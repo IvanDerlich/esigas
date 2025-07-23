@@ -30,28 +30,41 @@ export default function Home() {
       </div>
       <div className={styles.container_p}>
         <div className={styles.mision}>
-          <p className={styles.subtitle}>Misión</p>
-          <p>Ofrecer transporte sostenible con camiones euro 6, a gas nacional reduciendo el uso de combustible diesel, importado mejorando la contaminación ambiental y sonora.
+          <p className={`${abyssinica.className} ${styles.subtitle}`}>Misión</p>
+          <p className={abyssinica.className}>Ofrecer transporte sostenible con camiones euro 6, a gas nacional reduciendo el uso de combustible diesel, importado mejorando la contaminación ambiental y sonora.
             Desarrollar la transformación a gas de vehículos ciclos otto y diesel,
             Desarrollar los corredores verdes para producir un efecto económico positivo en la economía.</p>
         </div>
         <div className={styles.vision}>
-          <p className={styles.subtitle}>Vision</p>
-          <p>Ser socios confiables y seguros de aquellas empresas comprometidas con el medio ambiente y la reducción de la huella de carbono ofreciendo servicios de transporte ecológico, en el ámbito nacional e internacional.</p>
+          <p className={`${abyssinica.className} ${styles.subtitle}`}>Vision</p>
+          <p className={abyssinica.className}>Ser socios confiables y seguros de aquellas empresas comprometidas con el medio ambiente y la reducción de la huella de carbono ofreciendo servicios de transporte ecológico, en el ámbito nacional e internacional.</p>
         </div>
         <div className={styles.valores}>
-          <p className={styles.subtitle}>Valores</p>
-          <p>Profesionalización de nuestros servicios
-            Uso de normas internacionales de calidad.<br/>
-            Mejora continua<br/>
+          <p className={`${abyssinica.className} ${styles.subtitle}`}>Valores</p>
+          <p className={abyssinica.className}>Profesionalización de nuestros servicios
+            Uso de normas internacionales de calidad.<br />
+            Mejora continua<br />
             Compromiso ambiental</p>
         </div>
       </div>
-      <div className={styles.container_descripcion}>
-        <div>
-          <h2>Descripción</h2>
+      <div className={styles.container_ppl_descripcion}>
+        <div className={styles.container_h2}>
+          <h2 className={`${abyssinica.className} ${styles.title_h2}`}>Descripción</h2>
+        </div>
+        <div className={styles.container_descripcion}>
+          <p className={`${abyssinica.className} ${styles.descripcion}`}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          <Image src="/image/descripcion_img.jpg" alt="Descripcion" width={400} height={400} />
         </div>
       </div>
+      <footer className={styles.footer}>
+        <Image src="/image/logo.png" alt="Estaciones" width={110} height={55} />
+        <div className={styles.footer_text}>
+          <p className={`${abyssinica.className} ${styles.footer_p}`}>© Copyright 2025 Esigas. All Rights Reserved.</p>
+          <p className={`${abyssinica.className} ${styles.footer_p}`}>Made by Datara in 2025</p>
+        </div>
+      </footer>
     </div>
   );
 }
