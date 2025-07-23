@@ -18,13 +18,13 @@ export default function Home() {
         </div>
         <div className={styles.container_img}>
           <Link href={"https://transporteecologico.com.ar"}>
-            <Image src="/image/transporte.png" alt="Transporte" width={600} height={180} />
+            <Image className={styles.img_home} src="/image/transporte.png" alt="Transporte" width={600} height={180} />
           </Link>
           <Link href={"https://transporteecologico.com.ar"}>
-            <Image src="/image/equipos.png" alt="Equipos" width={600} height={180} />
+            <Image className={styles.img_home} src="/image/equipos.png" alt="Equipos" width={600} height={180} />
           </Link>
           <Link href={"https://transporteecologico.com.ar"}>
-            <Image src="/image/estaciones.png" alt="Estaciones" width={600} height={180} />
+            <Image className={styles.img_home} src="/image/estaciones.png" alt="Estaciones" width={600} height={180} />
           </Link>
         </div>
       </div>
@@ -41,10 +41,10 @@ export default function Home() {
         </div>
         <div className={styles.valores}>
           <p className={`${abyssinica.className} ${styles.subtitle}`}>Valores</p>
-          <p className={abyssinica.className}>Profesionalización de nuestros servicios
+          <p className={abyssinica.className}>Profesionalización de nuestros servicios.<br />
             Uso de normas internacionales de calidad.<br />
-            Mejora continua<br />
-            Compromiso ambiental</p>
+            Mejora continua.<br />
+            Compromiso ambiental.</p>
         </div>
       </div>
       <div className={styles.container_ppl_descripcion}>
@@ -55,7 +55,7 @@ export default function Home() {
           <p className={`${abyssinica.className} ${styles.descripcion}`}>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
             Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-          <Image src="/image/descripcion_img.jpg" alt="Descripcion" width={400} height={400} />
+          <Image className={styles.img_descripcion} src="/image/descripcion_img.jpg" alt="Descripcion" width={400} height={400} />
         </div>
       </div>
       <footer className={styles.footer}>
