@@ -103,7 +103,7 @@ const HeroImage = ({
 }) => {
   return (
     <Link href={href}>
-      <Image src={image} alt={alt} width={600} height={180} />
+      <Image className={styles.img_home} src={image} alt={alt} width={600} height={180} />
     </Link>
   );
 };
