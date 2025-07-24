@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { Abyssinica_SIL } from "next/font/google";
 import styles from "./page.module.css";
@@ -25,33 +25,21 @@ export default function Home() {
           </h1>
         </div>
         <div className={styles.container_img}>
-          <Link href={"https://transporteecologico.com.ar"}>
-            <Image
-              className={styles.img_home}
-              src={transporte}
-              alt="Transporte"
-              width={600}
-              height={180}
-            />
-          </Link>
-          <Link href={"https://transporteecologico.com.ar"}>
-            <Image
-              className={styles.img_home}
-              src={equipos}
-              alt="Equipos"
-              width={600}
-              height={180}
-            />
-          </Link>
-          <Link href={"https://transporteecologico.com.ar"}>
-            <Image
-              className={styles.img_home}
-              src={estaciones}
-              alt="Estaciones"
-              width={600}
-              height={180}
-            />
-          </Link>
+          <HeroImage
+            image={transporte}
+            alt="Transporte"
+            href={"https://transporteecologico.com.ar"}
+          />
+          <HeroImage
+            image={equipos}
+            alt="Equipos"
+            href={"https://transporteecologico.com.ar"}
+          />
+          <HeroImage
+            image={estaciones}
+            alt="Estaciones"
+            href={"https://transporteecologico.com.ar"}
+          />
         </div>
       </div>
       <div className={styles.container_p}>
@@ -60,7 +48,7 @@ export default function Home() {
           <p className={abyssinica.className}>{strings.mission}</p>
         </div>
         <div className={styles.vision}>
-          <p className={`${abyssinica.className} ${styles.subtitle}`}>Vision</p>
+          <p className={`${abyssinica.className} ${styles.subtitle}`}>Visión</p>
           <p className={abyssinica.className}>{strings.vision}</p>
         </div>
         <div className={styles.valores}>
@@ -103,3 +91,19 @@ export default function Home() {
     </div>
   );
 }
+
+const HeroImage = ({
+  image,
+  alt,
+  href,
+}: {
+  image: StaticImageData;
+  alt: string;
+  href: string;
+}) => {
+  return (
+    <Link href={href}>
+      <Image src={image} alt={alt} width={600} height={180} />
+    </Link>
+  );
+};
