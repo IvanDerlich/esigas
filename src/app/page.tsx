@@ -15,6 +15,8 @@ const abyssinica = Abyssinica_SIL({
   display: "swap",
 });
 
+console.log("Abyssinica font loaded:", abyssinica);
+
 export default function Home() {
   return (
     <div className={styles.container_ppl}>

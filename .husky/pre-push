@@ -1,13 +1,5 @@
 #!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
 echo "Ejecutando build antes del push..."
-
-npm run build
-
-if [ $? -ne 0 ]; then
-  echo "Build fallido. Push cancelado."
-  exit 1
-fi
+npm run build || exit 1
 
 echo "Build exitoso. Procediendo con el push..."
