@@ -7,7 +7,6 @@ import equipos from "@/images/equipos.png";
 import estaciones from "@/images/estaciones.png";
 import descripcion_img from "@/images/descripcion_img.jpg";
 import logo from "@/images/logo.png";
-import algoQueNoExiste from "./ruta/ficticia";
 import { strings } from "./consts";
 
 const abyssinica = Abyssinica_SIL({
