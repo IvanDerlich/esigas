@@ -40,7 +40,7 @@ export default function PecPage() {
     }, [images2.length]);
 
     return (
-        <div>
+        <div className={styles.container_ppl}>
 
             <div className={styles.container}>
                 <div className={`${abyssinica.className} ${styles.content}`}>
@@ -50,10 +50,11 @@ export default function PecPage() {
                     </Link>
                 </div>
                 <div className={styles.container_img}>
-                    <Image 
-                        src={oblea} 
-                        alt="Oblea" 
-                        width={500} 
+                    <Image
+                        className={styles.img_oblea}
+                        src={oblea}
+                        alt="Oblea"
+                        width={500}
                         priority />
                 </div>
             </div>

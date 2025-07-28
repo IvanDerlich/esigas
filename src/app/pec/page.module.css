@@ -1,5 +1,9 @@
+.container_ppl {
+    background-color: white;
+}
+ 
 .container {
-    background-color: #62B26EB3;
+    background-color: rgba(98, 178, 110, 0.7);
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -158,4 +162,125 @@
   width: 40%;
   display: flex;
   justify-content: space-evenly;
+}
+
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .container, .container_equipos {
+    flex-direction: column;
+    height: auto;
+    padding: 20px 0;
+  }
+
+  .content, .content_equipos {
+    width: 90%;
+    height: auto;
+  }
+
+  .text, .text_equipos {
+    font-size: 32px;
+    padding-bottom: 10px;
+  }
+
+  .img_oblea {
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  .btn, .btn_equipos {
+    width: 50%;
+    font-size: 20px;
+    height: 50px;
+  }
+
+  .carousel_container {
+    width: 100%;
+    margin: 20px auto;
+  }
+
+  .carousel_slider {
+    flex-direction: row;
+    width: 100%;
+  }
+
+  .carousel_slide {
+    min-width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  .carousel_slide img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .carousel_dots {
+    margin-top: 10px;
+  }
+
+  .dot, .dot2 {
+    height: 10px;
+    width: 10px;
+    margin: 0 4px;
+  }
+
+  .footer {
+    flex-direction: column;
+    height: auto;
+    padding: 15px 0;
+  }
+
+  .footer_text {
+    width: 90%;
+    margin-top: 10px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer_p {
+    font-size: 10px;
+    margin: 5px 0;
+  }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    height: 60vh;
+    padding: 0 20px;
+  }
+
+  .content, .content_equipos {
+    width: 45%;
+  }
+
+  .text, .text_equipos {
+    font-size: 45px;
+  }
+
+  .btn, .btn_equipos {
+    width: 220px;
+    font-size: 24px;
+    height: 55px;
+  }
+
+  .carousel_container {
+    width: 60%;
+  }
+
+  .footer {
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  .footer_text {
+    width: 70%;
+    flex-direction: row;
+  }
+
+  .footer_p {
+    font-size: 11px;
+  }
 }
