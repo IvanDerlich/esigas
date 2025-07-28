@@ -56,6 +56,7 @@ export default function Home() {
             Valores
           </p>
           <p className={abyssinica.className}>{strings.valores}</p>
+          <div>Probando</div>
         </div>
       </div>
       <div className={styles.container_ppl_descripcion}>
