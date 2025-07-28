@@ -16,6 +16,8 @@ const abyssinica = Abyssinica_SIL({
 });
 
 console.log("Abyssinica font loaded:", abyssinica);
+console.log("Abyssinica font loaded:", abyssinica);
+console.log("Abyssinica font loaded:", abyssinica);
 
 export default function Home() {
   return (
