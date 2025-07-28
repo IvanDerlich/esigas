@@ -1,0 +1,21 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+echo "🚧 Ejecutando build antes del push..."
+
+npm run build
+
+if [ $? -ne 0 ]; then
+  echo "❌ Build falló. No se puede hacer push."
+  exit 1
+fi
+
+echo "🔍 Buscando console.log en archivos staged..."
+
+if git diff --cached | grep -q "console.log"; then
+  echo "❌ No se puede hacer push: se detectaron console.log en los archivos staged."
+  exit 1
+fi
+
+echo "✅ Build OK y sin console.log. Haciendo push..."
+exit 0
