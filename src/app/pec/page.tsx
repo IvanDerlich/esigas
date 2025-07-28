@@ -1,6 +1,3 @@
-'use client';
-
-import { useEffect, useState } from 'react';
 import Link from "next/link";
 import Image from 'next/image';
 import oblea from "@/images/oblea.png";
@@ -10,6 +7,7 @@ import cilindromaquina from "@/images/cilindro-maquina.png";
 import tubognc from "@/images/tubo-gnc.png";
 import logo from "@/images/logo.png";
 import { Abyssinica_SIL } from "next/font/google";
+import InteractiveCarousel from './components/InteractiveCarousel';
 import styles from "./page.module.css";
 
 const abyssinica = Abyssinica_SIL({
@@ -19,26 +17,6 @@ const abyssinica = Abyssinica_SIL({
 });
 
 export default function PecPage() {
-    const [slideIndex, setSlideIndex] = useState(0);
-    const images = [equipoinstalado, equipognc];
-    const [slideIndex2, setSlideIndex2] = useState(0);
-    const images2 = [cilindromaquina, tubognc];
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setSlideIndex((prevIndex) => (prevIndex + 1) % images.length);
-        }, 5000);
-
-        return () => clearInterval(interval);
-    }, [images.length]);
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setSlideIndex2((prevIndex) => (prevIndex + 1) % images2.length);
-        }, 5000);
-        return () => clearInterval(interval);
-    }, [images2.length]);
-
     return (
         <div className={styles.container_ppl}>
 
@@ -55,38 +33,20 @@ export default function PecPage() {
                         src={oblea}
                         alt="Oblea"
                         width={500}
-                        priority />
+                        priority
+                    />
                 </div>
             </div>
 
             <div className={styles.container_equipos}>
-                <div className={styles.carousel_container}>
-                    <div
-                        className={styles.carousel_slider}
-                        style={{ transform: `translateX(-${slideIndex * 100}%)` }}
-                    >
-                        {images.map((img, index) => (
-                            <div key={index} className={styles.carousel_slide}>
-                                <Image
-                                    style={{ borderRadius: '15px' }}
-                                    src={img} alt={`Slide-${index}`}
-                                    width={400}
-                                    height={400}
-                                    priority
-                                />
-                            </div>
-                        ))}
-                    </div>
-                    <div className={styles.carousel_dots}>
-                        {images.map((_, i) => (
-                            <span
-                                key={i}
-                                className={`${styles.dot} ${i === slideIndex ? styles.active : ''}`}
-                                onClick={() => setSlideIndex(i)}
-                            />
-                        ))}
-                    </div>
-                </div>
+                <InteractiveCarousel
+                    images={[equipoinstalado, equipognc]}
+                    width={400}
+                    height={400}
+                    radius="15px"
+                    dotClass={styles.dot}
+                    activeClass={styles.active}
+                />
                 <div className={`${abyssinica.className} ${styles.content_equipos}`}>
                     <p className={styles.text_equipos}>¿Querés instalar un equipo?</p>
                     <Link className={styles.btn_equipos} href="https://transporteecologico.com.ar">
@@ -102,34 +62,14 @@ export default function PecPage() {
                         Consultar
                     </Link>
                 </div>
-                <div className={styles.carousel_container}>
-                    <div
-                        className={styles.carousel_slider}
-                        style={{ transform: `translateX(-${slideIndex2 * 100}%)` }}
-                    >
-                        {images2.map((img, index) => (
-                            <div key={index} className={styles.carousel_slide}>
-                                <Image
-                                    style={{ borderRadius: '15px' }}
-                                    src={img}
-                                    alt={`Slide2-${index}`}
-                                    width={450}
-                                    height={400}
-                                    priority
-                                />
-                            </div>
-                        ))}
-                    </div>
-                    <div className={styles.carousel_dots}>
-                        {images2.map((_, i) => (
-                            <span
-                                key={i}
-                                className={`${styles.dot2} ${i === slideIndex2 ? styles.active2 : ''}`}
-                                onClick={() => setSlideIndex2(i)}
-                            />
-                        ))}
-                    </div>
-                </div>
+                <InteractiveCarousel
+                    images={[cilindromaquina, tubognc]}
+                    width={450}
+                    height={350}
+                    radius="10px"
+                    dotClass={styles.dot2}
+                    activeClass={styles.active2}
+                />
             </div>
 
             <footer className={styles.footer}>
