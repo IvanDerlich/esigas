@@ -8,7 +8,7 @@
 
 .home {
   height: 100vh;
-  background-color: #62B26EB3;
+  background-color: #62b26eb3;
   display: flex;
   justify-content: center;
 }
@@ -79,7 +79,7 @@
 }
 
 .subtitle {
-  color: #62B26E;
+  color: #62b26e;
   font-size: 50px;
   text-align: center;
   padding-bottom: 30px;
@@ -91,7 +91,7 @@
 
 .container_h2 {
   height: 130px;
-  background-color: #62B26E;
+  background-color: #62b26e;
   display: flex;
   justify-content: center;
   align-items: center;

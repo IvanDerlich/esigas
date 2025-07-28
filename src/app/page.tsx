@@ -1,18 +1,18 @@
-import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
-import { Abyssinica_SIL } from "next/font/google";
-import styles from "./page.module.css";
-import transporte from "@/images/transporte.png";
-import equipos from "@/images/equipos.png";
-import estaciones from "@/images/estaciones.png";
-import descripcion_img from "@/images/descripcion_img.jpg";
-import logo from "@/images/logo.png";
-import { strings } from "./consts";
+import Image, { StaticImageData } from 'next/image';
+import Link from 'next/link';
+import { Abyssinica_SIL } from 'next/font/google';
+import styles from './page.module.css';
+import transporte from '@/images/transporte.png';
+import equipos from '@/images/equipos.png';
+import estaciones from '@/images/estaciones.png';
+import descripcion_img from '@/images/descripcion_img.jpg';
+import logo from '@/images/logo.png';
+import { strings } from './consts';
 
 const abyssinica = Abyssinica_SIL({
-  subsets: ["latin"],
-  weight: ["400"],
-  display: "swap",
+  subsets: ['latin'],
+  weight: ['400'],
+  display: 'swap',
 });
 
 export default function Home() {
@@ -28,17 +28,17 @@ export default function Home() {
           <HeroImage
             image={transporte}
             alt="Transporte"
-            href={"https://transporteecologico.com.ar"}
+            href={'https://transporteecologico.com.ar'}
           />
           <HeroImage
             image={equipos}
             alt="Equipos"
-            href={"https://transporteecologico.com.ar"}
+            href={'https://transporteecologico.com.ar'}
           />
           <HeroImage
             image={estaciones}
             alt="Estaciones"
-            href={"https://transporteecologico.com.ar"}
+            href={'https://transporteecologico.com.ar'}
           />
         </div>
       </div>
@@ -103,7 +103,13 @@ const HeroImage = ({
 }) => {
   return (
     <Link href={href}>
-      <Image className={styles.img_home} src={image} alt={alt} width={600} height={180} />
+      <Image
+        className={styles.img_home}
+        src={image}
+        alt={alt}
+        width={600}
+        height={180}
+      />
     </Link>
   );
 };
