@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image, { StaticImageData } from 'next/image';
-import styles from "./InteractiveCarousel.module.css";
+import styles from './InteractiveCarousel.module.css';
 
 type Props = {
   images: StaticImageData[];
@@ -20,15 +20,14 @@ const InteractiveCarousel = ({
   activeClass = styles.active,
   width = 500,
   height = 300,
-  radius = "0px",
+  radius = '0px',
   interval = 5000,
 }: Props) => {
   const [current, setCurrent] = useState(0);
 
-
   useEffect(() => {
     const slideInterval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % images.length);
+      setCurrent(prev => (prev + 1) % images.length);
     }, interval);
 
     return () => clearInterval(slideInterval);
@@ -57,7 +56,7 @@ const InteractiveCarousel = ({
         {images.map((_, i) => (
           <span
             key={i}
-            className={`${dotClass} ${i === current ? activeClass : ""}`}
+            className={`${dotClass} ${i === current ? activeClass : ''}`}
             onClick={() => setCurrent(i)}
           />
         ))}

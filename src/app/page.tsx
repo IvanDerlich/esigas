@@ -30,11 +30,7 @@ export default function Home() {
             alt="Transporte"
             href={'https://transporteecologico.com.ar'}
           />
-          <HeroImage
-            image={equipos}
-            alt="Equipos"
-            href={"/pec"}
-          />
+          <HeroImage image={equipos} alt="Equipos" href={'/pec'} />
           <HeroImage
             image={estaciones}
             alt="Estaciones"
