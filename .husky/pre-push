@@ -1,5 +1,12 @@
 #!/bin/sh
-echo "Ejecutando build antes del push..."
-npm run build || exit 1
+echo "Checking code formatting..."
 
-echo "Build exitoso. Procediendo con el push..."
+# Run prettier in check mode
+npm run format:check
+if [ $? -ne 0 ]; then
+  echo "Format errors found. Please run 'npm run format' to fix them before pushing."
+  exit 1
+fi
+
+echo "Formatting OK. Running build before push..."
+npm run build || exit 1
