@@ -1,0 +1,64 @@
+.header {
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.headerContent {
+  background-color: #62b26eb3;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 160px;
+  position: relative;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: black;
+}
+
+.heroImg {
+  background-image: url('/Image/estacion-de-servicio.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.heroContent {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
+  width: 55%;
+  padding: 0px 150px;
+  gap: 30px;
+}
+
+.h1 {
+  color: white;
+  font-size: 60px;
+  font-weight: 100;
+  text-align: end;
+}
+
+.btn {
+  background-color: #62b26e;
+  color: white;
+  height: 50px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 17px;
+}
