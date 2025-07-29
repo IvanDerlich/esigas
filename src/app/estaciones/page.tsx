@@ -3,7 +3,7 @@ import logo from '@/images/logo.png';
 import Link from 'next/link';
 import styles from './page.module.css';
 import { Abyssinica_SIL } from 'next/font/google';
-import WhyChooseUs from '../components/whyChooseUs/WhyChooseUs';
+import WhyChooseUs from '../components/WhyChooseUs/WhyChooseUs';
 
 const abyssinica = Abyssinica_SIL({
   subsets: ['latin'],
