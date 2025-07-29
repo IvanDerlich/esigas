@@ -10,6 +10,8 @@ import { Abyssinica_SIL } from 'next/font/google';
 import InteractiveCarousel from './components/InteractiveCarousel';
 import styles from './page.module.css';
 import nada from '@/images/nada.png';
+import nada from '@/images/nada.png';
+import nada from '@/images/nada.png';
 
 const abyssinica = Abyssinica_SIL({
   subsets: ['latin'],
