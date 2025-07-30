@@ -25,7 +25,11 @@ export default function Page() {
           />
 
           {/* Menú hamburguesa con CSS puro */}
-          <input type="checkbox" id="menu-toggle" className={styles.menuToggle} />
+          <input
+            type="checkbox"
+            id="menu-toggle"
+            className={styles.menuToggle}
+          />
           <label htmlFor="menu-toggle" className={styles.menuIcon}>
             <span></span>
             <span></span>

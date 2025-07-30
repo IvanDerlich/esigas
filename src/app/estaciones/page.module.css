@@ -101,7 +101,7 @@
     z-index: 998;
   }
 
-  .menuToggle:checked~.nav {
+  .menuToggle:checked ~ .nav {
     display: flex;
   }
 
@@ -130,10 +130,10 @@
 
 @media (min-width: 769px) and (max-width: 920px) {
   .headerContent {
-  padding: 0 40px;
-}
+    padding: 0 40px;
+  }
 
-.heroContent {
-  padding: 0px 40px;
-}
+  .heroContent {
+    padding: 0px 40px;
+  }
 }
