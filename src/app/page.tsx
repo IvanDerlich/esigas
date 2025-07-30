@@ -35,7 +35,7 @@ export default function Home() {
             <HeroImage
               image={estaciones}
               alt="Estaciones"
-              href={'https://transporteecologico.com.ar'}
+              href={'/estaciones'}
             />
           </div>
         </div>
