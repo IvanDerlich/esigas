@@ -24,7 +24,6 @@ export default function Page() {
             className={styles.logo}
           />
 
-          {/* Menú hamburguesa con CSS puro */}
           <input
             type="checkbox"
             id="menu-toggle"
