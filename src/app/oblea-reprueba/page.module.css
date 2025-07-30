@@ -95,11 +95,13 @@
 .serviceDescription {
   font-size: 27px;
   text-align: center;
+  color: #231f20;
 }
 
 .serviceSubtitle {
   font-size: 19px;
   text-align: center;
+  color: #231f20;
 }
 
 .link {
