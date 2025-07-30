@@ -46,3 +46,33 @@
   text-decoration: underline;
   font-size: 0.9rem;
 }
+
+@media screen and (max-width: 768px) {
+  .contentDescription {
+    padding: 20px 10px;
+    height: auto;
+    gap: 20px;
+  }
+
+  .h2 {
+    font-size: 36px;
+    padding: 0 10px;
+  }
+
+  .description {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .pTitle {
+    font-size: 22px;
+  }
+
+  .pDescription {
+    font-size: 14px;
+  }
+
+  .linkLike {
+    font-size: 0.85rem;
+  }
+}

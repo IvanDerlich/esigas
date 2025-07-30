@@ -23,7 +23,16 @@ export default function Page() {
             height={60}
             className={styles.logo}
           />
-          <nav className={`${abyssinica.className} ${styles.nav}`}>
+
+          {/* Menú hamburguesa con CSS puro */}
+          <input type="checkbox" id="menu-toggle" className={styles.menuToggle} />
+          <label htmlFor="menu-toggle" className={styles.menuIcon}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+
+          <nav className={styles.nav}>
             <Link href="/home">Home</Link>
             <Link href="/servicios">¿Cómo Llegar?</Link>
             <Link href="/servicios">Carga Pesada</Link>
