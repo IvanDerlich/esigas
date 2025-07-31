@@ -49,11 +49,7 @@
 
 @media screen and (max-width: 768px) {
   .contentDescription {
-<<<<<<< HEAD
     padding: 0px 10px;
-=======
-    padding: 20px 10px;
->>>>>>> 038c4a7aaf3398165d6bf3be8fcc8f515658e8d9
     gap: 20px;
     height: 107vh;
   }
