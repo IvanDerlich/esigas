@@ -5,7 +5,7 @@ import { OurAdvantages } from '../components/ourAdvantages/ourAdvantages';
 import { Abyssinica_SIL } from 'next/font/google';
 import styles from './page.module.css';
 import Carousel from '../components/testimonialCarousel/testimonialCarousel';
-import CalendarIcon from '@/images/Calendar.png';
+import CalendarIcon from '@/images/calendar.png';
 import ObleaGnc from '@/images/obleagnc.png';
 import Reprueba from '@/images/reprueba.png';
 
