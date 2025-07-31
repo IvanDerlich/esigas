@@ -1,0 +1,106 @@
+.equiposFinanciacion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 20px;
+}
+
+.equiposFinanciacion {
+  background-color: white;
+  font-size: 30px;
+  font-weight: 100;
+  color: #62b26e;
+}
+
+.financiacionContainer {
+  background-color: white;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.financiacionSubContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.equiposBox {
+  border: 3px solid #62b26e;
+  border-radius: 15px;
+  width: 150px;
+  height: 150px;
+}
+
+.equiposNumber {
+  font-size: 70px;
+  font-weight: 100;
+  color: #231f20;
+  text-align: center;
+}
+
+.equiposCuotas {
+  font-size: 30px;
+  font-weight: 100;
+  color: #231f20;
+  text-align: center;
+}
+
+.equiposLink {
+  background-color: #62b26e;
+  color: white;
+  height: 50px;
+  width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-size: 30px;
+}
+
+@media (max-width: 768px) {
+  .financiacionContainer {
+    padding: 2rem 1rem;
+    height: 90vh;
+    gap: 30px;
+  }
+
+  .financiacionSubContainer {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .equiposBox {
+    width: 120px;
+    height: 120px;
+  }
+
+  .equiposNumber {
+    font-size: 50px;
+  }
+
+  .equiposCuotas {
+    font-size: 24px;
+  }
+
+  .equiposLink {
+    width: 80%;
+    font-size: 22px;
+    padding: 25px 0px;
+  }
+
+  .equiposFinanciacion {
+    font-size: 22px;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+    padding: 1rem;
+  }
+}

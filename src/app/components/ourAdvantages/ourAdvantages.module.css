@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 80vh;
+  height: 100vh;
   gap: 30px;
   background-color: white;
 }
@@ -49,9 +49,9 @@
 
 @media screen and (max-width: 768px) {
   .contentDescription {
-    padding: 20px 10px;
-    height: auto;
+    padding: 0px 10px;
     gap: 20px;
+    height: 107vh;
   }
 
   .h2 {
@@ -60,7 +60,7 @@
   }
 
   .description {
-    width: 100%;
+    width: 80%;
     padding: 15px;
   }
 
@@ -74,5 +74,12 @@
 
   .linkLike {
     font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 376px) {
+  .description {
+    width: 100%;
+    padding: 15px;
   }
 }
