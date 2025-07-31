@@ -23,10 +23,7 @@ export default function PecPage() {
         <div className={styles.container}>
           <div className={`${abyssinica.className} ${styles.content}`}>
             <p className={styles.text}>Hace tu revisión técnica con nosotros</p>
-            <Link
-              className={styles.btn}
-              href="https://transporteecologico.com.ar"
-            >
+            <Link className={styles.btn} href="/oblea-reprueba">
               Consultar
             </Link>
           </div>
@@ -64,10 +61,7 @@ export default function PecPage() {
             <p className={styles.text}>
               ¿Querés hacer reprueba a tus cilindros?
             </p>
-            <Link
-              className={styles.btn}
-              href="https://transporteecologico.com.ar"
-            >
+            <Link className={styles.btn} href="/oblea-reprueba">
               Consultar
             </Link>
           </div>

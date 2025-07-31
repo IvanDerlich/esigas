@@ -1,0 +1,27 @@
+[
+  {
+    "type": "video",
+    "youtubeId": "B0FYrmBw8ik"
+  },
+  {
+    "type": "text",
+    "title": "La Mejor Financiación Que Encontré",
+    "comment": "Pude Pagar En 24 Cuotas Sin Problemas",
+    "author": "Carla Gonzalez",
+    "rating": 5
+  },
+  {
+    "type": "text",
+    "title": "Muy Rápido Y Seguro",
+    "comment": "Instalación en el día y excelente atención",
+    "author": "Luis Fernández",
+    "rating": 4
+  },
+  {
+    "type": "text",
+    "title": "Recomendado",
+    "comment": "Todo funcionó perfecto desde el primer día",
+    "author": "María Gómez",
+    "rating": 3
+  }
+]
