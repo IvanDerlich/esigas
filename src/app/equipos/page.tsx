@@ -2,6 +2,8 @@ import { Abyssinica_SIL } from 'next/font/google';
 import Image from 'next/image';
 import Line from '@/images/line.png';
 import Tarjetas from '@/images/tarjetas.png';
+import LineGreen from '@/images/line-green.png';
+import MediosDePago from '@/images/medios-de-pago.png'
 import NavBar from '../components/header/navBar';
 import { OurAdvantages } from '../components/ourAdvantages/ourAdvantages';
 import styles from './page.module.css';
@@ -73,8 +75,40 @@ export default function Page() {
           </Link>
         </div>
         <Calculator />
-        <div>
-          
+        <div className={styles.equiposFinanciacion}>
+          <Image
+            src={Line}
+            alt="Line"
+            width={450}
+            height={0.5}
+            className={styles.equiposImage}
+          />
+          <h2 className={styles.equiposTitle}>Financiación</h2>
+          <Image
+            src={Line}
+            alt="Line"
+            width={450}
+            height={0.5}
+            className={styles.equiposImage}
+          />
+        </div>
+        <div className={styles.financiacionContainerTwo}>
+          <p className={styles.financiacionText}>Disponemos de 6, 12 y 24 cuotas</p>
+          <Image
+            src={LineGreen}
+            alt="Line Green"
+            width={450}
+            height={0.5}
+            className={styles.equiposLine}
+          />
+          <p className={styles.financiacionText}>¡Recibimos todas las tarjetas!</p>
+          <Image
+            src={MediosDePago}
+            alt="Medios de Pago"
+            width={600}
+            height={80}
+            className={styles.imageFinanciacion}
+          />
         </div>
       </main>
     </>

@@ -69,6 +69,22 @@
   font-size: 30px;
 }
 
+.financiacionText {
+  font-size: 40px;
+  color: #231f20;
+  text-align: center;
+}
+
+.financiacionContainerTwo {
+  background-color: white;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 50px;
+}
+
 @media (max-width: 768px) {
   .financiacionContainer {
     padding: 21rem 1rem;
@@ -108,4 +124,18 @@
     gap: 15px;
     padding: 1rem;
   }
+
+  .financiacionText {
+  font-size: 30px;
+}
+
+  .imageFinanciacion {
+    width: 80%;
+    height: auto;
+  }
+
+  .financiacionContainerTwo {
+  height: 70vh;
+}
+
 }
