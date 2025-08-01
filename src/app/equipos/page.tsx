@@ -73,6 +73,9 @@ export default function Page() {
           </Link>
         </div>
         <Calculator />
+        <div>
+          
+        </div>
       </main>
     </>
   );
