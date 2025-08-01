@@ -27,6 +27,7 @@ export default function Page() {
     <>
       <NavBar links={links} />
       <main className={`${abyssinica.className} ${styles.main}`}>
+        <div className={styles.space}></div>
         <OurAdvantages />
         <div className={styles.equiposFinanciacion}>
           <Image

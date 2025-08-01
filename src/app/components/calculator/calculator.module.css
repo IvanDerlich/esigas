@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+  color: #231f20;
 }
 
 .container {
@@ -14,6 +15,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: white;
 }
 
 .title {
@@ -27,6 +29,7 @@
   font-size: 35px;
   width: 60%;
   padding-top: 25px;
+  color: #231f20;
 }
 
 .card {
@@ -58,6 +61,7 @@
   margin-bottom: 1rem;
   font-size: 18px;
   gap: 10px;
+  color: #231f20;
 }
 
 .label {
@@ -68,6 +72,7 @@
 .inputUnit {
   display: flex;
   align-items: center;
+  background-color: white;
 }
 
 .inputUnit input {
@@ -77,6 +82,7 @@
   border: 1px solid #ccc;
   font-size: 18px;
   width: 100px;
+  background-color: white;
 }
 
 .inputUnit span {
@@ -98,6 +104,10 @@
 .green {
   color: #62b26e;
   padding: 0px 10px;
+}
+
+.gray {
+  color: B3B3B3;
 }
 
 .buttonGroup {

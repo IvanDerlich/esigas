@@ -62,7 +62,7 @@ export default function Calculator() {
           <div className={styles.card}>
             <div className={styles.tabs}>
               <span className={styles.green}>Ahorro Cada 100 Km</span>
-              <span>Recuperación De Equipo</span>
+              <span className={styles.gray}>Recuperación De Equipo</span>
             </div>
 
             <div className={styles.inputGroup}>
@@ -151,7 +151,7 @@ export default function Calculator() {
           {step === 2 && (
             <div className={styles.card}>
               <div className={styles.tabs}>
-                <span>Ahorro Cada 100 Km</span>
+                <span className={styles.gray}>Ahorro Cada 100 Km</span>
                 <span className={styles.green}>Recuperación De Equipo</span>
               </div>
 
