@@ -50,10 +50,7 @@ export default function PecPage() {
           />
           <div className={`${abyssinica.className} ${styles.content_equipos}`}>
             <p className={styles.text_equipos}>¿Querés instalar un equipo?</p>
-            <Link
-              className={styles.btn_equipos}
-              href="https://transporteecologico.com.ar"
-            >
+            <Link className={styles.btn_equipos} href="/equipos">
               Consultar
             </Link>
           </div>
