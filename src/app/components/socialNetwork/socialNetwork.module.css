@@ -1,0 +1,187 @@
+.redesContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  gap: 20px;
+  background-color: white;
+}
+
+.redesTitle {
+  font-size: 40px;
+  color: #62b26e;
+  text-align: center;
+  font-weight: 100;
+}
+
+.container {
+  background-image: url('/Image/redes-sociales.png');
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 300px;
+  width: 80%;
+  gap: 35px;
+}
+
+.title {
+  font-size: 40px;
+  color: white;
+  text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+  text-align: center;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 25px;
+  color: white;
+  text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+  text-align: center;
+  padding-left: 90px;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 50%;
+}
+
+.newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 300px;
+  width: 100%;
+  background-color: #62b26eb3;
+  gap: 35px;
+}
+
+.newsletterContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.newsletterTitle {
+  font-size: 35px;
+  color: white;
+  text-align: center;
+}
+
+.newsletterText {
+  font-size: 20px;
+  color: white;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.input {
+  width: 500px;
+  height: 45px;
+  border-radius: 20px;
+  padding: 0 20px;
+  border: none;
+  font-size: 16px;
+  background-color: white;
+}
+
+.button {
+  background-color: #91ff95;
+  color: #231f20;
+  padding: 13px 20px;
+  border-radius: 50px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .redesTitle {
+    font-size: 28px;
+    padding: 0 1rem;
+  }
+
+  .container {
+    height: auto;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .containerContent {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+    padding-left: 0;
+  }
+
+  .socialIcons {
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .newsletter {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .newsletterTitle {
+    font-size: 28px;
+  }
+
+  .newsletterText {
+    font-size: 18px;
+  }
+
+  .form {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .input {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .button {
+    width: fit-content;
+    padding: 10px 20px;
+  }
+}
