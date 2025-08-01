@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Line from '@/images/line.png';
 import Tarjetas from '@/images/tarjetas.png';
 import LineGreen from '@/images/line-green.png';
-import MediosDePago from '@/images/medios-de-pago.png'
+import MediosDePago from '@/images/medios-de-pago.png';
 import NavBar from '../components/header/navBar';
 import { OurAdvantages } from '../components/ourAdvantages/ourAdvantages';
 import styles from './page.module.css';
@@ -93,7 +93,9 @@ export default function Page() {
           />
         </div>
         <div className={styles.financiacionContainerTwo}>
-          <p className={styles.financiacionText}>Disponemos de 6, 12 y 24 cuotas</p>
+          <p className={styles.financiacionText}>
+            Disponemos de 6, 12 y 24 cuotas
+          </p>
           <Image
             src={LineGreen}
             alt="Line Green"
@@ -101,7 +103,9 @@ export default function Page() {
             height={0.5}
             className={styles.equiposLine}
           />
-          <p className={styles.financiacionText}>¡Recibimos todas las tarjetas!</p>
+          <p className={styles.financiacionText}>
+            ¡Recibimos todas las tarjetas!
+          </p>
           <Image
             src={MediosDePago}
             alt="Medios de Pago"
