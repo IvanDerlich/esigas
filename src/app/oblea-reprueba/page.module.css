@@ -115,6 +115,10 @@
   gap: 10px;
 }
 
+.space {
+  height: 80px;
+}
+
 @media screen and (max-width: 768px) {
   .menuIcon {
     display: flex;

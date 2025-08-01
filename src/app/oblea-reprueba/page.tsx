@@ -8,6 +8,10 @@ import Carousel from '../components/testimonialCarousel/testimonialCarousel';
 import CalendarIcon from '@/images/Calendar.png';
 import ObleaGnc from '@/images/obleagnc.png';
 import Reprueba from '@/images/reprueba.png';
+import Contact from '../components/contact/contact';
+import Ubication from '../components/ubication/ubication';
+import SocialNetwork from '../components/socialNetwork/socialNetwork';
+import { Footer } from '../components/layout/footer';
 
 const abyssinica = Abyssinica_SIL({
   subsets: ['latin'],
@@ -48,6 +52,7 @@ export default function Page() {
         </div>
       </header>
       <main>
+        <div className={styles.space}></div>
         <OurAdvantages />
         <Carousel />
         <div className={`${abyssinica.className} ${styles.services}`}>
@@ -96,7 +101,11 @@ export default function Page() {
             </div>
           </div>
         </div>
+        <Contact />
+        <Ubication />
+        <SocialNetwork />
       </main>
+      <Footer />
     </>
   );
 }
