@@ -4,6 +4,13 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './navBar.module.css';
 import logo from '@/images/logo.png';
+import { Abyssinica_SIL } from 'next/font/google';
+
+const abyssinica = Abyssinica_SIL({
+  subsets: ['latin'],
+  weight: ['400'],
+  display: 'swap',
+});
 
 type NavLink = {
   label: string;
@@ -33,7 +40,7 @@ export default function Navbar({ links }: NavbarProps) {
           <span></span>
         </label>
 
-        <nav className={styles.nav}>
+        <nav className={`${abyssinica.className} ${styles.nav}`}>
           {links.map(({ label, href }) => (
             <Link key={label} href={href}>
               {label}
