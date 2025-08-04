@@ -171,6 +171,7 @@
     max-width: 320px;
     height: auto;
     padding: 20px 15px;
+    gap: 15px;
   }
 
   .serviceDescription {
@@ -188,9 +189,13 @@
   }
 }
 
-@media (min-width: 769px) and (max-width: 920px) {
+@media (min-width: 769px) and (max-width: 995px) {
   .headerContent {
     padding: 0 40px;
+  }
+   .services {
+    height: auto;
+    padding: 30px 0px;
   }
 }
 

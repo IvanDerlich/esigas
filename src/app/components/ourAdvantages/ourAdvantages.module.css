@@ -51,6 +51,7 @@
   .contentDescription {
     padding: 20px 10px;
     gap: 20px;
+    height: auto;
   }
 
   .h2 {
@@ -73,5 +74,13 @@
 
   .linkLike {
     font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 995px) {
+  .contentDescription {
+    padding: 30px 10px;
+    gap: 20px;
+    height: auto;
   }
 }
