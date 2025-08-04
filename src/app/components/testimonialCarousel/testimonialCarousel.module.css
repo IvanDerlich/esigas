@@ -185,18 +185,18 @@
 }
 
 @media (min-width: 769px) and (max-width: 995px) {
-   .container {
+  .container {
     height: auto;
     padding-bottom: 50px;
   }
 }
 
 @media (min-width: 995px) and (max-width: 1252px) {
-   .container {
+  .container {
     height: auto;
     padding-bottom: 50px;
   }
-  
+
   .testimonialsContent {
     gap: 20px;
     height: 70vh;
