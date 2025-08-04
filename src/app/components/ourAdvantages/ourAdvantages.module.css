@@ -75,3 +75,9 @@
     font-size: 0.85rem;
   }
 }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .contentDescription {
+    height: 100vh;
+  }
+}

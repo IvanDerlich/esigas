@@ -28,7 +28,7 @@
   background-image: url('/Image/estacion-de-servicio.png');
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 110vh;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -82,6 +82,127 @@
   border-radius: 2px;
 }
 
+.estaciones {
+  height: 130px;
+  background-color: #62b26e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.estacionesTitle {
+  font-size: 40px;
+  font-weight: 100;
+  color: white;
+}
+
+.containerMaps {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  padding-bottom: 70px;
+}
+
+.maps {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  width: 80%;
+  height: 70vh;
+}
+
+.mapContent {
+  width: 50%;
+}
+
+.mapTitle {
+  font-size: 40px;
+  padding-bottom: 30px;
+  color: #231f20;
+}
+
+.mapItems {
+  line-height: 25px;
+  color: #231f20;
+}
+
+.mapImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.containerTransport {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 30px;
+}
+
+.transporteInfo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  padding: 50px 0px;
+}
+
+.transporteContainer {
+  border: 2px solid #62b26e;
+  border-radius: 15px;
+  height: 450px;
+  width: 670px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.transporteText {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 40px;
+  gap: 20px;
+}
+
+.transporteTitle {
+  color: #231f20;
+  font-size: 40px;
+}
+
+.transporteSub {
+  font-size: 30px;
+  text-align: center;
+  color: #231f20;
+}
+
+.transporteItems {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.item {
+  font-size: 25px;
+  color: #62b26e;
+}
+
+.trasporteBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media screen and (max-width: 768px) {
   .menuIcon {
     display: flex;
@@ -101,7 +222,7 @@
     z-index: 998;
   }
 
-  .menuToggle:checked ~ .nav {
+  .menuToggle:checked~.nav {
     display: flex;
   }
 
@@ -126,14 +247,182 @@
     width: 100%;
     max-width: 300px;
   }
+
+  .estacionesTitle {
+    font-size: 28px;
+    text-align: center
+  }
+
+  .maps {
+    flex-direction: column;
+    height: auto;
+    padding: 20px 0;
+    gap: 20px;
+  }
+
+  .mapContent {
+    width: 90%;
+    text-align: center;
+  }
+
+  .mapTitle {
+    font-size: 24px;
+    padding-bottom: 15px;
+  }
+
+  .mapItems {
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  .ubication {
+    width: 90%;
+    height: 250px;
+  }
+
+  .mapImage {
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 20px;
+  }
+
+  .imageEstacion {
+    width: 90%;
+  }
+
+  .containerTransport {
+    padding: 30px 10px;
+  }
+
+  .line {
+    width: 90%;
+  }
+
+  .transport {
+    width: 90%;
+    height: auto;
+  }
+
+  .transporteContainer {
+    width: 100%;
+    height: auto;
+    padding: 20px 10px;
+  }
+
+  .transporteTitle {
+    font-size: 26px;
+  }
+
+  .transporteText {
+    padding: 0px 30px;
+  }
+
+  .transporteTitle {
+    text-align: center;
+  }
+
+  .transporteSub {
+    font-size: 18px;
+  }
+
+  .item {
+    font-size: 16px;
+  }
+
+  .trasporteBtn .btn {
+    max-width: 250px;
+    font-size: 14px;
+  }
 }
 
-@media (min-width: 769px) and (max-width: 920px) {
+/* @media (min-width: 769px) and (max-width: 920px) {
   .headerContent {
     padding: 0 40px;
   }
 
   .heroContent {
     padding: 0px 40px;
+  }
+} */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .headerContent {
+    padding: 0 40px;
+  }
+
+  .heroContent {
+    padding: 0 40px;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .h1 {
+    font-size: 42px;
+    text-align: center;
+  }
+
+  .btn {
+    max-width: 300px;
+  }
+
+  .maps {
+    flex-direction: column;
+    height: auto;
+    padding: 30px 0;
+    gap: 30px;
+  }
+
+  .mapContent {
+    width: 80%;
+    text-align: center;
+  }
+
+  .ubication {
+    width: 80%;
+    height: 300px;
+  }
+
+  .mapImage {
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .containerTransport {
+    padding: 30px 20px;
+  }
+
+  .transporteContainer {
+    width: 90%;
+    height: auto;
+    padding: 30px 20px;
+  }
+
+  .transporteTitle {
+    font-size: 32px;
+  }
+
+  .transporteSub {
+    font-size: 22px;
+  }
+
+  .item {
+    font-size: 18px;
+  }
+
+  .trasporteBtn .btn {
+    font-size: 16px;
+    width: 250px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1158px) {
+  .mapImage {
+    gap: 15px;
+  }
+
+  .imageEstacion {
+    width: 90%;
   }
 }
