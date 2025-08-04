@@ -21,7 +21,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  color: black;
+  color: #231f20;
 }
 
 .heroImg {
@@ -61,4 +61,79 @@
   justify-content: center;
   border-radius: 10px;
   font-size: 17px;
+}
+
+.menuToggle {
+  display: none;
+}
+
+.menuIcon {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+}
+
+.menuIcon span {
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+@media screen and (max-width: 768px) {
+  .menuIcon {
+    display: flex;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background-color: #62b26eb3;
+    padding: 20px 0;
+    align-items: center;
+    gap: 20px;
+    z-index: 998;
+  }
+
+  .menuToggle:checked ~ .nav {
+    display: flex;
+  }
+
+  .headerContent {
+    padding: 0 30px;
+  }
+
+  .heroContent {
+    width: 100%;
+    height: 100vh;
+    padding: 0 30px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .h1 {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 920px) {
+  .headerContent {
+    padding: 0 40px;
+  }
+
+  .heroContent {
+    padding: 0px 40px;
+  }
 }

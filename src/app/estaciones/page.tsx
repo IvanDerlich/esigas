@@ -3,7 +3,7 @@ import logo from '@/images/logo.png';
 import Link from 'next/link';
 import styles from './page.module.css';
 import { Abyssinica_SIL } from 'next/font/google';
-import WhyChooseUs from '../components/WhyChooseUs/WhyChooseUs';
+import { OurAdvantages } from '../components/ourAdvantages/ourAdvantages';
 
 const abyssinica = Abyssinica_SIL({
   subsets: ['latin'],
@@ -23,7 +23,19 @@ export default function Page() {
             height={60}
             className={styles.logo}
           />
-          <nav className={`${abyssinica.className} ${styles.nav}`}>
+
+          <input
+            type="checkbox"
+            id="menu-toggle"
+            className={styles.menuToggle}
+          />
+          <label htmlFor="menu-toggle" className={styles.menuIcon}>
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+
+          <nav className={styles.nav}>
             <Link href="/home">Home</Link>
             <Link href="/servicios">¿Cómo Llegar?</Link>
             <Link href="/servicios">Carga Pesada</Link>
@@ -43,7 +55,7 @@ export default function Page() {
             </Link>
           </div>
         </div>
-        <WhyChooseUs />
+        <OurAdvantages />
       </main>
     </>
   );
