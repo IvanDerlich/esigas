@@ -222,7 +222,7 @@
     z-index: 998;
   }
 
-  .menuToggle:checked~.nav {
+  .menuToggle:checked ~ .nav {
     display: flex;
   }
 
@@ -250,7 +250,7 @@
 
   .estacionesTitle {
     font-size: 28px;
-    text-align: center
+    text-align: center;
   }
 
   .maps {
