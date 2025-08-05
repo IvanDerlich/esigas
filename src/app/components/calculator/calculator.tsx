@@ -178,7 +178,7 @@ export default function Calculator() {
                     value={equipmentCost}
                     onChange={e => setEquipmentCost(e.target.value)}
                   />
-                  <span>$</span>
+                  <span className={styles.espacio}>$</span>
                 </div>
               </div>
 
