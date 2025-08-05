@@ -70,10 +70,10 @@ export default function Page() {
               Nuestras Estaciones de Servicio
             </h3>
           </div>
-          <div className={`${abyssinica.className} ${styles.containerMaps}`}>
+          <div className={styles.containerMaps}>
             <div className={styles.maps}>
               <div className={styles.mapContent}>
-                <h4 className={styles.mapTitle}>
+                <h4 className={`${abyssinica.className} ${styles.mapTitle}`}>
                   Saavedra 101, Guaymallén, Mendoza
                 </h4>
                 <p className={styles.mapItems}>
@@ -117,7 +117,7 @@ export default function Page() {
               />
             </div>
           </div>
-          <div className={`${abyssinica.className} ${styles.containerMaps}`}>
+          <div className={styles.containerMaps}>
             <div className={styles.maps}>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3348.5993862555056!2d-60.70113442453317!3d-32.93518117359797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b65335817e183f%3A0xe8ff445f5642cb6!2sSta%20Fe%205482%2C%20S2008%20GRN%2C%20Santa%20Fe!5e0!3m2!1sen!2sar!4v1754332486011!5m2!1sen!2sar"
@@ -129,7 +129,7 @@ export default function Page() {
                 className={styles.ubication}
               />
               <div className={styles.mapContent}>
-                <h4 className={styles.mapTitle}>
+                <h4 className={`${abyssinica.className} ${styles.mapTitle}`}>
                   Sta Fe 5482 Oeste, Rosario, Santa Fe
                 </h4>
                 <p className={styles.mapItems}>

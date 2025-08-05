@@ -49,6 +49,11 @@
   font-size: 60px;
   font-weight: 100;
   text-align: end;
+  text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
 }
 
 .btn {
@@ -91,7 +96,7 @@
 }
 
 .estacionesTitle {
-  font-size: 40px;
+  font-size: 45px;
   font-weight: 100;
   color: white;
 }
@@ -119,14 +124,17 @@
 }
 
 .mapTitle {
-  font-size: 40px;
+  font-size: 45px;
   padding-bottom: 30px;
   color: #231f20;
+  font-weight: 100;
 }
 
 .mapItems {
   line-height: 25px;
-  color: #231f20;
+  color: #414141;
+  transform: scaleY(1.4);
+  font-weight: 100;
 }
 
 .mapImage {
@@ -246,6 +254,7 @@
   .btn {
     width: 100%;
     max-width: 300px;
+    font-size: 15px;
   }
 
   .estacionesTitle {
