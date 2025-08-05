@@ -76,7 +76,7 @@ export default function Calculator() {
                   value={vehicleConsumption}
                   onChange={e => setVehicleConsumption(e.target.value)}
                 />
-                <span>Litros</span>
+                <span className={styles.espacio}>$ / L </span>
               </div>
             </div>
 
@@ -88,7 +88,7 @@ export default function Calculator() {
                   value={naftaPrice}
                   onChange={e => setNaftaPrice(e.target.value)}
                 />
-                <span>$ / Litros</span>
+                <span className={styles.espacio}>$ / L </span>
               </div>
             </div>
 

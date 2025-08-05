@@ -37,7 +37,7 @@
   border-radius: 16px;
   padding: 2rem;
   margin: 2rem auto;
-  width: 550px;
+  width: 570px;
   height: auto;
   background-color: #fff;
 }
@@ -58,10 +58,15 @@
 .inputGroup {
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   margin-bottom: 1rem;
   font-size: 18px;
   gap: 10px;
   color: #231f20;
+}
+
+.espacio {
+  padding-right: 14px;
 }
 
 .label {
