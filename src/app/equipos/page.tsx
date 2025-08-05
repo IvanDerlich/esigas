@@ -17,8 +17,8 @@ const abyssinica = Abyssinica_SIL({
 });
 
 const links = [
-  { label: 'Home', href: '/' },
-  { label: 'Calculadora', href: '/calculadora' },
+  { label: 'Home', href: '#home' },
+  { label: 'Calculadora', href: '#calculadora' },
   { label: 'Financiación', href: '/financiacion' },
   { label: 'Testimonios', href: '/testimonios' },
   { label: 'Contacto', href: '/contacto' },
@@ -29,7 +29,7 @@ export default function Page() {
     <>
       <NavBar links={links} />
       <main className={`${abyssinica.className} ${styles.main}`}>
-        <div className={styles.space}></div>
+        <div id="home" className={styles.space}></div>
         <OurAdvantages />
         <div className={styles.equiposFinanciacion}>
           <Image
