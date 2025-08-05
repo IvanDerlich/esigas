@@ -148,7 +148,7 @@
 
   .testimonialsContent {
     gap: 15px;
-    height: 70vh;
+    height: 40vh;
     padding: 10px;
   }
 
@@ -199,7 +199,7 @@
 
   .testimonialsContent {
     gap: 20px;
-    height: 70vh;
+    height: 45vh;
     padding: 10px;
   }
 }

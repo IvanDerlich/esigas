@@ -3,7 +3,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 80vh;
+  min-height: 60vh;
+  padding: 60px 20px;
   gap: 30px;
   background-color: white;
 }
@@ -51,7 +52,7 @@
   .contentDescription {
     padding: 20px 10px;
     gap: 20px;
-    height: auto;
+    padding-bottom: 50px;
   }
 
   .h2 {
@@ -77,10 +78,9 @@
   }
 }
 
-@media (min-width: 769px) and (max-width: 995px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .contentDescription {
-    padding: 30px 10px;
-    gap: 20px;
-    height: auto;
+    padding: 40px 20px;
+    gap: 25px;
   }
 }

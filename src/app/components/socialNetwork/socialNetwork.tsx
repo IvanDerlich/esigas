@@ -50,7 +50,7 @@ export default function SocialNetwork() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Image src={Facebook} alt="Facebook" width={90} height={90} />
+              <Image src={Facebook} alt="Facebook" width={83} height={83} />
             </Link>
             <Link
               className={styles.icon}
@@ -58,10 +58,10 @@ export default function SocialNetwork() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Image src={Instagram} alt="Instagram" width={90} height={90} />
+              <Image src={Instagram} alt="Instagram" width={84} height={84} />
             </Link>
             <Link className={styles.icon} href="tel:+1234567890">
-              <Image src={Phone} alt="Phone" width={89} height={89} />
+              <Image src={Phone} alt="Phone" width={83} height={83} />
             </Link>
           </div>
         </div>
