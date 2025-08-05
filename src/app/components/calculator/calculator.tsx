@@ -81,7 +81,7 @@ export default function Calculator() {
             </div>
 
             <div className={styles.inputGroup}>
-              <p>Precio De Nafta Super:</p>
+              <p>Precio De Nafta:</p>
               <div className={styles.inputUnit}>
                 <input
                   type="number"
