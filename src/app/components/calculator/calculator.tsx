@@ -11,7 +11,7 @@ const abyssinica = Abyssinica_SIL({
 });
 
 // This is the relative efficiency coefficient of the liter of nafta with respect to the m3 of gnc
-const RELATIVE_EFFICIENCY = 1.3;
+const RELATIVE_EFFICIENCY = 1;
 
 export default function Calculator() {
   const [vehicleConsumptionPer100km, setVehicleConsumption] =
