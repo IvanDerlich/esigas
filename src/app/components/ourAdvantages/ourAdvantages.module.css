@@ -47,10 +47,11 @@
   font-size: 0.9rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 940px) {
   .contentDescription {
-    padding: 20px 10px;
+    padding: 0px 10px;
     gap: 20px;
+    height: 105vh;
   }
 
   .h2 {
@@ -59,7 +60,7 @@
   }
 
   .description {
-    width: 100%;
+    width: 80%;
     padding: 15px;
   }
 
@@ -73,5 +74,12 @@
 
   .linkLike {
     font-size: 0.85rem;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 376px) {
+  .description {
+    width: 100%;
+    padding: 15px;
   }
 }
