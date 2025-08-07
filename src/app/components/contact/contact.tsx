@@ -12,7 +12,10 @@ const abyssinica = Abyssinica_SIL({
 export default function Contact() {
   return (
     <>
-      <div className={`${abyssinica.className} ${styles.contactContainer}`}>
+      <div
+        id="contacto"
+        className={`${abyssinica.className} ${styles.contactContainer}`}
+      >
         <h2 className={styles.contactTitle}>Contacto</h2>
       </div>
       <div className={`${abyssinica.className} ${styles.contactSubtitle}`}>

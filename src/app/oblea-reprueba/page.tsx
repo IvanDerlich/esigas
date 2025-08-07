@@ -44,18 +44,21 @@ export default function Page() {
           </label>
 
           <nav className={`${abyssinica.className} ${styles.nav}`}>
-            <Link href="/home">Home</Link>
-            <Link href="/servicios">Testimonios</Link>
-            <Link href="/servicios">Servicios</Link>
-            <Link href="/contacto">Contacto</Link>
+            <Link href="#home">Home</Link>
+            <Link href="#testimonios">Testimonios</Link>
+            <Link href="#servicios">Servicios</Link>
+            <Link href="#contacto">Contacto</Link>
           </nav>
         </div>
       </header>
-      <main>
+      <main id="home">
         <div className={styles.space}></div>
         <OurAdvantages />
         <Carousel />
-        <div className={`${abyssinica.className} ${styles.services}`}>
+        <div
+          id="servicios"
+          className={`${abyssinica.className} ${styles.services}`}
+        >
           <div className={styles.serviceHeader}>
             <h3 className={styles.serviceTitle}>
               Servicios rápidos y confiables

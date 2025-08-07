@@ -37,7 +37,7 @@ const TestimonialCarousel = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div id="testimonios" className={styles.container}>
       <div className={styles.testimonials}>
         <h2 className={styles.testimonialsTitle}>Testimonios</h2>
       </div>
