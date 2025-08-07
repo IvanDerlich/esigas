@@ -10,8 +10,8 @@ const abyssinica = Abyssinica_SIL({
   display: 'swap',
 });
 
-// Este es el coeficiente de rendimiento relativo del litro de nafta con respecto al m3 de gnc
-const RENDIMIENTO_RELATIVO = 1.3;
+// This is the relative efficiency coefficient of the liter of nafta with respect to the m3 of gnc
+const RELATIVE_EFFICIENCY = 1.3;
 
 export default function Calculator() {
   const [vehicleConsumptionPer100km, setVehicleConsumption] =
@@ -26,7 +26,7 @@ export default function Calculator() {
   const [equipmentCost, setEquipmentCost] = useState<number>(0);
 
   const savingsPer100Km =
-    vehicleConsumptionPer100km * (naftaPrice - gncPrice / RENDIMIENTO_RELATIVO);
+    vehicleConsumptionPer100km * (naftaPrice - gncPrice / RELATIVE_EFFICIENCY);
   const [showRecovery, setShowRecovery] = useState(false);
 
   const monthlySavings = (savingsPer100Km * monthlyKm) / 100;
