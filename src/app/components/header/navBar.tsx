@@ -5,7 +5,7 @@ import Link from 'next/link';
 import styles from './navBar.module.css';
 import logo from '@/images/logo.png';
 import { Abyssinica_SIL } from 'next/font/google';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 
 const abyssinica = Abyssinica_SIL({
   subsets: ['latin'],
@@ -25,7 +25,10 @@ type NavbarProps = {
 export default function Navbar({ links }: NavbarProps) {
   const menuToggleRef = useRef<HTMLInputElement>(null);
 
-  const handleLinkClick = () => {
+  const [activeLink, setActiveLink] = useState<string>('');
+
+  const handleLinkClick = (href: string) => {
+    setActiveLink(href);
     if (menuToggleRef.current) {
       menuToggleRef.current.checked = false;
     }
@@ -54,9 +57,14 @@ export default function Navbar({ links }: NavbarProps) {
           <span></span>
         </label>
 
-        <nav className={`${abyssinica.className} ${styles.nav}`}>
+        <nav className={styles.nav}>
           {links.map(({ label, href }) => (
-            <Link key={label} href={href} onClick={handleLinkClick}>
+            <Link
+              key={label}
+              href={href}
+              onClick={() => handleLinkClick(href)}
+              className={activeLink === href ? styles.active : ''}
+            >
               {label}
             </Link>
           ))}
