@@ -19,7 +19,7 @@ const abyssinica = Abyssinica_SIL({
 const links = [
   { label: 'Home', href: '#home' },
   { label: 'Calculadora', href: '#calculadora' },
-  { label: 'Financiación', href: '/financiacion' },
+  { label: 'Financiación', href: '#financiacion' },
   { label: 'Testimonios', href: '/testimonios' },
   { label: 'Contacto', href: '/contacto' },
 ];
@@ -70,7 +70,7 @@ export default function Page() {
               className={styles.equiposImage}
             />
           </div>
-          <Link href="/financiacion" className={styles.equiposLink}>
+          <Link id="calculadora" href="/financiacion" className={styles.equiposLink}>
             Consulta Financiación
           </Link>
         </div>
@@ -92,7 +92,7 @@ export default function Page() {
             className={styles.equiposImage}
           />
         </div>
-        <div className={styles.financiacionContainerTwo}>
+        <div id='financiacion' className={styles.financiacionContainerTwo}>
           <p className={styles.financiacionText}>
             Disponemos de 6, 12 y 24 cuotas
           </p>

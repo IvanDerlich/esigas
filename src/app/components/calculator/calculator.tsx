@@ -49,7 +49,7 @@ export default function Calculator() {
 
   return (
     <div
-      id="calculadora"
+      
       className={`${abyssinica.className} ${styles.wrapper}`}
     >
       <div className={styles.containerTitle}>
