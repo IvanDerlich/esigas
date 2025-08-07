@@ -31,7 +31,7 @@ export default function Page() {
       <main className={`${abyssinica.className} ${styles.main}`}>
         <div id="home" className={styles.space}></div>
         <OurAdvantages />
-        <div className={styles.equiposFinanciacion}>
+        <div id="financiacion" className={styles.equiposFinanciacion}>
           <Image
             src={Line}
             alt="Line"
@@ -96,7 +96,7 @@ export default function Page() {
             className={styles.equiposImage}
           />
         </div>
-        <div id="financiacion" className={styles.financiacionContainerTwo}>
+        <div className={styles.financiacionContainerTwo}>
           <p className={styles.financiacionText}>
             Disponemos de 6, 12 y 24 cuotas
           </p>
