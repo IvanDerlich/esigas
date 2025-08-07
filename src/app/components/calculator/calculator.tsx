@@ -81,8 +81,9 @@ export default function Calculator() {
                 />
                 <span className={styles.espacio}>Litros</span>
               </div>
+            </div>
 
-              <div className={styles.inputGroup}></div>
+            <div className={styles.inputGroup}>
               <p>Precio de la Nafta:</p>
               <div className={styles.inputUnit}>
                 <input
