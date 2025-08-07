@@ -1,7 +1,7 @@
 'use client';
+import { Abyssinica_SIL } from 'next/font/google';
 
 import styles from './calculator.module.css';
-import { Abyssinica_SIL } from 'next/font/google';
 import { useState } from 'react';
 
 const abyssinica = Abyssinica_SIL({
@@ -10,37 +10,40 @@ const abyssinica = Abyssinica_SIL({
   display: 'swap',
 });
 
+// This is the relative efficiency coefficient of the liter of nafta with respect to the m3 of gnc
+const RELATIVE_EFFICIENCY = 1.3;
+
 export default function Calculator() {
+  const [vehicleConsumptionPer100km, setVehicleConsumption] =
+    useState<number>(0);
   const [step, setStep] = useState(1);
 
-  const [vehicleConsumption, setVehicleConsumption] = useState('');
-  const [naftaPrice, setNaftaPrice] = useState('');
-  const [gncPrice, setGncPrice] = useState('');
+  const [naftaPrice, setNaftaPrice] = useState<number>(0);
+  const [gncPrice, setGncPrice] = useState<number>(0);
   const [showSavings, setShowSavings] = useState(false);
 
-  const [monthlyKm, setMonthlyKm] = useState('');
-  const [equipmentCost, setEquipmentCost] = useState('');
+  const [monthlyKm, setMonthlyKm] = useState<number>(0);
+  const [equipmentCost, setEquipmentCost] = useState<number>(0);
+
+  const savingsPer100Km =
+    vehicleConsumptionPer100km * (naftaPrice - gncPrice / RELATIVE_EFFICIENCY);
   const [showRecovery, setShowRecovery] = useState(false);
 
-  const ahorro =
-    (parseFloat(vehicleConsumption) || 0) *
-    ((parseFloat(naftaPrice) || 0) - (parseFloat(gncPrice) || 0));
-
-  const monthlySavings = (ahorro * (parseFloat(monthlyKm) || 0)) / 100;
-  const recoveryTime = (parseFloat(equipmentCost) || 0) / (monthlySavings || 1);
+  const monthlySavings = (savingsPer100Km * monthlyKm) / 100;
+  const recoveryTime = equipmentCost / monthlySavings;
   const years = Math.floor(recoveryTime / 12);
   const months = Math.round(recoveryTime % 12);
 
   const resetStep1 = () => {
-    setVehicleConsumption('');
-    setNaftaPrice('');
-    setGncPrice('');
+    setVehicleConsumption(0);
+    setNaftaPrice(0);
+    setGncPrice(0);
     setShowSavings(false);
   };
 
   const resetStep2 = () => {
-    setMonthlyKm('');
-    setEquipmentCost('');
+    setMonthlyKm(0);
+    setEquipmentCost(0);
     setShowRecovery(false);
   };
 
@@ -50,7 +53,7 @@ export default function Calculator() {
       className={`${abyssinica.className} ${styles.wrapper}`}
     >
       <div className={styles.containerTitle}>
-        <h1 className={styles.title}>Calculadora De Ahorro</h1>
+        <h1 className={styles.title}>Calculadora de Ahorro</h1>
       </div>
 
       <div className={styles.container}>
@@ -65,40 +68,39 @@ export default function Calculator() {
           <div className={styles.card}>
             <div className={styles.tabs}>
               <span className={styles.green}>Ahorro Cada 100 Km</span>
-              <span className={styles.gray}>Recuperación De Equipo</span>
+              <span className={styles.gray}>Recuperación del Equipo</span>
             </div>
 
             <div className={styles.inputGroup}>
-              <p>Consumo Del Vehículo Cada 100 Km:</p>
+              <p>Consumo de nafta Cada 100 Km:</p>
               <div className={styles.inputUnit}>
                 <input
                   type="number"
-                  value={vehicleConsumption}
-                  onChange={e => setVehicleConsumption(e.target.value)}
+                  value={vehicleConsumptionPer100km}
+                  onChange={e => setVehicleConsumption(Number(e.target.value))}
                 />
-                <span className={styles.espacio}>$ / L </span>
+                <span className={styles.espacio}>Litros</span>
               </div>
-            </div>
 
-            <div className={styles.inputGroup}>
-              <p>Precio De Nafta:</p>
+              <div className={styles.inputGroup}></div>
+              <p>Precio de la Nafta:</p>
               <div className={styles.inputUnit}>
                 <input
                   type="number"
                   value={naftaPrice}
-                  onChange={e => setNaftaPrice(e.target.value)}
+                  onChange={e => setNaftaPrice(Number(e.target.value))}
                 />
                 <span className={styles.espacio}>$ / L </span>
               </div>
             </div>
 
             <div className={styles.inputGroup}>
-              <p>Precio Del GNC:</p>
+              <p>Precio del GNC:</p>
               <div className={styles.inputUnit}>
                 <input
                   type="number"
                   value={gncPrice}
-                  onChange={e => setGncPrice(e.target.value)}
+                  onChange={e => setGncPrice(Number(e.target.value))}
                 />
                 <span>$ / M³</span>
               </div>
@@ -107,8 +109,10 @@ export default function Calculator() {
             {showSavings && (
               <div className={styles.output}>
                 Ahorrás{' '}
-                <span className={styles.green}>${ahorro.toFixed(0)}</span> Cada
-                100 Km
+                <span className={styles.green}>
+                  ${savingsPer100Km.toFixed()}
+                </span>{' '}
+                Cada 100 Km
               </div>
             )}
 
@@ -123,7 +127,7 @@ export default function Calculator() {
                       resetStep1();
                     }}
                   >
-                    ‹ Volver A Calcular
+                    ‹ Volver a Calcular
                   </button>
                   <button
                     className={`${abyssinica.className} ${styles.btn}`}
@@ -139,7 +143,7 @@ export default function Calculator() {
                 <button
                   className={`${abyssinica.className} ${styles.btn}`}
                   onClick={() => {
-                    if (vehicleConsumption && naftaPrice && gncPrice) {
+                    if (vehicleConsumptionPer100km && naftaPrice && gncPrice) {
                       setShowSavings(true);
                     }
                   }}
@@ -154,29 +158,29 @@ export default function Calculator() {
           {step === 2 && (
             <div className={styles.card}>
               <div className={styles.tabs}>
-                <span className={styles.gray}>Ahorro Cada 100 Km</span>
-                <span className={styles.green}>Recuperación De Equipo</span>
+                <span className={styles.gray}>Ahorro cada 100 Km</span>
+                <span className={styles.green}>Recuperación del Equipo</span>
               </div>
 
               <div className={styles.inputGroup}>
-                <p>Kilómetros Recorridos Por Mes:</p>
+                <p>Kilómetros Recorridos por Mes:</p>
                 <div className={styles.inputUnit}>
                   <input
                     type="number"
                     value={monthlyKm}
-                    onChange={e => setMonthlyKm(e.target.value)}
+                    onChange={e => setMonthlyKm(Number(e.target.value))}
                   />
                   <span>Km</span>
                 </div>
               </div>
 
               <div className={styles.inputGroup}>
-                <p>Precio Del Equipo:</p>
+                <p>Precio del Equipo:</p>
                 <div className={styles.inputUnit}>
                   <input
                     type="number"
                     value={equipmentCost}
-                    onChange={e => setEquipmentCost(e.target.value)}
+                    onChange={e => setEquipmentCost(Number(e.target.value))}
                   />
                   <span className={styles.espacio}>$</span>
                 </div>
