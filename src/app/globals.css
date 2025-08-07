@@ -35,7 +35,8 @@ a {
   text-decoration: none;
 }
 
-#financiacion {
+#financiacion,
+#calculadora {
   scroll-margin-top: 90px;
 }
 

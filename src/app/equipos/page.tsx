@@ -70,11 +70,7 @@ export default function Page() {
               className={styles.equiposImage}
             />
           </div>
-          <Link
-            id="calculadora"
-            href="/financiacion"
-            className={styles.equiposLink}
-          >
+          <Link href="/financiacion" className={styles.equiposLink}>
             Consulta Financiación
           </Link>
         </div>
