@@ -48,10 +48,7 @@ export default function Calculator() {
   };
 
   return (
-    <div
-      
-      className={`${abyssinica.className} ${styles.wrapper}`}
-    >
+    <div className={`${abyssinica.className} ${styles.wrapper}`}>
       <div className={styles.containerTitle}>
         <h1 className={styles.title}>Calculadora de Ahorro</h1>
       </div>
