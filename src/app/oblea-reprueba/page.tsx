@@ -8,6 +8,10 @@ import Carousel from '../components/testimonialCarousel/testimonialCarousel';
 import CalendarIcon from '@/images/calendar.png';
 import ObleaGnc from '@/images/obleagnc.png';
 import Reprueba from '@/images/reprueba.png';
+import Contact from '../components/contact/contact';
+import Ubication from '../components/ubication/ubication';
+import SocialNetwork from '../components/socialNetwork/socialNetwork';
+import { Footer } from '../components/layout/footer';
 
 const abyssinica = Abyssinica_SIL({
   subsets: ['latin'],
@@ -40,17 +44,21 @@ export default function Page() {
           </label>
 
           <nav className={`${abyssinica.className} ${styles.nav}`}>
-            <Link href="/home">Home</Link>
-            <Link href="/servicios">Testimonios</Link>
-            <Link href="/servicios">Servicios</Link>
-            <Link href="/contacto">Contacto</Link>
+            <Link href="#home">Home</Link>
+            <Link href="#testimonios">Testimonios</Link>
+            <Link href="#servicios">Servicios</Link>
+            <Link href="#contacto">Contacto</Link>
           </nav>
         </div>
       </header>
-      <main>
+      <main id="home">
+        <div className={styles.space}></div>
         <OurAdvantages />
         <Carousel />
-        <div className={`${abyssinica.className} ${styles.services}`}>
+        <div
+          id="servicios"
+          className={`${abyssinica.className} ${styles.services}`}
+        >
           <div className={styles.serviceHeader}>
             <h3 className={styles.serviceTitle}>
               Servicios rápidos y confiables
@@ -96,7 +104,11 @@ export default function Page() {
             </div>
           </div>
         </div>
+        <Contact />
+        <Ubication />
+        <SocialNetwork />
       </main>
+      <Footer />
     </>
   );
 }
