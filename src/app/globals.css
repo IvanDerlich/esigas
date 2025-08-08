@@ -35,6 +35,16 @@ a {
   text-decoration: none;
 }
 
+#financiacion,
+#calculadora,
+#testimonios,
+#servicios,
+#contacto,
+#como-llegar,
+#carga-pesada {
+  scroll-margin-top: 90px;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

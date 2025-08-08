@@ -12,6 +12,8 @@ import Link from 'next/link';
 import styles from './page.module.css';
 import { Abyssinica_SIL } from 'next/font/google';
 import { OurAdvantages } from '../components/ourAdvantages/ourAdvantages';
+import CarouselMobile from '../components/carouselMobile/carouselMobile';
+import NavbarTwo from '../components/header/navBarTwo';
 
 const abyssinica = Abyssinica_SIL({
   subsets: ['latin'],
@@ -19,40 +21,33 @@ const abyssinica = Abyssinica_SIL({
   display: 'swap',
 });
 
+const links = [
+  { label: 'Home', href: '#home' },
+  { label: '¿Cómo Llegar?', href: '#como-llegar' },
+  { label: 'Carga Pesada', href: '#carga-pesada' },
+  { label: 'Contacto', href: '/contacto' },
+];
+
+const imagesSet = [
+  { src: Estacion1, alt: 'Estación 1' },
+  { src: Estacion2, alt: 'Estación 2' },
+  { src: Estacion3, alt: 'Estación 3' },
+];
+
+const imagesSetTwo = [
+  { src: Estacion4, alt: 'Estación 4' },
+  { src: Estacion5, alt: 'Estación 5' },
+  { src: Estacion6, alt: 'Estación 6' },
+];
+
 export default function Page() {
   return (
     <>
-      <header className={styles.header}>
-        <div className={styles.headerContent}>
-          <Image
-            src={logo}
-            alt="Logo"
-            width={130}
-            height={60}
-            className={styles.logo}
-          />
-
-          <input
-            type="checkbox"
-            id="menu-toggle"
-            className={styles.menuToggle}
-          />
-          <label htmlFor="menu-toggle" className={styles.menuIcon}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </label>
-
-          <nav className={`${abyssinica.className} ${styles.nav}`}>
-            <Link href="/home">Home</Link>
-            <Link href="/servicios">¿Cómo Llegar?</Link>
-            <Link href="/servicios">Carga Pesada</Link>
-            <Link href="/contacto">Contacto</Link>
-          </nav>
-        </div>
+      <header>
+        <NavbarTwo links={links} />
       </header>
 
-      <main>
+      <main id="home">
         <div className={styles.heroImg}>
           <div className={styles.heroContent}>
             <h1 className={styles.h1}>
@@ -65,7 +60,10 @@ export default function Page() {
         </div>
         <OurAdvantages />
         <div>
-          <div className={`${abyssinica.className} ${styles.estaciones}`}>
+          <div
+            id="como-llegar"
+            className={`${abyssinica.className} ${styles.estaciones}`}
+          >
             <h3 className={styles.estacionesTitle}>
               Nuestras Estaciones de Servicio
             </h3>
@@ -93,29 +91,7 @@ export default function Page() {
                 className={styles.ubication}
               />
             </div>
-            <div className={styles.mapImage}>
-              <Image
-                src={Estacion1}
-                alt="Estaciones"
-                width={365}
-                height={180}
-                className={styles.imageEstacion}
-              />
-              <Image
-                src={Estacion2}
-                alt="Estaciones"
-                width={365}
-                height={180}
-                className={styles.imageEstacion}
-              />
-              <Image
-                src={Estacion3}
-                alt="Estaciones"
-                width={365}
-                height={180}
-                className={styles.imageEstacion}
-              />
-            </div>
+            <CarouselMobile images={imagesSet} />
           </div>
           <div className={styles.containerMaps}>
             <div className={styles.maps}>
@@ -140,32 +116,10 @@ export default function Page() {
                 </p>
               </div>
             </div>
-            <div className={styles.mapImage}>
-              <Image
-                src={Estacion4}
-                alt="Estaciones"
-                width={365}
-                height={180}
-                className={styles.imageEstacion}
-              />
-              <Image
-                src={Estacion5}
-                alt="Estaciones"
-                width={365}
-                height={180}
-                className={styles.imageEstacion}
-              />
-              <Image
-                src={Estacion6}
-                alt="Estaciones"
-                width={365}
-                height={180}
-                className={styles.imageEstacion}
-              />
-            </div>
+            <CarouselMobile images={imagesSetTwo} />
           </div>
         </div>
-        <div className={styles.containerTransport}>
+        <div id="carga-pesada" className={styles.containerTransport}>
           <Image
             src={Line}
             alt="Line"
