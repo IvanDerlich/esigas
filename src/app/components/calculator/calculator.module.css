@@ -1,3 +1,10 @@
+.wrapper {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+
 .containerTitle {
   height: 130px;
   background-color: #62b26e;
@@ -159,6 +166,11 @@
 }
 
 @media (max-width: 768px) {
+  .container {
+    gap: 30px;
+    padding-top: 30px;
+  }
+
   .containerTitle {
     height: auto;
     padding: 1.5rem;

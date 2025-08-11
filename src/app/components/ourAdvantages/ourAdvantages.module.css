@@ -1,11 +1,13 @@
 .contentDescription {
+  min-height: calc(100vh - 90px);
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 80vh;
   gap: 30px;
   background-color: white;
+  padding: 40px 20px;
+  box-sizing: border-box;
 }
 
 .h2 {
@@ -17,6 +19,7 @@
 
 .description {
   width: 75%;
+  max-width: 800px;
   height: auto;
   background-color: #62b26eb3;
   border: 3px solid #62b26e;
@@ -49,9 +52,9 @@
 
 @media screen and (max-width: 940px) {
   .contentDescription {
-    padding: 0px 10px;
+    padding: 30px 15px;
     gap: 20px;
-    height: 105vh;
+    min-height: calc(100vh - 80px);
   }
 
   .h2 {
@@ -60,7 +63,7 @@
   }
 
   .description {
-    width: 80%;
+    width: 85%;
     padding: 15px;
   }
 
@@ -77,9 +80,34 @@
   }
 }
 
+@media (max-width: 480px) {
+  .contentDescription {
+    padding: 20px 10px;
+    gap: 15px;
+    min-height: calc(100vh - 70px);
+  }
+
+  .h2 {
+    font-size: 28px;
+  }
+
+  .description {
+    width: 90%;
+    padding: 12px;
+  }
+
+  .pTitle {
+    font-size: 20px;
+  }
+
+  .pDescription {
+    font-size: 13px;
+  }
+}
+
 @media (min-width: 320px) and (max-width: 376px) {
   .description {
-    width: 100%;
-    padding: 15px;
+    width: 95%;
+    padding: 12px;
   }
 }

@@ -20,12 +20,14 @@
 
 .financiacionContainer {
   background-color: white;
-  height: 60vh;
+  height: 85vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 50px;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .financiacionSubContainer {
@@ -77,20 +79,22 @@
 
 .financiacionContainerTwo {
   background-color: white;
-  height: 60vh;
+  height: 80vh;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   gap: 50px;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
   .financiacionContainer {
-    padding: 21rem 1rem;
-    height: 75vh;
+    height: 110vh;
     gap: 30px;
+    padding-bottom: 20px;
   }
 
   .financiacionSubContainer {
@@ -114,8 +118,7 @@
   .equiposLink {
     width: 80%;
     font-size: 22px;
-    padding: 25px 0px;
-    margin-bottom: 30px;
+    padding: 20px 0;
   }
 
   .equiposFinanciacion {
@@ -127,7 +130,7 @@
   }
 
   .financiacionText {
-    font-size: 30px;
+    font-size: 40px;
   }
 
   .imageFinanciacion {
@@ -136,7 +139,7 @@
   }
 
   .financiacionContainerTwo {
-    height: 70vh;
-    padding: 1rem;
+    height: 100vh;
+    gap: 30px;
   }
 }
