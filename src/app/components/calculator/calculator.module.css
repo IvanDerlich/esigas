@@ -41,14 +41,14 @@
 
 .card {
   max-width: 570px;
-  width: 90%; /* o 100% con algún padding */
+  width: 95%;
   padding: 2rem;
   margin: 2rem auto;
   border: 3px solid #62b26e;
   border-radius: 16px;
   background-color: #fff;
   height: auto;
-  box-sizing: border-box; /* para que el padding no aumente el ancho total */
+  box-sizing: border-box;
 }
 
 .tabs {
@@ -97,6 +97,7 @@
   font-size: 18px;
   width: 100px;
   background-color: white;
+  color: #231f20;
 }
 
 .inputUnit span {
@@ -114,6 +115,7 @@
   align-items: center;
   justify-content: center;
   padding: 10px;
+  color: #231f20;
 }
 
 .green {
