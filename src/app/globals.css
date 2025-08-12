@@ -39,8 +39,13 @@ a {
 #calculadora,
 #testimonios,
 #servicios,
-#contacto {
+#contacto,
+#como-llegar {
   scroll-margin-top: 90px;
+}
+
+#carga-pesada {
+  scroll-margin-top: 75px;
 }
 
 @media (prefers-color-scheme: dark) {

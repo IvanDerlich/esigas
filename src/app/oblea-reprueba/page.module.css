@@ -194,12 +194,12 @@
   }
 }
 
-@media (min-width: 769px) and (max-width: 995px) {
+@media (min-width: 769px) and (max-width: 1024px) {
   .headerContent {
     padding: 0 40px;
   }
   .services {
-    height: auto;
+    height: 100vh;
     padding: 30px 0px;
   }
 }

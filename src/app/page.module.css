@@ -15,7 +15,7 @@
 
 .container_title {
   width: 30%;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -210,7 +210,7 @@
   .home {
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    height: 120vh;
   }
 
   .img_home {
