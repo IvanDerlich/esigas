@@ -48,6 +48,7 @@ export default function Page() {
         </div>
       </header>
       <main>
+        <div className={styles.space}></div>
         <OurAdvantages />
         <Carousel />
         <div className={`${abyssinica.className} ${styles.services}`}>
