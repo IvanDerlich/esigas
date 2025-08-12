@@ -19,7 +19,7 @@ const abyssinica = Abyssinica_SIL({
 const links = [
   { label: 'Home', href: '#home' },
   { label: 'Calculadora', href: '#calculadora' },
-  { label: 'Financiación', href: '/financiacion' },
+  { label: 'Financiación', href: '#financiacion' },
   { label: 'Testimonios', href: '/testimonios' },
   { label: 'Contacto', href: '/contacto' },
 ];
@@ -31,7 +31,7 @@ export default function Page() {
       <main className={`${abyssinica.className} ${styles.main}`}>
         <div id="home" className={styles.space}></div>
         <OurAdvantages />
-        <div className={styles.equiposFinanciacion}>
+        <div id="financiacion" className={styles.equiposFinanciacion}>
           <Image
             src={Line}
             alt="Line"
