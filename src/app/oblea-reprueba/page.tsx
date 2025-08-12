@@ -12,6 +12,7 @@ import Contact from '../components/contact/contact';
 import Ubication from '../components/ubication/ubication';
 import SocialNetwork from '../components/socialNetwork/socialNetwork';
 import { Footer } from '../components/layout/footer';
+import Navbar from '../components/header/navBar';
 
 const abyssinica = Abyssinica_SIL({
   subsets: ['latin'],
@@ -19,37 +20,18 @@ const abyssinica = Abyssinica_SIL({
   display: 'swap',
 });
 
+const links = [
+  { label: 'Home', href: '#home' },
+  { label: 'Testimonios', href: '#testimonios' },
+  { label: 'Servicios', href: '#servicios' },
+  { label: 'Contacto', href: '#contacto' },
+];
+
 export default function Page() {
   return (
     <>
       <header className={styles.header}>
-        <div className={styles.headerContent}>
-          <Image
-            src={logo}
-            alt="Logo"
-            width={130}
-            height={60}
-            className={styles.logo}
-          />
-
-          <input
-            type="checkbox"
-            id="menu-toggle"
-            className={styles.menuToggle}
-          />
-          <label htmlFor="menu-toggle" className={styles.menuIcon}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </label>
-
-          <nav className={`${abyssinica.className} ${styles.nav}`}>
-            <Link href="#home">Home</Link>
-            <Link href="#testimonios">Testimonios</Link>
-            <Link href="#servicios">Servicios</Link>
-            <Link href="#contacto">Contacto</Link>
-          </nav>
-        </div>
+        <Navbar links={links} />
       </header>
       <main id="home">
         <div className={styles.space}></div>
