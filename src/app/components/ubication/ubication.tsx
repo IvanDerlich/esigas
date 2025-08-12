@@ -1,4 +1,4 @@
-import styles from './ubication.module.css';
+import styles from './location.module.css';
 import Image from 'next/image';
 import Line from '@/images/line.png';
 import { Abyssinica_SIL } from 'next/font/google';
