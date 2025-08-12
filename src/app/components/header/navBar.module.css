@@ -20,7 +20,7 @@
 .nav {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
   color: #231f20;
   background-color: white;
   border-radius: 50px;
@@ -47,8 +47,13 @@
 }
 
 .active {
-  color: #62b26e;
-  font-weight: bold;
+  color: white;
+  font-weight: 400;
+  text-shadow:
+    -1px -1px 0 #62b26e,
+    1px -1px 0 #62b26e,
+    -1px 1px 0 #62b26e,
+    1px 1px 0 #62b26e;
 }
 
 @media screen and (max-width: 768px) {
