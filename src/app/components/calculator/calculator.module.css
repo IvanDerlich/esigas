@@ -168,6 +168,10 @@
 }
 
 @media (max-width: 768px) {
+  .wrapper {
+    height: auto;
+  }
+
   .container {
     gap: 30px;
     padding-top: 30px;
