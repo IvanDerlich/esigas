@@ -65,15 +65,15 @@
     padding: 0 60px;
   }
 
-.nav {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  color: #231f20;
-  background-color: white;
-  border-radius: 50px;
-  padding: 13px 15px;
-}
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #231f20;
+    background-color: white;
+    border-radius: 50px;
+    padding: 13px 15px;
+  }
 
   .menuToggle:checked ~ .nav {
     display: flex;
