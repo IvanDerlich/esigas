@@ -15,7 +15,7 @@
 .footer_text {
   width: 40%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-end;
 }
 
 @media (min-width: 320px) and (max-width: 768px) {
@@ -43,7 +43,7 @@
 
   .footer_text {
     width: 80%;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     gap: 2rem;
   }
@@ -56,6 +56,6 @@
 
   .footer_text {
     width: 60%;
-    justify-content: space-evenly;
+    justify-content: flex-end;
   }
 }
