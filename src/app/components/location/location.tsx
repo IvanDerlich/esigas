@@ -9,7 +9,7 @@ const abyssinica = Abyssinica_SIL({
   display: 'swap',
 });
 
-export default function Ubication() {
+export default function Location() {
   return (
     <>
       <div className={`${abyssinica.className} ${styles.ubicationContainer}`}>
