@@ -35,7 +35,7 @@ export default function SocialNetwork() {
       </div>
       <div className={`${abyssinica.className} ${styles.container}`}>
         <div className={`${abyssinica.className} ${styles.containerContent}`}>
-          <div>
+          <div className={styles.socialContainer}>
             <h3 className={styles.title}>
               Seguinos en nuestras redes sociales
             </h3>
