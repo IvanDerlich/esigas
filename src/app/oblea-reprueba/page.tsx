@@ -9,7 +9,7 @@ import CalendarIcon from '@/images/calendar.png';
 import ObleaGnc from '@/images/obleagnc.png';
 import Reprueba from '@/images/reprueba.png';
 import Contact from '../components/contact/contact';
-import Location from '../components/location/location'
+import Location from '../components/location/location';
 import SocialNetwork from '../components/socialNetwork/socialNetwork';
 import { Footer } from '../components/layout/footer';
 import Navbar from '../components/header/navBar';
