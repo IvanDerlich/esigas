@@ -46,6 +46,10 @@
   border-radius: 2px;
 }
 
+.space {
+  height: 80px;
+}
+
 .services {
   background-image: url('/Image/fondooblea.png');
   background-size: cover;
