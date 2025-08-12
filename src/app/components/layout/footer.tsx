@@ -15,9 +15,6 @@ export const Footer = () => {
       <Image src={logo} alt="Logo" width={110} height={55} />
       <div className={styles.footer_text}>
         <p className={`${abyssinica.className} ${styles.footer_p}`}>
-          © Copyright 2025 Esigas. All Rights Reserved.
-        </p>
-        <p className={`${abyssinica.className} ${styles.footer_p}`}>
           Made by Datara in 2025
         </p>
       </div>
