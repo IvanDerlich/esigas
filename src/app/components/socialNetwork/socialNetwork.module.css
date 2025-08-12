@@ -86,6 +86,7 @@
   justify-content: center;
   gap: 10px;
 }
+
 .newsletterTitle {
   font-size: 35px;
   color: white;
@@ -145,11 +146,14 @@
 
   .title {
     font-size: 28px;
+    width: 90%;
+    padding-bottom: 15px;
   }
 
   .subtitle {
     font-size: 18px;
     padding-left: 0;
+    width: 90%;
   }
 
   .socialIcons {
