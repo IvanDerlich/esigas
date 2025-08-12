@@ -53,7 +53,7 @@ export default function Page() {
             <h1 className={styles.h1}>
               Tu estación de confianza, estés donde estés
             </h1>
-            <Link href="/" className={styles.btn}>
+            <Link href="#como-llegar" className={styles.btn}>
               Encontra tu estación más cercana
             </Link>
           </div>
@@ -158,7 +158,7 @@ export default function Page() {
                 </div>
               </div>
               <div className={styles.trasporteBtn}>
-                <Link href="/" className={styles.btn}>
+                <Link href="#como-llegar" className={styles.btn}>
                   Encontra tu estación más cercana
                 </Link>
               </div>

@@ -80,12 +80,6 @@
   }
 }
 
-<<<<<<< HEAD
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .contentDescription {
-    padding: 40px 20px;
-    gap: 25px;
-=======
 @media (max-width: 480px) {
   .contentDescription {
     padding: 20px 10px;
@@ -115,6 +109,5 @@
   .description {
     width: 95%;
     padding: 12px;
->>>>>>> 62908cd1b96e16ca038b491ecbb27ac2121a87da
   }
 }

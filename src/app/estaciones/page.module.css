@@ -204,6 +204,10 @@
     font-size: 15px;
   }
 
+  .estaciones {
+    padding: 0px 15px;
+  }
+
   .estacionesTitle {
     font-size: 35px;
     text-align: center;
