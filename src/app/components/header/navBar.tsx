@@ -63,7 +63,7 @@ export default function Navbar({ links }: NavbarProps) {
               key={label}
               href={href}
               onClick={() => handleLinkClick(href)}
-              className={`${styles.links} ${activeLink === href ? styles.active : ''}`}
+              className={activeLink === href ? styles.active : ''}
             >
               {label}
             </Link>
