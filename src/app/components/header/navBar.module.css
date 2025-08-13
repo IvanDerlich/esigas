@@ -47,13 +47,8 @@
 }
 
 .active {
-  color: white;
+  color: #62b26e;
   font-weight: 400;
-  text-shadow:
-    -1px -1px 0 #62b26e,
-    1px -1px 0 #62b26e,
-    -1px 1px 0 #62b26e,
-    1px 1px 0 #62b26e;
 }
 
 @media screen and (max-width: 768px) {
