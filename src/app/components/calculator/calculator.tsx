@@ -76,8 +76,13 @@ export default function Calculator() {
               <div className={styles.inputUnit}>
                 <input
                   type="number"
-                  value={vehicleConsumptionPer100km}
+                  value={
+                    vehicleConsumptionPer100km === 0
+                      ? ''
+                      : vehicleConsumptionPer100km
+                  }
                   onChange={e => setVehicleConsumption(Number(e.target.value))}
+                  className={styles.input}
                 />
                 <span className={styles.espacio}>Litros</span>
               </div>
@@ -88,8 +93,9 @@ export default function Calculator() {
               <div className={styles.inputUnit}>
                 <input
                   type="number"
-                  value={naftaPrice}
+                  value={naftaPrice === 0 ? '' : naftaPrice}
                   onChange={e => setNaftaPrice(Number(e.target.value))}
+                  className={styles.input}
                 />
                 <span className={styles.espacio}>$ / L </span>
               </div>
@@ -100,8 +106,9 @@ export default function Calculator() {
               <div className={styles.inputUnit}>
                 <input
                   type="number"
-                  value={gncPrice}
+                  value={gncPrice === 0 ? '' : gncPrice}
                   onChange={e => setGncPrice(Number(e.target.value))}
+                  className={styles.input}
                 />
                 <span>$ / M³</span>
               </div>
@@ -168,8 +175,9 @@ export default function Calculator() {
                 <div className={styles.inputUnit}>
                   <input
                     type="number"
-                    value={monthlyKm}
+                    value={monthlyKm === 0 ? '' : monthlyKm}
                     onChange={e => setMonthlyKm(Number(e.target.value))}
+                    className={styles.input}
                   />
                   <span>Km</span>
                 </div>
@@ -180,8 +188,9 @@ export default function Calculator() {
                 <div className={styles.inputUnit}>
                   <input
                     type="number"
-                    value={equipmentCost}
+                    value={equipmentCost === 0 ? '' : equipmentCost}
                     onChange={e => setEquipmentCost(Number(e.target.value))}
+                    className={styles.input}
                   />
                   <span className={styles.espacio}>$</span>
                 </div>
