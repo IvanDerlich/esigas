@@ -48,7 +48,6 @@
 
 .active {
   color: #62b26e;
-  font-weight: bold;
 }
 
 @media screen and (max-width: 768px) {
