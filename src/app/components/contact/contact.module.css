@@ -60,6 +60,30 @@
   background-color: white;
 }
 
+.checkboxGroup {
+  font-size: 20px;
+  color: #231f20;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.containerCheckbox {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-bottom: 20px;
+}
+
+.checkboxLabel {
+  display: flex;
+  gap: 6px;
+}
+
+.checkbox {
+  width: 20px;
+}
+
 .formTextarea {
   width: 100%;
   height: 150px;
@@ -129,6 +153,10 @@
     width: 60%;
     font-size: 16px;
     padding: 12px 20px;
+  }
+
+  .checkboxGroup {
+    font-size: 16px;
   }
 }
 
