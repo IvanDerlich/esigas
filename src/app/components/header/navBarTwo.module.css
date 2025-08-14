@@ -47,6 +47,7 @@
 
 .active {
   color: white;
+  border-bottom: 2px solid white;
 }
 
 @media screen and (max-width: 768px) {
@@ -74,18 +75,18 @@
     gap: 20px;
     z-index: 998;
     font-size: 20px;
-    color: white;
-    text-shadow:
-      -1px -1px 0 black,
-      1px -1px 0 black,
-      -1px 1px 0 black,
-      1px 1px 0 black;
+    color: #858585;
   }
 
   .menuToggle:checked ~ .nav {
     display: flex;
     padding: 15px;
     background: linear-gradient(to bottom, #62b26eb3, #f0f0f0);
+  }
+
+  .active {
+    color: #000000;
+    border: none;
   }
 }
 

@@ -4,12 +4,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from './navBar.module.css';
 import logo from '@/images/logo.png';
-import { Abyssinica_SIL } from 'next/font/google';
+import { Montserrat } from 'next/font/google';
 import { useRef, useState } from 'react';
 
-const abyssinica = Abyssinica_SIL({
+const montserrat = Montserrat({
   subsets: ['latin'],
-  weight: ['400'],
+  weight: ['600'],
   display: 'swap',
 });
 
@@ -57,7 +57,7 @@ export default function Navbar({ links }: NavbarProps) {
           <span></span>
         </label>
 
-        <nav className={styles.nav}>
+        <nav className={`${montserrat.className} ${styles.nav}`}>
           {links.map(({ label, href }) => (
             <Link
               key={label}
