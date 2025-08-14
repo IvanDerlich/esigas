@@ -9,6 +9,11 @@ import { OurAdvantages } from '../components/ourAdvantages/ourAdvantages';
 import styles from './page.module.css';
 import Link from 'next/link';
 import Calculator from '../components/calculator/calculator';
+import TestimonialCarousel from '../components/testimonialCarousel/testimonialCarousel';
+import Contact from '../components/contact/contact';
+import Location from '../components/location/location';
+import SocialNetwork from '../components/socialNetwork/socialNetwork';
+import { Footer } from '../components/layout/footer';
 
 const abyssinica = Abyssinica_SIL({
   subsets: ['latin'],
@@ -20,8 +25,8 @@ const links = [
   { label: 'Home', href: '#home' },
   { label: 'Calculadora', href: '#calculadora' },
   { label: 'Financiación', href: '#financiacion' },
-  { label: 'Testimonios', href: '/testimonios' },
-  { label: 'Contacto', href: '/contacto' },
+  { label: 'Testimonios', href: '#testimonios' },
+  { label: 'Contacto', href: '#contacto' },
 ];
 
 export default function Page() {
@@ -114,7 +119,16 @@ export default function Page() {
             className={styles.imageFinanciacion}
           />
         </div>
+        <div id="testimonios">
+          <TestimonialCarousel />
+        </div>
+        <div id="contacto">
+          <Contact />
+        </div>
+        <Location />
+        <SocialNetwork />
       </main>
+      <Footer />
     </>
   );
 }
