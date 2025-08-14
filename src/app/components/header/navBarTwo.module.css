@@ -47,7 +47,6 @@
 
 .active {
   color: white;
-  font-weight: bold;
 }
 
 @media screen and (max-width: 768px) {
@@ -86,7 +85,7 @@
   .menuToggle:checked ~ .nav {
     display: flex;
     padding: 15px;
-    border-bottom: 1px solid #231f20;
+    background: linear-gradient(to bottom, #62b26eb3, #f0f0f0);
   }
 }
 
