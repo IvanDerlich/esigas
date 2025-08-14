@@ -1,5 +1,5 @@
 .wrapper {
-  height: 90vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   background-color: white;
@@ -40,13 +40,15 @@
 }
 
 .card {
-  border: 3px solid #62b26e;
-  border-radius: 16px;
+  max-width: 570px;
+  width: 95%;
   padding: 2rem;
   margin: 2rem auto;
-  width: 570px;
-  height: auto;
+  border: 3px solid #62b26e;
+  border-radius: 16px;
   background-color: #fff;
+  height: auto;
+  box-sizing: border-box;
 }
 
 .tabs {
@@ -95,6 +97,11 @@
   font-size: 18px;
   width: 100px;
   background-color: white;
+  color: #231f20;
+}
+
+.input {
+  color: #231f20;
 }
 
 .inputUnit span {
@@ -105,12 +112,14 @@
 
 .output {
   margin-top: 1.5rem;
-  font-size: 23px;
+  font-size: 19px;
   border: 2px solid #62b26e;
-  height: 40px;
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
+  color: #231f20;
 }
 
 .green {
@@ -166,6 +175,10 @@
 }
 
 @media (max-width: 768px) {
+  .wrapper {
+    height: auto;
+  }
+
   .container {
     gap: 30px;
     padding-top: 30px;
