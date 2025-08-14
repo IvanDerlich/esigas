@@ -6,7 +6,6 @@ import Estacion4 from '@/images/estacion4.png';
 import Estacion5 from '@/images/estacion5.png';
 import Estacion6 from '@/images/estacion6.png';
 import Line from '@/images/line.png';
-import logo from '@/images/logo.png';
 import Camion from '@/images/camion.png';
 import Link from 'next/link';
 import styles from './page.module.css';
@@ -14,6 +13,9 @@ import { Abyssinica_SIL } from 'next/font/google';
 import { OurAdvantages } from '../components/ourAdvantages/ourAdvantages';
 import CarouselMobile from '../components/carouselMobile/carouselMobile';
 import NavbarTwo from '../components/header/navBarTwo';
+import Contact from '../components/contact/contact';
+import SocialNetwork from '../components/socialNetwork/socialNetwork';
+import { Footer } from '../components/layout/footer';
 
 const abyssinica = Abyssinica_SIL({
   subsets: ['latin'],
@@ -25,7 +27,7 @@ const links = [
   { label: 'Home', href: '#home' },
   { label: '¿Cómo Llegar?', href: '#como-llegar' },
   { label: 'Carga Pesada', href: '#carga-pesada' },
-  { label: 'Contacto', href: '/contacto' },
+  { label: 'Contacto', href: '#contacto' },
 ];
 
 const imagesSet = [
@@ -165,7 +167,12 @@ export default function Page() {
             </div>
           </div>
         </div>
+        <div id="contacto">
+          <Contact showCheckboxes />
+        </div>
+        <SocialNetwork />
       </main>
+      <Footer />
     </>
   );
 }

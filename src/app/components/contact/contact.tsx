@@ -9,7 +9,11 @@ const abyssinica = Abyssinica_SIL({
   display: 'swap',
 });
 
-export default function Contact() {
+interface ContactFormProps {
+  showCheckboxes?: boolean;
+}
+
+export default function Contact({ showCheckboxes = false }: ContactFormProps) {
   return (
     <>
       <div
@@ -64,6 +68,29 @@ export default function Contact() {
               required
             />
           </label>
+          {showCheckboxes && (
+            <div className={styles.checkboxGroup}>
+              <p>Sucursal</p>
+              <div className={styles.containerCheckbox}>
+                <label className={styles.checkboxLabel}>
+                  <input
+                    className={styles.checkbox}
+                    type="checkbox"
+                    name="info"
+                  />
+                  Mendoza
+                </label>
+                <label className={styles.checkboxLabel}>
+                  <input
+                    className={styles.checkbox}
+                    type="checkbox"
+                    name="promos"
+                  />
+                  Santa Fe
+                </label>
+              </div>
+            </div>
+          )}
           <label className={styles.formLabel}>
             Mensaje:
             <textarea
