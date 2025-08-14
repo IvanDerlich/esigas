@@ -47,7 +47,7 @@
 }
 
 .active {
-  color: #62b26e;
+  color: #000000;
 }
 
 @media screen and (max-width: 768px) {
@@ -75,12 +75,7 @@
     gap: 20px;
     z-index: 998;
     font-size: 25px;
-    color: white;
-    text-shadow:
-      -1px -1px 0 black,
-      1px -1px 0 black,
-      -1px 1px 0 black,
-      1px 1px 0 black;
+    color: #858585;
   }
 
   .menuToggle:checked ~ .nav {
