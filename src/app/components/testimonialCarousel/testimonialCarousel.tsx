@@ -37,7 +37,7 @@ const TestimonialCarousel = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div id="testimonios" className={styles.container}>
       <div className={styles.testimonials}>
         <h2 className={styles.testimonialsTitle}>Testimonios</h2>
       </div>
@@ -49,9 +49,13 @@ const TestimonialCarousel = () => {
         </p>
       </div>
       <div className={styles.testimonialsContent}>
-        <button className={styles.arrowButton} onClick={handlePrev}>
-          <Image src={leftArrow} alt="Anterior" width={40} height={40} />
-        </button>
+        <div
+          className={`${styles.arrowWrapper} ${start > 0 ? '' : styles.hidden}`}
+        >
+          <button className={styles.arrowButton} onClick={handlePrev}>
+            <Image src={leftArrow} alt="Anterior" width={40} height={40} />
+          </button>
+        </div>
 
         {testimonialsData
           .slice(start, start + visibleItems)
@@ -95,9 +99,13 @@ const TestimonialCarousel = () => {
             </div>
           ))}
 
-        <button className={styles.arrowButton} onClick={handleNext}>
-          <Image src={rightArrow} alt="Siguiente" width={40} height={40} />
-        </button>
+        <div
+          className={`${styles.arrowWrapper} ${start < maxStartIndex ? '' : styles.hidden}`}
+        >
+          <button className={styles.arrowButton} onClick={handleNext}>
+            <Image src={rightArrow} alt="Siguiente" width={40} height={40} />
+          </button>
+        </div>
       </div>
     </div>
   );

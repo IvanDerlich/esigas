@@ -27,7 +27,6 @@ export default function CarouselMobile({ images }: CarouselMobileProps) {
     return () => window.removeEventListener('resize', updateViewport);
   }, []);
 
-  // Cambio automático cada 5s solo en móvil
   useEffect(() => {
     if (viewport !== 'mobile') return;
 
