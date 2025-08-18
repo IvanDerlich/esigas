@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from './navBar.module.css';
+import styles from './navBarTwo.module.css';
 import logo from '@/images/logo.png';
 import { Montserrat } from 'next/font/google';
 import { useRef, useState } from 'react';

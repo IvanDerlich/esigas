@@ -60,7 +60,6 @@
   }
 
   .nav {
-    display: none;
     flex-direction: column;
     position: absolute;
     top: 80px;
@@ -69,17 +68,22 @@
     background-color: #62b26eb3;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    padding: 0px 0;
     align-items: center;
     border-radius: 0px;
     gap: 20px;
-    z-index: 998;
-    font-size: 20px;
+    z-index: 999;
+    font-size: 25px;
+    clip-path: inset(0 0 100% 0);
+    opacity: 0;
+    transition:
+      clip-path 0.4s ease,
+      opacity 0.4s ease;
     color: #858585;
   }
 
   .menuToggle:checked ~ .nav {
-    display: flex;
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
     padding: 15px;
     background: linear-gradient(to bottom, #62b26eb3, #f0f0f0);
   }
