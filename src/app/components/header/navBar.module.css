@@ -73,12 +73,7 @@
     gap: 20px;
     z-index: 999;
     font-size: 25px;
-    color: white;
-    text-shadow:
-      -1px -1px 0 black,
-      1px -1px 0 black,
-      -1px 1px 0 black,
-      1px 1px 0 black;
+    color: #858585;
     clip-path: inset(0 0 100% 0);
     opacity: 0;
     transition:
@@ -90,7 +85,11 @@
     clip-path: inset(0 0 0 0);
     opacity: 1;
     padding: 15px;
-    border-bottom: 1px solid #231f20;
+    background: linear-gradient(to bottom, #62b26eb3, #f0f0f0);
+  }
+
+  .active {
+    color: #000000;
   }
 }
 
