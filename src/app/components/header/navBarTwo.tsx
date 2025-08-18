@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import styles from './navBarTwo.module.css';
+import styles from './navBar.module.css';
 import logo from '@/images/logo.png';
 import { Abyssinica_SIL } from 'next/font/google';
 import { useRef, useState } from 'react';
@@ -13,25 +13,24 @@ const abyssinica = Abyssinica_SIL({
   display: 'swap',
 });
 
-type NavLink = {
-  label: string;
-  href: string;
-};
-
-type NavbarProps = {
-  links: NavLink[];
-};
+type NavLink = { label: string; href: string };
+type NavbarProps = { links: NavLink[] };
 
 export default function Navbar({ links }: NavbarProps) {
   const menuToggleRef = useRef<HTMLInputElement>(null);
-
   const [activeLink, setActiveLink] = useState<string>('');
 
   const handleLinkClick = (href: string) => {
     setActiveLink(href);
+
     if (menuToggleRef.current) {
       menuToggleRef.current.checked = false;
     }
+
+    setTimeout(() => {
+      const target = document.querySelector(href);
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    }, 50);
   };
 
   return (
@@ -59,14 +58,17 @@ export default function Navbar({ links }: NavbarProps) {
 
         <nav className={styles.nav}>
           {links.map(({ label, href }) => (
-            <Link
+            <a
               key={label}
               href={href}
-              onClick={() => handleLinkClick(href)}
+              onClick={e => {
+                e.preventDefault();
+                handleLinkClick(href);
+              }}
               className={activeLink === href ? styles.active : ''}
             >
               {label}
-            </Link>
+            </a>
           ))}
         </nav>
       </div>
