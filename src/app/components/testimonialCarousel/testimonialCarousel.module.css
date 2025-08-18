@@ -1,7 +1,11 @@
 .container {
   background-color: white;
-  height: 90vh;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
 }
+
 .testimonials {
   background-color: #62b26e;
   height: 130px;
