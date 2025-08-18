@@ -39,6 +39,10 @@
   color: #231f20;
 }
 
+.calcWrapper {
+  width: 100%;
+}
+
 .card {
   max-width: 570px;
   width: 95%;
@@ -49,6 +53,7 @@
   background-color: #fff;
   height: auto;
   box-sizing: border-box;
+  scroll-margin-top: 50px;
 }
 
 .tabs {
@@ -76,11 +81,6 @@
 
 .espacio {
   padding-right: 14px;
-}
-
-.label {
-  font-weight: 600;
-  margin-bottom: 0.5rem;
 }
 
 .inputUnit {
@@ -120,6 +120,16 @@
   justify-content: center;
   padding: 10px;
   color: #231f20;
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
+}
+
+.showOutput {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .green {
@@ -128,7 +138,7 @@
 }
 
 .gray {
-  color: B3B3B3;
+  color: #b3b3b3;
 }
 
 .buttonGroup {
@@ -170,10 +180,6 @@
   padding: 0.6rem 1.2rem;
 }
 
-.green {
-  color: #1e9c63;
-}
-
 @media (max-width: 768px) {
   .wrapper {
     height: auto;
@@ -206,7 +212,7 @@
   }
 
   .tabs {
-    flex-direction: column;
+    flex-wrap: wrap;
     height: auto;
     gap: 10px;
     font-size: 14px;
@@ -215,7 +221,7 @@
 
   .inputGroup {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 5px;
     font-size: 16px;
   }
@@ -225,7 +231,7 @@
   }
 
   .output {
-    font-size: 19px;
+    font-size: 17px;
     height: auto;
     flex-wrap: wrap;
   }
