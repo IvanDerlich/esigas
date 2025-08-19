@@ -1,6 +1,6 @@
 .container {
   background-color: white;
-  min-height: auto;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   padding-bottom: 50px;
@@ -46,7 +46,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 50%;
+  height: auto;
   width: 100%;
 }
 
@@ -203,7 +203,10 @@
 
   .testimonialsContent {
     gap: 20px;
-    height: 45vh;
+    height: 80vh;
     padding: 10px;
+  }
+  .testimonialsDescription {
+    padding-bottom: 30px;
   }
 }
