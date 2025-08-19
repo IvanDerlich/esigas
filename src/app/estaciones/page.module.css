@@ -2,7 +2,7 @@
   background-image: url('/Image/estacion-de-servicio.png');
   background-size: cover;
   background-position: center;
-  height: 120vh;
+  height: 110vh;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -14,7 +14,7 @@
   justify-content: center;
   flex-direction: column;
   width: 55%;
-  padding: 0px 115px;
+  padding: 0px 130px;
   gap: 30px;
 }
 
@@ -68,7 +68,7 @@
 .maps {
   display: flex;
   justify-content: space-around;
-  align-items: flex-start; 
+  align-items: flex-start;
   background-color: white;
   width: 80%;
   min-height: 430px;
