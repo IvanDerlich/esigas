@@ -1,6 +1,7 @@
 .container {
   background-color: white;
   min-height: 100vh;
+  height: auto;
   display: flex;
   flex-direction: column;
   padding-bottom: 50px;
@@ -203,7 +204,8 @@
 
   .testimonialsContent {
     gap: 20px;
-    height: 80vh;
+    min-height: 80vh;
+    height: auto;
     padding: 10px;
   }
   .testimonialsDescription {
