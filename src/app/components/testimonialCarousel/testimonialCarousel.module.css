@@ -1,7 +1,12 @@
 .container {
   background-color: white;
-  height: 90vh;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 50px;
 }
+
 .testimonials {
   background-color: #62b26e;
   height: 130px;
@@ -42,7 +47,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 50%;
+  height: auto;
   width: 100%;
 }
 
@@ -199,7 +204,11 @@
 
   .testimonialsContent {
     gap: 20px;
-    height: 45vh;
+    min-height: 80vh;
+    height: auto;
     padding: 10px;
+  }
+  .testimonialsDescription {
+    padding-bottom: 30px;
   }
 }

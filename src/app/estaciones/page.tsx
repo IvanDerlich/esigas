@@ -50,6 +50,7 @@ export default function Page() {
       </header>
 
       <main id="home">
+        <div className={styles.space}></div>
         <div className={styles.heroImg}>
           <div className={styles.heroContent}>
             <h1 className={styles.h1}>
