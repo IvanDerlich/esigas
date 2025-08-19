@@ -90,7 +90,13 @@ export default function Page() {
         <Location />
         <SocialNetwork />
         <Link href="/" className={styles.btnWhatsapp}>
-          <Image src={Whatsapp} alt="Whatsapp" width={100} height={100} />
+          <Image
+            className={styles.imgWhatsapp}
+            src={Whatsapp}
+            alt="Whatsapp"
+            width={100}
+            height={100}
+          />
         </Link>
       </main>
       <Footer />
