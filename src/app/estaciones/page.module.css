@@ -14,7 +14,7 @@
   justify-content: center;
   flex-direction: column;
   width: 55%;
-  padding: 0px 150px;
+  padding: 0px 130px;
   gap: 30px;
 }
 
@@ -68,10 +68,12 @@
 .maps {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   background-color: white;
   width: 80%;
-  height: 70vh;
+  min-height: 430px;
+  gap: 40px;
+  padding: 35px 0;
 }
 
 .mapContent {
@@ -170,6 +172,10 @@
 
 .btnWhatsapp:hover {
   transform: scale(1.1);
+
+.space {
+  height: 80px;
+
 }
 
 @media screen and (max-width: 768px) {
