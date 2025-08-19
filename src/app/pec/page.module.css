@@ -1,5 +1,6 @@
 .container_ppl {
   background-color: white;
+  height: auto;
 }
 
 .container {
@@ -7,11 +8,11 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 70vh;
+  height: 80vh;
 }
 
 .content {
-  width: 31%;
+  width: 29%;
   height: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -20,7 +21,7 @@
 }
 
 .text {
-  font-size: 65px;
+  font-size: 60px;
   color: white;
   text-align: center;
 }
@@ -49,12 +50,12 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 70vh;
+  height: 80vh;
   width: 100%;
 }
 
 .content_equipos {
-  width: 35%;
+  width: 30%;
   height: 100%;
   display: flex;
   justify-content: space-evenly;
@@ -63,7 +64,7 @@
 }
 
 .text_equipos {
-  font-size: 65px;
+  font-size: 60px;
   color: #62b26e;
   text-align: center;
 }
@@ -153,7 +154,7 @@
   }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1084px) {
   .container {
     height: 60vh;
     padding: 0 20px;
