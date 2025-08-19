@@ -14,7 +14,7 @@
   justify-content: center;
   flex-direction: column;
   width: 55%;
-  padding: 0px 150px;
+  padding: 0px 130px;
   gap: 30px;
 }
 
@@ -68,10 +68,12 @@
 .maps {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   background-color: white;
   width: 80%;
-  height: 70vh;
+  min-height: 430px;
+  gap: 40px;
+  padding: 35px 0;
 }
 
 .mapContent {
@@ -170,226 +172,229 @@
 
 .btnWhatsapp:hover {
   transform: scale(1.1);
-}
-
-@media screen and (max-width: 768px) {
-  .menuIcon {
-    display: flex;
-  }
-
-  .nav {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 80px;
-    left: 0;
-    width: 100%;
-    background-color: #62b26eb3;
-    padding: 20px 0;
-    align-items: center;
-    gap: 20px;
-    z-index: 998;
-  }
-
-  .menuToggle:checked ~ .nav {
-    display: flex;
-  }
-
-  .headerContent {
-    padding: 0 30px;
-  }
-
-  .heroContent {
-    width: 100%;
-    height: 100vh;
-    padding: 0 30px;
-    align-items: center;
-    text-align: center;
-  }
-
-  .h1 {
-    font-size: 36px;
-    text-align: center;
-  }
-
-  .btn {
-    width: 100%;
-    max-width: 300px;
-    font-size: 15px;
-  }
-
-  .estaciones {
-    padding: 0px 15px;
-  }
-
-  .estacionesTitle {
-    font-size: 35px;
-    text-align: center;
-  }
-
-  .maps {
-    flex-direction: column;
-    height: auto;
-    padding: 40px 0;
-    gap: 40px;
-  }
-
-  .mapContent {
-    width: 90%;
-    text-align: center;
-  }
-
-  .mapTitle {
-    font-size: 35px;
-    padding-bottom: 20px;
-  }
-
-  .mapItems {
-    font-size: 18px;
-    line-height: 25px;
-    padding: 10px 0px;
-  }
-
-  .ubication {
-    width: 90%;
-    height: 250px;
-  }
-
-  .imageEstacion {
-    width: 90%;
-  }
-
-  .containerTransport {
-    padding: 30px 10px;
-  }
-
-  .line {
-    width: 90%;
-  }
-
-  .transport {
-    width: 90%;
-    height: auto;
-  }
-
-  .transporteContainer {
-    width: 100%;
-    height: auto;
-    padding: 20px 10px;
-  }
-
-  .transporteTitle {
-    font-size: 26px;
-  }
-
-  .transporteText {
-    padding: 0px 30px;
-  }
-
-  .transporteTitle {
-    text-align: center;
-  }
-
-  .transporteSub {
-    font-size: 18px;
-  }
-
-  .item {
-    font-size: 16px;
-  }
-
-  .trasporteBtn .btn {
-    max-width: 250px;
-    font-size: 14px;
-  }
-
-  .btnWhatsapp {
-    bottom: 1px;
-    right: 10px;
-  }
-
-  .imgWhatsapp {
-    width: 80px;
+  .space {
     height: 80px;
   }
-}
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  .headerContent {
-    padding: 0 40px;
+  @media screen and (max-width: 768px) {
+    .menuIcon {
+      display: flex;
+    }
+
+    .nav {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      background-color: #62b26eb3;
+      padding: 20px 0;
+      align-items: center;
+      gap: 20px;
+      z-index: 998;
+    }
+
+    .menuToggle:checked ~ .nav {
+      display: flex;
+    }
+
+    .headerContent {
+      padding: 0 30px;
+    }
+
+    .heroContent {
+      width: 100%;
+      height: 100vh;
+      padding: 0 30px;
+      align-items: center;
+      text-align: center;
+    }
+
+    .h1 {
+      font-size: 36px;
+      text-align: center;
+    }
+
+    .btn {
+      width: 100%;
+      max-width: 300px;
+      font-size: 15px;
+    }
+
+    .estaciones {
+      padding: 0px 15px;
+    }
+
+    .estacionesTitle {
+      font-size: 35px;
+      text-align: center;
+    }
+
+    .maps {
+      flex-direction: column;
+      height: auto;
+      padding: 40px 0;
+      gap: 40px;
+    }
+
+    .mapContent {
+      width: 90%;
+      text-align: center;
+    }
+
+    .mapTitle {
+      font-size: 35px;
+      padding-bottom: 20px;
+    }
+
+    .mapItems {
+      font-size: 18px;
+      line-height: 25px;
+      padding: 10px 0px;
+    }
+
+    .ubication {
+      width: 90%;
+      height: 250px;
+    }
+
+    .imageEstacion {
+      width: 90%;
+    }
+
+    .containerTransport {
+      padding: 30px 10px;
+    }
+
+    .line {
+      width: 90%;
+    }
+
+    .transport {
+      width: 90%;
+      height: auto;
+    }
+
+    .transporteContainer {
+      width: 100%;
+      height: auto;
+      padding: 20px 10px;
+    }
+
+    .transporteTitle {
+      font-size: 26px;
+    }
+
+    .transporteText {
+      padding: 0px 30px;
+    }
+
+    .transporteTitle {
+      text-align: center;
+    }
+
+    .transporteSub {
+      font-size: 18px;
+    }
+
+    .item {
+      font-size: 16px;
+    }
+
+    .trasporteBtn .btn {
+      max-width: 250px;
+      font-size: 14px;
+    }
+
+    .btnWhatsapp {
+      bottom: 1px;
+      right: 10px;
+    }
+
+    .imgWhatsapp {
+      width: 80px;
+      height: 80px;
+    }
   }
 
-  .heroContent {
-    padding: 0 40px;
-    width: 100%;
-    align-items: center;
-    text-align: center;
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .headerContent {
+      padding: 0 40px;
+    }
+
+    .heroContent {
+      padding: 0 40px;
+      width: 100%;
+      align-items: center;
+      text-align: center;
+    }
+
+    .h1 {
+      font-size: 42px;
+      text-align: center;
+    }
+
+    .btn {
+      max-width: 300px;
+    }
+
+    .maps {
+      flex-direction: column;
+      height: auto;
+      padding: 30px 0;
+      gap: 30px;
+    }
+
+    .mapContent {
+      width: 80%;
+      text-align: center;
+    }
+
+    .ubication {
+      width: 80%;
+      height: 300px;
+    }
+
+    .containerTransport {
+      padding: 30px 20px;
+    }
+
+    .line {
+      width: 90%;
+    }
+
+    .transporteContainer {
+      width: 90%;
+      height: auto;
+      padding: 30px 20px;
+    }
+
+    .transporteTitle {
+      font-size: 32px;
+    }
+
+    .transporteSub {
+      font-size: 22px;
+    }
+
+    .item {
+      font-size: 18px;
+    }
+
+    .trasporteBtn .btn {
+      font-size: 16px;
+      width: 250px;
+    }
   }
 
-  .h1 {
-    font-size: 42px;
-    text-align: center;
-  }
+  @media (min-width: 1025px) and (max-width: 1300px) {
+    .imageEstacion {
+      width: 90%;
+    }
 
-  .btn {
-    max-width: 300px;
-  }
-
-  .maps {
-    flex-direction: column;
-    height: auto;
-    padding: 30px 0;
-    gap: 30px;
-  }
-
-  .mapContent {
-    width: 80%;
-    text-align: center;
-  }
-
-  .ubication {
-    width: 80%;
-    height: 300px;
-  }
-
-  .containerTransport {
-    padding: 30px 20px;
-  }
-
-  .line {
-    width: 90%;
-  }
-
-  .transporteContainer {
-    width: 90%;
-    height: auto;
-    padding: 30px 20px;
-  }
-
-  .transporteTitle {
-    font-size: 32px;
-  }
-
-  .transporteSub {
-    font-size: 22px;
-  }
-
-  .item {
-    font-size: 18px;
-  }
-
-  .trasporteBtn .btn {
-    font-size: 16px;
-    width: 250px;
-  }
-}
-
-@media (min-width: 1025px) and (max-width: 1300px) {
-  .imageEstacion {
-    width: 90%;
-  }
-
-  .maps {
-    gap: 40px;
+    .maps {
+      gap: 40px;
+    }
   }
 }
