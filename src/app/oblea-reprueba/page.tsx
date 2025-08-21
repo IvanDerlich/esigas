@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import logo from '@/images/logo.png';
 import Link from 'next/link';
 import { OurAdvantages } from '../components/ourAdvantages/ourAdvantages';
 import { Abyssinica_SIL } from 'next/font/google';
@@ -13,6 +12,7 @@ import Location from '../components/location/location';
 import SocialNetwork from '../components/socialNetwork/socialNetwork';
 import { Footer } from '../components/layout/footer';
 import Navbar from '../components/header/navBar';
+import Whatsapp from '@/images/whatsapp.webp';
 
 const abyssinica = Abyssinica_SIL({
   subsets: ['latin'],
@@ -89,6 +89,15 @@ export default function Page() {
         <Contact />
         <Location />
         <SocialNetwork />
+        <Link href="/" className={styles.btnWhatsapp}>
+          <Image
+            className={styles.imgWhatsapp}
+            src={Whatsapp}
+            alt="Whatsapp"
+            width={100}
+            height={100}
+          />
+        </Link>
       </main>
       <Footer />
     </>
