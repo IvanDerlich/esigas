@@ -14,6 +14,7 @@ import Contact from '../components/contact/contact';
 import Location from '../components/location/location';
 import SocialNetwork from '../components/socialNetwork/socialNetwork';
 import { Footer } from '../components/layout/footer';
+import Whatsapp from '@/images/whatsapp.png';
 
 const abyssinica = Abyssinica_SIL({
   subsets: ['latin'],
@@ -127,6 +128,15 @@ export default function Page() {
         </div>
         <Location />
         <SocialNetwork />
+        <Link href="/" className={styles.btnWhatsapp}>
+          <Image
+            className={styles.imgWhatsapp}
+            src={Whatsapp}
+            alt="Whatsapp"
+            width={120}
+            height={120}
+          />
+        </Link>
       </main>
       <Footer />
     </>
