@@ -6,5 +6,5 @@ export const strings = {
   valores:
     'Profesionalización de nuestros servicios. Uso de normas internacionales de calidad. Mejora continua. Compromiso ambiental.',
   descripcion:
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    'ESIGAS es una empresa de servicios de ingeniería dedicada al cambio de la matriz energética de combustibles líquidos a gas natural en el transporte de personas y cargas, por compromiso ambiental y por  efecto económico positivo para los usuarios y para el país.',
 };
