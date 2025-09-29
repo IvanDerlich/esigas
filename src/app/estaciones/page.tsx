@@ -9,7 +9,7 @@ import Estacionr1 from '@/images/estacion-rosario1.jpg';
 import Estacionr2 from '@/images/estacion-rosario2.jpg';
 import Estacionr3 from '@/images/estacion-rosario3.jpg';
 import Estacionr4 from '@/images/estacion-rosario4.jpg';
-import Estacionr5 from '@/images/estacion-rosario5.jpg';  
+import Estacionr5 from '@/images/estacion-rosario5.jpg';
 import Estacionr6 from '@/images/estacion-rosario6.jpg';
 import Line from '@/images/line.png';
 import Camion from '@/images/camion.png';
@@ -43,7 +43,7 @@ const imagesSet = [
   { src: Estacionmza3, alt: 'Estación 3' },
   { src: Estacionmza4, alt: 'Estación 4' },
   { src: Estacionmza5, alt: 'Estación 5' },
-  { src: Estacionmza6, alt: 'Estación 6' }
+  { src: Estacionmza6, alt: 'Estación 6' },
 ];
 
 const imagesSetTwo = [

@@ -33,7 +33,7 @@ export default function CarouselMobile({ images }: CarouselMobileProps) {
     if (!images.length) return;
 
     const interval = setInterval(() => {
-      setActiveIndex((prev) => (prev + 1) % images.length);
+      setActiveIndex(prev => (prev + 1) % images.length);
     }, 5000);
 
     return () => clearInterval(interval);
