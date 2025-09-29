@@ -58,7 +58,7 @@ export default function Page() {
               Tu estación de confianza, estés donde estés
             </h1>
             <Link href="#como-llegar" className={styles.btn}>
-              Encontra tu estación más cercana
+              Encontrá tu estación más cercana
             </Link>
           </div>
         </div>
@@ -147,7 +147,7 @@ export default function Page() {
                   Habilitadas para carga pesada
                 </h4>
                 <p className={styles.transporteSub}>
-                  Nuestras estaciones están preparadas para recibir vehiculos de
+                  Nuestras estaciones están preparadas para recibir vehículos de
                   gran porte.
                 </p>
                 <div className={styles.transporteItems}>
@@ -163,7 +163,7 @@ export default function Page() {
               </div>
               <div className={styles.trasporteBtn}>
                 <Link href="#como-llegar" className={styles.btn}>
-                  Encontra tu estación más cercana
+                  Encontrá tu estación más cercana
                 </Link>
               </div>
             </div>

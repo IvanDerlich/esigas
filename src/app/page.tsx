@@ -22,7 +22,7 @@ export default function Home() {
         <div className={styles.home}>
           <div className={`${abyssinica.className} ${styles.container_title}`}>
             <h1 className={styles.title}>
-              ¡Descubri los diferentes servicios que tenemos para ofrecerte!
+              ¡Descubrí los diferentes servicios que tenemos para ofrecerte!
             </h1>
           </div>
           <div className={styles.container_img}>
