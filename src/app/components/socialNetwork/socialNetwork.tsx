@@ -46,7 +46,7 @@ export default function SocialNetwork() {
           <div className={styles.socialIcons}>
             <Link
               className={styles.icon}
-              href="https://www.facebook.com"
+              href="https://www.facebook.com/EsigasArg"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -54,7 +54,7 @@ export default function SocialNetwork() {
             </Link>
             <Link
               className={styles.icon}
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/esigas.arg/"
               target="_blank"
               rel="noopener noreferrer"
             >

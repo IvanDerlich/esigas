@@ -173,7 +173,10 @@ export default function Page() {
           <Contact showCheckboxes />
         </div>
         <SocialNetwork />
-        <Link href="/" className={styles.btnWhatsapp}>
+        <Link
+          href="https://wa.me/+5492613252113"
+          className={styles.btnWhatsapp}
+        >
           <Image
             className={styles.imgWhatsapp}
             src={Whatsapp}
