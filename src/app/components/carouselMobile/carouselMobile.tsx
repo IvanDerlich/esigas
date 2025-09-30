@@ -29,16 +29,6 @@ export default function CarouselMobile({ images }: CarouselMobileProps) {
 
   const itemsToShow = viewport === 'mobile' ? 1 : viewport === 'tablet' ? 2 : 3;
 
-  useEffect(() => {
-    if (!images.length) return;
-
-    const interval = setInterval(() => {
-      setActiveIndex(prev => (prev + 1) % images.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [images.length]);
-
   if (!images || images.length === 0) return null;
 
   const visibleImages = Array.from({ length: itemsToShow }, (_, i) => {
