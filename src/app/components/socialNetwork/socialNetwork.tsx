@@ -60,9 +60,6 @@ export default function SocialNetwork() {
             >
               <Image src={Instagram} alt="Instagram" width={84} height={84} />
             </Link>
-            <Link className={styles.icon} href="tel:+1234567890">
-              <Image src={Phone} alt="Phone" width={83} height={83} />
-            </Link>
           </div>
         </div>
         <div className={`${abyssinica.className} ${styles.newsletter}`}>
