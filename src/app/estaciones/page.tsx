@@ -172,7 +172,7 @@ export default function Page() {
         <div id="contacto">
           <Contact showCheckboxes />
         </div>
-        <SocialNetwork />
+        <SocialNetwork showNewsletter={false} />
         <Link href="/" className={styles.btnWhatsapp}>
           <Image
             className={styles.imgWhatsapp}
