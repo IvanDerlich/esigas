@@ -23,5 +23,5 @@ export const advantages: Advantage[] = [
     title: 'Servicio y Postventa',
     description:
       'Brindamos un servicio de calidad y personalizado a cada cliente, el postventa es fundamental para la tranquilidad de nuestros clientes, siempre que lo necesiten se pueden acercar al taller que deseen para resolver cualquier inconveniente.',
-  }
+  },
 ];
