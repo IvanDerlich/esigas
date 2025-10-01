@@ -19,7 +19,9 @@ type SocialNetworkProps = {
   showNewsletter?: boolean;
 };
 
-export default function SocialNetwork({ showNewsletter = true }: SocialNetworkProps) {
+export default function SocialNetwork({
+  showNewsletter = true,
+}: SocialNetworkProps) {
   return (
     <>
       <div className={`${abyssinica.className} ${styles.redesContainer}`}>
