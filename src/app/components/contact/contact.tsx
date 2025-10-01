@@ -14,7 +14,10 @@ interface ContactFormProps {
   showContact?: boolean; // ✅ nuevo booleano
 }
 
-export default function Contact({ showCheckboxes = false, showContact = true }: ContactFormProps) {
+export default function Contact({
+  showCheckboxes = false,
+  showContact = true,
+}: ContactFormProps) {
   if (!showContact) return null; // ✅ si es false, no renderiza nada
 
   return (
