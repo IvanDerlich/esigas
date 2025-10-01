@@ -5,13 +5,23 @@ export interface Advantage {
 
 export const advantages: Advantage[] = [
   {
-    title: 'Somos un centro de repruebas de cilindros (CRPC)',
+    title: '37 años de trayectoria',
     description:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry is standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+      'Hace 37 años nos dedicamos a convertir, reparar, habilitar, abastecer y desarrollar vehículos a GNC, siendo uno de las empresas con más trayectoria en el rubro a nivel nacional.',
   },
   {
-    title: 'Somos Productor de Equipos Completos (PEC)',
+    title: 'Especialistas en GNC',
     description:
-      'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry is standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.',
+      'Nos dedicamos pura y exclusivamente al GNC, tanto en nuestros talleres, PECS, estaciones de servicio y transporte ecológico',
   },
+  {
+    title: 'Confiabilidad y Seguridad',
+    description:
+      'Más de 30.000 vehículos convertidos avalan nuestros equipos, certificados y homologados bajo estrictas normas internacionales.',
+  },
+  {
+    title: 'Servicio y Postventa',
+    description:
+      'Brindamos un servicio de calidad y personalizado a cada cliente, el postventa es fundamental para la tranquilidad de nuestros clientes, siempre que lo necesiten se pueden acercar al taller que deseen para resolver cualquier inconveniente.',
+  }
 ];
