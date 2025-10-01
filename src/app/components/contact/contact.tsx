@@ -11,9 +11,12 @@ const abyssinica = Abyssinica_SIL({
 
 interface ContactFormProps {
   showCheckboxes?: boolean;
+  showContact?: boolean; // ✅ nuevo booleano
 }
 
-export default function Contact({ showCheckboxes = false }: ContactFormProps) {
+export default function Contact({ showCheckboxes = false, showContact = true }: ContactFormProps) {
+  if (!showContact) return null; // ✅ si es false, no renderiza nada
+
   return (
     <>
       <div
