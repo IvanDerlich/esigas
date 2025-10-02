@@ -1,3 +1,5 @@
+'use client';
+
 import styles from './socialNetwork.module.css';
 import Image from 'next/image';
 import Facebook from '@/images/fb.png';
@@ -13,7 +15,13 @@ const abyssinica = Abyssinica_SIL({
   display: 'swap',
 });
 
-export default function SocialNetwork() {
+type SocialNetworkProps = {
+  showNewsletter?: boolean;
+};
+
+export default function SocialNetwork({
+  showNewsletter = true,
+}: SocialNetworkProps) {
   return (
     <>
       <div className={`${abyssinica.className} ${styles.redesContainer}`}>
@@ -62,27 +70,30 @@ export default function SocialNetwork() {
             </Link>
           </div>
         </div>
-        <div className={`${abyssinica.className} ${styles.newsletter}`}>
-          <div className={styles.newsletterContent}>
-            <h3 className={styles.newsletterTitle}>
-              ¿Querés conocer nuestras novedades?
-            </h3>
-            <p className={styles.newsletterText}>
-              Inscribite a nuestro newsletter y recibí toda la info!
-            </p>
+
+        {showNewsletter && (
+          <div className={`${abyssinica.className} ${styles.newsletter}`}>
+            <div className={styles.newsletterContent}>
+              <h3 className={styles.newsletterTitle}>
+                ¿Querés conocer nuestras novedades?
+              </h3>
+              <p className={styles.newsletterText}>
+                Inscribite a nuestro newsletter y recibí toda la info!
+              </p>
+            </div>
+            <form className={styles.form}>
+              <input
+                type="email"
+                placeholder="Ingresa tu email"
+                className={styles.input}
+                required
+              />
+              <button type="submit" className={styles.button}>
+                Suscribirme
+              </button>
+            </form>
           </div>
-          <form className={styles.form}>
-            <input
-              type="email"
-              placeholder="Ingresa tu email"
-              className={styles.input}
-              required
-            />
-            <button type="submit" className={styles.button}>
-              Suscribirme
-            </button>
-          </form>
-        </div>
+        )}
       </div>
     </>
   );
