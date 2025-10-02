@@ -128,7 +128,10 @@ export default function Page() {
         </div>
         <Location />
         <SocialNetwork />
-        <Link href="/" className={styles.btnWhatsapp}>
+        <Link
+          href="https://wa.me/+5492616913692"
+          className={styles.btnWhatsapp}
+        >
           <Image
             className={styles.imgWhatsapp}
             src={Whatsapp}
