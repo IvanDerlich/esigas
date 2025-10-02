@@ -33,31 +33,31 @@ export default function Location() {
         <div className={styles.ubicationCard}>
           <h3 className={styles.ubicationTitleCard}>Casa Central</h3>
           <p className={styles.ubicationText}>
-            <span className={styles.green}>Telefono:</span>
-            +54 9 2616 92-9656
+            <span className={styles.green}>Teléfono:</span>
+            +54 9 261 3808347
           </p>
           <p className={styles.ubicationText}>
             <span className={styles.green}>Dirección:</span>
-            Ituzaingó 2536, Mendoza Ciudad
+            Perito Moreno 508, Godoy Cruz Mendoza
           </p>
           <p className={styles.ubicationText}>
             <span className={styles.green}>Email:</span>
-            ventas@esigas.com
+            ventas@esigas.com.ar
           </p>
         </div>
         <div className={styles.ubicationCard}>
-          <h3 className={styles.ubicationTitleCard}>Sucursal Ituzaingo</h3>
+          <h3 className={styles.ubicationTitleCard}>Sucursal Ituzaingó</h3>
           <p className={styles.ubicationText}>
-            <span className={styles.green}>Telefono:</span>
-            +54 9 2616 92-9656
+            <span className={styles.green}>Teléfono:</span>
+            +54 9 261 6913692
           </p>
           <p className={styles.ubicationText}>
             <span className={styles.green}>Dirección:</span>
-            Ituzaingó 2536, Mendoza Ciudad
+            Ituzaingó 2536, Ciudad Mendoza
           </p>
           <p className={styles.ubicationText}>
             <span className={styles.green}>Email:</span>
-            ventas@esigas.com
+            ventas@esigas.com.ar
           </p>
         </div>
       </div>
