@@ -1,10 +1,16 @@
 import Image from 'next/image';
-import Estacion1 from '@/images/estacion1.png';
-import Estacion2 from '@/images/estacion2.png';
-import Estacion3 from '@/images/estacion3.png';
-import Estacion4 from '@/images/estacion4.png';
-import Estacion5 from '@/images/estacion5.png';
-import Estacion6 from '@/images/estacion6.png';
+import Estacionmza1 from '@/images/estacion-mendoza1.png';
+import Estacionmza2 from '@/images/estacion-mendoza2.png';
+import Estacionmza3 from '@/images/estacion-mendoza3.png';
+import Estacionmza4 from '@/images/estacion-mendoza4.png';
+import Estacionmza5 from '@/images/estacion-mendoza5.png';
+import Estacionmza6 from '@/images/estacion-mendoza6.png';
+import Estacionr1 from '@/images/estacion-rosario1.jpg';
+import Estacionr2 from '@/images/estacion-rosario2.jpg';
+import Estacionr3 from '@/images/estacion-rosario3.jpg';
+import Estacionr4 from '@/images/estacion-rosario4.jpg';
+import Estacionr5 from '@/images/estacion-rosario5.jpg';
+import Estacionr6 from '@/images/estacion-rosario6.jpg';
 import Line from '@/images/line.png';
 import Camion from '@/images/camion.png';
 import Link from 'next/link';
@@ -32,15 +38,21 @@ const links = [
 ];
 
 const imagesSet = [
-  { src: Estacion1, alt: 'Estación 1' },
-  { src: Estacion2, alt: 'Estación 2' },
-  { src: Estacion3, alt: 'Estación 3' },
+  { src: Estacionmza1, alt: 'Estación 1' },
+  { src: Estacionmza2, alt: 'Estación 2' },
+  { src: Estacionmza3, alt: 'Estación 3' },
+  { src: Estacionmza4, alt: 'Estación 4' },
+  { src: Estacionmza5, alt: 'Estación 5' },
+  { src: Estacionmza6, alt: 'Estación 6' },
 ];
 
 const imagesSetTwo = [
-  { src: Estacion4, alt: 'Estación 4' },
-  { src: Estacion5, alt: 'Estación 5' },
-  { src: Estacion6, alt: 'Estación 6' },
+  { src: Estacionr1, alt: 'Estación 1' },
+  { src: Estacionr2, alt: 'Estación 2' },
+  { src: Estacionr3, alt: 'Estación 3' },
+  { src: Estacionr4, alt: 'Estación 4' },
+  { src: Estacionr5, alt: 'Estación 5' },
+  { src: Estacionr6, alt: 'Estación 6' },
 ];
 
 export default function Page() {
