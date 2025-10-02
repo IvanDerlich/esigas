@@ -27,76 +27,43 @@ export default function CarouselMobile({ images }: CarouselMobileProps) {
     return () => window.removeEventListener('resize', updateViewport);
   }, []);
 
-  useEffect(() => {
-    if (viewport !== 'mobile') return;
-
-    const interval = setInterval(() => {
-      setActiveIndex(i => (i + 1) % images.length);
-    }, 5000);
-
-    return () => clearInterval(interval);
-  }, [viewport, images.length]);
+  const itemsToShow = viewport === 'mobile' ? 1 : viewport === 'tablet' ? 2 : 3;
 
   if (!images || images.length === 0) return null;
 
-  if (viewport === 'mobile') {
-    return (
-      <div className={styles.carousel}>
-        <div className={styles.imageContainer}>
-          <Image
-            src={images[activeIndex].src}
-            alt={images[activeIndex].alt}
-            width={320}
-            height={280}
-            className={styles.carouselImage}
-            priority
-          />
-        </div>
-        <div className={styles.dots}>
-          {images.map((_, i) => (
-            <button
-              key={i}
-              className={`${styles.dot} ${i === activeIndex ? styles.activeDot : ''}`}
-              onClick={() => setActiveIndex(i)}
-              aria-label={`Mostrar imagen ${i + 1}`}
-            />
-          ))}
-        </div>
-      </div>
-    );
-  }
+  const visibleImages = Array.from({ length: itemsToShow }, (_, i) => {
+    return images[(activeIndex + i) % images.length];
+  });
 
-  if (viewport === 'tablet') {
-    return (
-      <div className={styles.wrapImages}>
-        {images.map((img, i) => (
+  return (
+    <div className={styles.carousel}>
+      <div className={styles.imageRow}>
+        {visibleImages.map((img, i) => (
           <Image
             key={i}
             src={img.src}
             alt={img.alt}
             width={365}
             height={180}
-            className={styles.imageEstacion}
+            className={styles.carouselImage}
             priority
           />
         ))}
       </div>
-    );
-  }
 
-  return (
-    <div className={styles.desktopImages}>
-      {images.map((img, i) => (
-        <Image
-          key={i}
-          src={img.src}
-          alt={img.alt}
-          width={365}
-          height={180}
-          className={styles.imageEstacion}
-          priority
-        />
-      ))}
+      {/* Dots */}
+      <div className={styles.dots}>
+        {images.map((_, i) => (
+          <button
+            key={i}
+            className={`${styles.dot} ${
+              i === activeIndex ? styles.activeDot : ''
+            }`}
+            onClick={() => setActiveIndex(i)}
+            aria-label={`Mostrar imagen ${i + 1}`}
+          />
+        ))}
+      </div>
     </div>
   );
 }

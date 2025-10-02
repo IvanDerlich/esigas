@@ -54,7 +54,7 @@ export default function SocialNetwork({
           <div className={styles.socialIcons}>
             <Link
               className={styles.icon}
-              href="https://www.facebook.com"
+              href="https://www.facebook.com/EsigasArg"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -62,14 +62,11 @@ export default function SocialNetwork({
             </Link>
             <Link
               className={styles.icon}
-              href="https://www.instagram.com"
+              href="https://www.instagram.com/esigas.arg/"
               target="_blank"
               rel="noopener noreferrer"
             >
               <Image src={Instagram} alt="Instagram" width={84} height={84} />
-            </Link>
-            <Link className={styles.icon} href="tel:+1234567890">
-              <Image src={Phone} alt="Phone" width={83} height={83} />
             </Link>
           </div>
         </div>

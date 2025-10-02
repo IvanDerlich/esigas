@@ -124,11 +124,14 @@ export default function Page() {
           <TestimonialCarousel />
         </div>
         <div id="contacto">
-          <Contact />
+          <Contact showContact={false} />
         </div>
         <Location />
         <SocialNetwork showNewsletter={false} />
-        <Link href="/" className={styles.btnWhatsapp}>
+        <Link
+          href="https://wa.me/+5492616913692"
+          className={styles.btnWhatsapp}
+        >
           <Image
             className={styles.imgWhatsapp}
             src={Whatsapp}
