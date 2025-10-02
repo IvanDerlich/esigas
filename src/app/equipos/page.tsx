@@ -124,7 +124,7 @@ export default function Page() {
           <TestimonialCarousel />
         </div>
         <div id="contacto">
-          <Contact />
+          <Contact showContact={false} />
         </div>
         <Location />
         <SocialNetwork />

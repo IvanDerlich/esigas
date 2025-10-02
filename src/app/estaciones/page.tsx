@@ -182,7 +182,7 @@ export default function Page() {
           </div>
         </div>
         <div id="contacto">
-          <Contact showCheckboxes />
+          <Contact showContact={false} showCheckboxes />
         </div>
         <SocialNetwork />
         <Link
