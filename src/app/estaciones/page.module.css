@@ -1,11 +1,16 @@
 .heroImg {
-  background-image: url('/Image/estacion-de-servicio.png');
+  background-image: url('/Image/estacion-rosario1.jpg');
   background-size: cover;
   background-position: center;
-  height: 110vh;
+  background-repeat: no-repeat;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  padding: 4rem 2rem;
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden; 
 }
 
 .heroContent {
