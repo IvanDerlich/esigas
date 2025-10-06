@@ -3,8 +3,10 @@ import Image from 'next/image';
 import oblea from '@/images/oblea.png';
 import equipoinstalado from '@/images/equipo-instalado.png';
 import equipognc from '@/images/equipo-gnc.png';
-import cilindromaquina from '@/images/cilindro-maquina.png';
-import tubognc from '@/images/tubo-gnc.png';
+import centroReprueba1 from '@/images/centro-reprueba1.png';
+import centroReprueba2 from '@/images/centro-reprueba2.png';
+import centroReprueba3 from '@/images/centro-reprueba3.png';
+import centroReprueba4 from '@/images/centro-reprueba4.png';
 import { Footer } from '../components/layout/footer';
 import { Abyssinica_SIL } from 'next/font/google';
 import InteractiveCarousel from './components/InteractiveCarousel';
@@ -66,7 +68,12 @@ export default function PecPage() {
             </Link>
           </div>
           <InteractiveCarousel
-            images={[cilindromaquina, tubognc]}
+            images={[
+              centroReprueba1,
+              centroReprueba2,
+              centroReprueba3,
+              centroReprueba4,
+            ]}
             width={450}
             height={350}
             radius="10px"
