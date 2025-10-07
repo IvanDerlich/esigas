@@ -88,7 +88,7 @@ export default function Page() {
         </div>
         <Contact showContact={false} />
         <Location />
-        <SocialNetwork />
+        <SocialNetwork showNewsletter={false} />
         <Link
           href="https://wa.me/+5492616913692"
           className={styles.btnWhatsapp}
