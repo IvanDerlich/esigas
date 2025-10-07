@@ -18,9 +18,9 @@ const InteractiveCarousel = ({
   images,
   dotClass = styles.dot,
   activeClass = styles.active,
-  width = 500,
-  height = 300,
-  radius = '0px',
+  width = 400,
+  height = 400,
+  radius = '15px',
   interval = 5000,
 }: Props) => {
   const [current, setCurrent] = useState(0);
