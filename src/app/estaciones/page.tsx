@@ -148,7 +148,7 @@ export default function Page() {
               src={Camion}
               alt="Transporte"
               width={660}
-              height={500}
+              height={350}
               className={styles.transport}
             />
             <div
