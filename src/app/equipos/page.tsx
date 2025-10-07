@@ -1,4 +1,5 @@
 import { Abyssinica_SIL } from 'next/font/google';
+import { Roboto } from 'next/font/google';
 import Image from 'next/image';
 import Line from '@/images/line.png';
 import Tarjetas from '@/images/tarjetas.png';
@@ -17,6 +18,12 @@ import { Footer } from '../components/layout/footer';
 import Whatsapp from '@/images/whatsapp.png';
 
 const abyssinica = Abyssinica_SIL({
+  subsets: ['latin'],
+  weight: ['400'],
+  display: 'swap',
+});
+
+const roboto = Roboto({
   subsets: ['latin'],
   weight: ['400'],
   display: 'swap',
@@ -76,6 +83,12 @@ export default function Page() {
               className={styles.equiposImage}
             />
           </div>
+          <p
+            className={`${roboto.className} ${styles.financiacionDisponibilidad}`}
+          >
+            *La disponibilidad de planes de financiación puede variar según
+            disponibilidad
+          </p>
           <Link href="/financiacion" className={styles.equiposLink}>
             Consulta Financiación
           </Link>
@@ -119,6 +132,12 @@ export default function Page() {
             height={80}
             className={styles.imageFinanciacion}
           />
+          <p
+            className={`${roboto.className} ${styles.financiacionDisponibilidad}`}
+          >
+            *La disponibilidad de planes de financiación puede variar según
+            disponibilidad
+          </p>
         </div>
         <div id="testimonios">
           <TestimonialCarousel />
