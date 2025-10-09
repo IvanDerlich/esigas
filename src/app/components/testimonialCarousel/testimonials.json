@@ -1,27 +1,47 @@
 [
   {
-    "type": "video",
-    "youtubeId": "B0FYrmBw8ik"
+    "type": "instagram",
+    "igUrl": "https://www.instagram.com/reel/DPEOnEbDtG8/?igsh=MTJocHZkNGc3dGRpag%3D%3D",
+    "image": "/Image/testimonio.png"
   },
   {
     "type": "text",
-    "title": "La Mejor Financiación Que Encontré",
-    "comment": "Pude Pagar En 24 Cuotas Sin Problemas",
-    "author": "Carla Gonzalez",
+    "title": "Excelente Atención",
+    "comment": "Excelente la atención de todo el personal, responsabilidad y compromiso en resolver el problema que traia de otro taller, y valoran el tiempo de uno, lo resolvieron rapidísimo y quedó perfecto y totalmente razonable el precio. Absolutamente recomendable",
+    "author": "Nicolás Bustos Norton",
+    "urlTestimonial": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUNDX0pMRU9REAE!2m1!1s0x0:0x805cdc7fa98e9676!3m1!1s2@1:CIHM0ogKEICAgICC_JLEOQ%7CCgsIyeTj-QUQoO3iKg%7C?hl=es-419&source=sh/x/kp/local/m1/0&kgs=a632864fcb0067ab&shem=shrtsdl&utm_source=shrtsdl,sh/x/kp/local/m1/0",
     "rating": 5
   },
   {
     "type": "text",
-    "title": "Muy Rápido Y Seguro",
-    "comment": "Instalación en el día y excelente atención",
-    "author": "Luis Fernández",
-    "rating": 4
+    "title": "Altamente recomendable",
+    "comment": "Altamente recomendable por la atención, la explicación, la limpieza, la forma de trabajar....todo hace que sea impecable. Y en cuanto a los precios muy conforme, de 5 lugares consultados fue en esta Empresa que recibí honestidad y el mejor precio. Muy conforme!",
+    "author": "Jesica Leonor",
+    "urlTestimonial": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSURaLXF2b01nEAE!2m1!1s0x0:0x805cdc7fa98e9676!3m1!1s2@1:CIHM0ogKEICAgIDZ-qvoMg%7CCgwI07XbqAYQoIvWqAE%7C?hl=es-419&source=sh/x/kp/local/m1/0&kgs=21e27e330bb4a189&shem=shrtsdl&utm_source=shrtsdl,sh/x/kp/local/m1/0",
+    "rating": 5
   },
   {
     "type": "text",
-    "title": "Recomendado",
-    "comment": "Todo funcionó perfecto desde el primer día",
-    "author": "María Gómez",
-    "rating": 3
+    "title": "Excelente servicio",
+    "comment": "Excelente servicio. Muy amable y atento el personal. Primera vez que tengo un vehículo a gas, supieron capacitarme y guiarme  ante cualquier problema. Felicitaciones por la rapidez, orden y la limpieza del local.",
+    "author": "Emiliano Gimenez",
+    "urlTestimonial": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sCi9DQUlRQUNvZENodHljRjlvT2xKM1JFa3pMV05OVFcxQk5tUmlXRE5DVm5CTlUwRRAB!2m1!1s0x0:0x805cdc7fa98e9676!3m1!1s2@1:CAIQACodChtycF9oOlJ3REkzLWNNTW1BNmRiWDNCVnBNU0E%7C0cOyXjcEw7s%7C?hl=es-419&source=sh/x/kp/local/m1/0&kgs=6c74f923b9e3ea19&shem=shrtsdl&utm_source=shrtsdl,sh/x/kp/local/m1/0",
+    "rating": 5
+  },
+  {
+    "type": "text",
+    "title": "Muy buena atención",
+    "comment": "Muy buena atención y servicio. Personal muy capacitado.",
+    "author": "Ruben Rojas",
+    "urlTestimonial": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChdDSUhNMG9nS0VJQ0FnSUNSeHAySzlBRRAB!2m1!1s0x0:0x805cdc7fa98e9676!3m1!1s2@1:CIHM0ogKEICAgICRxp2K9AE%7CCgwI3OKboQYQyOW-jwI%7C?hl=es-419&source=sh/x/kp/local/m1/0&kgs=6c20d4f77b7cb5bf&shem=shrtsdl&utm_source=shrtsdl,sh/x/kp/local/m1/0",
+    "rating": 5
+  },
+  {
+    "type": "text",
+    "title": "Excelente",
+    "comment": "Excelente como siempre! Buen trato, predisposición, granas de que su trabajo se vea bien. Gracias por la excelencia que brindan.",
+    "author": "Rum Rum",
+    "urlTestimonial": "https://www.google.com/maps/reviews/data=!4m8!14m7!1m6!2m5!1sChZDSUhNMG9nS0VJQ0FnSUN0dVlyLVN3EAE!2m1!1s0x0:0x805cdc7fa98e9676!3m1!1s2@1:CIHM0ogKEICAgICtuYr-Sw%7CCgwIgMPmrQYQwLLcrQM%7C?hl=es-419&source=sh/x/kp/local/m1/0&kgs=673f79e32ed663d0&shem=shrtsdl&utm_source=shrtsdl,sh/x/kp/local/m1/0",
+    "rating": 5
   }
 ]
