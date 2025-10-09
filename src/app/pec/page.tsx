@@ -72,9 +72,6 @@ export default function PecPage() {
               centroReprueba3,
               centroReprueba4,
             ]}
-            width={450}
-            height={350}
-            radius="10px"
             dotClass={styles.dot2}
             activeClass={styles.active2}
           />
