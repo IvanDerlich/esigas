@@ -12,7 +12,7 @@ import Estacionr4 from '@/images/estacion-rosario4.jpg';
 import Estacionr5 from '@/images/estacion-rosario5.jpg';
 import Estacionr6 from '@/images/estacion-rosario6.jpg';
 import Line from '@/images/line.png';
-import Camion from '@/images/camion.png';
+import Camion from '@/images/camion.jpg';
 import Link from 'next/link';
 import styles from './page.module.css';
 import { Abyssinica_SIL } from 'next/font/google';
@@ -147,8 +147,8 @@ export default function Page() {
             <Image
               src={Camion}
               alt="Transporte"
-              width={800}
-              height={600}
+              width={660}
+              height={350}
               className={styles.transport}
             />
             <div

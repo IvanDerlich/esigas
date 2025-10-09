@@ -127,6 +127,10 @@
   gap: 30px;
 }
 
+.transport {
+  border-radius: 15px;
+}
+
 .transporteText {
   display: flex;
   justify-content: center;
