@@ -2,7 +2,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import oblea from '@/images/oblea.png';
 import equipoinstalado from '@/images/equipo-instalado.png';
-import equipognc from '@/images/equipo-gnc.png';
 import centroReprueba1 from '@/images/centro-reprueba1.png';
 import centroReprueba2 from '@/images/centro-reprueba2.png';
 import centroReprueba3 from '@/images/centro-reprueba3.png';
@@ -42,13 +41,12 @@ export default function PecPage() {
         </div>
 
         <div className={styles.container_equipos}>
-          <InteractiveCarousel
-            images={[equipoinstalado, equipognc]}
+          <Image
+            className={styles.img_equipos}
+            src={equipoinstalado}
+            alt="Equipo Instalado"
             width={400}
             height={400}
-            radius="15px"
-            dotClass={styles.dot}
-            activeClass={styles.active}
           />
           <div className={`${abyssinica.className} ${styles.content_equipos}`}>
             <p className={styles.text_equipos}>¿Querés instalar un equipo?</p>
@@ -74,9 +72,6 @@ export default function PecPage() {
               centroReprueba3,
               centroReprueba4,
             ]}
-            width={450}
-            height={350}
-            radius="10px"
             dotClass={styles.dot2}
             activeClass={styles.active2}
           />
