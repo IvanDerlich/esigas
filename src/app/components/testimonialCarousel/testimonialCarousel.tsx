@@ -5,6 +5,14 @@ import testimonialsData from './testimonials.json';
 import Image from 'next/image';
 import leftArrow from '@/images/Icon-left.png';
 import rightArrow from '@/images/Icon-right.png';
+import { Abyssinica_SIL } from 'next/font/google';
+import Link from 'next/link';
+
+const abyssinica = Abyssinica_SIL({
+  subsets: ['latin'],
+  weight: ['400'],
+  display: 'swap',
+});
 
 const TestimonialCarousel = () => {
   const [start, setStart] = useState(0);
@@ -37,7 +45,10 @@ const TestimonialCarousel = () => {
   };
 
   return (
-    <div id="testimonios" className={styles.container}>
+    <div
+      id="testimonios"
+      className={`${abyssinica.className} ${styles.container}`}
+    >
       <div className={styles.testimonials}>
         <h2 className={styles.testimonialsTitle}>Testimonios</h2>
       </div>
@@ -57,9 +68,21 @@ const TestimonialCarousel = () => {
           </button>
         </div>
 
-        {testimonialsData
-          .slice(start, start + visibleItems)
-          .map((item, index) => (
+        {testimonialsData.slice(start, start + visibleItems).map(
+          (
+            item: {
+              type: string;
+              title?: string;
+              comment?: string;
+              author?: string;
+              rating?: number;
+              urlTestimonial?: string;
+              youtubeId?: string | null;
+              igUrl?: string;
+              image?: string;
+            },
+            index
+          ) => (
             <div key={index} className={styles.testimonial}>
               {item.type === 'text' ? (
                 <>
@@ -74,8 +97,16 @@ const TestimonialCarousel = () => {
                   </div>
                   <p className={styles.testimonialTextTwo}>{item.comment}</p>
                   <p className={styles.testimonialAuthor}>- {item.author}</p>
+                  <Link
+                    href={item.urlTestimonial || '#'}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.googleButton}
+                  >
+                    Ver en Google
+                  </Link>
                 </>
-              ) : (
+              ) : item.type === 'video' ? (
                 <div className={styles.videoContainer}>
                   <iframe
                     width="100%"
@@ -95,9 +126,28 @@ const TestimonialCarousel = () => {
                     Ver en YouTube
                   </a>
                 </div>
-              )}
+              ) : item.type === 'instagram' && item.igUrl ? (
+                <div className={styles.instagramContainer}>
+                  <Link
+                    href={item.igUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Image
+                      src={item.image!}
+                      alt="Instagram post"
+                      width={300}
+                      height={300}
+                    />
+                    <div className={styles.instagramButton}>
+                      Ver en Instagram
+                    </div>
+                  </Link>
+                </div>
+              ) : null}
             </div>
-          ))}
+          )
+        )}
 
         <div
           className={`${styles.arrowWrapper} ${start < maxStartIndex ? '' : styles.hidden}`}
