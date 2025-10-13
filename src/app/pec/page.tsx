@@ -44,11 +44,7 @@ export default function PecPage() {
 
         <div className={styles.container_equipos}>
           <InteractiveCarousel
-            images={[
-              equipoinstalado,
-              equipoGnc,
-              equipoGnc1
-            ]}
+            images={[equipoinstalado, equipoGnc, equipoGnc1]}
             dotClass={styles.dot}
             activeClass={styles.active}
           />
