@@ -23,11 +23,21 @@ export default function PecPage() {
       <main className={styles.container_ppl}>
         <div className={styles.container}>
           <div className={`${abyssinica.className} ${styles.content}`}>
-            <p className={styles.text}>Hace tu revisión técnica con nosotros</p>
-            <Link className={styles.btn} href="/oblea-reprueba">
+            <p className={styles.text}>¿Querés instalar un equipo?</p>
+            <Link className={styles.btn} href="/equipos">
               Consultar
             </Link>
           </div>
+          <Image
+            className={styles.img_equipos}
+            src={equipoinstalado}
+            alt="Equipo Instalado"
+            width={400}
+            height={400}
+          />
+        </div>
+
+        <div className={styles.container_equipos}>
           <div className={styles.container_img}>
             <Image
               className={styles.img_oblea}
@@ -38,19 +48,11 @@ export default function PecPage() {
               priority
             />
           </div>
-        </div>
-
-        <div className={styles.container_equipos}>
-          <Image
-            className={styles.img_equipos}
-            src={equipoinstalado}
-            alt="Equipo Instalado"
-            width={400}
-            height={400}
-          />
           <div className={`${abyssinica.className} ${styles.content_equipos}`}>
-            <p className={styles.text_equipos}>¿Querés instalar un equipo?</p>
-            <Link className={styles.btn_equipos} href="/equipos">
+            <p className={styles.text_equipos}>
+              Hace tu revisión técnica con nosotros
+            </p>
+            <Link className={styles.btn_equipos} href="/oblea-reprueba">
               Consultar
             </Link>
           </div>
