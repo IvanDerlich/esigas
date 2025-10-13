@@ -6,6 +6,8 @@ import centroReprueba1 from '@/images/centro-reprueba1.png';
 import centroReprueba2 from '@/images/centro-reprueba2.png';
 import centroReprueba3 from '@/images/centro-reprueba3.png';
 import centroReprueba4 from '@/images/centro-reprueba4.png';
+import equipoGnc from '@/images/equipo-gnc.jpg';
+import equipoGnc1 from '@/images/equipo-gnc-1.jpg';
 import { Footer } from '../components/layout/footer';
 import { Abyssinica_SIL } from 'next/font/google';
 import InteractiveCarousel from './components/InteractiveCarousel';
@@ -41,12 +43,14 @@ export default function PecPage() {
         </div>
 
         <div className={styles.container_equipos}>
-          <Image
-            className={styles.img_equipos}
-            src={equipoinstalado}
-            alt="Equipo Instalado"
-            width={400}
-            height={400}
+          <InteractiveCarousel
+            images={[
+              equipoinstalado,
+              equipoGnc,
+              equipoGnc1
+            ]}
+            dotClass={styles.dot}
+            activeClass={styles.active}
           />
           <div className={`${abyssinica.className} ${styles.content_equipos}`}>
             <p className={styles.text_equipos}>¿Querés instalar un equipo?</p>
