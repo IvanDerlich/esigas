@@ -8,22 +8,11 @@ type Props = {
   images: StaticImageData[];
   dotClass?: string;
   activeClass?: string;
-  width?: number;
-  height?: number;
-  radius?: string;
-  interval?: number;
 };
 
-const InteractiveCarousel = ({
-  images,
-  dotClass = styles.dot,
-  activeClass = styles.active,
-  width = 500,
-  height = 300,
-  radius = '0px',
-  interval = 5000,
-}: Props) => {
+const InteractiveCarousel = ({ images, dotClass, activeClass }: Props) => {
   const [current, setCurrent] = useState(0);
+  const interval = 5000;
 
   useEffect(() => {
     const slideInterval = setInterval(() => {
@@ -31,7 +20,7 @@ const InteractiveCarousel = ({
     }, interval);
 
     return () => clearInterval(slideInterval);
-  }, [images.length, interval]);
+  }, [images.length]);
 
   return (
     <div className={styles.carousel_container}>
@@ -44,9 +33,9 @@ const InteractiveCarousel = ({
             <Image
               src={img}
               alt={`Slide-${i}`}
-              width={width}
-              height={height}
-              style={{ borderRadius: radius }}
+              width={400}
+              height={400}
+              style={{ borderRadius: '15px', objectFit: 'cover' }}
               priority
             />
           </div>

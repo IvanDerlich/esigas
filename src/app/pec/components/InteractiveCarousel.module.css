@@ -10,6 +10,8 @@
 }
 
 .carousel_slide {
+  object-fit: cover;
+  max-width: 500px;
   min-width: 100%;
   display: flex;
   justify-content: center;
@@ -19,38 +21,6 @@
 .carousel_dots {
   text-align: center;
   margin-top: 10px;
-}
-
-.dot {
-  height: 12px;
-  width: 12px;
-  margin: 0 6px;
-  background-color: white;
-  border: 2px #62b26e solid;
-  border-radius: 50%;
-  display: inline-block;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.dot.active {
-  background-color: #62b26e;
-}
-
-.dot2 {
-  height: 12px;
-  width: 12px;
-  margin: 0 6px;
-  background-color: #62b26e;
-  border: 2px white solid;
-  border-radius: 50%;
-  display: inline-block;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.active2 {
-  background-color: white;
 }
 
 @media (min-width: 320px) and (max-width: 768px) {
@@ -72,9 +42,9 @@
   }
 
   .carousel_slide img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
+    width: 90%;
+    max-width: 380px;
+    object-fit: cover;
   }
 
   .carousel_dots {
