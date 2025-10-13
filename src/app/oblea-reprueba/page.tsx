@@ -50,7 +50,7 @@ export default function Page() {
             <div className={styles.serviceCard}>
               <Image src={ObleaGnc} alt="Oblea GNC" width={90} height={90} />
               <p className={styles.serviceDescription}>
-                Hacé tu oblea con nosotros
+                Hace la revisión técnica anual con nosotros
               </p>
               <p className={styles.serviceSubtitle}>
                 Renová tu oblea en minutos, con la seguridad que necesitas
@@ -69,7 +69,7 @@ export default function Page() {
             <div className={styles.serviceCard}>
               <Image src={Reprueba} alt="Reprueba" width={90} height={90} />
               <p className={styles.serviceDescription}>
-                Hacé la reprueba de tus cilindros con nosotros
+                Hace la reprueba de tus cilindros con nosotros
               </p>
               <p className={styles.serviceSubtitle}>
                 Revisamos y certificamos tus cilindros según normativa
