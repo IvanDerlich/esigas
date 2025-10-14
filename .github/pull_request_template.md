@@ -12,8 +12,6 @@ Screenshots or videos of the page previous to the work done
 
 Screenshots or videos of the page after the work done
 
-Place some screenshots of the work done
-
 ## Branch names
 
 If it's a fix, name the branch fix/[the name you want]
