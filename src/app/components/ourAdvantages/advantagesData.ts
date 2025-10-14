@@ -17,7 +17,7 @@ export const advantages: Advantage[] = [
   {
     title: 'Confiabilidad y Seguridad',
     description:
-      'Más de 30.000 vehículos convertidos avalan nuestros equipos, certificados y homologados bajo estrictas normas internacionales.',
+      'Más de 100.000 vehículos convertidos avalan nuestros equipos, certificados y homologados bajo estrictas normas internacionales.',
   },
   {
     title: 'Servicio y Postventa',
