@@ -55,7 +55,7 @@
   min-height: 80vh;
   height: auto;
   width: 100%;
-  padding: 30px 0px;
+  padding: 30px 10px;
 }
 
 .img_equipos {
@@ -168,6 +168,7 @@
   .text_equipos {
     font-size: 32px;
     padding-bottom: 10px;
+    width: 95%;
   }
 
   .img_oblea {

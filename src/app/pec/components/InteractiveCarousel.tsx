@@ -34,7 +34,7 @@ const InteractiveCarousel = ({ images, dotClass, activeClass }: Props) => {
               src={img}
               alt={`Slide-${i}`}
               width={400}
-              height={400}
+              height={350}
               style={{ borderRadius: '15px', objectFit: 'cover' }}
               priority
             />
