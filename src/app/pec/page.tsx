@@ -6,6 +6,8 @@ import centroReprueba1 from '@/images/centro-reprueba1.png';
 import centroReprueba2 from '@/images/centro-reprueba2.png';
 import centroReprueba3 from '@/images/centro-reprueba3.png';
 import centroReprueba4 from '@/images/centro-reprueba4.png';
+import equipoGnc from '@/images/equipo-gnc.jpg';
+import equipoGnc1 from '@/images/equipo-gnc-1.jpg';
 import { Footer } from '../components/layout/footer';
 import { Abyssinica_SIL } from 'next/font/google';
 import InteractiveCarousel from './components/InteractiveCarousel';
