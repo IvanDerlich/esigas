@@ -30,12 +30,10 @@ export default function PecPage() {
               Consultar
             </Link>
           </div>
-          <Image
-            className={styles.img_equipos}
-            src={equipoinstalado}
-            alt="Equipo Instalado"
-            width={400}
-            height={400}
+          <InteractiveCarousel
+            images={[equipoinstalado, equipoGnc, equipoGnc1]}
+            dotClass={styles.dot2}
+            activeClass={styles.active2}
           />
         </div>
 
