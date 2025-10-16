@@ -15,7 +15,7 @@
 
 .content {
   width: 29%;
-  height: 50%;
+  height: 100%;
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
@@ -211,7 +211,7 @@
 
   .content,
   .content_equipos {
-    width: 40%;
+    width: 45%;
   }
 
   .img_equipos {
