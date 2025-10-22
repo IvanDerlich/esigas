@@ -86,7 +86,7 @@ export default function Page() {
             </div>
           </div>
         </div>
-        <Contact showContact={false} />
+        <Contact formType="oblea-reprueba" showContact={true} />
         <Location />
         <SocialNetwork showNewsletter={false} />
         <Link
