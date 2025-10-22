@@ -8,7 +8,7 @@ interface EmailConfig {
   email: string;
   phone: string;
   message: string;
-  destinationEmail: string; // ✅ agregado
+  destinationEmail: string;
   user: string;
   pass: string;
   host: string;
@@ -56,13 +56,13 @@ export default async function sendEmailCore(
 
   try {
     await transporter.sendMail(mailOptions);
-    return ms.MESSAGE_SENT_SUCCESSFULLY; // ✅ devuelve string
+    return ms.MESSAGE_SENT_SUCCESSFULLY;
   } catch (error: unknown) {
     if (error instanceof Error) {
       console.error('Error enviando correo:', error.message);
     } else {
       console.error('Error desconocido al enviar correo:', error);
     }
-    return ms.INTERNAL_SERVER_ERROR; // ✅ devuelve string
+    return ms.INTERNAL_SERVER_ERROR;
   }
 }
