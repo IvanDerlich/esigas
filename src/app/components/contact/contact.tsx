@@ -27,14 +27,14 @@ export default function Contact({
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [isPending, startTransition] = useTransition();
 
-  if (!showContact) return null;
-
   useEffect(() => {
     if (status === 'success' || status === 'error') {
       const timer = setTimeout(() => setStatus('idle'), 5000);
       return () => clearTimeout(timer);
     }
   }, [status]);
+
+  if (!showContact) return null;
 
   async function handleSubmit(formData: FormData) {
     setStatus('idle');
@@ -143,7 +143,7 @@ export default function Contact({
                     className={styles.checkbox}
                     required
                   />
-                  Santa Fé
+                  Santa Fe
                 </label>
               </div>
             </div>
