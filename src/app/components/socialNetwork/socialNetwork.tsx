@@ -4,7 +4,6 @@ import styles from './socialNetwork.module.css';
 import Image from 'next/image';
 import Facebook from '@/images/fb.png';
 import Instagram from '@/images/ig.png';
-import Phone from '@/images/phone.png';
 import { Abyssinica_SIL } from 'next/font/google';
 import Line from '@/images/line.png';
 import Link from 'next/link';

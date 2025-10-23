@@ -182,7 +182,7 @@ export default function Page() {
           </div>
         </div>
         <div id="contacto">
-          <Contact showContact={false} showCheckboxes />
+          <Contact formType="estaciones" showContact={true} showCheckboxes />
         </div>
         <SocialNetwork showNewsletter={false} />
         <Link
