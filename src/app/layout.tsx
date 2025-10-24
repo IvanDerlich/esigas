@@ -16,18 +16,16 @@ export const metadata: Metadata = {
   title: 'Esigas',
   description:
     'Empresa Servicios de Ingeniería. Modernizamos tu experiencia con GNC: información, ahorro y tecnología en un solo lugar para que disfrutes un servicio eficiente y sustentable.',
-  metadataBase: new URL(
-    'https://esigas-git-bug-sw-77-alchemysts-projects.vercel.app/'
-  ),
+  metadataBase: new URL('https://esigas.com.ar'),
   openGraph: {
     title: 'Esigas',
     description:
       'Empresa Servicios de Ingeniería. Modernizamos tu experiencia con GNC: información, ahorro y tecnología en un solo lugar para que disfrutes un servicio eficiente y sustentable.',
-    url: 'https://esigas-git-bug-sw-77-alchemysts-projects.vercel.app/',
+    url: 'https://esigas.com.ar',
     siteName: 'Esigas',
     images: [
       {
-        url: 'https://esigas-git-bug-sw-77-alchemysts-projects.vercel.app/Image/logo-simple.png',
+        url: 'https://esigas.com.ar/Image/logo-simple.png',
         width: 1200,
         height: 630,
         alt: 'Logo Esigas',
@@ -41,9 +39,7 @@ export const metadata: Metadata = {
     title: 'Esigas',
     description:
       'Empresa Servicios de Ingeniería. Modernizamos tu experiencia con GNC: información, ahorro y tecnología en un solo lugar para que disfrutes un servicio eficiente y sustentable.',
-    images: [
-      'https://esigas-git-bug-sw-77-alchemysts-projects.vercel.app/Image/logo-simple.png',
-    ],
+    images: ['https://esigas.com.ar/Image/logo-simple.png'],
   },
 };
 
