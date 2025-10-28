@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: 'Esigas',
     images: [
       {
-        url: 'https://esigas.com.ar/Image/logo.png',
+        url: 'https://esigas.com.ar/Image/logo-simple.png',
         width: 1200,
         height: 630,
         alt: 'Logo Esigas',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: 'Esigas',
     description:
       'Empresa Servicios de Ingeniería. Modernizamos tu experiencia con GNC: información, ahorro y tecnología en un solo lugar para que disfrutes un servicio eficiente y sustentable.',
-    images: ['https://esigas.com.ar/Image/logo.png'],
+    images: ['https://esigas.com.ar/Image/logo-simple.png'],
   },
 };
 
