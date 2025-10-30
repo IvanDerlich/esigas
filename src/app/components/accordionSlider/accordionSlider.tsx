@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import styles from "./accordionSlider.module.css";
-import Image from "next/image";
+import { useState } from 'react';
+import styles from './accordionSlider.module.css';
+import Image from 'next/image';
 
 export default function AccordionSlider() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -10,60 +10,56 @@ export default function AccordionSlider() {
   const slides = [
     {
       id: 1,
-      icon: "/Image/logo-transporte-ecologico.png",
-      brand: "Transporte Ecológico",
-      name: "Movilidad Sustentable Esigas",
-      subtitle: "Reducción de emisiones y eficiencia energética",
+      icon: '/Image/logo-transporte-ecologico.png',
+      brand: 'Transporte Ecológico',
+      name: 'Movilidad Sustentable Esigas',
+      subtitle: 'Reducción de emisiones y eficiencia energética',
       specs: [
-        "Tecnología: Conversión a Gas Natural Comprimido (GNC)",
-        "Beneficio: Reducción del 90% en emisiones de CO₂",
-        "Ahorro: Hasta 45% menos costo operativo frente al diésel",
-        "Cobertura: Servicio logístico nacional e internacional",
+        'Tecnología: Conversión a Gas Natural Comprimido (GNC)',
+        'Beneficio: Reducción del 90% en emisiones de CO₂',
+        'Ahorro: Hasta 45% menos costo operativo frente al diésel',
+        'Cobertura: Servicio logístico nacional e internacional',
       ],
       badges: [
-        "Energía limpia",
-        "Transporte inteligente",
-        "Certificación ambiental ISO 14001",
+        'Energía limpia',
+        'Transporte inteligente',
+        'Certificación ambiental ISO 14001',
       ],
-      img: "/Image/transporte-carga-pesada.png",
+      img: '/Image/transporte-carga-pesada.png',
     },
     {
       id: 2,
-      icon: "/Image/logo-simple.png",
-      brand: "Equipos y Revisiones",
-      name: "Control y Certificación de Seguridad",
-      subtitle: "Revisión, mantenimiento y prueba de cilindros GNC",
+      icon: '/Image/logo-simple.png',
+      brand: 'Equipos y Revisiones',
+      name: 'Control y Certificación de Seguridad',
+      subtitle: 'Revisión, mantenimiento y prueba de cilindros GNC',
       specs: [
-        "Servicio: Verificación técnica obligatoria de equipos GNC",
-        "Pruebas: Hidráulicas y visuales con tecnología certificada",
-        "Norma: Cumplimiento de Resolución ENARGAS vigente",
-        "Trazabilidad: Registro digital completo y reportes en línea",
+        'Servicio: Verificación técnica obligatoria de equipos GNC',
+        'Pruebas: Hidráulicas y visuales con tecnología certificada',
+        'Norma: Cumplimiento de Resolución ENARGAS vigente',
+        'Trazabilidad: Registro digital completo y reportes en línea',
       ],
       badges: [
-        "Seguridad garantizada",
-        "Certificación oficial",
-        "Revisión y reprueba integral",
+        'Seguridad garantizada',
+        'Certificación oficial',
+        'Revisión y reprueba integral',
       ],
-      img: "/Image/revision-equipo.png",
+      img: '/Image/revision-equipo.png',
     },
     {
       id: 3,
-      icon: "/Image/logo-simple.png",
-      brand: "Estaciones",
-      name: "Red de Abastecimiento GNC",
-      subtitle: "Carga rápida, segura y eficiente para cada viaje",
+      icon: '/Image/logo-simple.png',
+      brand: 'Estaciones',
+      name: 'Red de Abastecimiento GNC',
+      subtitle: 'Carga rápida, segura y eficiente para cada viaje',
       specs: [
-        "Infraestructura: Estaciones de carga de alta presión GNC",
-        "Ubicación: Red nacional en expansión continua",
-        "Tecnología: Sistemas automáticos de medición y control",
-        "Servicio: Atención 24/7 con soporte técnico especializado",
+        'Infraestructura: Estaciones de carga de alta presión GNC',
+        'Ubicación: Red nacional en expansión continua',
+        'Tecnología: Sistemas automáticos de medición y control',
+        'Servicio: Atención 24/7 con soporte técnico especializado',
       ],
-      badges: [
-        "Alta disponibilidad",
-        "Energía limpia",
-        "Atención profesional",
-      ],
-      img: "/Image/estacion-rosario6.jpg",
+      badges: ['Alta disponibilidad', 'Energía limpia', 'Atención profesional'],
+      img: '/Image/estacion-rosario6.jpg',
     },
   ];
 
@@ -73,12 +69,11 @@ export default function AccordionSlider() {
 
   return (
     <div className={styles.sliderContainer}>
-
       <div className={styles.accordionSlider}>
         {slides.map((slide, i) => (
           <div
             key={slide.id}
-            className={`${styles.slide} ${activeIndex === i ? styles.active : ""}`}
+            className={`${styles.slide} ${activeIndex === i ? styles.active : ''}`}
             style={{ backgroundImage: `url(${slide.img})` }}
             onClick={() => handleClick(i)}
           >
@@ -135,19 +130,31 @@ export default function AccordionSlider() {
 
             <button
               className={styles.addButton}
-              onClick={(e) => {
+              onClick={e => {
                 e.stopPropagation();
                 handleClick(i);
               }}
             >
-              {activeIndex === i ? "−" : "+"}
+              {activeIndex === i ? '−' : '+'}
             </button>
           </div>
         ))}
       </div>
 
-      <button className={`${styles.navBtn} ${styles.prev}`} onClick={() => handleClick((activeIndex! - 1 + slides.length) % slides.length)}>‹</button>
-      <button className={`${styles.navBtn} ${styles.next}`} onClick={() => handleClick((activeIndex! + 1) % slides.length)}>›</button>
+      <button
+        className={`${styles.navBtn} ${styles.prev}`}
+        onClick={() =>
+          handleClick((activeIndex! - 1 + slides.length) % slides.length)
+        }
+      >
+        ‹
+      </button>
+      <button
+        className={`${styles.navBtn} ${styles.next}`}
+        onClick={() => handleClick((activeIndex! + 1) % slides.length)}
+      >
+        ›
+      </button>
     </div>
   );
 }

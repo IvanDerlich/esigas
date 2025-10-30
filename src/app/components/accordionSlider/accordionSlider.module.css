@@ -19,7 +19,9 @@
   background-size: cover;
   background-position: center;
   cursor: pointer;
-  transition: flex 1s cubic-bezier(0.25, 1, 0.5, 1), filter 0.4s ease;
+  transition:
+    flex 1s cubic-bezier(0.25, 1, 0.5, 1),
+    filter 0.4s ease;
   filter: grayscale(1) brightness(0.55);
   overflow: hidden;
 }
@@ -51,7 +53,10 @@
   gap: 6px;
   z-index: 3;
   color: white;
-  transition: opacity 0.5s ease, transform 0.5s ease, bottom 0.6s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease,
+    bottom 0.6s ease;
 }
 
 /* --- Header cerrado --- */
@@ -149,7 +154,9 @@
   color: #fff;
   opacity: 0;
   transform: translateY(40px);
-  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s ease;
+  transition:
+    transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+    opacity 0.8s ease;
 }
 
 .slide.active .slideContent {
@@ -264,7 +271,9 @@
   justify-content: center;
   z-index: 4;
   cursor: pointer;
-  transition: transform 0.25s ease, background 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease;
 }
 
 .addButton:hover {
@@ -300,7 +309,6 @@
 .next {
   right: 20px;
 }
-
 
 @media (max-width: 800px) {
   .sliderContainer {
@@ -416,7 +424,7 @@
   /* === Botón + / − === */
   .addButton {
     position: fixed;
-    bottom: 30px; 
+    bottom: 30px;
     right: 25px;
     width: 34px;
     height: 34px;
@@ -428,7 +436,9 @@
     align-items: center;
     justify-content: center;
     z-index: 999;
-    transition: transform 0.25s ease, background 0.25s ease;
+    transition:
+      transform 0.25s ease,
+      background 0.25s ease;
   }
 
   .addButton:hover {
@@ -441,6 +451,3 @@
     display: none;
   }
 }
-
-
-
