@@ -1,0 +1,446 @@
+/* === LAYOUT GENERAL === */
+.sliderContainer {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  background: #000;
+}
+
+.accordionSlider {
+  display: flex;
+  height: 100%;
+}
+
+/* === SLIDES === */
+.slide {
+  flex: 1;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  transition: flex 1s cubic-bezier(0.25, 1, 0.5, 1), filter 0.4s ease;
+  filter: grayscale(1) brightness(0.55);
+  overflow: hidden;
+}
+
+.slide:not(.active):hover {
+  filter: grayscale(0.2) brightness(0.9);
+}
+
+.slide.active {
+  flex: 3;
+  filter: grayscale(0) brightness(1);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent 60%);
+  pointer-events: none;
+}
+
+/* === HEADERS === */
+.headerClosed,
+.headerOpen {
+  position: absolute;
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  z-index: 3;
+  color: white;
+  transition: opacity 0.5s ease, transform 0.5s ease, bottom 0.6s ease;
+}
+
+/* --- Header cerrado --- */
+.headerClosed {
+  bottom: 60px;
+  opacity: 1;
+  pointer-events: auto;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.slide.active .headerClosed {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(0);
+}
+
+/* --- Header abierto --- */
+.headerOpen {
+  bottom: 300px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(30px);
+}
+
+.slide.active .headerOpen {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+  transition-delay: 0.1s;
+}
+
+/* --- Header cerrado --- */
+.brandClosed {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.85);
+  writing-mode: vertical-rl;
+  transform: rotate(180deg) translateY(0);
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  transform-origin: left center;
+}
+
+.slide.active .brandClosed {
+  writing-mode: horizontal-tb;
+  transform: rotate(390deg) translateY(0);
+  opacity: 0;
+  transition: transform 1.8s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: 0.4s;
+}
+
+.numberClosed {
+  font-size: 60px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* --- Header abierto --- */
+.numberOpen {
+  font-size: 60px;
+  font-weight: 300;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.brandOpen {
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+/* --- Aparición progresiva del número y marca --- */
+.slide.active .numberOpen {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.15s;
+}
+
+.slide.active .brandOpen {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.25s;
+}
+
+/* === CONTENIDO INTERNO === */
+.slideContent {
+  position: absolute;
+  bottom: 100px;
+  left: 40px;
+  right: 40px;
+  color: #fff;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.8s ease;
+}
+
+.slide.active .slideContent {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+/* Barrido progresivo */
+.name,
+.subtitle,
+.specRow,
+.badge {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.slide.active .name {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.35s;
+}
+
+.slide.active .subtitle {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.45s;
+}
+
+.slide.active .specRow:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.55s;
+}
+.slide.active .specRow:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.65s;
+}
+.slide.active .specRow:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.75s;
+}
+.slide.active .specRow:nth-child(4) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.85s;
+}
+
+.slide.active .badge:nth-child(1) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.95s;
+}
+.slide.active .badge:nth-child(2) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1.05s;
+}
+.slide.active .badge:nth-child(3) {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 1.15s;
+}
+
+.name {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 16px;
+  opacity: 0.85;
+  margin-bottom: 14px;
+}
+
+.specs {
+  font-size: 14px;
+}
+
+.badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.badge {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
+  padding: 10px 10px;
+  font-size: 12px;
+}
+
+/* === BOTÓN + / − === */
+.addButton {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #9fff6b;
+  color: #9fff6b;
+  font-size: 22px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.addButton:hover {
+  background: rgba(159, 255, 107, 0.15);
+  transform: scale(1.06);
+}
+
+/* === NAVEGACIÓN (flechas laterales) === */
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  z-index: 5;
+  transition: background 0.3s ease;
+}
+
+.navBtn:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+
+@media (max-width: 800px) {
+  .sliderContainer {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #000;
+  }
+
+  .accordionSlider {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  /* === Slides en forma vertical === */
+  .slide {
+    flex: 1;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    overflow: hidden;
+    transition:
+      flex 1s cubic-bezier(0.25, 1, 0.5, 1),
+      filter 0.6s ease;
+    filter: grayscale(1) brightness(0.55);
+  }
+
+  /* === Slide activa === */
+  .slide.active {
+    flex: 4;
+    filter: grayscale(0) brightness(1);
+  }
+
+  /* === Header cerrado === */
+  .headerClosed {
+    bottom: 25px;
+    left: 25px;
+    gap: 8px;
+  }
+
+  .brandClosed {
+    writing-mode: horizontal-tb;
+    transform: none;
+    font-size: 13px;
+  }
+
+  .numberClosed {
+    font-size: 42px;
+  }
+
+  /* === Header abierto === */
+  .headerOpen {
+    top: 25px;
+    left: 25px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+
+  .slide.active .headerOpen {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+  }
+
+  /* === Contenido === */
+  .slideContent {
+    position: absolute;
+    bottom: 80px;
+    left: 25px;
+    right: 25px;
+    color: #fff;
+    opacity: 0;
+    transform: translateY(40px);
+    transition:
+      transform 0.8s cubic-bezier(0.25, 1, 0.5, 1),
+      opacity 0.8s ease;
+  }
+
+  .slide.active .slideContent {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.25s;
+  }
+
+  /* === Textos === */
+  .name {
+    font-size: 22px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    margin-bottom: 12px;
+  }
+
+  .specs {
+    font-size: 13px;
+  }
+
+  .badges {
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  .badge {
+    font-size: 11px;
+  }
+
+  /* === Botón + / − === */
+  .addButton {
+    position: fixed;
+    bottom: 30px; 
+    right: 25px;
+    width: 34px;
+    height: 34px;
+    border: 2px solid #9fff6b;
+    color: #9fff6b;
+    font-size: 20px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    transition: transform 0.25s ease, background 0.25s ease;
+  }
+
+  .addButton:hover {
+    background: rgba(159, 255, 107, 0.15);
+    transform: scale(1.05);
+  }
+
+  /* === Navegación === */
+  .navBtn {
+    display: none;
+  }
+}
+
+
+
