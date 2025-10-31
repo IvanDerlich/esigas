@@ -12,10 +12,10 @@ export default function AccordionSlider() {
       id: 1,
       icon: '/Image/logo-transporte-ecologico.png',
       brand: 'Transporte Ecológico',
-      name: 'Movilidad Sustentable Esigas',
+      name: 'Movilidad Sustentable',
       subtitle: 'Reducción de emisiones y eficiencia energética',
       specs: [
-        'Tecnología: Conversión a Gas Natural Comprimido (GNC)',
+        'Tecnología: Conversión a Gas Natural Comprimido',
         'Beneficio: Reducción del 90% en emisiones de CO₂',
         'Ahorro: Hasta 45% menos costo operativo frente al diésel',
         'Cobertura: Servicio logístico nacional e internacional',
@@ -26,25 +26,27 @@ export default function AccordionSlider() {
         'Certificación ambiental ISO 14001',
       ],
       img: '/Image/transporte-carga-pesada.png',
+      url: 'https://transporteecologico.com.ar/',
     },
     {
       id: 2,
       icon: '/Image/logo-simple.png',
-      brand: 'Equipos y Revisiones',
-      name: 'Control y Certificación de Seguridad',
-      subtitle: 'Revisión, mantenimiento y prueba de cilindros GNC',
+      brand: 'Equipos, Revisiones y Repruebas',
+      name: 'Certificación de Seguridad',
+      subtitle: 'Revisión y prueba de equipos GNC',
       specs: [
-        'Servicio: Verificación técnica obligatoria de equipos GNC',
-        'Pruebas: Hidráulicas y visuales con tecnología certificada',
-        'Norma: Cumplimiento de Resolución ENARGAS vigente',
-        'Trazabilidad: Registro digital completo y reportes en línea',
+        'Verificación técnica obligatoria',
+        'Pruebas hidráulicas y visuales certificadas',
+        'Cumple con norma ENARGAS',
+        'Registro digital y reportes online',
       ],
       badges: [
         'Seguridad garantizada',
         'Certificación oficial',
-        'Revisión y reprueba integral',
+        'Revisión integral',
       ],
       img: '/Image/revision-equipo.png',
+      url: 'https://www.esigas.com.ar/pec',
     },
     {
       id: 3,
@@ -53,13 +55,14 @@ export default function AccordionSlider() {
       name: 'Red de Abastecimiento GNC',
       subtitle: 'Carga rápida, segura y eficiente para cada viaje',
       specs: [
-        'Infraestructura: Estaciones de carga de alta presión GNC',
+        'Infraestructura: Estaciones de carga de alta presión',
         'Ubicación: Red nacional en expansión continua',
         'Tecnología: Sistemas automáticos de medición y control',
-        'Servicio: Atención 24/7 con soporte técnico especializado',
+        'Servicio: Atención especializada',
       ],
       badges: ['Alta disponibilidad', 'Energía limpia', 'Atención profesional'],
       img: '/Image/estacion-rosario6.jpg',
+      url: 'https://www.esigas.com.ar/estaciones',
     },
   ];
 
@@ -125,6 +128,15 @@ export default function AccordionSlider() {
                     {badge}
                   </span>
                 ))}
+              </div>
+
+              <div>
+                <button
+                  onClick={() => window.open(slide.url, '_blank')}
+                  className={styles.learnMoreButton}
+                >
+                  Ver más
+                </button>
               </div>
             </div>
 
