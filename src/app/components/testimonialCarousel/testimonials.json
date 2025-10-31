@@ -5,6 +5,11 @@
     "image": "/Image/testimonio.png"
   },
   {
+    "type": "instagram",
+    "igUrl": "https://www.instagram.com/reel/DPwOZ-hjqmS/?igsh=MWJpMHowOXV4OHVqdg%3D%3D",
+    "image": "/Image/testimonio2.png"
+  },
+  {
     "type": "text",
     "title": "Excelente Atención",
     "comment": "Excelente la atención de todo el personal, responsabilidad y compromiso en resolver el problema que traia de otro taller, y valoran el tiempo de uno, lo resolvieron rapidísimo y quedó perfecto y totalmente razonable el precio. Absolutamente recomendable",
