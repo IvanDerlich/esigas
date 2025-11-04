@@ -5,86 +5,137 @@
   justify-content: center;
   align-items: center;
   gap: 20px;
-  padding: 30px;
   background-color: white;
-}
-
-.ubicationContent {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 50px;
-  background-color: white;
-  height: 350px;
-}
-
-.ubicationCard {
-  width: 350px;
-  height: 200px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  color: #231f20;
-  gap: 10px;
+  height: auto;
 }
 
 .ubicationTitle {
   font-size: 45px;
   font-weight: 100;
   color: #62b26e;
+  padding-bottom: 20px;
+}
+
+.ubicationContent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+  padding: 20px 0;
+}
+
+.ubicationCard {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  border: 1px solid #62b26e;
+  border-radius: 12px;
+  background-color: #ffffff;
+  overflow: hidden;
+  height: 240px;
+  box-shadow:
+    0px 3px 6px rgba(0, 0, 0, 0.1),
+    8px 15px 8px rgba(0, 0, 0, 0.25);
+}
+
+.ubicationCard > div:first-child {
+  flex: 1;
+  padding: 25px 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #fff;
 }
 
 .ubicationTitleCard {
-  font-size: 40px;
-  font-weight: 100;
-  color: #231f20;
+  font-size: 28px;
+  color: #2c2c2c;
+  margin-bottom: 15px;
 }
 
-.ubicationText {
-  display: flex;
-  flex-direction: column;
-  font-size: 20px;
+.ubicationItem {
+  margin-bottom: 12px;
 }
 
 .green {
   color: #62b26e;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 4px;
 }
 
-@media screen and (max-width: 768px) {
+.value {
+  color: #3a3a3a;
+  font-size: 18px;
+}
+
+.mapContainer {
+  flex-basis: 55%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0 12px 12px 0;
+}
+
+.map {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+@media screen and (max-width: 1023px) {
   .ubicationContainer {
-    font-size: 18px;
-    flex-direction: column;
-    padding: 20px;
-    text-align: center;
+    gap: 10px;
+    padding-bottom: 30px;
   }
 
   .ubicationContent {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    padding: 30px 20px;
-    height: auto;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: stretch;
+    padding: 20px 15px;
   }
 
   .ubicationCard {
-    width: 100%;
-    max-width: 320px;
+    width: 307px;
+    flex-direction: column;
     height: auto;
-    align-items: center;
-    text-align: center;
+  }
+
+  .mapContainer {
+    flex-basis: 100%;
+    height: 300px;
+    border-radius: 0 0 12px 12px;
+  }
+
+  .ubicationImage {
+    width: 25%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 600px) {
+  .ubicationContainer {
+    flex-direction: column;
+    gap: 10px;
+    padding-bottom: 30px;
+  }
+
+  .ubicationImage {
+    width: 220px;
+    order: 0;
   }
 
   .ubicationTitle {
-    font-size: 30px;
+    order: 1;
+    font-size: 32px;
+    padding: 0;
   }
 
-  .ubicationTitleCard {
-    font-size: 26px;
-  }
-
-  .ubicationText {
-    font-size: 16px;
-    align-items: center;
+  .ubicationContainer img:last-of-type {
+    order: 2;
   }
 }
