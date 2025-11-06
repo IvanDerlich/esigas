@@ -30,7 +30,7 @@ export default function AccordionSlider() {
     },
     {
       id: 2,
-      icon: '/Image/logo-simple.png',
+      icon: '/Image/logo.png',
       brand: 'Equipos, Revisiones y Repruebas',
       name: 'Certificación de Seguridad',
       subtitle: 'Revisión y prueba de equipos GNC',
@@ -50,7 +50,7 @@ export default function AccordionSlider() {
     },
     {
       id: 3,
-      icon: '/Image/logo-simple.png',
+      icon: '/Image/logo.png',
       brand: 'Estaciones',
       name: 'Red de Abastecimiento GNC',
       subtitle: 'Carga rápida, segura y eficiente para cada viaje',
@@ -91,8 +91,8 @@ export default function AccordionSlider() {
                   src={slide.icon}
                   alt={`${slide.brand} icon`}
                   className={styles.iconImage}
-                  width={65}
-                  height={55}
+                  width={80}
+                  height={60}
                 />
               </span>
             </div>
@@ -103,8 +103,8 @@ export default function AccordionSlider() {
                   src={slide.icon}
                   alt={`${slide.brand} icon`}
                   className={styles.iconImage}
-                  width={65}
-                  height={55}
+                  width={80}
+                  height={60}
                 />
               </span>
               <span className={styles.brandOpen}>{slide.brand}</span>
