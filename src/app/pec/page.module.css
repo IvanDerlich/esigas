@@ -172,7 +172,6 @@
 
   .img_oblea {
     width: 95%;
-    height: auto;
     padding-top: 10px;
   }
 
@@ -204,8 +203,8 @@
 
 @media (min-width: 769px) and (max-width: 1084px) {
   .container {
-    height: 60vh;
-    padding: 0 20px;
+    height: auto;
+    padding: 20px 0;
   }
 
   .content,
