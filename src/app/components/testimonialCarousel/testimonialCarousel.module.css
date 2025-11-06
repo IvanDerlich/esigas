@@ -50,7 +50,7 @@
   gap: 25px;
   width: 100%;
   position: relative;
-  padding: 20px 0;
+  padding: 20px;
 }
 
 .testimonial {
@@ -169,6 +169,27 @@
   color: blue;
 }
 
+.arrowButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+  z-index: 5;
+}
+
+.arrowWrapper {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.arrowWrapper.hidden {
+  visibility: hidden;
+}
+
 @media screen and (max-width: 768px) {
   .container {
     height: auto;
@@ -251,6 +272,46 @@
   .instagramButton {
     font-size: 16px;
     padding: 8px 12px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .testimonialsContent {
+    position: relative;
+    padding-bottom: 90px;
+  }
+
+  .arrowWrapper {
+    position: absolute;
+    bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .arrowLeft {
+    left: 34%;
+    transform: translateX(-50%);
+  }
+
+  .arrowRight {
+    left: 66%;
+    transform: translateX(-50%);
+  }
+
+  .arrowButton {
+    position: static;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition:
+      transform 0.2s ease,
+      filter 0.2s ease;
+  }
+
+  .arrowButton:hover,
+  .arrowButton:active {
+    filter: brightness(1.2);
   }
 }
 

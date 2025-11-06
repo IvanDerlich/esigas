@@ -61,7 +61,7 @@ const TestimonialCarousel = () => {
       </div>
       <div className={styles.testimonialsContent}>
         <div
-          className={`${styles.arrowWrapper} ${start > 0 ? '' : styles.hidden}`}
+          className={`${styles.arrowWrapper} ${styles.arrowLeft} ${start > 0 ? '' : styles.hidden}`}
         >
           <button className={styles.arrowButton} onClick={handlePrev}>
             <Image src={leftArrow} alt="Anterior" width={40} height={40} />
@@ -150,7 +150,7 @@ const TestimonialCarousel = () => {
         )}
 
         <div
-          className={`${styles.arrowWrapper} ${start < maxStartIndex ? '' : styles.hidden}`}
+          className={`${styles.arrowWrapper} ${styles.arrowRight} ${start < maxStartIndex ? '' : styles.hidden}`}
         >
           <button className={styles.arrowButton} onClick={handleNext}>
             <Image src={rightArrow} alt="Siguiente" width={40} height={40} />
