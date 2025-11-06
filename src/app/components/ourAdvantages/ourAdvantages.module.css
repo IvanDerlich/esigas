@@ -13,7 +13,7 @@
 .h2 {
   color: #62b26e;
   font-size: 50px;
-  font-weight: 100;
+  font-weight: 600;
   text-align: center;
 }
 
@@ -25,16 +25,20 @@
   border: 3px solid #62b26e;
   border-radius: 10px;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .pTitle {
   color: white;
   font-size: 30px;
+  font-weight: 800;
 }
 
 .pDescription {
   color: white;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .truncate {
@@ -72,7 +76,7 @@
   }
 
   .pDescription {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .linkLike {
@@ -88,20 +92,20 @@
   }
 
   .h2 {
-    font-size: 28px;
+    font-size: 35px;
   }
 
   .description {
     width: 90%;
-    padding: 12px;
+    padding: 14px;
   }
 
   .pTitle {
-    font-size: 20px;
+    font-size: 22px;
   }
 
   .pDescription {
-    font-size: 13px;
+    font-size: 15px;
   }
 }
 
