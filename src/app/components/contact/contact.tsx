@@ -39,6 +39,7 @@ export default function Contact({
   async function handleSubmit(formData: FormData) {
     setStatus('idle');
     formData.append('formType', formType);
+    formData.append('origin', window.location.pathname);
 
     startTransition(async () => {
       try {
