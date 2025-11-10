@@ -6,6 +6,26 @@
   background-color: white;
 }
 
+.container_video {
+  width: 70%;
+  height: 90vh;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px #939393 solid;
+  border-bottom: 1px #939393 solid;
+}
+
+.video {
+  width: 90%;
+  height: 500px;
+  max-width: 900px;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
 .home {
   min-height: auto;
   background-color: #62b26eb3;
@@ -56,7 +76,6 @@
   width: 70%;
   margin-top: 50px;
   padding-top: 50px;
-  border-top: 1px #939393 solid;
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
@@ -120,6 +139,11 @@
 }
 
 @media (min-width: 320px) and (max-width: 768px) {
+  .video {
+    width: 100%;
+    height: auto;
+    max-height: 520px;
+  }
   .home {
     flex-direction: column;
     align-items: center;
