@@ -17,7 +17,6 @@ export default function Home() {
   return (
     <>
       <main className={styles.container_ppl}>
-        <AccordionSlider />
         <div className={styles.container_video}>
           <video
             src="https://zodqmpsbkn9hean6.public.blob.vercel-storage.com/Video%20Institucional%20Esigas.mp4"
@@ -30,6 +29,7 @@ export default function Home() {
           />
         </div>
 
+        <AccordionSlider />
         <div className={styles.container_p}>
           <div className={styles.mision}>
             <p className={`${abyssinica.className} ${styles.subtitle}`}>

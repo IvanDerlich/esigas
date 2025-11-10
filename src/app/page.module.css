@@ -9,7 +9,7 @@
 .container_video {
   width: 70%;
   height: 90vh;
-  margin-top: 60px;
+  margin: 40px 0;
   display: flex;
   justify-content: center;
   align-items: center;
