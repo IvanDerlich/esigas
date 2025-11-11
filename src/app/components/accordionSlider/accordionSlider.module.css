@@ -24,7 +24,6 @@
   transition:
     flex 1s cubic-bezier(0.25, 1, 0.5, 1),
     filter 0.4s ease;
-  filter: grayscale(1) brightness(0.55);
   overflow: hidden;
 }
 
@@ -40,6 +39,11 @@
 .overlay {
   position: absolute;
   inset: 0;
+  background: transparent;
+  pointer-events: none;
+}
+
+.slide.active .overlay {
   background: linear-gradient(
     to top,
     rgba(0, 0, 0, 0.85) 0%,
@@ -47,7 +51,6 @@
     rgba(0, 0, 0, 0.2) 80%,
     transparent 100%
   );
-  pointer-events: none;
 }
 
 .learnMoreButton {
@@ -228,16 +231,19 @@
   transform: translateY(0);
   transition-delay: 0.55s;
 }
+
 .slide.active .specRow:nth-child(2) {
   opacity: 1;
   transform: translateY(0);
   transition-delay: 0.65s;
 }
+
 .slide.active .specRow:nth-child(3) {
   opacity: 1;
   transform: translateY(0);
   transition-delay: 0.75s;
 }
+
 .slide.active .specRow:nth-child(4) {
   opacity: 1;
   transform: translateY(0);
@@ -249,11 +255,13 @@
   transform: translateY(0);
   transition-delay: 0.95s;
 }
+
 .slide.active .badge:nth-child(2) {
   opacity: 1;
   transform: translateY(0);
   transition-delay: 1.05s;
 }
+
 .slide.active .badge:nth-child(3) {
   opacity: 1;
   transform: translateY(0);
@@ -302,6 +310,7 @@
 
 .iconImage {
   filter: drop-shadow(0 0 2px rgba(0, 0, 0, 1));
+  object-fit: contain;
 }
 
 /* === BOTÓN + / − === */
@@ -324,6 +333,7 @@
   transition:
     transform 0.25s ease,
     background 0.25s ease;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 1));
 }
 
 .addButton:hover {
@@ -387,7 +397,6 @@
     transition:
       flex 1s cubic-bezier(0.25, 1, 0.5, 1),
       filter 0.6s ease;
-    filter: grayscale(1) brightness(0.55);
   }
 
   /* === Slide activa === */
@@ -407,6 +416,11 @@
     writing-mode: horizontal-tb;
     transform: none;
     font-size: 12px;
+    text-shadow:
+      -1px -1px 0 black,
+      1px -1px 0 black,
+      -1px 1px 0 black,
+      1px 1px 0 black;
   }
 
   .numberClosed {
@@ -512,9 +526,6 @@
 
   /* === Botón + / − === */
   .addButton {
-    position: fixed;
-    bottom: 25px;
-    right: 20px;
     width: 32px;
     height: 32px;
     border: 2px solid #9fff6b;
