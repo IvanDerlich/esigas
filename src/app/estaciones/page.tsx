@@ -18,7 +18,7 @@ import styles from './page.module.css';
 import { Abyssinica_SIL } from 'next/font/google';
 import { OurAdvantages } from '../components/ourAdvantages/ourAdvantages';
 import CarouselMobile from '../components/carouselMobile/carouselMobile';
-import NavbarTwo from '../components/header/navBarTwo';
+import NavbarTwo from '../components/header/navBarEstaciones';
 import Contact from '../components/contact/contact';
 import SocialNetwork from '../components/socialNetwork/socialNetwork';
 import { Footer } from '../components/layout/footer';
