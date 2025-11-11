@@ -55,6 +55,8 @@ export default function Navbar({ links }: NavbarProps) {
           <span></span>
         </label>
 
+        <div className={styles.menuBackground}></div>
+
         <nav className={`${montserrat.className} ${styles.nav}`}>
           {links.map(({ label, href }) => (
             <a
