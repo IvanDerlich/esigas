@@ -46,7 +46,7 @@ export default function AccordionSlider() {
         'Revisión integral',
       ],
       img: '/Image/revision-equipo.png',
-      url: 'https://www.esigas.com.ar/pec',
+      url: '/pec',
     },
     {
       id: 3,
@@ -62,7 +62,7 @@ export default function AccordionSlider() {
       ],
       badges: ['Alta disponibilidad', 'Energía limpia', 'Atención profesional'],
       img: '/Image/estacion-rosario6.jpg',
-      url: 'https://www.esigas.com.ar/estaciones',
+      url: '/estaciones',
     },
   ];
 
@@ -132,7 +132,7 @@ export default function AccordionSlider() {
 
               <div>
                 <button
-                  onClick={() => window.open(slide.url, '_blank')}
+                  onClick={() => window.open(slide.url, '_self')}
                   className={styles.learnMoreButton}
                 >
                   Ver más
