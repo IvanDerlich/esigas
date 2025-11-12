@@ -119,6 +119,29 @@
   color: black;
 }
 
+.container_contacto {
+  background-color: #eeeeee;
+  width: 100%;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.title_contacto {
+  font-size: 40px;
+  font-weight: 100;
+  color: #62b26e;
+  text-align: center;
+}
+
+.email_contacto {
+  font-size: 20px;
+  font-weight: 800;
+  color: #62b26e;
+}
+
 @media (min-width: 320px) and (max-width: 768px) {
   .home {
     flex-direction: column;
@@ -205,6 +228,10 @@
   .descripcion {
     width: 80%;
     font-size: 17px;
+  }
+
+  .container_contacto {
+    margin-top: 30px;
   }
 }
 
