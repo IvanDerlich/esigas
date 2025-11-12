@@ -16,6 +16,7 @@ interface EmailConfig {
   secure: boolean;
   origin?: string;
   sucursal?: string;
+  sourceForm?: string;
 }
 
 export default async function sendEmailCore(
@@ -34,6 +35,7 @@ export default async function sendEmailCore(
     secure,
     origin,
     sucursal,
+    sourceForm,
   } = config;
 
   const transporter = nodemailer.createTransport({
@@ -50,6 +52,7 @@ export default async function sendEmailCore(
     subject: 'Nuevo mensaje desde el formulario de contacto',
     html: `
       <h2>Nuevo mensaje de contacto</h2>
+      ${sourceForm ? `<p><b>Formulario de origen:</b> ${sourceForm}</p>` : ''}
       ${origin ? `<p><b>Página de origen:</b> ${origin}</p>` : ''}
       ${sucursal ? `<p><b>Sucursal:</b> ${sucursal}</p>` : ''}
       <p><b>Nombre:</b> ${name}</p>
