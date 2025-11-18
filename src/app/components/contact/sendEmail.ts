@@ -10,6 +10,8 @@ export async function sendEmail(formData: FormData): Promise<string> {
   const message = formData.get('message')?.toString().trim() || '';
   const formType = formData.get('formType')?.toString() || '';
   const sucursal = formData.get('sucursal')?.toString() || '';
+  const sourceURL = formData.get('sourceURL')?.toString() || '';
+  const sourceForm = formData.get('sourceForm')?.toString() || '';
 
   if (!name) return ms.NAME_EMPTY;
   if (!email) return ms.EMAIL_EMPTY;
@@ -62,5 +64,8 @@ export async function sendEmail(formData: FormData): Promise<string> {
     host: EMAIL_HOST,
     port: parseInt(EMAIL_PORT),
     secure: EMAIL_SECURE === 'true',
+    origin: sourceURL,
+    sucursal,
+    sourceForm,
   });
 }
