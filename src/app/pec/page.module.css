@@ -47,6 +47,10 @@
   align-items: center;
 }
 
+.img_oblea {
+  object-fit: contain;
+}
+
 .container_equipos {
   background-color: white;
   display: flex;
@@ -172,7 +176,7 @@
 
   .img_oblea {
     width: 95%;
-    padding-top: 10px;
+    height: 290px;
   }
 
   .btn,
