@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import styles from './navBar.module.css';
+import styles from './navBarEstaciones.module.css';
 import logo from '@/images/logo.png';
 import { Montserrat } from 'next/font/google';
 import { useRef, useState } from 'react';
