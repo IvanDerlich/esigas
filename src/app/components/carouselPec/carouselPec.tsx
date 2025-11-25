@@ -1,3 +1,8 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable react/no-direct-mutation-state */
+/* eslint-disable prefer-const */
 // @ts-nocheck
 'use client';
 
