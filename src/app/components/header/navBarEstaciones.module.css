@@ -8,7 +8,7 @@
 }
 
 .headerContent {
-  background-color: #62b26eb3;
+  background-color: #06650B;
   height: 80px;
   display: flex;
   align-items: center;
@@ -21,7 +21,7 @@
   display: flex;
   align-items: center;
   gap: 20px;
-  color: #231f20;
+  color: white;
   border-radius: 50px;
   padding: 13px 15px;
 }
@@ -92,7 +92,7 @@
     top: 80px;
     left: 0;
     width: 100%;
-    background-color: #62b26eb3;
+    background-color: #06650B;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     align-items: center;
@@ -114,7 +114,7 @@
     clip-path: inset(0 0 0 0);
     opacity: 1;
     padding: 15px;
-    background: linear-gradient(to bottom, #62b26eb3, #f0f0f0);
+    background: linear-gradient(to bottom, #06650B, #f0f0f0);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     z-index: 999;

@@ -81,7 +81,7 @@
 }
 
 .subtitle {
-  color: #62b26e;
+  color: #06650B;
   font-size: 50px;
   text-align: start;
   padding-bottom: 30px;
@@ -93,7 +93,7 @@
 
 .container_h2 {
   height: 130px;
-  background-color: #62b26e;
+  background-color: #06650B;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -132,14 +132,14 @@
 .title_contacto {
   font-size: 40px;
   font-weight: 100;
-  color: #62b26e;
+  color: #06650B;
   text-align: center;
 }
 
 .email_contacto {
   font-size: 20px;
   font-weight: 800;
-  color: #62b26e;
+  color: #06650B;
 }
 
 @media (min-width: 320px) and (max-width: 768px) {

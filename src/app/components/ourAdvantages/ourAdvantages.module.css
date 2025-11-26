@@ -11,7 +11,7 @@
 }
 
 .h2 {
-  color: #62b26e;
+  color: #06650B;
   font-size: 50px;
   font-weight: 600;
   text-align: center;
@@ -21,8 +21,8 @@
   width: 75%;
   max-width: 800px;
   height: auto;
-  background-color: #62b26eb3;
-  border: 3px solid #62b26e;
+  background-color: #06650B80;
+  border: 3px solid #06650B;
   border-radius: 10px;
   padding: 20px;
   display: flex;

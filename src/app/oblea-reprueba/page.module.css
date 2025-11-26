@@ -8,7 +8,7 @@
 }
 
 .headerContent {
-  background-color: #62b26eb3;
+  background-color: #06650B;
   height: 80px;
   display: flex;
   align-items: center;
@@ -113,7 +113,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #62b26e;
+  background-color: #06650B;
   color: white;
   padding: 10px 50px;
   border-radius: 10px;
@@ -150,7 +150,7 @@
     top: 80px;
     left: 0;
     width: 100%;
-    background-color: #62b26eb3;
+    background-color: #06650B;
     padding: 20px 0;
     align-items: center;
     border-radius: 0px;
