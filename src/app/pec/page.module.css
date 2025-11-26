@@ -4,7 +4,7 @@
 }
 
 .container {
-  background-color: #06650B;
+  background-color: #06650b;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -32,7 +32,7 @@
   background-color: white;
   width: 250px;
   height: 60px;
-  color: #06650B;
+  color: #06650b;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,12 +78,12 @@
 
 .text_equipos {
   font-size: 60px;
-  color: #06650B;
+  color: #06650b;
   text-align: center;
 }
 
 .btn_equipos {
-  background-color: #06650B;
+  background-color: #06650b;
   width: 250px;
   height: 60px;
   color: white;
@@ -120,7 +120,7 @@
   width: 12px;
   margin: 0 6px;
   background-color: white;
-  border: 2px #06650B solid;
+  border: 2px #06650b solid;
   border-radius: 50%;
   display: inline-block;
   cursor: pointer;
@@ -128,14 +128,14 @@
 }
 
 .dot.active {
-  background-color: #06650B;
+  background-color: #06650b;
 }
 
 .dot2 {
   height: 12px;
   width: 12px;
   margin: 0 6px;
-  background-color: #06650B;
+  background-color: #06650b;
   border: 2px white solid;
   border-radius: 50%;
   display: inline-block;

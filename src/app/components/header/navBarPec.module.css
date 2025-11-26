@@ -8,7 +8,7 @@
 }
 
 .headerContent {
-  background-color: #06650B;
+  background-color: #06650b;
   height: 80px;
   display: flex;
   align-items: center;
@@ -47,7 +47,7 @@
 }
 
 .active {
-  color: #06650B;
+  color: #06650b;
 }
 
 .menuBackground {
@@ -93,7 +93,7 @@
     top: 80px;
     left: 0;
     width: 100%;
-    background-color: #06650B;
+    background-color: #06650b;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     align-items: center;
@@ -115,7 +115,7 @@
     clip-path: inset(0 0 0 0);
     opacity: 1;
     padding: 15px;
-    background: linear-gradient(to bottom, #06650B, #f0f0f0);
+    background: linear-gradient(to bottom, #06650b, #f0f0f0);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     z-index: 999;

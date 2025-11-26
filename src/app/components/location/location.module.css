@@ -12,7 +12,7 @@
 .ubicationTitle {
   font-size: 45px;
   font-weight: 100;
-  color: #06650B;
+  color: #06650b;
   padding-bottom: 20px;
 }
 
@@ -32,7 +32,7 @@
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  border: 1px solid #06650B;
+  border: 1px solid #06650b;
   border-radius: 12px;
   background-color: #ffffff;
   overflow: hidden;
@@ -62,7 +62,7 @@
 }
 
 .green {
-  color: #06650B;
+  color: #06650b;
   font-weight: 600;
   font-size: 18px;
   margin-bottom: 4px;

@@ -12,7 +12,7 @@
   background-color: white;
   font-size: 30px;
   font-weight: 100;
-  color: #06650B;
+  color: #06650b;
 }
 
 .financiacionContainer {
@@ -36,7 +36,7 @@
 }
 
 .equiposBox {
-  border: 3px solid #06650B;
+  border: 3px solid #06650b;
   border-radius: 15px;
   width: 150px;
   height: 150px;
@@ -65,7 +65,7 @@
 }
 
 .equiposLink {
-  background-color: #06650B;
+  background-color: #06650b;
   color: white;
   height: 50px;
   width: 500px;

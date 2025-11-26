@@ -7,7 +7,7 @@
 
 .containerTitle {
   height: 130px;
-  background-color: #06650B;
+  background-color: #06650b;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,7 +48,7 @@
   width: 95%;
   padding: 2rem;
   margin: 2rem auto;
-  border: 3px solid #06650B;
+  border: 3px solid #06650b;
   border-radius: 16px;
   background-color: #fff;
   height: auto;
@@ -65,8 +65,8 @@
 }
 
 .active {
-  color: #06650B;
-  border-bottom: 2px solid #06650B;
+  color: #06650b;
+  border-bottom: 2px solid #06650b;
 }
 
 .inputGroup {
@@ -113,7 +113,7 @@
 .output {
   margin-top: 1.5rem;
   font-size: 19px;
-  border: 2px solid #06650B;
+  border: 2px solid #06650b;
   height: auto;
   display: flex;
   align-items: center;
@@ -133,7 +133,7 @@
 }
 
 .green {
-  color: #06650B;
+  color: #06650b;
   padding: 0px 10px;
 }
 
@@ -156,7 +156,7 @@
 }
 
 .btn {
-  background-color: #06650B;
+  background-color: #06650b;
   color: white;
   padding: 13px 60px;
   border: none;
@@ -167,13 +167,13 @@
 }
 
 .btn:hover {
-  background-color: #06650B;
+  background-color: #06650b;
 }
 
 .link {
   background: none;
   border: none;
-  color: #06650B;
+  color: #06650b;
   text-decoration: underline;
   cursor: pointer;
   font-weight: bold;
