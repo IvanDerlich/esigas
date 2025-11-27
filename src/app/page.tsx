@@ -17,6 +17,18 @@ export default function Home() {
   return (
     <>
       <main className={styles.container_ppl}>
+        <div className={styles.container_video}>
+          <video
+            src="https://zodqmpsbkn9hean6.public.blob.vercel-storage.com/Video%20Institucional%20Esigas.mp4"
+            controls
+            autoPlay
+            loop
+            muted
+            playsInline
+            className={styles.video}
+          />
+        </div>
+
         <AccordionSlider />
         <div className={styles.container_p}>
           <div className={styles.mision}>
