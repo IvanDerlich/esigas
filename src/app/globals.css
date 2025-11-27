@@ -48,8 +48,38 @@ a {
   scroll-margin-top: 75px;
 }
 
+:root {
+  --mzaC-fg: #e7ecf2;
+  --mzaC-accent: #9ef7d2;
+  --mzaC-accent2: #82a0ff;
+  --mzaC-glass: rgba(255, 255, 255, 0.06);
+  --mzaC-glow: rgba(130, 160, 255, 0.75);
+  --mzaC-slideW: min(880px, 90vw);
+  --mzaC-peek: 0.15;
+  --mzaPagH: 64px;
+  --mzaCardH: clamp(360px, 62vh, 600px);
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+@media (max-width: 1000px) {
+  :root {
+    --mzaC-slideW: min(92vw, 620px);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --mzaC-slideW: min(94vw, 560px);
+  }
+}
+
+@media (max-width: 560px) {
+  :root {
+    --mzaC-slideW: min(96vw, 520px);
   }
 }
