@@ -104,7 +104,7 @@ export default function MzaCarousel() {
                 rotateY: 12,
                 zDepth: 60,
                 scaleDrop: 0.05,
-                activeLeftBias: 0.07,
+                activeLeftBias: 0.4,
               },
             ],
           },
