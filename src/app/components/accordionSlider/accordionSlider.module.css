@@ -54,19 +54,33 @@
 }
 
 .learnMoreButton {
-  margin-top: 15px;
-  padding: 10px 46px;
-  background-color: #9fff6b;
-  color: #000;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 18px;
+  margin-top: 20px;
+  appearance: none;
+  border: 1px solid #9ef7d2;
+  border-radius: 14px;
+  padding: 15px 20px;
+  font-weight: 700;
+  color: #0b0e13;
+  background-image: linear-gradient(
+    180deg,
+    #9ef7d2,
+    #97ebc8,
+    #8fe0be,
+    #88d5b5,
+    #81c9ab,
+    #7abea2,
+    #73b398,
+    #6ca88f,
+    #659d86,
+    #5e937d,
+    #588874,
+    #517e6b
+  );
+  box-shadow: 0 3px 15px var(--mzaC-glow);
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .slide.active .learnMoreButton {
@@ -320,25 +334,24 @@
   right: 30px;
   width: 36px;
   height: 36px;
-  border-radius: 50%;
-  border: 2px solid #9fff6b;
-  color: #9fff6b;
-  font-size: 22px;
-  background: transparent;
+  font-size: 19px;
+  appearance: none;
+  border: 3px solid #9ef7d2;
+  border-radius: 100px;
+  font-weight: 900;
+  color: #9ef7d2;
+  background-color: transparent;
+  box-shadow: 0 3px 15px var(--mzaC-glow);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 4;
   cursor: pointer;
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease;
   filter: drop-shadow(0 0 2px rgba(0, 0, 0, 1));
-}
-
-.addButton:hover {
-  background: rgba(159, 255, 107, 0.15);
-  transform: scale(1.06);
 }
 
 /* === NAVEGACIÓN (flechas laterales) === */
@@ -526,24 +539,8 @@
 
   /* === Botón + / − === */
   .addButton {
-    width: 32px;
-    height: 32px;
-    border: 2px solid #9fff6b;
-    color: #9fff6b;
-    font-size: 18px;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    filter: drop-shadow(0 0 12px rgba(0, 0, 0, 1));
     z-index: 999;
-    transition:
-      transform 0.25s ease,
-      background 0.25s ease;
-  }
-
-  .addButton:hover {
-    background: rgba(159, 255, 107, 0.15);
-    transform: scale(1.05);
   }
 
   /* === Navegación === */
