@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import styles from './navBarEstaciones.module.css';
-import logo from '@/images/logo.png';
+import logo from '@/images/logo-esignc.png';
 import { Montserrat } from 'next/font/google';
 import { useRef, useState } from 'react';
 
