@@ -17,6 +17,10 @@ const abyssinica = Abyssinica_SIL({
 const TestimonialCarousel = () => {
   const [start, setStart] = useState(0);
   const [visibleItems, setVisibleItems] = useState(3);
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchEndX, setTouchEndX] = useState(0);
+
+  const minSwipeDistance = 50;
 
   useEffect(() => {
     const updateVisibleItems = () => {
@@ -44,6 +48,27 @@ const TestimonialCarousel = () => {
     setStart(prev => Math.max(prev - 1, 0));
   };
 
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    setTouchStartX(e.touches[0].clientX);
+    setTouchEndX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    setTouchEndX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    const distance = touchEndX - touchStartX;
+
+    if (Math.abs(distance) < minSwipeDistance) return;
+
+    if (distance < 0) {
+      handleNext();
+    } else {
+      handlePrev();
+    }
+  };
+
   return (
     <div
       id="testimonios"
@@ -59,7 +84,12 @@ const TestimonialCarousel = () => {
           nosotros.
         </p>
       </div>
-      <div className={styles.testimonialsContent}>
+      <div
+        className={styles.testimonialsContent}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         <div
           className={`${styles.arrowWrapper} ${styles.arrowLeft} ${start > 0 ? '' : styles.hidden}`}
         >
