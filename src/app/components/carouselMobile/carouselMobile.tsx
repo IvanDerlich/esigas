@@ -19,6 +19,7 @@ export default function CarouselMobile({ images }: CarouselMobileProps) {
   );
 
   const [fullscreenIndex, setFullscreenIndex] = useState<number | null>(null);
+  const [isClosing, setIsClosing] = useState(false);
 
   useEffect(() => {
     function updateViewport() {
@@ -43,13 +44,18 @@ export default function CarouselMobile({ images }: CarouselMobileProps) {
   });
 
   const openFullscreen = (index: number) => {
-    if (viewport === 'mobile') {
-      setFullscreenIndex(index);
-      setActiveIndex(index);
-    }
+    setFullscreenIndex(index);
+    setActiveIndex(index);
   };
 
-  const closeFullscreen = () => setFullscreenIndex(null);
+  const closeFullscreen = () => {
+    setIsClosing(true);
+
+    setTimeout(() => {
+      setFullscreenIndex(null);
+      setIsClosing(false);
+    }, 250);
+  };
 
   const nextFullscreen = () => {
     if (fullscreenIndex === null) return;
@@ -119,7 +125,7 @@ export default function CarouselMobile({ images }: CarouselMobileProps) {
               src={images[fullscreenIndex].src}
               alt={images[fullscreenIndex].alt}
               fill
-              className={styles.fullscreenImage}
+              className={`${styles.fullscreenImage} ${isClosing ? styles.zoomOut : styles.zoomIn}`}
             />
           </div>
 
