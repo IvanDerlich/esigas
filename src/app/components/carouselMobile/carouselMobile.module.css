@@ -114,3 +114,53 @@
   width: 24px;
   height: 24px;
 }
+
+.zoomIn {
+  animation: zoomInAnim 0.25s forwards ease-out;
+}
+
+.zoomOut {
+  animation: zoomOutAnim 0.25s forwards ease-in;
+}
+
+@keyframes zoomInAnim {
+  from {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes zoomOutAnim {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .fullscreenOverlay {
+    padding: 0 60px;
+    box-sizing: border-box;
+  }
+
+  .closeBtn {
+    top: 24px;
+    right: 34px;
+  }
+
+  .arrowLeft {
+    left: 60px;
+  }
+
+  .arrowRight {
+    right: 60px;
+  }
+}
