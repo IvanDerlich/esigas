@@ -22,25 +22,23 @@ export default function CarouselMobile({ images }: CarouselMobileProps) {
   const [touchStartX, setTouchStartX] = useState(0);
   const [touchEndX, setTouchEndX] = useState(0);
 
-
   function handlePrev() {
-    setActiveIndex((prev) => (prev - 1 + images.length) % images.length);
+    setActiveIndex(prev => (prev - 1 + images.length) % images.length);
   }
 
   function handleNext() {
-    setActiveIndex((prev) => (prev + 1) % images.length);
+    setActiveIndex(prev => (prev + 1) % images.length);
   }
 
   function handleFullscreenPrev() {
     if (fullscreenIndex === null) return;
-    setFullscreenIndex((prev) => (prev! - 1 + images.length) % images.length);
+    setFullscreenIndex(prev => (prev! - 1 + images.length) % images.length);
   }
 
   function handleFullscreenNext() {
     if (fullscreenIndex === null) return;
-    setFullscreenIndex((prev) => (prev! + 1) % images.length);
+    setFullscreenIndex(prev => (prev! + 1) % images.length);
   }
-
 
   const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     setTouchStartX(e.touches[0].clientX);
@@ -57,16 +55,11 @@ export default function CarouselMobile({ images }: CarouselMobileProps) {
     if (distance < -50) handlePrev();
   };
 
-
-  const handleFullscreenTouchStart = (
-    e: React.TouchEvent<HTMLDivElement>
-  ) => {
+  const handleFullscreenTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
     setTouchStartX(e.touches[0].clientX);
   };
 
-  const handleFullscreenTouchMove = (
-    e: React.TouchEvent<HTMLDivElement>
-  ) => {
+  const handleFullscreenTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
     setTouchEndX(e.touches[0].clientX);
   };
 
@@ -76,7 +69,6 @@ export default function CarouselMobile({ images }: CarouselMobileProps) {
     if (distance > 50) handleFullscreenNext();
     if (distance < -50) handleFullscreenPrev();
   };
-
 
   useEffect(() => {
     function updateViewport() {
@@ -94,8 +86,7 @@ export default function CarouselMobile({ images }: CarouselMobileProps) {
 
   if (!images || images.length === 0) return null;
 
-  const itemsToShow =
-    viewport === 'mobile' ? 1 : viewport === 'tablet' ? 2 : 3;
+  const itemsToShow = viewport === 'mobile' ? 1 : viewport === 'tablet' ? 2 : 3;
 
   const visibleImages = Array.from({ length: itemsToShow }, (_, i) => {
     return images[(activeIndex + i) % images.length];
@@ -162,10 +153,7 @@ export default function CarouselMobile({ images }: CarouselMobileProps) {
             ✕
           </button>
 
-          <button
-            className={styles.arrowLeft}
-            onClick={handleFullscreenPrev}
-          >
+          <button className={styles.arrowLeft} onClick={handleFullscreenPrev}>
             <Image className={styles.arrow} src={arrowLeft} alt="Previous" />
           </button>
 
@@ -178,10 +166,7 @@ export default function CarouselMobile({ images }: CarouselMobileProps) {
             />
           </div>
 
-          <button
-            className={styles.arrowRight}
-            onClick={handleFullscreenNext}
-          >
+          <button className={styles.arrowRight} onClick={handleFullscreenNext}>
             <Image className={styles.arrow} src={arrowRight} alt="Next" />
           </button>
         </div>
