@@ -15,6 +15,9 @@ export default function OurCompany() {
   const raf = useRef<number | null>(null);
 
   useEffect(() => {
+    const isMobile = window.innerWidth <= 767;
+    if (isMobile) return;
+
     const MAX_SHIFT = 90;
     const SPEED = 0.22;
 
