@@ -50,7 +50,7 @@ export default function AccordionSlider() {
     },
     {
       id: 3,
-      icon: '/Image/logo.png',
+      icon: '/Image/logo-esignc.png',
       brand: 'Estaciones',
       name: 'Red de Abastecimiento GNC',
       subtitle: 'Carga rápida, segura y eficiente para cada viaje',
