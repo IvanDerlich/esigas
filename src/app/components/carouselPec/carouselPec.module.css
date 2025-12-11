@@ -94,8 +94,16 @@
 
 .mzaCardHead {
   position: absolute;
-  inset: 20px auto auto 20px;
+  inset: 10px auto auto 20px;
+  width: max-content;
+  max-width: 50%;
+  height: auto;
   z-index: 2;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .mzaCardTitle {
@@ -349,6 +357,11 @@
     height: auto;
     inset: auto 16px 80px 16px;
     font-size: 14px;
+    width: 65% !important;
+    padding: 12px 10px;
+    font-size: 14px;
+    line-height: 1.4;
+    max-width: 60ch;
   }
 
   .mzaCardTitle {
