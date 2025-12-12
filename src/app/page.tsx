@@ -6,6 +6,7 @@ import descripcion_img from '@/images/descripcion_img.jpg';
 import { Footer } from './components/layout/footer';
 import { strings } from './consts';
 import AccordionSlider from './components/accordionSlider/accordionSlider';
+import OurMission from './components/ourMission/ourMission';
 
 const abyssinica = Abyssinica_SIL({
   subsets: ['latin'],
@@ -18,13 +19,8 @@ export default function Home() {
     <>
       <main className={styles.container_ppl}>
         <AccordionSlider />
+        <OurMission />
         <div className={styles.container_p}>
-          <div className={styles.mision}>
-            <p className={`${abyssinica.className} ${styles.subtitle}`}>
-              Misión
-            </p>
-            <p className={abyssinica.className}>{strings.mission}</p>
-          </div>
           <div className={styles.vision}>
             <p className={`${abyssinica.className} ${styles.subtitle}`}>
               Visión
