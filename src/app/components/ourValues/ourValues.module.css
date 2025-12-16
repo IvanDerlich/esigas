@@ -1,0 +1,143 @@
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+.container_valores {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* =========================
+   BLOQUE AZUL (TEXTO)
+========================= */
+.text_valores {
+  width: 75%;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 100px 100px 300px;
+  background-color: #022047;
+  color: #c7d2e0;
+  z-index: 1;
+
+  /* animación */
+  transform: translateX(120px);
+  opacity: 0;
+  transition:
+    transform 0.8s ease,
+    opacity 0.8s ease;
+}
+
+/* Título */
+.title {
+  font-size: 36px;
+  color: #ffffff;
+  margin-bottom: 60px;
+}
+
+/* Grupo texto (titulo + items juntos) */
+.text_group {
+  transform: translateY(30px);
+  opacity: 0;
+  transition:
+    transform 0.6s ease,
+    opacity 0.6s ease;
+  transition-delay: 0.4s;
+}
+
+.subtitle {
+  color: white;
+}
+
+/* Texto */
+.text_valores p {
+  font-size: 20px;
+  line-height: 23px;
+  margin-bottom: 30px;
+}
+
+.text {
+  color: #ffffff80;
+}
+
+/* =========================
+   IMAGEN SUPERPUESTA
+========================= */
+.img_container {
+  position: absolute;
+  left: 0;
+  bottom: 450px;
+  width: 42%;
+  max-width: 720px;
+  z-index: 2;
+
+  /* animación */
+  transform: translateX(-120px);
+  opacity: 0;
+  transition:
+    transform 0.8s ease,
+    opacity 0.8s ease;
+}
+
+/* Imagen */
+.img_valores {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* =========================
+   ESTADO ACTIVO (ENTRA EN VIEWPORT)
+========================= */
+.animate .img_container {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.animate .text_valores {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.animate .text_group {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .container_valores {
+    flex-direction: column;
+    padding-bottom: 80px;
+  }
+
+  .img_container {
+    position: relative;
+    width: 100%;
+    max-width: none;
+    margin-bottom: 40px;
+    transform: none;
+    opacity: 1;
+  }
+
+  .text_valores {
+    width: 100%;
+    margin-left: 0;
+    padding: 40px 30px;
+    transform: none;
+    opacity: 1;
+  }
+
+  .text_group {
+    transform: none;
+    opacity: 1;
+  }
+}
