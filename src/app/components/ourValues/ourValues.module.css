@@ -1,6 +1,3 @@
-/* =========================
-   CONTENEDOR PRINCIPAL
-========================= */
 .container_valores {
   position: relative;
   width: 100%;
@@ -10,21 +7,16 @@
   align-items: center;
 }
 
-/* =========================
-   BLOQUE AZUL (TEXTO)
-========================= */
 .text_valores {
-  width: 75%;
+  width: 70%;
   margin-left: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 100px 100px 100px 300px;
+  padding: 100px 100px 100px 250px;
   background-color: #022047;
   color: #c7d2e0;
   z-index: 1;
-
-  /* animación */
   transform: translateX(120px);
   opacity: 0;
   transition:
@@ -32,14 +24,12 @@
     opacity 0.8s ease;
 }
 
-/* Título */
 .title {
   font-size: 36px;
   color: #ffffff;
   margin-bottom: 60px;
 }
 
-/* Grupo texto (titulo + items juntos) */
 .text_group {
   transform: translateY(30px);
   opacity: 0;
@@ -53,7 +43,6 @@
   color: white;
 }
 
-/* Texto */
 .text_valores p {
   font-size: 20px;
   line-height: 23px;
@@ -64,18 +53,14 @@
   color: #ffffff80;
 }
 
-/* =========================
-   IMAGEN SUPERPUESTA
-========================= */
 .img_container {
   position: absolute;
   left: 0;
-  bottom: 450px;
   width: 42%;
   max-width: 720px;
   z-index: 2;
-
-  /* animación */
+  display: flex;
+  justify-content: center;
   transform: translateX(-120px);
   opacity: 0;
   transition:
@@ -83,17 +68,13 @@
     opacity 0.8s ease;
 }
 
-/* Imagen */
 .img_valores {
   width: 100%;
-  height: auto;
+  height: 650px;
   display: block;
   object-fit: cover;
 }
 
-/* =========================
-   ESTADO ACTIVO (ENTRA EN VIEWPORT)
-========================= */
 .animate .img_container {
   transform: translateX(0);
   opacity: 1;
@@ -109,35 +90,72 @@
   opacity: 1;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media (max-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .container_valores {
+    display: flex;
+    align-items: flex-start;
     flex-direction: column;
-    padding-bottom: 80px;
-  }
-
-  .img_container {
-    position: relative;
-    width: 100%;
-    max-width: none;
-    margin-bottom: 40px;
-    transform: none;
-    opacity: 1;
   }
 
   .text_valores {
     width: 100%;
-    margin-left: 0;
-    padding: 40px 30px;
-    transform: none;
-    opacity: 1;
+    padding: 150px 180px 100px 100px;
   }
 
-  .text_group {
-    transform: none;
-    opacity: 1;
+  .img_container {
+    position: relative;
+    left: 0;
+    top: 90px;
+    width: 600px;
+  }
+
+  .img_valores {
+    width: 100%;
+    height: 600px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .text_valores p {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .container_valores {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .text_valores {
+    width: 100%;
+    padding: 90px 50px 50px 50px;
+  }
+
+  .img_container {
+    position: relative;
+    left: 0;
+    top: 30px;
+    width: 100%;
+  }
+
+  .img_valores {
+    display: block;
+    object-fit: cover;
+    max-height: 500px;
+    max-width: 500px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .text_valores p {
+    font-size: 16px;
   }
 }

@@ -34,8 +34,6 @@ export default function OurValues() {
           className={styles.img_valores}
           src={ourValues}
           alt="Nuestros Valores"
-          width={650}
-          height={550}
         />
       </div>
 
