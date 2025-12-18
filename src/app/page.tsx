@@ -14,25 +14,25 @@ export default function Home() {
         <AccordionSlider />
         <OurCompany />
         <OurMission />
-          <div className={styles.container_p}>
-            <div className={styles.vision}>
-              <p className={styles.subtitle}>Visión</p>
-              <p className={styles.vision}>{strings.vision}</p>
-            </div>
-            <div className={styles.valores}>
-              <p className={styles.subtitle}>Valores</p>
-              <p className={styles.valores}>{strings.valores}</p>
-            </div>
+        <div className={styles.container_p}>
+          <div className={styles.vision}>
+            <p className={styles.subtitle}>Visión</p>
+            <p className={styles.vision}>{strings.vision}</p>
           </div>
-          <div className={styles.container_contacto}>
-            <h3 className={styles.title_contacto}>Comunicate con nosotros:</h3>
-            <a
-              className={styles.email_contacto}
-              href="mailto:esigas@esigas.com.ar?subject=Consulta%20de%20servicio&body=Hola,%20quisiera%20consultar%20sobre..."
-            >
-              esigas@esigas.com.ar
-            </a>
+          <div className={styles.valores}>
+            <p className={styles.subtitle}>Valores</p>
+            <p className={styles.valores}>{strings.valores}</p>
           </div>
+        </div>
+        <div className={styles.container_contacto}>
+          <h3 className={styles.title_contacto}>Comunicate con nosotros:</h3>
+          <a
+            className={styles.email_contacto}
+            href="mailto:esigas@esigas.com.ar?subject=Consulta%20de%20servicio&body=Hola,%20quisiera%20consultar%20sobre..."
+          >
+            esigas@esigas.com.ar
+          </a>
+        </div>
       </main>
       <Footer />
     </>
