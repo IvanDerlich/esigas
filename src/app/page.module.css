@@ -4,51 +4,7 @@
   flex-direction: column;
   align-items: center;
   background-color: white;
-}
-
-.home {
-  min-height: auto;
-  background-color: #62b26eb3;
-  display: flex;
-  justify-content: center;
-  padding: 50px;
-}
-
-.container_title {
-  width: 30%;
-  /* height: 100vh; */
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.title {
-  color: white;
-  font-size: 60px;
-  line-height: 104px;
-  font-weight: 100;
-}
-
-.container_img {
-  width: 40%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-  gap: 20px;
-}
-
-.transporte {
-  width: 100px;
-}
-
-.equipos {
-  width: 100px;
-}
-
-.estaciones {
-  width: 100px;
+  width: 100%;
 }
 
 .container_p {
@@ -87,38 +43,6 @@
   padding-bottom: 30px;
 }
 
-.container_ppl_descripcion {
-  width: 100%;
-}
-
-.container_h2 {
-  height: 130px;
-  background-color: #62b26e;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.title_h2 {
-  color: white;
-  font-size: 50px;
-  font-weight: 100;
-}
-
-.container_descripcion {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 80px;
-  height: 600px;
-}
-
-.descripcion {
-  width: 30%;
-  font-size: 19px;
-  color: black;
-}
-
 .container_contacto {
   background-color: #eeeeee;
   width: 100%;
@@ -143,47 +67,6 @@
 }
 
 @media (min-width: 320px) and (max-width: 768px) {
-  .home {
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-    padding: 1rem;
-  }
-
-  .container_title {
-    width: 100%;
-    height: auto;
-    text-align: center;
-    align-items: center;
-    padding-bottom: 1rem;
-  }
-
-  .title {
-    font-size: 20px;
-    line-height: 40px;
-  }
-
-  .container_img {
-    width: 100%;
-    height: auto;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
-    margin-bottom: 2rem;
-  }
-
-  .transporte,
-  .equipos,
-  .estaciones {
-    width: 80px;
-  }
-
-  .img_home {
-    width: 250px;
-    height: 100px;
-  }
-
   .container_p {
     flex-direction: column;
     width: 80%;
@@ -204,76 +87,12 @@
     padding-bottom: 20px;
   }
 
-  .container_h2 {
-    height: auto;
-    padding: 1rem;
-  }
-
-  .title_h2 {
-    font-size: 30px;
-  }
-
-  .container_descripcion {
-    flex-direction: column;
-    gap: 2rem;
-    height: auto;
-    padding: 2rem 1rem;
-  }
-
-  .img_descripcion {
-    height: 350px;
-    width: 300px;
-  }
-
-  .descripcion {
-    width: 80%;
-    font-size: 17px;
-  }
-
   .container_contacto {
     margin-top: 30px;
   }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-  .home {
-    flex-direction: column;
-    align-items: center;
-    height: 120vh;
-  }
-
-  .img_home {
-    height: 160px;
-    width: 580px;
-  }
-
-  .container_title {
-    width: 90%;
-    text-align: center;
-    align-items: center;
-  }
-
-  .title {
-    font-size: 45px;
-    line-height: 60px;
-  }
-
-  .container_img {
-    width: 80%;
-    height: auto;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-    margin: 2rem 0;
-  }
-
-  .transporte,
-  .equipos,
-  .estaciones {
-    width: 90px;
-  }
-
   .container_p {
     flex-direction: column;
     align-items: center;
@@ -294,51 +113,9 @@
   .subtitle {
     font-size: 40px;
   }
-
-  .container_h2 {
-    padding: 2rem;
-    height: auto;
-  }
-
-  .title_h2 {
-    font-size: 40px;
-  }
-
-  .container_descripcion {
-    flex-direction: column;
-    gap: 2rem;
-    height: auto;
-    padding: 2rem;
-  }
-
-  .descripcion {
-    width: 80%;
-    font-size: 18px;
-    text-align: center;
-  }
 }
 
 @media (min-width: 1025px) and (max-width: 1400px) {
-  .container_title {
-    width: 40%;
-  }
-
-  .title {
-    font-size: 50px;
-    line-height: 70px;
-  }
-
-  .container_img {
-    width: 50%;
-    gap: 2rem;
-  }
-
-  .transporte,
-  .equipos,
-  .estaciones {
-    width: 90px;
-  }
-
   .container_p {
     width: 90%;
     gap: 2rem;
@@ -356,26 +133,5 @@
   .subtitle {
     font-size: 45px;
     padding-bottom: 20px;
-  }
-
-  .container_h2 {
-    height: auto;
-    padding: 1.5rem;
-  }
-
-  .title_h2 {
-    font-size: 45px;
-  }
-
-  .container_descripcion {
-    gap: 3rem;
-    padding: 2rem;
-    height: auto;
-    flex-wrap: wrap;
-  }
-
-  .descripcion {
-    width: 40%;
-    font-size: 18px;
   }
 }
