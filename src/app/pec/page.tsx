@@ -1,5 +1,6 @@
 import { Footer } from '../components/layout/footer';
 import CarouselPec from '../components/carouselPec/carouselPec';
+import logo from '@/images/logo.png';
 
 export default function PecPage() {
   return (
@@ -7,7 +8,7 @@ export default function PecPage() {
       <main>
         <CarouselPec />
       </main>
-      <Footer />
+      <Footer logoSrc={logo} />
     </>
   );
 }
