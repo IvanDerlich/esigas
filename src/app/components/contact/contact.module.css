@@ -1,6 +1,6 @@
 .contactContainer {
   height: 130px;
-  background-color: #62b26e;
+  background-color: #06650b;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,7 +14,7 @@
 
 .contactSubtitle {
   font-size: 25px;
-  color: #62b26e;
+  color: #06650b;
   font-weight: 100;
   display: flex;
   justify-content: center;
@@ -116,7 +116,7 @@ input[type='radio'].checkbox:checked {
 }
 
 .formButton {
-  background-color: #62b26e;
+  background-color: #06650b;
   color: white;
   padding: 15px 40px;
   border: none;

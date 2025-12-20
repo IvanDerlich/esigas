@@ -11,7 +11,7 @@
 }
 
 .h2 {
-  color: #62b26e;
+  color: #06650b;
   font-size: 50px;
   font-weight: 600;
   text-align: center;
@@ -21,8 +21,8 @@
   width: 75%;
   max-width: 800px;
   height: auto;
-  background-color: #62b26eb3;
-  border: 3px solid #62b26e;
+  background-color: #06650b99;
+  border: 3px solid #06650b;
   border-radius: 10px;
   padding: 20px;
   display: flex;
@@ -48,10 +48,11 @@
 }
 
 .linkLike {
-  color: #4d81ef;
+  color: #1e3e7c;
   cursor: pointer;
   text-decoration: underline;
   font-size: 0.9rem;
+  font-weight: 800;
 }
 
 @media screen and (max-width: 940px) {
