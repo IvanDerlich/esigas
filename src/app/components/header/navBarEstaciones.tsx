@@ -1,8 +1,8 @@
 'use client';
 
 import Image from 'next/image';
-import styles from './navBarTwo.module.css';
-import logo from '@/images/logo.png';
+import styles from './navBarEstaciones.module.css';
+import logo from '@/images/logo-esignc.png';
 import { Montserrat } from 'next/font/google';
 import { useRef, useState } from 'react';
 
@@ -54,6 +54,8 @@ export default function Navbar({ links }: NavbarProps) {
           <span></span>
           <span></span>
         </label>
+
+        <div className={styles.menuBackground}></div>
 
         <nav className={`${montserrat.className} ${styles.nav}`}>
           {links.map(({ label, href }) => (

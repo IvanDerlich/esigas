@@ -30,7 +30,7 @@ export default function AccordionSlider() {
     },
     {
       id: 2,
-      icon: '/Image/logo-simple.png',
+      icon: '/Image/logo.png',
       brand: 'Equipos, Revisiones y Repruebas',
       name: 'Certificación de Seguridad',
       subtitle: 'Revisión y prueba de equipos GNC',
@@ -46,11 +46,11 @@ export default function AccordionSlider() {
         'Revisión integral',
       ],
       img: '/Image/revision-equipo.png',
-      url: 'https://www.esigas.com.ar/pec',
+      url: '/pec',
     },
     {
       id: 3,
-      icon: '/Image/logo-simple.png',
+      icon: '/Image/logo-esignc.png',
       brand: 'Estaciones',
       name: 'Red de Abastecimiento GNC',
       subtitle: 'Carga rápida, segura y eficiente para cada viaje',
@@ -62,7 +62,7 @@ export default function AccordionSlider() {
       ],
       badges: ['Alta disponibilidad', 'Energía limpia', 'Atención profesional'],
       img: '/Image/estacion-rosario6.jpg',
-      url: 'https://www.esigas.com.ar/estaciones',
+      url: '/estaciones',
     },
   ];
 
@@ -91,8 +91,8 @@ export default function AccordionSlider() {
                   src={slide.icon}
                   alt={`${slide.brand} icon`}
                   className={styles.iconImage}
-                  width={65}
-                  height={55}
+                  width={80}
+                  height={60}
                 />
               </span>
             </div>
@@ -103,8 +103,8 @@ export default function AccordionSlider() {
                   src={slide.icon}
                   alt={`${slide.brand} icon`}
                   className={styles.iconImage}
-                  width={65}
-                  height={55}
+                  width={80}
+                  height={60}
                 />
               </span>
               <span className={styles.brandOpen}>{slide.brand}</span>
@@ -132,7 +132,7 @@ export default function AccordionSlider() {
 
               <div>
                 <button
-                  onClick={() => window.open(slide.url, '_blank')}
+                  onClick={() => window.open(slide.url, '_self')}
                   className={styles.learnMoreButton}
                 >
                   Ver más

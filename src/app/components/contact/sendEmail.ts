@@ -8,9 +8,13 @@ export async function sendEmail(formData: FormData): Promise<string> {
   const email = formData.get('email')?.toString().trim() || '';
   const phone = formData.get('phone')?.toString().trim() || '';
   const message = formData.get('message')?.toString().trim() || '';
-  const formType = formData.get('formType')?.toString() || '';
-  const sucursal = formData.get('sucursal')?.toString() || '';
-  const origin = formData.get('origin')?.toString() || '';
+  const sucursalValues = formData.getAll('sucursal');
+  const sucursal =
+    sucursalValues.length > 0
+      ? sucursalValues.map(v => v.toString()).join(', ')
+      : 'No especificada';
+  const sourceURL = formData.get('sourceURL')?.toString() || '';
+  const sourceForm = formData.get('sourceForm')?.toString() || '';
 
   if (!name) return ms.NAME_EMPTY;
   if (!email) return ms.EMAIL_EMPTY;
@@ -38,7 +42,8 @@ export async function sendEmail(formData: FormData): Promise<string> {
     host: EMAIL_HOST,
     port: parseInt(EMAIL_PORT),
     secure: EMAIL_SECURE === 'true',
-    origin,
+    origin: sourceURL,
     sucursal,
+    sourceForm,
   });
 }

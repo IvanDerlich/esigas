@@ -26,6 +26,11 @@ export default function Contact({
 }: ContactFormProps) {
   const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [isPending, startTransition] = useTransition();
+  const [sourceURL, setSourceURL] = useState('');
+
+  useEffect(() => {
+    setSourceURL(window.location.href);
+  }, []);
 
   useEffect(() => {
     if (status === 'success' || status === 'error') {
@@ -39,7 +44,8 @@ export default function Contact({
   async function handleSubmit(formData: FormData) {
     setStatus('idle');
     formData.append('formType', formType);
-    formData.append('origin', window.location.pathname);
+    formData.append('sourceURL', sourceURL);
+    formData.append('sourceForm', 'contacto');
 
     startTransition(async () => {
       try {
@@ -54,10 +60,7 @@ export default function Contact({
 
   return (
     <>
-      <div
-        id="contacto"
-        className={`${abyssinica.className} ${styles.contactContainer}`}
-      >
+      <div className={`${abyssinica.className} ${styles.contactContainer}`}>
         <h2 className={styles.contactTitle}>Contacto</h2>
       </div>
 
@@ -81,10 +84,13 @@ export default function Contact({
 
       <div className={`${abyssinica.className} ${styles.contactFormContainer}`}>
         <form
+          id="contacto"
           className={styles.contactForm}
           action={handleSubmit}
           noValidate={false}
         >
+          <input type="hidden" name="sourceURL" value={sourceURL} />
+          <input type="hidden" name="sourceForm" value="contacto" />
           <label className={styles.formLabel}>
             Nombre y Apellido:
             <input
@@ -128,21 +134,19 @@ export default function Contact({
               <div className={styles.containerCheckbox}>
                 <label className={styles.checkboxLabel}>
                   <input
-                    type="radio"
+                    type="checkbox"
                     name="sucursal"
                     value="Mendoza"
                     className={styles.checkbox}
-                    required
                   />
                   Mendoza
                 </label>
                 <label className={styles.checkboxLabel}>
                   <input
-                    type="radio"
+                    type="checkbox"
                     name="sucursal"
                     value="Santa Fe"
                     className={styles.checkbox}
-                    required
                   />
                   Santa Fe
                 </label>

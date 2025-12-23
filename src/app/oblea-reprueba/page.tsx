@@ -11,8 +11,9 @@ import Contact from '../components/contact/contact';
 import Location from '../components/location/location';
 import SocialNetwork from '../components/socialNetwork/socialNetwork';
 import { Footer } from '../components/layout/footer';
-import Navbar from '../components/header/navBar';
+import Navbar from '../components/header/navBarPec';
 import Whatsapp from '@/images/whatsapp.png';
+import logo from '@/images/logo.png';
 
 const abyssinica = Abyssinica_SIL({
   subsets: ['latin'],
@@ -102,7 +103,7 @@ export default function Page() {
           />
         </Link>
       </main>
-      <Footer />
+      <Footer logoSrc={logo} />
     </>
   );
 }

@@ -24,7 +24,6 @@
   transition:
     flex 1s cubic-bezier(0.25, 1, 0.5, 1),
     filter 0.4s ease;
-  filter: grayscale(1) brightness(0.55);
   overflow: hidden;
 }
 
@@ -40,6 +39,11 @@
 .overlay {
   position: absolute;
   inset: 0;
+  background: transparent;
+  pointer-events: none;
+}
+
+.slide.active .overlay {
   background: linear-gradient(
     to top,
     rgba(0, 0, 0, 0.85) 0%,
@@ -47,23 +51,36 @@
     rgba(0, 0, 0, 0.2) 80%,
     transparent 100%
   );
-  pointer-events: none;
 }
 
 .learnMoreButton {
-  margin-top: 15px;
-  padding: 10px 46px;
-  background-color: #9fff6b;
-  color: #000;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 18px;
+  margin-top: 20px;
+  appearance: none;
+  border: 1px solid #9ef7d2;
+  border-radius: 14px;
+  padding: 15px 20px;
+  font-weight: 700;
+  color: #0b0e13;
+  background-image: linear-gradient(
+    180deg,
+    #9ef7d2,
+    #97ebc8,
+    #8fe0be,
+    #88d5b5,
+    #81c9ab,
+    #7abea2,
+    #73b398,
+    #6ca88f,
+    #659d86,
+    #5e937d,
+    #588874,
+    #517e6b
+  );
+  box-shadow: 0 3px 15px var(--mzaC-glow);
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.6s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .slide.active .learnMoreButton {
@@ -228,16 +245,19 @@
   transform: translateY(0);
   transition-delay: 0.55s;
 }
+
 .slide.active .specRow:nth-child(2) {
   opacity: 1;
   transform: translateY(0);
   transition-delay: 0.65s;
 }
+
 .slide.active .specRow:nth-child(3) {
   opacity: 1;
   transform: translateY(0);
   transition-delay: 0.75s;
 }
+
 .slide.active .specRow:nth-child(4) {
   opacity: 1;
   transform: translateY(0);
@@ -249,11 +269,13 @@
   transform: translateY(0);
   transition-delay: 0.95s;
 }
+
 .slide.active .badge:nth-child(2) {
   opacity: 1;
   transform: translateY(0);
   transition-delay: 1.05s;
 }
+
 .slide.active .badge:nth-child(3) {
   opacity: 1;
   transform: translateY(0);
@@ -302,6 +324,7 @@
 
 .iconImage {
   filter: drop-shadow(0 0 2px rgba(0, 0, 0, 1));
+  object-fit: contain;
 }
 
 /* === BOTÓN + / − === */
@@ -311,24 +334,24 @@
   right: 30px;
   width: 36px;
   height: 36px;
-  border-radius: 50%;
-  border: 2px solid #9fff6b;
-  color: #9fff6b;
-  font-size: 22px;
-  background: transparent;
+  font-size: 19px;
+  appearance: none;
+  border: 3px solid #9ef7d2;
+  border-radius: 100px;
+  font-weight: 900;
+  color: #9ef7d2;
+  background-color: transparent;
+  box-shadow: 0 3px 15px var(--mzaC-glow);
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 4;
   cursor: pointer;
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease;
-}
-
-.addButton:hover {
-  background: rgba(159, 255, 107, 0.15);
-  transform: scale(1.06);
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 1));
 }
 
 /* === NAVEGACIÓN (flechas laterales) === */
@@ -387,7 +410,6 @@
     transition:
       flex 1s cubic-bezier(0.25, 1, 0.5, 1),
       filter 0.6s ease;
-    filter: grayscale(1) brightness(0.55);
   }
 
   /* === Slide activa === */
@@ -407,6 +429,11 @@
     writing-mode: horizontal-tb;
     transform: none;
     font-size: 12px;
+    text-shadow:
+      -1px -1px 0 black,
+      1px -1px 0 black,
+      -1px 1px 0 black,
+      1px 1px 0 black;
   }
 
   .numberClosed {
@@ -512,27 +539,8 @@
 
   /* === Botón + / − === */
   .addButton {
-    position: fixed;
-    bottom: 25px;
-    right: 20px;
-    width: 32px;
-    height: 32px;
-    border: 2px solid #9fff6b;
-    color: #9fff6b;
-    font-size: 18px;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    filter: drop-shadow(0 0 12px rgba(0, 0, 0, 1));
     z-index: 999;
-    transition:
-      transform 0.25s ease,
-      background 0.25s ease;
-  }
-
-  .addButton:hover {
-    background: rgba(159, 255, 107, 0.15);
-    transform: scale(1.05);
   }
 
   /* === Navegación === */

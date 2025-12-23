@@ -10,6 +10,14 @@
 .footer_p {
   color: white;
   font-size: 14px;
+  text-align: center;
+}
+
+.content_footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
 }
 
 .footer_text {
@@ -18,11 +26,30 @@
   justify-content: flex-start;
 }
 
+.contact_info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title_contacto {
+  color: white;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.email_contacto {
+  color: white;
+  font-size: 14px;
+  text-decoration: none;
+}
+
 @media (min-width: 320px) and (max-width: 768px) {
   .footer {
     flex-direction: column;
     height: auto;
-    gap: 1rem;
+    gap: 30px;
     padding: 1rem 0;
   }
 
@@ -30,6 +57,17 @@
     width: 100%;
     justify-content: space-around;
     flex-wrap: wrap;
+  }
+
+  .content_footer {
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+  }
+
+  .contact_info {
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -46,6 +84,10 @@
     justify-content: center;
     align-items: center;
     gap: 2rem;
+  }
+
+  .content_footer {
+    width: 55%;
   }
 }
 

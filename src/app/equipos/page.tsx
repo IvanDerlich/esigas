@@ -5,7 +5,7 @@ import Line from '@/images/line.png';
 import Tarjetas from '@/images/tarjetas.png';
 import LineGreen from '@/images/line-green.png';
 import MediosDePago from '@/images/medios-de-pago.png';
-import NavBar from '../components/header/navBar';
+import NavBar from '../components/header/navBarPec';
 import { OurAdvantages } from '../components/ourAdvantages/ourAdvantages';
 import styles from './page.module.css';
 import Link from 'next/link';
@@ -16,6 +16,7 @@ import Location from '../components/location/location';
 import SocialNetwork from '../components/socialNetwork/socialNetwork';
 import { Footer } from '../components/layout/footer';
 import Whatsapp from '@/images/whatsapp.png';
+import logo from '@/images/logo.png';
 
 const abyssinica = Abyssinica_SIL({
   subsets: ['latin'],
@@ -160,7 +161,7 @@ export default function Page() {
           />
         </Link>
       </main>
-      <Footer />
+      <Footer logoSrc={logo} />
     </>
   );
 }
