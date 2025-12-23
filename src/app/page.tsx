@@ -6,6 +6,7 @@ import { strings } from './consts';
 import AccordionSlider from './components/accordionSlider/accordionSlider';
 import OurMission from './components/ourMission/ourMission';
 import OurCompany from './components/ourCompany/ourCompany';
+import logo from '@/images/logo.png';
 
 export default function Home() {
   return (
@@ -34,7 +35,7 @@ export default function Home() {
           </a>
         </div>
       </main>
-      <Footer />
+      <Footer logoSrc={logo} />
     </>
   );
 }
