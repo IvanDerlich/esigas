@@ -7,6 +7,7 @@ import { Footer } from './components/layout/footer';
 import { strings } from './consts';
 import AccordionSlider from './components/accordionSlider/accordionSlider';
 import OurValues from './components/ourValues/ourValues';
+import logo from '@/images/logo.png';
 
 const abyssinica = Abyssinica_SIL({
   subsets: ['latin'],
@@ -63,7 +64,7 @@ export default function Home() {
           </a>
         </div>
       </main>
-      <Footer />
+      <Footer logoSrc={logo} />
     </>
   );
 }
