@@ -49,7 +49,7 @@ export default async function sendEmailCore(
     from: `"ESIGAS Web" <${user}>`,
     to: destinationEmail,
     replyTo: email,
-    subject: 'Nuevo mensaje de contacto',
+    subject: 'Mensaje desde un formulario de la pagina esigas.com.ar',
     html: `
       <h2>Nuevo mensaje de contacto</h2>
       ${sourceForm ? `<p><b>Formulario de origen:</b> ${sourceForm}</p>` : ''}
