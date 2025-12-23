@@ -40,76 +40,21 @@ export default function OurValues() {
       <div className={styles.text_valores}>
         <h2 className={styles.title}>Nuestros Valores</h2>
 
-        <div className={styles.text_group}>
-          <div className={styles.content_values}>
-            <p className={styles.subtitle}>
-              Profesionalización de nuestros servicios
-            </p>
-            <p className={styles.text}>
-              Respaldada por equipos técnicos capacitados y procesos
-              estandarizados.
-            </p>
-          </div>
-
-          <div className={styles.content_values}>
-            <p className={styles.subtitle}>
-              Uso de normas internacionales de calidad
-            </p>
-            <p className={styles.text}>
-              Garantizando seguridad, eficiencia y confiabilidad en cada
-              proyecto.
-            </p>
-          </div>
-
-          <div className={styles.content_values}>
-            <p className={styles.subtitle}>Mejora continua</p>
-            <p className={styles.text}>
-              Incorporando innovación, tecnología y aprendizaje constante.
-            </p>
-          </div>
-
-          <div className={styles.content_values}>
-            <p className={styles.subtitle}>Compromiso ambiental</p>
-            <p className={styles.text}>
-              Promoviendo soluciones sustentables y desarrollo responsable.
-            </p>
-          </div>
-
-          <div className={styles.content_values}>
-            <p className={styles.subtitle}>Seguridad como prioridad</p>
-            <p className={styles.text}>
-              Cuidando a las personas, instalaciones y el entorno.
-            </p>
-          </div>
-
-          <div className={styles.content_values}>
-            <p className={styles.subtitle}>
-              Responsabilidad y ética profesional
-            </p>
-            <p className={styles.text}>
-              Actuando con transparencia e integridad.
-            </p>
-          </div>
-
-          <div className={styles.content_values}>
-            <p className={styles.subtitle}>Orientación al cliente</p>
-            <p className={styles.text}>
-              Soluciones a medida y acompañamiento permanente.
-            </p>
-          </div>
-
-          <div className={styles.content_values}>
-            <p className={styles.subtitle}>Trabajo en equipo</p>
-            <p className={styles.text}>Colaboración y crecimiento conjunto.</p>
-          </div>
-
-          <div className={styles.content_values}>
-            <p className={styles.subtitle}>Excelencia operativa</p>
-            <p className={styles.text}>
-              Resultados consistentes y de alto nivel.
-            </p>
-          </div>
-        </div>
+        <ul className={styles.text_group}>
+          <li className={styles.item}>
+            Profesionalización de nuestros servicios
+          </li>
+          <li className={styles.item}>
+            Uso de normas internacionales de calidad
+          </li>
+          <li className={styles.item}>Mejora continua</li>
+          <li className={styles.item}>Compromiso ambiental</li>
+          <li className={styles.item}>Seguridad como prioridad</li>
+          <li className={styles.item}>Responsabilidad y ética profesional</li>
+          <li className={styles.item}>Orientación al cliente</li>
+          <li className={styles.item}>Trabajo en equipo</li>
+          <li className={styles.item}>Excelencia operativa</li>
+        </ul>
       </div>
     </section>
   );
