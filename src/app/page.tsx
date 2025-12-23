@@ -4,6 +4,7 @@ import styles from './page.module.css';
 import { Footer } from './components/layout/footer';
 import { strings } from './consts';
 import AccordionSlider from './components/accordionSlider/accordionSlider';
+import OurMission from './components/ourMission/ourMission';
 import OurCompany from './components/ourCompany/ourCompany';
 import logo from '@/images/logo.png';
 
@@ -13,11 +14,8 @@ export default function Home() {
       <main className={styles.container_ppl}>
         <AccordionSlider />
         <OurCompany />
+        <OurMission />
         <div className={styles.container_p}>
-          <div className={styles.mision}>
-            <p className={styles.subtitle}>Misión</p>
-            <p className={styles.mision}>{strings.mission}</p>
-          </div>
           <div className={styles.vision}>
             <p className={styles.subtitle}>Visión</p>
             <p className={styles.vision}>{strings.vision}</p>
