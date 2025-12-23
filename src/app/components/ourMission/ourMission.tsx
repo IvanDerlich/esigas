@@ -99,13 +99,21 @@ export default function OurMission() {
 
       <div className={styles.container_descripcion_mision}>
         <h2 className={styles.h2}>Nuestra Misión</h2>
-        <p className={styles.text_descripcion_mision}>
-          Ofrecer transporte sostenible con camiones euro 6, a gas nacional
-          reduciendo el uso de combustible diesel, importado mejorando la
-          contaminación ambiental y sonora. Desarrollar la transformación a gas
-          de vehículos ciclos otto y diesel, Desarrollar los corredores verdes
-          para producir un efecto económico positivo en la economía.
-        </p>
+        <ul className={styles.text_descripcion_mision}>
+          <li>
+            Ofrecer transporte sostenible con camiones Euro 6, a gas nacional,
+            reduciendo el uso de combustible diésel importado y mejorando la
+            contaminación ambiental y sonora.
+          </li>
+          <li>
+            Desarrollar la transformación a gas de vehículos de ciclo Otto y
+            diésel.
+          </li>
+          <li>
+            Desarrollar corredores verdes para producir un efecto económico
+            positivo en la economía.
+          </li>
+        </ul>
       </div>
     </section>
   );
