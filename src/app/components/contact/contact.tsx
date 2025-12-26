@@ -134,21 +134,19 @@ export default function Contact({
               <div className={styles.containerCheckbox}>
                 <label className={styles.checkboxLabel}>
                   <input
-                    type="radio"
+                    type="checkbox"
                     name="sucursal"
                     value="Mendoza"
                     className={styles.checkbox}
-                    required
                   />
                   Mendoza
                 </label>
                 <label className={styles.checkboxLabel}>
                   <input
-                    type="radio"
+                    type="checkbox"
                     name="sucursal"
                     value="Santa Fe"
                     className={styles.checkbox}
-                    required
                   />
                   Santa Fe
                 </label>

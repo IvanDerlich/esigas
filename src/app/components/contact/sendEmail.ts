@@ -8,8 +8,11 @@ export async function sendEmail(formData: FormData): Promise<string> {
   const email = formData.get('email')?.toString().trim() || '';
   const phone = formData.get('phone')?.toString().trim() || '';
   const message = formData.get('message')?.toString().trim() || '';
-  const formType = formData.get('formType')?.toString() || '';
-  const sucursal = formData.get('sucursal')?.toString() || '';
+  const sucursalValues = formData.getAll('sucursal');
+  const sucursal =
+    sucursalValues.length > 0
+      ? sucursalValues.map(v => v.toString()).join(', ')
+      : 'No especificada';
   const sourceURL = formData.get('sourceURL')?.toString() || '';
   const sourceForm = formData.get('sourceForm')?.toString() || '';
 
@@ -20,38 +23,13 @@ export async function sendEmail(formData: FormData): Promise<string> {
   const emailRegex = /\S+@\S+\.\S+/;
   if (!emailRegex.test(email)) return ms.EMAIL_INVALID;
 
-  const {
-    EMAIL_USER,
-    EMAIL_PASS,
-    EMAIL_HOST,
-    EMAIL_PORT,
-    EMAIL_SECURE,
-    EMAIL_EQUIPOS,
-    EMAIL_OBLEA_REPRUEBA,
-    EMAIL_ESTACION_MENDOZA,
-    EMAIL_ESTACION_SANTAFE,
-  } = process.env;
+  const { EMAIL_USER, EMAIL_PASS, EMAIL_HOST, EMAIL_PORT, EMAIL_SECURE } =
+    process.env;
 
   if (!EMAIL_USER || !EMAIL_PASS || !EMAIL_HOST || !EMAIL_PORT)
     return ms.INTERNAL_SERVER_ERROR;
 
-  let destinationEmail = '';
-  switch (formType) {
-    case 'equipos':
-      destinationEmail = EMAIL_EQUIPOS!;
-      break;
-    case 'oblea-reprueba':
-      destinationEmail = EMAIL_OBLEA_REPRUEBA!;
-      break;
-    case 'estaciones':
-      destinationEmail =
-        sucursal === 'Mendoza'
-          ? EMAIL_ESTACION_MENDOZA!
-          : EMAIL_ESTACION_SANTAFE!;
-      break;
-    default:
-      return ms.INTERNAL_SERVER_ERROR;
-  }
+  const destinationEmail = EMAIL_USER;
 
   return sendEmailCore({
     name,
