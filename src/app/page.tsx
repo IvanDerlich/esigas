@@ -17,7 +17,7 @@ export default function Home() {
         <OurCompany />
         <OurMission />
         <OurVision />
-        <OurValues /> 
+        <OurValues />
         <div className={styles.container_contacto}>
           <h3 className={styles.title_contacto}>Comunicate con nosotros:</h3>
           <a
