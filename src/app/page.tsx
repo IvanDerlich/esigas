@@ -2,9 +2,9 @@ import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
 import styles from './page.module.css';
 import { Footer } from './components/layout/footer';
-import { strings } from './consts';
 import AccordionSlider from './components/accordionSlider/accordionSlider';
 import OurValues from './components/ourValues/ourValues';
+import OurVision from './components/ourVision/ourVision';
 import OurMission from './components/ourMission/ourMission';
 import OurCompany from './components/ourCompany/ourCompany';
 import logo from '@/images/logo.png';
@@ -16,13 +16,8 @@ export default function Home() {
         <AccordionSlider />
         <OurCompany />
         <OurMission />
-        <OurValues />
-        <div className={styles.container_p}>
-          <div className={styles.vision}>
-            <p className={styles.subtitle}>Visión</p>
-            <p className={styles.vision}>{strings.vision}</p>
-          </div>
-        </div>
+        <OurVision />
+        <OurValues /> 
         <div className={styles.container_contacto}>
           <h3 className={styles.title_contacto}>Comunicate con nosotros:</h3>
           <a
