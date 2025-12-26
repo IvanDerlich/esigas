@@ -32,8 +32,8 @@ const roboto = Roboto({
 
 const links = [
   { label: 'Home', href: '#home' },
-  { label: 'Calculadora', href: '#calculadora' },
   { label: 'Financiación', href: '#financiacion' },
+  { label: 'Calculadora', href: '#calculadora' },
   { label: 'Testimonios', href: '#testimonios' },
   { label: 'Contacto', href: '#contacto' },
 ];
