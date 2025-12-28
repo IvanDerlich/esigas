@@ -1,0 +1,154 @@
+.container_valores {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.text_valores {
+  width: 70%;
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 100px 100px 100px 250px;
+  background-color: #62b26e;
+  color: #c7d2e0;
+  z-index: 1;
+  transform: translateX(120px);
+  opacity: 0;
+  transition:
+    transform 0.8s ease,
+    opacity 0.8s ease;
+}
+
+.title {
+  font-size: 36px;
+  color: #ffffff;
+  margin-bottom: 60px;
+}
+
+.text_group {
+  transform: translateY(30px);
+  opacity: 0;
+  transition:
+    transform 0.6s ease,
+    opacity 0.6s ease;
+  transition-delay: 0.4s;
+}
+
+.item {
+  color: white;
+  font-size: 20px;
+  line-height: 2;
+  margin-bottom: 30px;
+}
+
+.img_container {
+  position: absolute;
+  left: 0;
+  width: 42%;
+  max-width: 720px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  transform: translateX(-120px);
+  opacity: 0;
+  transition:
+    transform 0.8s ease,
+    opacity 0.8s ease;
+}
+
+.img_valores {
+  width: 100%;
+  height: 650px;
+  display: block;
+  object-fit: cover;
+}
+
+.animate .img_container {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.animate .text_valores {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.animate .text_group {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container_valores {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .text_valores {
+    width: 100%;
+    padding: 150px 180px 100px 100px;
+  }
+
+  .img_container {
+    position: relative;
+    left: 0;
+    top: 90px;
+    width: 600px;
+  }
+
+  .img_valores {
+    width: 100%;
+    height: 600px;
+    display: block;
+    object-fit: cover;
+  }
+
+  .title {
+    font-size: 26px;
+  }
+
+  .item {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .container_valores {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .text_valores {
+    width: 100%;
+    padding: 90px 50px 50px 50px;
+  }
+
+  .img_container {
+    position: relative;
+    left: 0;
+    top: 30px;
+    width: 100%;
+  }
+
+  .img_valores {
+    display: block;
+    object-fit: cover;
+    max-height: 500px;
+    max-width: 500px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .item {
+    font-size: 16px;
+  }
+}
