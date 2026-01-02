@@ -1,7 +1,12 @@
 'use client';
-import { Abyssinica_SIL } from 'next/font/google';
-import { useState, useRef, useEffect } from 'react';
+
+import { Abyssinica_SIL, Inter } from 'next/font/google';
 import styles from './calculator.module.css';
+import Image from 'next/image';
+import numberOne from '@/images/number-one.png';
+import numberTwo from '@/images/number-two.png';
+import calculatorImage from '@/images/img-calculadora.png';
+import { useRef, useState, useEffect } from 'react';
 
 const abyssinica = Abyssinica_SIL({
   subsets: ['latin'],
@@ -9,245 +14,505 @@ const abyssinica = Abyssinica_SIL({
   display: 'swap',
 });
 
-// This is the relative efficiency coefficient of the liter of nafta with respect to the m3 of gnc
-const RELATIVE_EFFICIENCY = 1;
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['200'],
+  display: 'swap',
+});
 
 export default function Calculator() {
-  const [vehicleConsumptionPer100km, setVehicleConsumption] =
-    useState<number>(0);
-  const [naftaPrice, setNaftaPrice] = useState<number>(0);
-  const [gncPrice, setGncPrice] = useState<number>(0);
-  const [monthlyKm, setMonthlyKm] = useState<number>(0);
-  const [equipmentCost, setEquipmentCost] = useState<number>(0);
 
-  const [step, setStep] = useState(1);
-  const [showSavings, setShowSavings] = useState(false);
-  const [showRecovery, setShowRecovery] = useState(false);
-  const [calculated, setCalculated] = useState(false);
+  const step1Ref = useRef<HTMLDivElement | null>(null);
+  const step2Ref = useRef<HTMLDivElement | null>(null);
+  const [showBackToStep1, setShowBackToStep1] = useState(true);
+  const [showStep2, setShowStep2] = useState(false);
 
-  const card2Ref = useRef<HTMLDivElement>(null);
+  const slowScrollTo = (ref: React.RefObject<HTMLDivElement | null>) => {
+    if (!ref.current) return;
 
-  const savingsPer100Km =
-    vehicleConsumptionPer100km * (naftaPrice - gncPrice / RELATIVE_EFFICIENCY);
-  const monthlySavings = (savingsPer100Km * monthlyKm) / 100;
-  const recoveryTime = equipmentCost / monthlySavings;
-  const years = Math.floor(recoveryTime / 12);
-  const months = Math.round(recoveryTime % 12);
+    const y =
+      ref.current.getBoundingClientRect().top +
+      window.scrollY -
+      20;
 
-  useEffect(() => {
-    if (step === 2 && card2Ref.current) {
-      const rect = card2Ref.current.getBoundingClientRect();
-      const scrollTop =
-        window.scrollY + rect.top - (window.innerHeight - rect.height) / 2;
-      window.scrollTo({ top: scrollTop, behavior: 'smooth' });
-    }
-  }, [step]);
-
-  const handleCalculate = () => {
-    if (vehicleConsumptionPer100km && naftaPrice && gncPrice) {
-      setShowSavings(true);
-      setCalculated(true);
-    }
+    window.scrollTo({
+      top: y,
+      behavior: 'smooth',
+    });
   };
 
-  const handleNextStep = () => {
-    setStep(2);
-    setShowRecovery(false);
-  };
+  const [step, setStep] = useState<1 | 2>(1);
+  const [calculatedStep1, setCalculatedStep1] = useState(false);
+  const [calculatedStep2, setCalculatedStep2] = useState(false);
 
-  const handleRecoveryCalculate = () => {
-    if (monthlyKm && equipmentCost) {
-      setShowRecovery(true);
-    }
-  };
+  const [fuelMonthly, setFuelMonthly] = useState<number | ''>('');
+  const [fuelPrice, setFuelPrice] = useState<number | ''>('');
+  const [gncPrice, setGncPrice] = useState<number | ''>('');
+
+  const isStep1Valid =
+    fuelMonthly !== '' &&
+    fuelPrice !== '' &&
+    gncPrice !== '' &&
+    fuelMonthly > 0 &&
+    fuelPrice > 0 &&
+    gncPrice > 0;
+
+  const fuelLiters =
+    fuelMonthly && fuelPrice ? fuelMonthly / fuelPrice : 0;
+
+  const gncM3 = fuelLiters * 1.1;
+  const gncMonthlyCost = gncM3 * (gncPrice || 0);
+  const monthlySavings = Math.max(
+    0,
+    (fuelMonthly || 0) - gncMonthlyCost
+  );
+
+  const [equipmentPrice, setEquipmentPrice] = useState<number | ''>('');
+  const [installments, setInstallments] = useState<number | ''>('');
+  const [annualInterest, setAnnualInterest] = useState<number | ''>('');
+
+  const isStep2Valid =
+    equipmentPrice !== '' &&
+    installments !== '' &&
+    equipmentPrice > 0 &&
+    installments > 0 &&
+    (annualInterest === '' || annualInterest >= 0);
+
+  const monthlyInterest =
+    annualInterest && installments
+      ? Number(annualInterest) / 100 / 12
+      : 0;
+
+  const monthlyInstallment =
+    equipmentPrice && installments && monthlyInterest
+      ? (Number(equipmentPrice) * monthlyInterest) /
+      (1 - Math.pow(1 + monthlyInterest, -Number(installments)))
+      : equipmentPrice && installments
+        ? Number(equipmentPrice) / Number(installments)
+        : 0;
+
+  const difference = Math.abs(
+    monthlySavings - monthlyInstallment
+  );
+
+  const savingsGreaterThanInstallment =
+    monthlySavings >= monthlyInstallment;
+
+  const discountPercent =
+    monthlyInstallment > 0
+      ? (monthlySavings / monthlyInstallment) * 100
+      : 0;
 
   const resetStep1 = () => {
-    setVehicleConsumption(0);
-    setNaftaPrice(0);
-    setGncPrice(0);
-    setShowSavings(false);
-    setCalculated(false);
+    setFuelMonthly('');
+    setFuelPrice('');
+    setGncPrice('');
+    setCalculatedStep1(false);
+    slowScrollTo(step1Ref);
   };
 
   const resetStep2 = () => {
-    setMonthlyKm(0);
-    setEquipmentCost(0);
-    setShowRecovery(false);
+    setEquipmentPrice('');
+    setInstallments('');
+    setAnnualInterest('');
+    setCalculatedStep2(false);
+    slowScrollTo(step2Ref);
   };
 
+  useEffect(() => {
+    if (step === 2) {
+      requestAnimationFrame(() => {
+        slowScrollTo(step2Ref);
+      });
+    }
+  }, [step]);
+
   return (
-    <div
-      id="calculadora"
-      className={`${abyssinica.className} ${styles.wrapper}`}
-    >
-      <div className={styles.containerTitle}>
+    <>
+      <div className={`${abyssinica.className} ${styles.containerTitle}`}>
         <h1 className={styles.title}>Calculadora de Ahorro</h1>
       </div>
 
-      <div className={styles.container}>
+      <div className={`${abyssinica.className} ${styles.container}`}>
         <div className={styles.containerText}>
           <p>
             ¿Tenés un vehículo a nafta y querés ver cuánto te ahorrás con GNC?
           </p>
         </div>
+      </div>
 
-        <div className={styles.calcWrapper}>
-          {/* Card 1 */}
-          <div className={styles.card}>
-            <div className={styles.tabs}>
-              <span className={styles.green}>Ahorro Cada 100 Km</span>
-              <span className={styles.gray}>Recuperación del Equipo</span>
-            </div>
 
-            <div className={styles.inputGroup}>
-              <p>Consumo de nafta Cada 100 Km:</p>
-              <div className={styles.inputUnit}>
-                <input
-                  type="number"
-                  value={
-                    vehicleConsumptionPer100km === 0
-                      ? ''
-                      : vehicleConsumptionPer100km
+      {/* Card 1 */}
+      <div
+        ref={step1Ref}
+        className={`${inter.className} ${styles.calculator}`}
+      >
+        <div className={styles.stepsContainer}>
+          <div className={styles.stepActive}>
+            <Image src={numberOne} alt="Número uno" width={37} height={37} />
+            <p className={styles.stepsText}>Datos de consumo</p>
+          </div>
+
+          <div className={styles.step}>
+            <Image src={numberTwo} alt="Número dos" width={37} height={37} />
+            <p className={styles.stepsText}>Calcular financiación</p>
+          </div>
+        </div>
+
+        <div className={styles.calculatorContainer}>
+          <h2 className={styles.calculatorTitle}>
+            Ingresá tus datos de consumo
+          </h2>
+
+          <div className={styles.inputContainer}>
+            <form className={styles.form}>
+              <label>¿Cuánto gastás por mes en nafta?</label>
+              <input
+                className={styles.input}
+                type="number"
+                min={0}
+                value={fuelMonthly}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  if (value === '') {
+                    setFuelMonthly('');
+                    return;
                   }
-                  onChange={e => setVehicleConsumption(Number(e.target.value))}
-                  className={styles.input}
-                />
-                <span className={styles.espacio}>Litros</span>
-              </div>
-            </div>
+                  const num = Number(value);
+                  if (num < 0) return;
+                  setFuelMonthly(num);
+                }}
+              />
 
-            <div className={styles.inputGroup}>
-              <p>Precio de la Nafta:</p>
-              <div className={styles.inputUnit}>
-                <input
-                  type="number"
-                  value={naftaPrice === 0 ? '' : naftaPrice}
-                  onChange={e => setNaftaPrice(Number(e.target.value))}
-                  className={styles.input}
-                />
-                <span className={styles.espacio}>$ / L</span>
-              </div>
-            </div>
+              <label>Precio del litro de nafta</label>
+              <input
+                className={styles.input}
+                type="number"
+                min={0}
+                value={fuelPrice}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  if (value === '') {
+                    setFuelPrice('');
+                    return;
+                  }
+                  const num = Number(value);
+                  if (num < 0) return;
+                  setFuelPrice(num);
+                }}
+              />
 
-            <div className={styles.inputGroup}>
-              <p>Precio del GNC:</p>
-              <div className={styles.inputUnit}>
-                <input
-                  type="number"
-                  value={gncPrice === 0 ? '' : gncPrice}
-                  onChange={e => setGncPrice(Number(e.target.value))}
-                  className={styles.input}
-                />
-                <span>$ / M³</span>
-              </div>
-            </div>
+              <label>Precio del m³ de GNC</label>
+              <input
+                className={styles.input}
+                type="number"
+                min={0}
+                value={gncPrice}
+                onChange={(e) => {
+                  const value = e.target.value;
+                  if (value === '') {
+                    setGncPrice('');
+                    return;
+                  }
+                  const num = Number(value);
+                  if (num < 0) return;
+                  setGncPrice(num);
+                }}
+              />
+            </form>
 
-            <div
-              className={`${styles.output} ${showSavings ? styles.showOutput : ''}`}
+            {calculatedStep1 && (
+              <div className={styles.resultsSection}>
+                <div className={styles.resultsContainer}>
+                  <div className={`${styles.resultsItem} ${styles.borderTop}`}>
+                    <p className={styles.textResults}>
+                      Consumo de nafta por mes:
+                    </p>
+                    <p className={styles.green}>
+                      {fuelLiters.toFixed(2)} l
+                    </p>
+                  </div>
+
+                  <div className={styles.resultsItem}>
+                    <p className={styles.textResults}>
+                      Consumo de GNC por mes:
+                    </p>
+                    <p className={styles.green}>
+                      {gncM3.toFixed(2)} m³
+                    </p>
+                  </div>
+
+                  <div
+                    className={`${styles.resultsItem} ${styles.borderBottom}`}
+                  >
+                    <p className={styles.textResults}>
+                      Gasto de GNC por mes:
+                    </p>
+                    <p className={styles.green}>
+                      ${gncMonthlyCost.toFixed(0)}
+                    </p>
+                  </div>
+
+                  <div className={styles.resultsItem}>
+                    <p className={styles.green}>Ahorro mensual</p>
+                    <p className={styles.green}>
+                      ${monthlySavings.toFixed(0)}
+                    </p>
+                  </div>
+                </div>
+
+                <div className={styles.explanationContainer}>
+                  <p className={styles.explanation}>
+                    <span className={styles.titleExplanation}>
+                      Explicación:
+                    </span>
+                    <br />
+                    Hoy en día gastas ${Number(fuelMonthly).toFixed(0)} pesos
+                    andando a nafta.
+                    <br />
+                    Si anduvieses el mes completo a GNC, vas a estar gastando
+                    aproximadamente ${gncMonthlyCost.toFixed(0)} pesos por mes.
+                    <br />
+                    ¡Esto es una diferencia de $
+                    {monthlySavings.toFixed(0)} pesos a tu favor!!
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
+
+          <div className={styles.buttonContainer}>
+            {calculatedStep1 ? (
+              <button className={styles.buttonBack} onClick={resetStep1}>
+                Volver a calcular
+              </button>
+            ) : (
+              <div style={{ width: 235 }} />
+            )}
+
+            <button
+              className={styles.button}
+              disabled={!isStep1Valid && !calculatedStep1}
+              onClick={() => {
+                if (!calculatedStep1) {
+                  if (!isStep1Valid) return;
+                  setCalculatedStep1(true);
+                } else {
+                  setStep(2);
+                  setShowStep2(true);
+                }
+              }}
             >
-              {showSavings && (
-                <>
-                  Ahorrás{' '}
-                  <span className={styles.green}>
-                    ${savingsPer100Km.toFixed()}
-                  </span>{' '}
-                  cada 100 Km
-                </>
-              )}
+              {calculatedStep1 ? 'Continuar' : 'Calcular'}
+            </button>
+          </div>
+
+          <p className={styles.disclaimer}>
+            *Los valores presentados son meramente estimativos y no constituyen
+            una proyección exacta de la realidad. Antes de tomar cualquier
+            decisión, se recomienda realizar un análisis detallado.
+          </p>
+        </div>
+
+        <div className={styles.imageCalculatorContainer}>
+          <Image className={styles.calculatorImage} src={calculatorImage} alt="Calculadora" width={190} height={450} />
+        </div>
+      </div>
+
+      {/* Card 2 */}
+      {step === 2 && (
+        <div
+          ref={step2Ref}
+          className={`${inter.className} ${styles.calculator} ${styles.fadeIn}`}
+        >
+          <div className={styles.stepsContainer}>
+            <div className={styles.step}>
+              <Image src={numberOne} alt="Número uno" width={37} height={37} />
+              <p className={styles.stepsText}>Datos de consumo</p>
             </div>
 
-            <div
-              className={`${styles.buttonGroup} ${showSavings ? styles.alignBetween : styles.alignEnd}`}
-            >
-              {!calculated ? (
-                <button className={styles.btn} onClick={handleCalculate}>
-                  Calcular
-                </button>
-              ) : (
-                <>
-                  <button className={styles.link} onClick={resetStep1}>
-                    ‹ Volver a Calcular
-                  </button>
-                  <button className={styles.btn} onClick={handleNextStep}>
-                    Siguiente
-                  </button>
-                </>
-              )}
+            <div className={styles.stepActive}>
+              <Image src={numberTwo} alt="Número dos" width={37} height={37} />
+              <p className={styles.stepsText}>Calcular financiación</p>
             </div>
           </div>
 
-          {/* Card 2 */}
-          {step === 2 && (
-            <div className={styles.card} ref={card2Ref}>
-              <div className={styles.tabs}>
-                <span className={styles.gray}>Ahorro cada 100 Km</span>
-                <span className={styles.green}>Recuperación del Equipo</span>
-              </div>
+          <div className={styles.calculatorContainer}>
+            <h2 className={styles.calculatorTitle}>Financiación</h2>
 
-              <div className={styles.inputGroup}>
-                <p>Kilómetros Recorridos por Mes:</p>
-                <div className={styles.inputUnit}>
-                  <input
-                    type="number"
-                    value={monthlyKm === 0 ? '' : monthlyKm}
-                    onChange={e => setMonthlyKm(Number(e.target.value))}
-                    className={styles.input}
-                  />
-                  <span>Km</span>
+            <div className={styles.inputContainer}>
+              <form className={styles.form}>
+                <label>Precio del equipo</label>
+                <input
+                  className={styles.input}
+                  type="number"
+                  min={0}
+                  value={equipmentPrice}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    if (value === '') {
+                      setEquipmentPrice('');
+                      return;
+                    }
+                    const num = Number(value);
+                    if (num < 0) return;
+                    setEquipmentPrice(num);
+                  }}
+                />
+
+                <label>Cuotas</label>
+                <input
+                  className={styles.input}
+                  type="number"
+                  min={1}
+                  value={installments}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    if (value === '') {
+                      setInstallments('');
+                      return;
+                    }
+                    const num = Number(value);
+                    if (num < 0) return;
+                    setInstallments(num);
+                  }}
+                />
+
+                <label>Interés anual</label>
+                <input
+                  className={styles.input}
+                  type="number"
+                  min={0}
+                  value={annualInterest}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    if (value === '') {
+                      setAnnualInterest('');
+                      return;
+                    }
+                    const num = Number(value);
+                    if (num < 0) return;
+                    setAnnualInterest(num);
+                  }}
+                />
+              </form>
+
+              {calculatedStep2 && (
+                <div className={styles.resultsSection}>
+                  <div className={styles.resultsContainer}>
+                    <div className={`${styles.resultsItem} ${styles.borderTop}`}>
+                      <p className={styles.textResults}>Ahorro mensual:</p>
+                      <p className={styles.green}>
+                        ${monthlySavings.toFixed(0)}
+                      </p>
+                    </div>
+
+                    <div className={styles.resultsItem}>
+                      <p className={styles.textResults}>
+                        Valor de la cuota (Con interés):
+                      </p>
+                      <p className={styles.green}>
+                        ${monthlyInstallment.toFixed(0)}
+                      </p>
+                    </div>
+
+                    <div
+                      className={`${styles.resultsItem} ${styles.borderBottom}`}
+                    >
+                      <p className={styles.textResults}>Diferencia:</p>
+                      <p className={styles.green}>
+                        ${difference.toFixed(0)}
+                      </p>
+                    </div>
+                  </div>
+
+                  {savingsGreaterThanInstallment ? (
+                    <div className={styles.explanationContainer}>
+                      <p className={styles.explanation}>
+                        <span className={styles.titleExplanation}>
+                          Explicación:
+                        </span>
+                        <br />
+                        Por mes vas a estar pagando una cuota de $
+                        {monthlyInstallment.toFixed(0)} para pagar el equipo.
+                        <br />
+                        Por lo que la cuota se paga con el ahorro y todos los
+                        meses te va a sobrar $
+                        {difference.toFixed(0)} en tu bolsillo!
+                        <br />
+                        Al cabo de {installments} meses, te va a quedar cada mes
+                        ${monthlySavings.toFixed(0)} en tu bolsillo
+                      </p>
+                    </div>
+                  ) : (
+                    <div className={styles.explanationContainer}>
+                      <p className={styles.explanation}>
+                        <span className={styles.titleExplanation}>
+                          Explicación:
+                        </span>
+                        <br />
+                        Por mes vas a estar pagando una cuota de $
+                        {monthlyInstallment.toFixed(0)} para pagar el equipo.
+                        <br />
+                        Por lo que la cuota te baja $
+                        {monthlySavings.toFixed(0)}!
+                        <br />
+                        O sea que la cuota va a tener un descuento del{' '}
+                        {discountPercent.toFixed(0)}%!
+                        <br />
+                        Al cabo de {installments} meses te va a quedar en tu
+                        bolsillo ${monthlySavings.toFixed(0)} todos los meses
+                      </p>
+                    </div>
+                  )}
                 </div>
-              </div>
+              )}
+            </div>
 
-              <div className={styles.inputGroup}>
-                <p>Precio del Equipo:</p>
-                <div className={styles.inputUnit}>
-                  <input
-                    type="number"
-                    value={equipmentCost === 0 ? '' : equipmentCost}
-                    onChange={e => setEquipmentCost(Number(e.target.value))}
-                    className={styles.input}
-                  />
-                  <span className={styles.espacio}>$</span>
-                </div>
-              </div>
-
-              <div
-                className={`${styles.output} ${showRecovery ? styles.showOutput : ''}`}
-              >
-                {showRecovery && (
-                  <>
-                    Recuperás lo invertido en{' '}
-                    <span className={styles.green}>
-                      {recoveryTime < 1
-                        ? 'Menos de 1 Mes'
-                        : `${years > 0 ? `${years} Año${years > 1 ? 's' : ''} ` : ''}${months} Meses`}
-                    </span>
-                  </>
-                )}
-              </div>
-
-              <div
-                className={`${styles.buttonGroup} ${showSavings ? styles.alignBetween : styles.alignEnd}`}
-              >
+            <div className={styles.buttonContainer}>
+              {step === 2 && (
                 <button
-                  className={styles.link}
+                  className={styles.buttonBack}
                   onClick={() => {
-                    setStep(1);
-                    resetStep2();
+                    if (calculatedStep2) {
+                      resetStep2();
+                    } else {
+                      setStep(1);
+                      requestAnimationFrame(() => {
+                        slowScrollTo(step1Ref);
+                      });
+                    }
                   }}
                 >
-                  ‹ Anterior
+                  {calculatedStep2 ? 'Volver a calcular' : 'Volver al paso anterior'}
                 </button>
-                <button
-                  className={styles.btn}
-                  onClick={handleRecoveryCalculate}
-                >
-                  Calcular
-                </button>
-              </div>
+              )}
+
+              <button
+                className={styles.button}
+                disabled={!isStep2Valid}
+                onClick={() => {
+                  if (!isStep2Valid) return;
+                  setCalculatedStep2(true);
+                  setShowBackToStep1(false);
+                }}
+              >
+                Calcular
+              </button>
             </div>
-          )}
+
+            <p className={styles.disclaimer}>
+              *Los valores presentados son meramente estimativos y no constituyen
+              una proyección exacta de la realidad. Antes de tomar cualquier
+              decisión, se recomienda realizar un análisis detallado.
+            </p>
+          </div>
+
+          <div className={styles.imageCalculatorContainer}>
+            <Image className={styles.calculatorImage} src={calculatorImage} alt="Calculadora" width={190} height={450} />
+          </div>
         </div>
-      </div>
-    </div>
+      )}
+    </>
   );
 }
