@@ -6,6 +6,7 @@ import Image from 'next/image';
 import numberOne from '@/images/number-one.png';
 import numberTwo from '@/images/number-two.png';
 import calculatorImage from '@/images/img-calculadora.png';
+import calculatorMiniature from '@/images/img-calculadora2.png';
 import { useRef, useState, useEffect } from 'react';
 
 const abyssinica = Abyssinica_SIL({
@@ -148,6 +149,9 @@ export default function Calculator() {
         className={`${inter.className} ${styles.calculator}`}
       >
         <div className={styles.stepsContainer}>
+          <div className={styles.miniatureContainer}>
+            <Image className={styles.miniatureImage} src={calculatorMiniature} alt="Calculadora" width={120} height={120} />
+          </div>
           <div className={styles.stepActive}>
             <Image src={numberOne} alt="Número uno" width={37} height={37} />
             <p className={styles.stepsText}>Datos de consumo</p>

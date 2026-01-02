@@ -79,6 +79,10 @@
   gap: 30px;
 }
 
+.miniatureContainer {
+  display: none;
+}
+
 .stepActive {
   width: 241px;
   display: flex;
@@ -291,26 +295,20 @@
   transition: opacity 300ms ease, transform 300ms ease;
 }
 
-.fadeOut {
-  opacity: 0;
-  transform: translateY(-20px);
-  transition: opacity 300ms ease, transform 300ms ease;
-}
-
-.step2 {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 1s ease, transform 1s ease;
-}
-
-.step2Visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 @media (min-width: 769px) and (max-width: 1023px) {
   .calculatorContainer {
     border-radius: 0 20px 20px 0;
+  }
+
+  .stepsContainer {
+    padding: 50px 0 0 0;
+  }
+
+  .miniatureContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .imageCalculatorContainer {
@@ -356,9 +354,10 @@
     height: auto;
     border-radius: 20px 20px 0 0;
     flex-direction: row;
-    padding: 10px 0 0 25px;
+    padding: 10px 10px 0 25px;
     gap: 10px;
     align-self: center;
+    justify-content: space-between;
   }
 
   .step,
@@ -383,6 +382,20 @@
 
   .calculatorTitle {
     font-size: 25px;
+  }
+
+  .miniatureContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    order: 2;
+    padding-bottom: 8px;
+  }
+
+  .miniatureImage {
+    width: 50px;
+    height: 50px;
   }
 
   .textResults,
