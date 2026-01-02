@@ -307,3 +307,107 @@
   opacity: 1;
   transform: translateY(0);
 }
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  .calculatorContainer {
+    border-radius: 0 20px 20px 0;
+  }
+
+  .imageCalculatorContainer {
+    display: none;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+  .container {
+    gap: 30px;
+    padding-top: 30px;
+  }
+
+  .containerTitle {
+    height: auto;
+    padding: 1.5rem;
+  }
+
+  .title {
+    font-size: 25px;
+  }
+
+  .containerText {
+    font-size: 20px;
+    width: 90%;
+    padding-top: 15px;
+  }
+
+  .calculatorContainer {
+    width: 90%;
+    padding: 50px 25px;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .calculator {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .stepsContainer {
+    width: 90%;
+    height: auto;
+    border-radius: 20px 20px 0 0;
+    flex-direction: row;
+    padding: 10px 0 0 25px;
+    gap: 10px;
+    align-self: center;
+  }
+
+  .step,
+  .stepActive {
+    width: 55px;
+    height: 60px;
+    border-radius: 20px 20px 0 0;
+    justify-content: center;
+  }
+
+  .stepsText {
+    display: none;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .input {
+    width: 100%;
+  }
+
+  .calculatorTitle {
+    font-size: 25px;
+  }
+
+  .textResults,
+  .green,
+  .explanation {
+    font-size: 15px;
+  }
+
+  .green {
+    text-align: center;
+  }
+
+  .titleExplanation {
+    font-size: 20px;
+  }
+
+  .buttonContainer {
+    gap: 15px;
+  }
+
+  .disclaimer {
+    font-size: 10px;
+  }
+
+  .imageCalculatorContainer {
+    display: none;
+  }
+}
