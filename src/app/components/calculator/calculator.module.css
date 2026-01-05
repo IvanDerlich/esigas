@@ -68,7 +68,7 @@
 
 .stepsContainer {
   width: 250px;
-  height: 680px;
+  height: auto;
   background-color: #222630;
   display: flex;
   flex-direction: column;
@@ -89,7 +89,7 @@
   align-items: center;
   justify-content: flex-start;
   gap: 20px;
-  background-color: #FFFFFF45;
+  background-color: #ffffff45;
   padding: 10px;
   border-radius: 20px 0 0 20px;
 }
@@ -111,9 +111,8 @@
 
 .calculator {
   display: flex;
-  align-items: stretch;
+  align-items: flex-start;
   justify-content: center;
-  margin: 50px 0;
   height: auto;
 }
 
@@ -225,13 +224,13 @@
 
 .borderTop {
   width: 100%;
-  border-top: 2px dotted #62B26E;
+  border-top: 2px dotted #62b26e;
   padding-top: 10px;
 }
 
 .borderBottom {
   width: 100%;
-  border-bottom: 2px dotted #62B26E;
+  border-bottom: 2px dotted #62b26e;
   padding-bottom: 10px;
 }
 
@@ -248,8 +247,8 @@
 
 .explanationContainer {
   width: 100%;
-  border-top: 2px dotted #62B26E;
-  border-bottom: 2px dotted #62B26E;
+  border-top: 2px dotted #62b26e;
+  border-bottom: 2px dotted #62b26e;
   padding: 10px 0 10px 0;
 }
 
@@ -271,7 +270,7 @@
 
 .imageCalculatorContainer {
   width: 250px;
-  height: 680px;
+  height: auto;
   background-color: #222630;
   border-radius: 0 20px 20px 0;
   display: flex;
@@ -283,16 +282,25 @@
   object-fit: contain;
 }
 
-.stepsContainer,
-.imageCalculatorContainer {
-  height: auto;
-  align-self: stretch;
+.calculatorWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  padding: 60px 0;
 }
 
-.fadeIn {
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 300ms ease, transform 300ms ease;
+.calculatorColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.stepsContainer,
+.imageCalculatorContainer {
+  position: sticky;
+  top: 120px;
+  align-self: stretch;
+  display: flex;
 }
 
 @media (min-width: 769px) and (max-width: 1023px) {
@@ -422,5 +430,19 @@
 
   .imageCalculatorContainer {
     display: none;
+  }
+
+  .calculatorWrapper {
+    flex-direction: column;
+  }
+
+  .stepsContainer,
+  .imageCalculatorContainer {
+    height: auto !important;
+    transition: none !important;
+  }
+
+  .calculatorColumn {
+    gap: 110px;
   }
 }
