@@ -61,15 +61,16 @@ export default function Calculator() {
   const monthlySavings = Math.max(0, (fuelMonthly || 0) - gncMonthlyCost);
 
   const [equipmentPrice, setEquipmentPrice] = useState<number | ''>('');
-  const [installments, setInstallments] = useState<number | ''>('');
-  const [annualInterest, setAnnualInterest] = useState<number | ''>('');
+  const [installments, setInstallments] = useState<number | ''>(12);
+  const [annualInterest, setAnnualInterest] = useState<number | ''>(0);
 
   const isStep2Valid =
     equipmentPrice !== '' &&
     installments !== '' &&
+    annualInterest !== '' &&
     equipmentPrice > 0 &&
     installments > 0 &&
-    (annualInterest === '' || annualInterest >= 0);
+    annualInterest >= 0;
 
   const monthlyInterest =
     annualInterest && installments ? Number(annualInterest) / 100 / 12 : 0;
@@ -94,7 +95,18 @@ export default function Calculator() {
     setFuelPrice('');
     setGncPrice('');
     setCalculatedStep1(false);
-    slowScrollTo(step1Ref);
+
+    if (step === 2) {
+      setEquipmentPrice('');
+      setInstallments('');
+      setAnnualInterest('');
+      setCalculatedStep2(false);
+      setStep(1);
+    }
+
+    requestAnimationFrame(() => {
+      slowScrollTo(step1Ref);
+    });
   };
 
   const resetStep2 = () => {
