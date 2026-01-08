@@ -303,6 +303,20 @@
   display: flex;
 }
 
+.inputWithUnit {
+  position: relative;
+  width: 100%;
+}
+
+.unit {
+  position: absolute;
+  right: 35px;
+  top: 30%;
+  color: black;
+  font-size: 14px;
+  pointer-events: none;
+}
+
 @media (min-width: 769px) and (max-width: 1023px) {
   .calculatorContainer {
     border-radius: 0 20px 20px 0;
