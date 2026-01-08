@@ -57,10 +57,15 @@ export default function Location() {
 
       <div className={`${inter.className} ${styles.ubicationContent}`}>
         {locations.map((loc, index) => (
-          <div key={index} className={`${styles.ubicationCard} ${loc.mapLocationRight === false ? styles.reverse : ''
-            }`}>
-            <div className={loc.mapLocationRight === false ? styles.alignEnd : ''
-            }>
+          <div
+            key={index}
+            className={`${styles.ubicationCard} ${
+              loc.mapLocationRight === false ? styles.reverse : ''
+            }`}
+          >
+            <div
+              className={loc.mapLocationRight === false ? styles.alignEnd : ''}
+            >
               <h3 className={styles.ubicationTitleCard}>{loc.title}</h3>
 
               <div className={styles.ubicationItem}>

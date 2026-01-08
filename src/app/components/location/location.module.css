@@ -42,7 +42,7 @@
     8px 15px 8px rgba(0, 0, 0, 0.25);
 }
 
-.ubicationCard>div:first-child {
+.ubicationCard > div:first-child {
   flex: 1;
   padding: 25px 25px;
   display: flex;
