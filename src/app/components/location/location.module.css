@@ -42,7 +42,7 @@
     8px 15px 8px rgba(0, 0, 0, 0.25);
 }
 
-.ubicationCard > div:first-child {
+.ubicationCard>div:first-child {
   flex: 1;
   padding: 25px 25px;
   display: flex;
@@ -59,6 +59,19 @@
 
 .ubicationItem {
   margin-bottom: 12px;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.alignEnd {
+  align-items: flex-end;
+}
+
+.alignEnd h3,
+.alignEnd .ubicationItem {
+  text-align: right;
 }
 
 .green {
@@ -115,6 +128,15 @@
 
   .ubicationImage {
     width: 25%;
+  }
+
+  .alignEnd {
+    align-items: flex-start;
+  }
+
+  .alignEnd h3,
+  .alignEnd .ubicationItem {
+    text-align: left;
   }
 }
 
