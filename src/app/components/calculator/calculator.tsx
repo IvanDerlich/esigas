@@ -78,7 +78,7 @@ export default function Calculator() {
   const monthlyInstallment =
     equipmentPrice && installments && monthlyInterest
       ? (Number(equipmentPrice) * monthlyInterest) /
-        (1 - Math.pow(1 + monthlyInterest, -Number(installments)))
+      (1 - Math.pow(1 + monthlyInterest, -Number(installments)))
       : equipmentPrice && installments
         ? Number(equipmentPrice) / Number(installments)
         : 0;
@@ -212,6 +212,7 @@ export default function Calculator() {
               <div className={styles.inputContainer}>
                 <form className={styles.form}>
                   <label>¿Cuánto gastás por mes en nafta?</label>
+                  <div className={styles.inputWithUnit}>
                   <input
                     className={styles.input}
                     type="number"
@@ -228,8 +229,11 @@ export default function Calculator() {
                       setFuelMonthly(num);
                     }}
                   />
+                  <span className={styles.unit}>L</span>
+                  </div>
 
                   <label>Precio del litro de nafta</label>
+                  <div className={styles.inputWithUnit}>
                   <input
                     className={styles.input}
                     type="number"
@@ -246,24 +250,29 @@ export default function Calculator() {
                       setFuelPrice(num);
                     }}
                   />
+                  <span className={styles.unit}>$/L</span>
+                  </div>
 
                   <label>Precio del m³ de GNC</label>
-                  <input
-                    className={styles.input}
-                    type="number"
-                    min={0}
-                    value={gncPrice}
-                    onChange={e => {
-                      const value = e.target.value;
-                      if (value === '') {
-                        setGncPrice('');
-                        return;
-                      }
-                      const num = Number(value);
-                      if (num < 0) return;
-                      setGncPrice(num);
-                    }}
-                  />
+                  <div className={styles.inputWithUnit}>
+                    <input
+                      className={styles.input}
+                      type="number"
+                      min={0}
+                      value={gncPrice}
+                      onChange={e => {
+                        const value = e.target.value;
+                        if (value === '') {
+                          setGncPrice('');
+                          return;
+                        }
+                        const num = Number(value);
+                        if (num < 0) return;
+                        setGncPrice(num);
+                      }}
+                    />
+                    <span className={styles.unit}>$/M³</span>
+                  </div>
                 </form>
 
                 {calculatedStep1 && (
@@ -377,22 +386,25 @@ export default function Calculator() {
                 <div className={styles.inputContainer}>
                   <form className={styles.form}>
                     <label>Precio del equipo</label>
-                    <input
-                      className={styles.input}
-                      type="number"
-                      min={0}
-                      value={equipmentPrice}
-                      onChange={e => {
-                        const value = e.target.value;
-                        if (value === '') {
-                          setEquipmentPrice('');
-                          return;
-                        }
-                        const num = Number(value);
-                        if (num < 0) return;
-                        setEquipmentPrice(num);
-                      }}
-                    />
+                    <div className={styles.inputWithUnit}>
+                      <input
+                        className={styles.input}
+                        type="number"
+                        min={0}
+                        value={equipmentPrice}
+                        onChange={e => {
+                          const value = e.target.value;
+                          if (value === '') {
+                            setEquipmentPrice('');
+                            return;
+                          }
+                          const num = Number(value);
+                          if (num < 0) return;
+                          setEquipmentPrice(num);
+                        }}
+                      />
+                      <span className={styles.unit}>$</span>
+                    </div>
 
                     <label>Cuotas</label>
                     <input
@@ -413,22 +425,25 @@ export default function Calculator() {
                     />
 
                     <label>Interés anual</label>
-                    <input
-                      className={styles.input}
-                      type="number"
-                      min={0}
-                      value={annualInterest}
-                      onChange={e => {
-                        const value = e.target.value;
-                        if (value === '') {
-                          setAnnualInterest('');
-                          return;
-                        }
-                        const num = Number(value);
-                        if (num < 0) return;
-                        setAnnualInterest(num);
-                      }}
-                    />
+                    <div className={styles.inputWithUnit}>
+                      <input
+                        className={styles.input}
+                        type="number"
+                        min={0}
+                        value={annualInterest}
+                        onChange={e => {
+                          const value = e.target.value;
+                          if (value === '') {
+                            setAnnualInterest('');
+                            return;
+                          }
+                          const num = Number(value);
+                          if (num < 0) return;
+                          setAnnualInterest(num);
+                        }}
+                      />
+                      <span className={styles.unit}>%</span>
+                    </div>
                   </form>
 
                   {calculatedStep2 && (
