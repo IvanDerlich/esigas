@@ -125,6 +125,22 @@ export default function Calculator() {
     }
   }, [step]);
 
+
+  const updateHeight = () => {
+    let targetElement;
+
+    if (step === 2 && step2Ref.current) {
+      targetElement = step2Ref.current;
+    } else if (step === 1 && step1Ref.current) {
+      targetElement = step1Ref.current;
+    }
+    
+    if (targetElement) {
+      setDynamicHeight(targetElement.offsetHeight);
+    }
+  };
+
+
   useEffect(() => {
     if (step !== 2) {
       setSideOffset(0);
@@ -132,28 +148,38 @@ export default function Calculator() {
     }
 
     if (!step1Ref.current || !step2Ref.current) return;
-
+    
     const step1Top = step1Ref.current.offsetTop;
     const step2Top = step2Ref.current.offsetTop;
 
     const offset = step2Top - step1Top;
 
     setSideOffset(offset);
+    
   }, [step]);
+  
 
   useEffect(() => {
-    if (step === 1 && step1Ref.current) {
-      setDynamicHeight(step1Ref.current.offsetHeight);
-    } else if (step === 2 && step2Ref.current) {
-      setDynamicHeight(step2Ref.current.offsetHeight);
-    }
+      updateHeight();
+      
+      const observer = new ResizeObserver(updateHeight);
+      let targetToObserve = null;
+      
+      if (step === 1 && step1Ref.current) {
+          targetToObserve = step1Ref.current;
+      } else if (step === 2 && step2Ref.current) {
+          targetToObserve = step2Ref.current;
+      }
+      
+      if (targetToObserve) {
+          observer.observe(targetToObserve);
+      }
+      
+      return () => {
+          observer.disconnect();
+      };
+      
   }, [step, calculatedStep1, calculatedStep2]);
-
-  useEffect(() => {
-    if (step1Ref.current) {
-      setDynamicHeight(step1Ref.current.offsetHeight);
-    }
-  }, []);
 
   return (
     <>
@@ -169,13 +195,15 @@ export default function Calculator() {
         </div>
       </div>
 
-      <div className={styles.calculatorWrapper}>
+      <div className={styles.calculatorWrapper} style={{ 
+              minHeight: dynamicHeight > 0 ? `${dynamicHeight}px` : 'auto', 
+          }}>
         <div
           className={styles.stepsContainer}
           style={{
             transform: `translateY(${sideOffset}px)`,
             transition: step === 2 ? 'transform 400ms ease' : 'none',
-            height: dynamicHeight > 0 ? `${dynamicHeight}px` : 'auto',
+            height: dynamicHeight > 0 ? `${dynamicHeight}px` : 'auto', 
           }}
         >
           <div className={styles.miniatureContainer}>
@@ -514,7 +542,7 @@ export default function Calculator() {
                             <br />
                             Al cabo de {installments} meses te va a quedar en tu
                             bolsillo ${monthlySavings.toFixed(0)} todos los
-                            meses
+                            meses.
                           </p>
                         </div>
                       )}
