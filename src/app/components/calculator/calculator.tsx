@@ -78,7 +78,7 @@ export default function Calculator() {
   const monthlyInstallment =
     equipmentPrice && installments && monthlyInterest
       ? (Number(equipmentPrice) * monthlyInterest) /
-      (1 - Math.pow(1 + monthlyInterest, -Number(installments)))
+        (1 - Math.pow(1 + monthlyInterest, -Number(installments)))
       : equipmentPrice && installments
         ? Number(equipmentPrice) / Number(installments)
         : 0;
@@ -125,7 +125,6 @@ export default function Calculator() {
     }
   }, [step]);
 
-
   const updateHeight = () => {
     let targetElement;
 
@@ -134,12 +133,11 @@ export default function Calculator() {
     } else if (step === 1 && step1Ref.current) {
       targetElement = step1Ref.current;
     }
-    
+
     if (targetElement) {
       setDynamicHeight(targetElement.offsetHeight);
     }
   };
-
 
   useEffect(() => {
     if (step !== 2) {
@@ -148,37 +146,34 @@ export default function Calculator() {
     }
 
     if (!step1Ref.current || !step2Ref.current) return;
-    
+
     const step1Top = step1Ref.current.offsetTop;
     const step2Top = step2Ref.current.offsetTop;
 
     const offset = step2Top - step1Top;
 
     setSideOffset(offset);
-    
   }, [step]);
-  
 
   useEffect(() => {
-      updateHeight();
-      
-      const observer = new ResizeObserver(updateHeight);
-      let targetToObserve = null;
-      
-      if (step === 1 && step1Ref.current) {
-          targetToObserve = step1Ref.current;
-      } else if (step === 2 && step2Ref.current) {
-          targetToObserve = step2Ref.current;
-      }
-      
-      if (targetToObserve) {
-          observer.observe(targetToObserve);
-      }
-      
-      return () => {
-          observer.disconnect();
-      };
-      
+    updateHeight();
+
+    const observer = new ResizeObserver(updateHeight);
+    let targetToObserve = null;
+
+    if (step === 1 && step1Ref.current) {
+      targetToObserve = step1Ref.current;
+    } else if (step === 2 && step2Ref.current) {
+      targetToObserve = step2Ref.current;
+    }
+
+    if (targetToObserve) {
+      observer.observe(targetToObserve);
+    }
+
+    return () => {
+      observer.disconnect();
+    };
   }, [step, calculatedStep1, calculatedStep2]);
 
   return (
@@ -195,15 +190,18 @@ export default function Calculator() {
         </div>
       </div>
 
-      <div className={styles.calculatorWrapper} style={{ 
-              minHeight: dynamicHeight > 0 ? `${dynamicHeight}px` : 'auto', 
-          }}>
+      <div
+        className={styles.calculatorWrapper}
+        style={{
+          minHeight: dynamicHeight > 0 ? `${dynamicHeight}px` : 'auto',
+        }}
+      >
         <div
           className={styles.stepsContainer}
           style={{
             transform: `translateY(${sideOffset}px)`,
             transition: step === 2 ? 'transform 400ms ease' : 'none',
-            height: dynamicHeight > 0 ? `${dynamicHeight}px` : 'auto', 
+            height: dynamicHeight > 0 ? `${dynamicHeight}px` : 'auto',
           }}
         >
           <div className={styles.miniatureContainer}>
@@ -241,44 +239,44 @@ export default function Calculator() {
                 <form className={styles.form}>
                   <label>¿Cuánto gastás por mes en nafta?</label>
                   <div className={styles.inputWithUnit}>
-                  <input
-                    className={styles.input}
-                    type="number"
-                    min={0}
-                    value={fuelMonthly}
-                    onChange={e => {
-                      const value = e.target.value;
-                      if (value === '') {
-                        setFuelMonthly('');
-                        return;
-                      }
-                      const num = Number(value);
-                      if (num < 0) return;
-                      setFuelMonthly(num);
-                    }}
-                  />
-                  <span className={styles.unit}>L</span>
+                    <input
+                      className={styles.input}
+                      type="number"
+                      min={0}
+                      value={fuelMonthly}
+                      onChange={e => {
+                        const value = e.target.value;
+                        if (value === '') {
+                          setFuelMonthly('');
+                          return;
+                        }
+                        const num = Number(value);
+                        if (num < 0) return;
+                        setFuelMonthly(num);
+                      }}
+                    />
+                    <span className={styles.unit}>L</span>
                   </div>
 
                   <label>Precio del litro de nafta</label>
                   <div className={styles.inputWithUnit}>
-                  <input
-                    className={styles.input}
-                    type="number"
-                    min={0}
-                    value={fuelPrice}
-                    onChange={e => {
-                      const value = e.target.value;
-                      if (value === '') {
-                        setFuelPrice('');
-                        return;
-                      }
-                      const num = Number(value);
-                      if (num < 0) return;
-                      setFuelPrice(num);
-                    }}
-                  />
-                  <span className={styles.unit}>$/L</span>
+                    <input
+                      className={styles.input}
+                      type="number"
+                      min={0}
+                      value={fuelPrice}
+                      onChange={e => {
+                        const value = e.target.value;
+                        if (value === '') {
+                          setFuelPrice('');
+                          return;
+                        }
+                        const num = Number(value);
+                        if (num < 0) return;
+                        setFuelPrice(num);
+                      }}
+                    />
+                    <span className={styles.unit}>$/L</span>
                   </div>
 
                   <label>Precio del m³ de GNC</label>
