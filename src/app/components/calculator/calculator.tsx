@@ -56,7 +56,7 @@ export default function Calculator() {
 
   const fuelLiters = fuelMonthly && fuelPrice ? fuelMonthly / fuelPrice : 0;
 
-  const gncM3 = fuelLiters * 1.1;
+  const gncM3 = fuelLiters * 1.0;
   const gncMonthlyCost = gncM3 * (gncPrice || 0);
   const monthlySavings = Math.max(0, (fuelMonthly || 0) - gncMonthlyCost);
 
