@@ -181,13 +181,6 @@ export default function Calculator() {
     };
   }, [step, calculatedStep1, calculatedStep2]);
 
-  useEffect(() => {
-    if (step === 2) {
-      setInstallments(prev => (prev === '' ? INITIAL_INSTALLMENTS : prev));
-      setAnnualInterest(prev => (prev === '' ? INITIAL_INTEREST : prev));
-    }
-  }, [step]);
-
   return (
     <>
       <div className={`${abyssinica.className} ${styles.containerTitle}`}>
@@ -395,6 +388,13 @@ export default function Calculator() {
                       if (!isStep1Valid) return;
                       setCalculatedStep1(true);
                     } else {
+                      setInstallments(prev =>
+                        prev === '' ? INITIAL_INSTALLMENTS : prev
+                      );
+                      setAnnualInterest(prev =>
+                        prev === '' ? INITIAL_INTEREST : prev
+                      );
+
                       setStep(2);
                     }
                   }}
