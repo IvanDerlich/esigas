@@ -56,13 +56,20 @@ export default function Calculator() {
 
   const fuelLiters = fuelMonthly && fuelPrice ? fuelMonthly / fuelPrice : 0;
 
+  const INITIAL_INSTALLMENTS = 12;
+  const INITIAL_INTEREST = 0;
+
   const gncM3 = fuelLiters * 1.1;
   const gncMonthlyCost = gncM3 * (gncPrice || 0);
   const monthlySavings = Math.max(0, (fuelMonthly || 0) - gncMonthlyCost);
 
   const [equipmentPrice, setEquipmentPrice] = useState<number | ''>('');
-  const [installments, setInstallments] = useState<number | ''>(12);
-  const [annualInterest, setAnnualInterest] = useState<number | ''>(0);
+  const [installments, setInstallments] = useState<number | ''>(
+    INITIAL_INSTALLMENTS
+  );
+  const [annualInterest, setAnnualInterest] = useState<number | ''>(
+    INITIAL_INTEREST
+  );
 
   const isStep2Valid =
     equipmentPrice !== '' &&
@@ -96,13 +103,11 @@ export default function Calculator() {
     setGncPrice('');
     setCalculatedStep1(false);
 
-    if (step === 2) {
-      setEquipmentPrice('');
-      setInstallments('');
-      setAnnualInterest('');
-      setCalculatedStep2(false);
-      setStep(1);
-    }
+    setEquipmentPrice('');
+    setInstallments(INITIAL_INSTALLMENTS);
+    setAnnualInterest(INITIAL_INTEREST);
+    setCalculatedStep2(false);
+    setStep(1);
 
     requestAnimationFrame(() => {
       slowScrollTo(step1Ref);
@@ -111,8 +116,8 @@ export default function Calculator() {
 
   const resetStep2 = () => {
     setEquipmentPrice('');
-    setInstallments('');
-    setAnnualInterest('');
+    setInstallments(INITIAL_INSTALLMENTS);
+    setAnnualInterest(INITIAL_INTEREST);
     setCalculatedStep2(false);
     slowScrollTo(step2Ref);
   };
@@ -175,6 +180,13 @@ export default function Calculator() {
       observer.disconnect();
     };
   }, [step, calculatedStep1, calculatedStep2]);
+
+  useEffect(() => {
+    if (step === 2) {
+      setInstallments(prev => (prev === '' ? INITIAL_INSTALLMENTS : prev));
+      setAnnualInterest(prev => (prev === '' ? INITIAL_INTEREST : prev));
+    }
+  }, [step]);
 
   return (
     <>
@@ -255,7 +267,7 @@ export default function Calculator() {
                         setFuelMonthly(num);
                       }}
                     />
-                    <span className={styles.unit}>L</span>
+                    <span className={styles.unit}>$</span>
                   </div>
 
                   <label>Precio del litro de nafta</label>
@@ -571,9 +583,9 @@ export default function Calculator() {
 
                   <button
                     className={styles.button}
-                    disabled={!isStep2Valid}
+                    disabled={!isStep2Valid || calculatedStep2}
                     onClick={() => {
-                      if (!isStep2Valid) return;
+                      if (!isStep2Valid || calculatedStep2) return;
                       setCalculatedStep2(true);
                     }}
                   >
