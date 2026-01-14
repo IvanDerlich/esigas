@@ -8,6 +8,15 @@ import rightArrow from '@/images/Icon-right.png';
 import { Abyssinica_SIL } from 'next/font/google';
 import Link from 'next/link';
 
+type TextTestimonial = {
+  type: string;
+  title?: string;
+  comment?: string;
+  author?: string;
+  rating?: number;
+  urlTestimonial?: string;
+};
+
 const abyssinica = Abyssinica_SIL({
   subsets: ['latin'],
   weight: ['400'],
@@ -19,7 +28,7 @@ const TestimonialCarousel = () => {
   const [visibleItems, setVisibleItems] = useState(3);
   const [touchStartX, setTouchStartX] = useState(0);
   const [touchEndX, setTouchEndX] = useState(0);
-  const [activeTestimonial, setActiveTestimonial] = useState<any | null>(null);
+  const [activeTestimonial, setActiveTestimonial] = useState<TextTestimonial | null>(null);
 
   const minSwipeDistance = 50;
 

@@ -1,5 +1,3 @@
-import Image, { StaticImageData } from 'next/image';
-import Link from 'next/link';
 import styles from './page.module.css';
 import { Footer } from './components/layout/footer';
 import AccordionSlider from './components/accordionSlider/accordionSlider';
@@ -32,25 +30,3 @@ export default function Home() {
     </>
   );
 }
-
-const HeroImage = ({
-  image,
-  alt,
-  href,
-}: {
-  image: StaticImageData;
-  alt: string;
-  href: string;
-}) => {
-  return (
-    <Link href={href}>
-      <Image
-        className={styles.img_home}
-        src={image}
-        alt={alt}
-        width={600}
-        height={180}
-      />
-    </Link>
-  );
-};
