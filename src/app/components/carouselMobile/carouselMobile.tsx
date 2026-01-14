@@ -125,8 +125,9 @@ export default function CarouselMobile({ images }: Props) {
             <button
               key={i}
               onClick={() => setCurrentIndex(i)}
-              className={`${styles.dot} ${i === currentIndex ? styles.activeDot : ''
-                }`}
+              className={`${styles.dot} ${
+                i === currentIndex ? styles.activeDot : ''
+              }`}
             />
           ))}
         </div>
@@ -134,8 +135,9 @@ export default function CarouselMobile({ images }: Props) {
 
       {isFullscreen && (
         <div
-          className={`${styles.fullscreenOverlay} ${isClosing ? styles.zoomOut : styles.zoomIn
-            }`}
+          className={`${styles.fullscreenOverlay} ${
+            isClosing ? styles.zoomOut : styles.zoomIn
+          }`}
           onPointerDown={e => startSwipe(e.clientX)}
           onPointerMove={e => moveSwipe(e.clientX)}
           onPointerUp={() => endSwipe()}

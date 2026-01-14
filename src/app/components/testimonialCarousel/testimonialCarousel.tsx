@@ -28,7 +28,8 @@ const TestimonialCarousel = () => {
   const [visibleItems, setVisibleItems] = useState(3);
   const [touchStartX, setTouchStartX] = useState(0);
   const [touchEndX, setTouchEndX] = useState(0);
-  const [activeTestimonial, setActiveTestimonial] = useState<TextTestimonial | null>(null);
+  const [activeTestimonial, setActiveTestimonial] =
+    useState<TextTestimonial | null>(null);
 
   const minSwipeDistance = 50;
 
