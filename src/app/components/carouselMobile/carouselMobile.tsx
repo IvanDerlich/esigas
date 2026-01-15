@@ -70,7 +70,7 @@ export default function CarouselMobile({ images }: Props) {
     const abs = Math.abs(diff);
 
     if (abs < TAP_THRESHOLD) {
-      onTap?.();
+      if (onTap) onTap();
     } else if (abs > SWIPE_THRESHOLD) {
       diff > 0 ? next() : prev();
     }
