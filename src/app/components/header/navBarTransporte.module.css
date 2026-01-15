@@ -1,0 +1,85 @@
+.header {
+  max-height: 110px;
+  background-color: #07610D;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 85px 20px 40px;
+  gap: 40px;
+}
+
+.logo {
+  height: 100%;
+  width: 21%;
+  object-fit: contain;
+}
+
+.text {
+  color: white;
+  font-size: 24px;
+  text-align: center;
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  color: white;
+  text-decoration: black;
+  font-size: 15px;
+  font-weight: 400;
+  border: 1px solid white;
+  padding: 10px 35px;
+  border-radius: 6px;
+  background: transparent;
+}
+
+.link span {
+  position: relative;
+  z-index: 2;
+}
+
+.link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.15)),
+    linear-gradient(130deg, #16A807 0%, #88F383 100%);
+
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.link:hover::before {
+  opacity: 1;
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  .header {
+    padding: 20px 50px 20px 30px;
+    gap: 30px;
+  }
+
+  .text {
+    font-size: 17px;
+  }
+
+  .link {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 768px) {
+
+  .text {
+    display: none;
+  }
+
+  .link {
+    display: none;
+  }
+}
