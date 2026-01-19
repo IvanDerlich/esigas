@@ -188,6 +188,14 @@
 }
 
 @media screen and (max-width: 768px) {
+  .heroImg {
+    background-image: url('/Image/hero-section-mobile.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    height: 100vh;
+  }
+
   .menuIcon {
     display: flex;
   }
@@ -217,14 +225,17 @@
   .heroContent {
     width: 100%;
     height: 100vh;
-    padding: 0 30px;
-    align-items: center;
+    padding: 0 10px;
+    align-items: flex-start;
     text-align: center;
   }
 
   .h1 {
     font-size: 36px;
-    text-align: center;
+    width: 85%;
+    max-width: 360px;
+    text-align: left;
+    align-self: flex-start;
   }
 
   .btn {
