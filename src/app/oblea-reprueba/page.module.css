@@ -126,8 +126,8 @@
 
 .btnWhatsapp {
   position: fixed;
-  bottom: 10px;
-  right: 20px;
+  bottom: 20px;
+  right: 25px;
   z-index: 9999;
   border-radius: 50%;
   transition: transform 0.2s;
@@ -135,6 +135,11 @@
 
 .btnWhatsapp:hover {
   transform: scale(1.1);
+}
+
+.imgWhatsapp {
+  width: 100px;
+  height: 100px;
 }
 
 @media screen and (max-width: 768px) {

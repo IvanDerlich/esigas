@@ -108,6 +108,11 @@
   transform: scale(1.1);
 }
 
+.imgWhatsapp {
+  width: 100px;
+  height: 100px;
+}
+
 @media (max-width: 768px) {
   .financiacionContainer {
     height: auto;
