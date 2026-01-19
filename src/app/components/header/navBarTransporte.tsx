@@ -19,23 +19,26 @@ export const poppins = Poppins({
 export default function NavBarTransporte() {
   return (
     <header className={`${sen.className} ${styles.header}`}>
-      <Image
-        className={styles.logo}
-        src={logo}
-        alt="Logo Transporte Ecológico"
-      />
+      <div className={styles.inner}>
+        <Image
+          className={styles.logo}
+          src={logo}
+          alt="Logo Transporte Ecológico"
+          priority
+        />
 
-      <p className={styles.text}>
-        Unite a nosotros en esta misión por un futuro más verde
-      </p>
+        <p className={styles.text}>
+          Unite a nosotros en esta misión por un futuro más verde
+        </p>
 
-      <div>
-        <Link
-          className={`${poppins.className} ${styles.link}`}
-          href="https://api.whatsapp.com/send/?phone=5492615591335&text="
-        >
-          <span>CONTÁCTANOS</span>
-        </Link>
+        <div>
+          <Link
+            className={`${poppins.className} ${styles.link}`}
+            href="https://api.whatsapp.com/send/?phone=5492615591335&text="
+          >
+            <span>CONTÁCTANOS</span>
+          </Link>
+        </div>
       </div>
     </header>
   );
