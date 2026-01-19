@@ -23,6 +23,7 @@ const locations = [
     address: 'Ituzaingó 2536, Ciudad Mendoza',
     email: 'ventas@esigas.com.ar',
     map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.234217496493!2d-68.84500012399988!3d-32.91844197108678!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e09ad12bdf3c7%3A0x6b8b8ef6e18a29d9!2sItuzaing%C3%B3%202536%2C%20M5500%20Mendoza!5e0!3m2!1ses-419!2sar!4v1761935200000!5m2!1ses-419!2sar',
+    mapLocationRight: false,
   },
   {
     title: 'Sucursal San Rafael',
@@ -56,8 +57,15 @@ export default function Location() {
 
       <div className={`${inter.className} ${styles.ubicationContent}`}>
         {locations.map((loc, index) => (
-          <div key={index} className={styles.ubicationCard}>
-            <div>
+          <div
+            key={index}
+            className={`${styles.ubicationCard} ${
+              loc.mapLocationRight === false ? styles.reverse : ''
+            }`}
+          >
+            <div
+              className={loc.mapLocationRight === false ? styles.alignEnd : ''}
+            >
               <h3 className={styles.ubicationTitleCard}>{loc.title}</h3>
 
               <div className={styles.ubicationItem}>
