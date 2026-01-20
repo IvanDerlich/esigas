@@ -200,6 +200,10 @@
   height: 80px;
 }
 
+.ubication {
+  border: none;
+}
+
 @media screen and (max-width: 768px) {
   .menuIcon {
     display: flex;
