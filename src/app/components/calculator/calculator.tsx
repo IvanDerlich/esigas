@@ -1,13 +1,7 @@
 'use client';
-import { Abyssinica_SIL } from 'next/font/google';
+import { abyssinica } from '@/app/assets/fonts';
 import { useState, useRef, useEffect } from 'react';
 import styles from './calculator.module.css';
-
-const abyssinica = Abyssinica_SIL({
-  subsets: ['latin'],
-  weight: ['400'],
-  display: 'swap',
-});
 
 // This is the relative efficiency coefficient of the liter of nafta with respect to the m3 of gnc
 const RELATIVE_EFFICIENCY = 1;

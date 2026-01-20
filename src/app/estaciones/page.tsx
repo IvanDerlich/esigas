@@ -15,7 +15,7 @@ import Line from '@/images/line.png';
 import Camion from '@/images/camion.jpg';
 import Link from 'next/link';
 import styles from './page.module.css';
-import { Abyssinica_SIL } from 'next/font/google';
+import { abyssinica } from '@/app/assets/fonts';
 import { OurAdvantages } from '../components/ourAdvantages/ourAdvantages';
 import CarouselMobile from '../components/carouselMobile/carouselMobile';
 import NavbarTwo from '../components/header/navBarEstaciones';
@@ -24,12 +24,6 @@ import SocialNetwork from '../components/socialNetwork/socialNetwork';
 import { Footer } from '../components/layout/footer';
 import Whatsapp from '@/images/whatsapp.png';
 import logo from '@/images/logo-esignc.png';
-
-const abyssinica = Abyssinica_SIL({
-  subsets: ['latin'],
-  weight: ['400'],
-  display: 'swap',
-});
 
 const links = [
   { label: 'Home', href: '#home' },

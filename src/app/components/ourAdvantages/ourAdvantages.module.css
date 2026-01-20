@@ -13,7 +13,7 @@
 .h2 {
   color: #62b26e;
   font-size: 50px;
-  font-weight: 600;
+  font-weight: 400;
   text-align: center;
 }
 
@@ -33,12 +33,13 @@
 .pTitle {
   color: white;
   font-size: 30px;
-  font-weight: 800;
+  font-weight: 400;
 }
 
 .pDescription {
   color: white;
   font-size: 18px;
+  font-weight: 300;
 }
 
 .truncate {
@@ -52,6 +53,7 @@
   cursor: pointer;
   text-decoration: underline;
   font-size: 0.9rem;
+  font-weight: 300;
 }
 
 @media screen and (max-width: 940px) {
