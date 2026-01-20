@@ -61,6 +61,19 @@
   margin-bottom: 12px;
 }
 
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.alignEnd {
+  align-items: flex-end;
+}
+
+.alignEnd h3,
+.alignEnd .ubicationItem {
+  text-align: right;
+}
+
 .green {
   color: #62b26e;
   font-weight: 600;
@@ -115,6 +128,15 @@
 
   .ubicationImage {
     width: 25%;
+  }
+
+  .alignEnd {
+    align-items: flex-start;
+  }
+
+  .alignEnd h3,
+  .alignEnd .ubicationItem {
+    text-align: left;
   }
 }
 
