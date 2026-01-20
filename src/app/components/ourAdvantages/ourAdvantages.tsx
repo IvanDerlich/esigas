@@ -1,13 +1,7 @@
 import styles from './ourAdvantages.module.css';
-import { Inter } from 'next/font/google';
+import { inter } from '@/app/assets/fonts';
 import { AdvantageItem } from './AdvantageItem';
 import { advantages } from './advantagesData';
-
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['200'],
-  display: 'swap',
-});
 
 export const OurAdvantages = () => {
   return (

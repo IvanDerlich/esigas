@@ -4,15 +4,9 @@ import styles from './socialNetwork.module.css';
 import Image from 'next/image';
 import Facebook from '@/images/fb.png';
 import Instagram from '@/images/ig.png';
-import { Abyssinica_SIL } from 'next/font/google';
+import { abyssinica } from '@/app/assets/fonts';
 import Line from '@/images/line.png';
 import Link from 'next/link';
-
-const abyssinica = Abyssinica_SIL({
-  subsets: ['latin'],
-  weight: ['400'],
-  display: 'swap',
-});
 
 type SocialNetworkProps = {
   showNewsletter?: boolean;

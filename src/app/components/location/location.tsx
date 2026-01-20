@@ -1,13 +1,7 @@
 import styles from './location.module.css';
 import Image from 'next/image';
 import Line from '@/images/line.png';
-import { Inter } from 'next/font/google';
-
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['200'],
-  display: 'swap',
-});
+import { inter } from '@/app/assets/fonts';
 
 const locations = [
   {

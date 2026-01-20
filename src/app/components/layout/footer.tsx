@@ -1,12 +1,6 @@
 import Image, { StaticImageData } from 'next/image';
 import styles from './footer.module.css';
-import { Abyssinica_SIL } from 'next/font/google';
-
-const abyssinica = Abyssinica_SIL({
-  subsets: ['latin'],
-  weight: ['400'],
-  display: 'swap',
-});
+import { abyssinica } from '@/app/assets/fonts';
 
 type FooterProps = {
   logoSrc: StaticImageData;
