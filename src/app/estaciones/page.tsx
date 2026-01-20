@@ -91,11 +91,21 @@ export default function Page() {
                   LEÑA HIELO <br />
                   ACEITE AGUA DESTILADA
                 </p>
+                <div className={styles.contactInfo}>
+                  <p className={styles.mapItems}>
+                    <span className={styles.green}>Teléfono:</span> +54 9 2616
+                    92-9656
+                  </p>
+                  <p className={styles.mapItems}>
+                    <span className={styles.green}>Email:</span>{' '}
+                    ventas@esigas.com
+                  </p>
+                </div>
               </div>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.244238680631!2d-68.83192682453506!3d-32.89171017361593!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e093c98fcf3bf%3A0x8699a83fb67a3a27!2sSaavedra%20101%2C%20M5519%20Mendoza!5e0!3m2!1sen!2sar!4v1754329864541!5m2!1sen!2sar"
-                width="500"
-                height="350"
+                width="600"
+                height="450"
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -108,8 +118,8 @@ export default function Page() {
             <div className={styles.maps}>
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3348.5993862555056!2d-60.70113442453317!3d-32.93518117359797!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b65335817e183f%3A0xe8ff445f5642cb6!2sSta%20Fe%205482%2C%20S2008%20GRN%2C%20Santa%20Fe!5e0!3m2!1sen!2sar!4v1754332486011!5m2!1sen!2sar"
-                width="500"
-                height="350"
+                width="600"
+                height="450"
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -125,6 +135,16 @@ export default function Page() {
                   LEÑA HIELO <br />
                   ACEITE AGUA DESTILADA
                 </p>
+                <div className={styles.contactInfo}>
+                  <p className={styles.mapItems}>
+                    <span className={styles.green}>Teléfono:</span> +54 9 2616
+                    92-9656
+                  </p>
+                  <p className={styles.mapItems}>
+                    <span className={styles.green}>Email:</span>{' '}
+                    ventas@esigas.com
+                  </p>
+                </div>
               </div>
             </div>
             <CarouselMobile images={imagesSetTwo} />
