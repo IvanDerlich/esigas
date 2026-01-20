@@ -175,7 +175,6 @@
   right: 20px;
   z-index: 9999;
   border-radius: 50%;
-  overflow: hidden;
   transition: transform 0.2s;
 }
 
@@ -185,6 +184,11 @@
 
 .space {
   height: 80px;
+}
+
+.imgWhatsapp {
+  width: 100px;
+  height: 100px;
 }
 
 @media screen and (max-width: 768px) {
