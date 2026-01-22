@@ -5,7 +5,7 @@ import testimonialsData from './testimonials.json';
 import Image from 'next/image';
 import leftArrow from '@/images/Icon-left.png';
 import rightArrow from '@/images/Icon-right.png';
-import { Abyssinica_SIL } from 'next/font/google';
+import { abyssinica } from '@/app/assets/fonts';
 import Link from 'next/link';
 
 type TextTestimonial = {
@@ -16,12 +16,6 @@ type TextTestimonial = {
   rating?: number;
   urlTestimonial?: string;
 };
-
-const abyssinica = Abyssinica_SIL({
-  subsets: ['latin'],
-  weight: ['400'],
-  display: 'swap',
-});
 
 const TestimonialCarousel = () => {
   const [start, setStart] = useState(0);

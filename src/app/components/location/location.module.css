@@ -11,7 +11,7 @@
 
 .ubicationTitle {
   font-size: 45px;
-  font-weight: 100;
+  font-weight: 300;
   color: #62b26e;
   padding-bottom: 20px;
 }
@@ -55,10 +55,24 @@
   font-size: 28px;
   color: #2c2c2c;
   margin-bottom: 15px;
+  font-weight: 400;
 }
 
 .ubicationItem {
   margin-bottom: 12px;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.alignEnd {
+  align-items: flex-end;
+}
+
+.alignEnd h3,
+.alignEnd .ubicationItem {
+  text-align: right;
 }
 
 .green {
@@ -66,11 +80,13 @@
   font-weight: 600;
   font-size: 18px;
   margin-bottom: 4px;
+  font-weight: 400;
 }
 
 .value {
   color: #3a3a3a;
   font-size: 18px;
+  font-weight: 300;
 }
 
 .mapContainer {
@@ -115,6 +131,15 @@
 
   .ubicationImage {
     width: 25%;
+  }
+
+  .alignEnd {
+    align-items: flex-start;
+  }
+
+  .alignEnd h3,
+  .alignEnd .ubicationItem {
+    text-align: left;
   }
 }
 

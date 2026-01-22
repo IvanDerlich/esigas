@@ -3,14 +3,8 @@
 import Image from 'next/image';
 import styles from './navBarEstaciones.module.css';
 import logo from '@/images/logo-esignc.png';
-import { Montserrat } from 'next/font/google';
+import { montserrat } from '@/app/assets/fonts';
 import { useRef, useState } from 'react';
-
-const montserrat = Montserrat({
-  subsets: ['latin'],
-  weight: ['600'],
-  display: 'swap',
-});
 
 type NavLink = { label: string; href: string };
 type NavbarProps = { links: NavLink[] };
