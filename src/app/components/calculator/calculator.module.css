@@ -32,40 +32,6 @@
   color: #231f20;
 }
 
-.containerTitle {
-  height: 130px;
-  background-color: #62b26e;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #231f20;
-}
-
-.title {
-  font-size: 50px;
-  font-weight: 100;
-  color: white;
-}
-
-.container {
-  width: 100%;
-  height: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-}
-
-.containerText {
-  text-align: center;
-  font-size: 35px;
-  width: 60%;
-  padding-top: 25px;
-  color: #231f20;
-}
-
 .stepsContainer {
   width: 250px;
   height: auto;
@@ -83,24 +49,19 @@
   display: none;
 }
 
+.step,
 .stepActive {
   width: 241px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   gap: 20px;
-  background-color: #ffffff45;
   padding: 10px;
-  border-radius: 20px 0 0 20px;
 }
 
-.step {
-  width: 241px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 20px;
-  padding: 10px;
+.stepActive {
+  background-color: #ffffff45;
+  border-radius: 20px 0 0 20px;
 }
 
 .stepsText {
