@@ -3,15 +3,9 @@
 import Image from 'next/image';
 import Line from '@/images/line.png';
 import styles from './contact.module.css';
-import { Abyssinica_SIL } from 'next/font/google';
+import { abyssinica } from '@/app/assets/fonts';
 import { sendEmail } from './sendEmail';
 import { useState, useTransition, useEffect } from 'react';
-
-const abyssinica = Abyssinica_SIL({
-  subsets: ['latin'],
-  weight: ['400'],
-  display: 'swap',
-});
 
 interface ContactFormProps {
   showCheckboxes?: boolean;

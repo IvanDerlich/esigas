@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { OurAdvantages } from '../components/ourAdvantages/ourAdvantages';
-import { Abyssinica_SIL } from 'next/font/google';
+import { abyssinica } from '@/app/assets/fonts';
 import styles from './page.module.css';
 import Carousel from '../components/testimonialCarousel/testimonialCarousel';
 import CalendarIcon from '@/images/calendar.png';
@@ -14,12 +14,6 @@ import { Footer } from '../components/layout/footer';
 import Navbar from '../components/header/navBarPec';
 import Whatsapp from '@/images/whatsapp.png';
 import logo from '@/images/logo.png';
-
-const abyssinica = Abyssinica_SIL({
-  subsets: ['latin'],
-  weight: ['400'],
-  display: 'swap',
-});
 
 const links = [
   { label: 'Home', href: '#home' },

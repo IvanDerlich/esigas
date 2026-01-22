@@ -17,18 +17,7 @@ import SocialNetwork from '../components/socialNetwork/socialNetwork';
 import { Footer } from '../components/layout/footer';
 import Whatsapp from '@/images/whatsapp.png';
 import logo from '@/images/logo.png';
-
-const abyssinica = Abyssinica_SIL({
-  subsets: ['latin'],
-  weight: ['400'],
-  display: 'swap',
-});
-
-const roboto = Roboto({
-  subsets: ['latin'],
-  weight: ['400'],
-  display: 'swap',
-});
+import { abyssinica, roboto } from '@/app/assets/fonts';
 
 const links = [
   { label: 'Home', href: '#home' },

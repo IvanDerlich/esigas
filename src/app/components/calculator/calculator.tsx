@@ -1,25 +1,12 @@
 'use client';
-
-import { Abyssinica_SIL, Inter } from 'next/font/google';
+import { abyssinica, inter } from '@/app/assets/fonts';
+import { useState, useRef, useEffect } from 'react';
 import styles from './calculator.module.css';
 import Image from 'next/image';
 import numberOne from '@/images/number-one.png';
 import numberTwo from '@/images/number-two.png';
 import calculatorImage from '@/images/img-calculadora.png';
 import calculatorMiniature from '@/images/img-calculadora2.png';
-import { useRef, useState, useEffect } from 'react';
-
-const abyssinica = Abyssinica_SIL({
-  subsets: ['latin'],
-  weight: ['400'],
-  display: 'swap',
-});
-
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['200'],
-  display: 'swap',
-});
 
 export default function Calculator() {
   const step1Ref = useRef<HTMLDivElement | null>(null);
