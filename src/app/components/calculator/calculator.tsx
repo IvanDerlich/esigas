@@ -48,7 +48,7 @@ export default function Calculator() {
   const INITIAL_INSTALLMENTS = 12;
   const INITIAL_INTEREST = 0;
 
-  const gncM3 = fuelLiters * 1.1;
+  const gncM3 = fuelLiters * 0.95;
   const gncMonthlyCost = gncM3 * (gncPrice || 0);
   const monthlySavings = Math.max(0, (fuelMonthly || 0) - gncMonthlyCost);
 
