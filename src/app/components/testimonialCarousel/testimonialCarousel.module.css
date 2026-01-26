@@ -200,6 +200,70 @@
   overscroll-behavior-y: none !important;
 }
 
+.clickable {
+  cursor: pointer;
+}
+
+.fullscreenOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.fullscreenCard {
+  background: white;
+  border: 2px solid #62b26e;
+  width: 90%;
+  max-width: 600px;
+  height: 80%;
+  padding: 2rem;
+  border-radius: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 5px;
+  right: 12px;
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.testimonialTitle {
+  font-size: 34px;
+}
+
+.testimonialTextFull {
+  font-size: 22px;
+}
+
+.testimonialAuthorFull {
+  font-size: 25px;
+}
+
+.googleButtonFull {
+  color: blue;
+  font-size: 20px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .testimonial:hover {
+    transform: scale(1.3);
+    z-index: 10;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .container {
     height: auto;
@@ -282,6 +346,26 @@
   .instagramButton {
     font-size: 16px;
     padding: 8px 12px;
+  }
+
+  .fullscreenCard {
+    gap: 20px;
+  }
+
+  .testimonialTitle {
+    font-size: 25px;
+  }
+
+  .testimonialTextFull {
+    font-size: 16px;
+  }
+
+  .testimonialAuthorFull {
+    font-size: 20px;
+  }
+
+  .googleButtonFull {
+    font-size: 17px;
   }
 }
 
