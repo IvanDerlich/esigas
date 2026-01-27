@@ -1,60 +1,52 @@
-.carousel {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  touch-action: pan-y;
-  user-select: none;
-  cursor: grab;
-}
-
-.carousel:active {
-  cursor: grabbing;
-}
-
-.imageRow {
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-}
-
 .carouselImage {
   border-radius: 12px;
   object-fit: cover;
-  width: 97%;
   cursor: pointer;
   pointer-events: auto;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
 }
 
 .dots {
-  margin-top: 12px;
   display: flex;
   gap: 8px;
+  margin-top: 20px;
 }
 
 .dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
   border: none;
   background-color: #ccc;
   cursor: pointer;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  transition: all 0.3s;
 }
 
 .activeDot {
   background-color: #62b26e;
+  transform: scale(1.3);
 }
 
 .fullscreenOverlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  inset: 0;
   background: rgba(0, 0, 0, 0.92);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 99999;
+  touch-action: none;
+}
+
+.fullscreenImageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .fullscreenImage {
@@ -85,7 +77,6 @@
   border: none;
   width: 50px;
   height: 50px;
-  font-size: 40px;
   cursor: pointer;
   border-radius: 50%;
   user-select: none;
@@ -110,26 +101,20 @@
   transition: 0.2s;
 }
 
-.fullscreenImageWrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.arrow {
-  width: 24px;
-  height: 24px;
-}
-
 .zoomIn {
   animation: zoomInAnim 0.25s forwards ease-out;
 }
 
 .zoomOut {
   animation: zoomOutAnim 0.25s forwards ease-in;
+}
+
+.fsSlideLeft {
+  animation: fsSlideLeft 0.35s ease;
+}
+
+.fsSlideRight {
+  animation: fsSlideRight 0.35s ease;
 }
 
 @keyframes zoomInAnim {
@@ -154,6 +139,69 @@
   }
 }
 
+@keyframes fsSlideLeft {
+  from {
+    transform: translateX(60px);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fsSlideRight {
+  from {
+    transform: translateX(-60px);
+    opacity: 0.5;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.mzaContainer {
+  width: 100%;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.mzaViewport {
+  width: 100%;
+  max-width: 1024px;
+  height: 250px;
+  position: relative;
+  touch-action: none;
+}
+
+.mzaTrack {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mzaSlide {
+  position: absolute;
+  width: 300px;
+  height: 180px;
+  will-change: transform, opacity;
+  user-select: none;
+}
+
+.closeBtn,
+.arrowLeft,
+.arrowRight {
+  pointer-events: auto;
+}
+
 @media (min-width: 1024px) {
   .fullscreenOverlay {
     padding: 0 60px;
@@ -171,5 +219,29 @@
 
   .arrowRight {
     right: 60px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .mzaContainer {
+    width: 90%;
+  }
+
+  .mzaViewport {
+    width: 80%;
+  }
+
+  .mzaSlide {
+    width: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mzaViewport {
+    width: 100%;
+  }
+
+  .mzaSlide {
+    width: 287px;
   }
 }
