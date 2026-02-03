@@ -16,21 +16,36 @@ type Props = {
 };
 
 const SlideItem = memo(
-  ({ img, index, tx, opacity, zIndex, onPointerDown }: any) => {
+  ({
+    img,
+    index,
+    tx,
+    opacity,
+    zIndex,
+    onPointerDown,
+    fullscreen = false,
+  }: any) => {
     const [status, setStatus] = useState<'loading' | 'loaded'>('loading');
     const [currentSrc, setCurrentSrc] = useState('');
 
     useEffect(() => {
       const newSrc = typeof img.src === 'string' ? img.src : img.src.src;
       if (newSrc !== currentSrc) {
-        setStatus('loading');
+        const preloadImg = new window.Image();
+        preloadImg.src = newSrc;
+        if (preloadImg.complete) {
+          setStatus('loaded');
+        } else {
+          setStatus('loading');
+          preloadImg.onload = () => setStatus('loaded');
+        }
         setCurrentSrc(newSrc);
       }
     }, [img.src, currentSrc]);
 
     return (
       <div
-        className={styles.mzaSlide}
+        className={`${styles.mzaSlide} ${fullscreen ? styles.fullscreenSlide : ''}`}
         style={{
           transform: `translateX(${tx}px)`,
           opacity,
@@ -46,7 +61,6 @@ const SlideItem = memo(
             position: 'relative',
             width: '100%',
             height: '100%',
-            backgroundColor: '#fff',
             overflow: 'hidden',
           }}
         >
@@ -60,7 +74,6 @@ const SlideItem = memo(
                 alignItems: 'center',
                 justifyContent: 'center',
                 zIndex: 10,
-                backgroundColor: '#fff',
               }}
             >
               <div className={styles.spinner} />
@@ -74,13 +87,12 @@ const SlideItem = memo(
               width={300}
               height={180}
               draggable={false}
-              className={styles.carouselImage}
+              className={`${styles.carouselImage} ${
+                fullscreen ? styles.fullscreenImage : ''
+              }`}
               onLoad={() => setStatus('loaded')}
               style={{
                 opacity: status === 'loaded' ? 1 : 0,
-                objectFit: 'cover',
-                width: '100%',
-                height: '100%',
                 transition: 'opacity 0.15s ease',
               }}
             />
@@ -90,6 +102,7 @@ const SlideItem = memo(
     );
   }
 );
+
 SlideItem.displayName = 'SlideItem';
 
 export default function CarouselMobile({ images }: Props) {
@@ -114,8 +127,10 @@ export default function CarouselMobile({ images }: Props) {
     setIsTransitioning(true);
     const startPos = state.pos;
     let d = targetIndex - startPos;
+
     if (d > n / 2) d -= n;
     if (d < -n / 2) d += n;
+
     const endPos = startPos + d;
     const startTime = performance.now();
     const duration = 600;
@@ -124,14 +139,18 @@ export default function CarouselMobile({ images }: Props) {
       const t = Math.min(1, (now - startTime) / duration);
       const ease = 1 - Math.pow(1 - t, 4);
       const currentPos = startPos + (endPos - startPos) * ease;
+
       setState(prev => ({ ...prev, pos: currentPos }));
-      if (t < 1) rafRef.current = requestAnimationFrame(animate);
-      else {
+
+      if (t < 1) {
+        rafRef.current = requestAnimationFrame(animate);
+      } else {
         const finalIndex = mod(Math.round(currentPos), n);
         setState({ index: finalIndex, pos: finalIndex });
         setIsTransitioning(false);
       }
     };
+
     cancelAnimationFrame(rafRef.current);
     rafRef.current = requestAnimationFrame(animate);
   };
@@ -150,32 +169,28 @@ export default function CarouselMobile({ images }: Props) {
     gesture.current.currentX = e.clientX;
     const dx = e.clientX - gesture.current.startX;
 
-    if (!isFullscreen) {
-      setState(prev => ({ ...prev, pos: prev.index - dx / 400 }));
-    }
+    const moveThreshold = isFullscreen ? 800 : 400;
+    setState(prev => ({ ...prev, pos: prev.index - dx / moveThreshold }));
   };
 
   const onPointerUp = () => {
     if (!gesture.current.isDragging) return;
     gesture.current.isDragging = false;
+
     const moved = Math.abs(gesture.current.currentX - gesture.current.startX);
 
     if (moved > 10) {
       const direction =
         gesture.current.currentX < gesture.current.startX ? 1 : -1;
       if (isFullscreen) {
-        setFsAnimDir(direction === 1 ? 'left' : 'right');
-        setState(prev => ({
-          index: mod(prev.index + direction, n),
-          pos: mod(prev.index + direction, n),
-        }));
+        goTo(mod(Math.round(state.pos), n));
       } else {
         goTo(mod(Math.round(state.pos), n));
       }
       return;
     }
 
-    if (gesture.current.tappedIndex !== null) {
+    if (gesture.current.tappedIndex !== null && !isFullscreen) {
       const idx = gesture.current.tappedIndex;
       setState({ index: idx, pos: idx });
       setIsFullscreen(true);
@@ -184,25 +199,11 @@ export default function CarouselMobile({ images }: Props) {
 
   const next = () => {
     setFsAnimDir('left');
-    if (isFullscreen) {
-      setState(prev => ({
-        index: mod(prev.index + 1, n),
-        pos: mod(prev.index + 1, n),
-      }));
-      return;
-    }
     goTo(mod(state.index + 1, n));
   };
 
   const prev = () => {
     setFsAnimDir('right');
-    if (isFullscreen) {
-      setState(prev => ({
-        index: mod(prev.index - 1, n),
-        pos: mod(prev.index - 1, n),
-      }));
-      return;
-    }
     goTo(mod(state.index - 1, n));
   };
 
@@ -231,6 +232,7 @@ export default function CarouselMobile({ images }: Props) {
               let d = i - state.pos;
               if (d > n / 2) d -= n;
               if (d < -n / 2) d += n;
+
               const tx = d * 320;
               const opacity = 1 - Math.abs(d) * 0.5;
               const zIndex = 100 - Math.abs(d) * 10;
@@ -256,7 +258,9 @@ export default function CarouselMobile({ images }: Props) {
           {images.map((_, i) => (
             <button
               key={i}
-              className={`${styles.dot} ${mod(Math.round(state.pos), n) === i ? styles.activeDot : ''}`}
+              className={`${styles.dot} ${
+                mod(Math.round(state.pos), n) === i ? styles.activeDot : ''
+              }`}
               onClick={() => goTo(i)}
             />
           ))}
@@ -265,7 +269,9 @@ export default function CarouselMobile({ images }: Props) {
 
       {isFullscreen && (
         <div
-          className={`${styles.fullscreenOverlay} ${isClosing ? styles.zoomOut : styles.zoomIn}`}
+          className={`${styles.fullscreenOverlay} ${
+            isClosing ? styles.zoomOut : styles.zoomIn
+          }`}
           onPointerDown={e => {
             if (e.pointerType !== 'mouse')
               e.currentTarget.setPointerCapture(e.pointerId);
@@ -277,19 +283,41 @@ export default function CarouselMobile({ images }: Props) {
           <button className={styles.closeBtn} onClick={closeFullscreen}>
             ✕
           </button>
+
           <button className={styles.arrowLeft} onClick={prev}>
             <Image src={arrowLeft} alt="Anterior" />
           </button>
-          <div className={styles.fullscreenImageWrapper}>
-            <SlideItem
-              img={images[state.index]}
-              index={state.index}
-              tx={0}
-              opacity={1}
-              zIndex={100}
-              onPointerDown={onPointerDown}
-            />
+
+          <div
+            className={styles.fullscreenTrack}
+            style={{ position: 'relative', width: '100%', height: '100%' }}
+          >
+            {images.map((img, i) => {
+              let d = i - state.pos;
+              if (d > n / 2) d -= n;
+              if (d < -n / 2) d += n;
+
+              const width =
+                typeof window !== 'undefined' ? window.innerWidth : 800;
+              const tx = d * width;
+
+              if (Math.abs(d) > 1.5) return null;
+
+              return (
+                <SlideItem
+                  key={`fs-slide-${i}`}
+                  img={img}
+                  index={i}
+                  tx={tx}
+                  opacity={1}
+                  zIndex={10}
+                  fullscreen
+                  onPointerDown={(e: any) => onPointerDown(e)}
+                />
+              );
+            })}
           </div>
+
           <button className={styles.arrowRight} onClick={next}>
             <Image src={arrowRight} alt="Siguiente" />
           </button>

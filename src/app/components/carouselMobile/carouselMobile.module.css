@@ -50,7 +50,12 @@
 }
 
 .fullscreenImage {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .closeBtn {
@@ -122,6 +127,7 @@
     opacity: 0;
     transform: scale(0.6);
   }
+
   to {
     opacity: 1;
     transform: scale(1);
@@ -133,6 +139,7 @@
     opacity: 1;
     transform: scale(1);
   }
+
   to {
     opacity: 0;
     transform: scale(0.6);
@@ -144,6 +151,7 @@
     transform: translateX(60px);
     opacity: 0.5;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
@@ -155,6 +163,7 @@
     transform: translateX(-60px);
     opacity: 0.5;
   }
+
   to {
     transform: translateX(0);
     opacity: 1;
@@ -177,6 +186,10 @@
   height: 250px;
   position: relative;
   touch-action: none;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .mzaTrack {
@@ -202,12 +215,65 @@
   pointer-events: auto;
 }
 
-@media (min-width: 1024px) {
-  .fullscreenOverlay {
-    padding: 0 60px;
-    box-sizing: border-box;
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.spinnerOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(240, 240, 240, 0.5);
+  z-index: 1;
+  pointer-events: none;
+  inset: 0;
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid #ccc;
+  border-top: 3px solid #62b26e;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
 
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.fullscreenViewport {
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.fullscreenSlide {
+  position: absolute;
+  left: -0.5%;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (min-width: 1024px) {
   .closeBtn {
     top: 24px;
     right: 34px;
@@ -234,6 +300,13 @@
   .mzaSlide {
     width: 260px;
   }
+
+  .fullscreenSlide {
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  }
 }
 
 @media (max-width: 768px) {
@@ -244,42 +317,11 @@
   .mzaSlide {
     width: 287px;
   }
-}
 
-.imageWrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.spinnerOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(240, 240, 240, 0.5);
-  z-index: 1;
-  pointer-events: none;
-}
-
-.spinner {
-  width: 30px;
-  height: 30px;
-  border: 3px solid #ccc;
-  border-top: 3px solid #62b26e;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
+  .fullscreenSlide {
+    position: absolute;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
   }
 }
