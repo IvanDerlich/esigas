@@ -25,12 +25,18 @@ type Testimonial = {
 const TestimonialCarousel = () => {
   const [state, setState] = useState({ index: 0, pos: 0 });
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [activeTestimonial, setActiveTestimonial] = useState<Testimonial | null>(null);
+  const [activeTestimonial, setActiveTestimonial] =
+    useState<Testimonial | null>(null);
 
   const testimonials = testimonialsData as Testimonial[];
   const n = testimonials.length;
 
-  const gesture = useRef({ startX: 0, currentX: 0, isDragging: false, moved: false });
+  const gesture = useRef({
+    startX: 0,
+    currentX: 0,
+    isDragging: false,
+    moved: false,
+  });
   const rafRef = useRef<number>(0);
 
   useEffect(() => {
@@ -109,14 +115,20 @@ const TestimonialCarousel = () => {
 
   return (
     <>
-      <div id="testimonios" className={`${abyssinica.className} ${styles.container}`}>
+      <div
+        id="testimonios"
+        className={`${abyssinica.className} ${styles.container}`}
+      >
         <div className={styles.testimonials}>
           <h2 className={styles.testimonialsTitle}>Testimonios</h2>
         </div>
         <div className={styles.testimonialsDescription}>
-          <p className={styles.testimonialsSubtitle}>Nuestros clientes opinan</p>
+          <p className={styles.testimonialsSubtitle}>
+            Nuestros clientes opinan
+          </p>
           <p className={styles.testimonialsText}>
-            Estas son algunas de las experiencias de quienes confiaron en nosotros.
+            Estas son algunas de las experiencias de quienes confiaron en
+            nosotros.
           </p>
         </div>
 
@@ -143,7 +155,7 @@ const TestimonialCarousel = () => {
                 <div
                   key={i}
                   className={styles.mzaSlide}
-                  onDragStart={(e) => e.preventDefault()}
+                  onDragStart={e => e.preventDefault()}
                   style={{
                     transform: `translateX(${tx}%) scale(${scale})`,
                     opacity,
@@ -151,7 +163,7 @@ const TestimonialCarousel = () => {
                     cursor: gesture.current.isDragging ? 'grabbing' : 'pointer',
                     display: 'flex',
                     justifyContent: 'center',
-                    alignItems: 'center'
+                    alignItems: 'center',
                   }}
                 >
                   <div
@@ -160,7 +172,7 @@ const TestimonialCarousel = () => {
                     style={{
                       height: '100%',
                       width: '100%',
-                      display: 'contents'
+                      display: 'contents',
                     }}
                   >
                     {item.type === 'text' && (
@@ -170,7 +182,10 @@ const TestimonialCarousel = () => {
                       <VideoTestimonialCard youtubeId={item.youtubeId} />
                     )}
                     {item.type === 'instagram' && item.igUrl && item.image && (
-                      <InstagramTestimonialCard igUrl={item.igUrl} image={item.image} />
+                      <InstagramTestimonialCard
+                        igUrl={item.igUrl}
+                        image={item.image}
+                      />
                     )}
                   </div>
                 </div>
@@ -179,10 +194,16 @@ const TestimonialCarousel = () => {
           </div>
 
           <div className={styles.navigationWrapper}>
-            <button className={`${styles.arrowBtn} ${styles.left}`} onClick={handlePrev}>
+            <button
+              className={`${styles.arrowBtn} ${styles.left}`}
+              onClick={handlePrev}
+            >
               <Image src={leftArrow} alt="Anterior" width={40} height={40} />
             </button>
-            <button className={`${styles.arrowBtn} ${styles.right}`} onClick={handleNext}>
+            <button
+              className={`${styles.arrowBtn} ${styles.right}`}
+              onClick={handleNext}
+            >
               <Image src={rightArrow} alt="Siguiente" width={40} height={40} />
             </button>
           </div>
@@ -190,9 +211,20 @@ const TestimonialCarousel = () => {
       </div>
 
       {activeTestimonial && activeTestimonial.type === 'text' && (
-        <div className={styles.fullscreenOverlay} onClick={() => setActiveTestimonial(null)}>
-          <div className={styles.fullscreenCard} onClick={e => e.stopPropagation()}>
-            <button className={styles.closeButton} onClick={() => setActiveTestimonial(null)}>✕</button>
+        <div
+          className={styles.fullscreenOverlay}
+          onClick={() => setActiveTestimonial(null)}
+        >
+          <div
+            className={styles.fullscreenCard}
+            onClick={e => e.stopPropagation()}
+          >
+            <button
+              className={styles.closeButton}
+              onClick={() => setActiveTestimonial(null)}
+            >
+              ✕
+            </button>
 
             <p className={styles.testimonialTitle}>{activeTestimonial.title}</p>
 
@@ -204,11 +236,20 @@ const TestimonialCarousel = () => {
               ))}
             </div>
 
-            <p className={styles.testimonialTextFull}>{activeTestimonial.comment}</p>
-            <p className={styles.testimonialAuthorFull}>- {activeTestimonial.author}</p>
+            <p className={styles.testimonialTextFull}>
+              {activeTestimonial.comment}
+            </p>
+            <p className={styles.testimonialAuthorFull}>
+              - {activeTestimonial.author}
+            </p>
 
             {activeTestimonial.urlTestimonial && (
-              <a href={activeTestimonial.urlTestimonial} target="_blank" rel="noopener noreferrer" className={styles.googleButtonFull}>
+              <a
+                href={activeTestimonial.urlTestimonial}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.googleButtonFull}
+              >
                 Ver en Google
               </a>
             )}
