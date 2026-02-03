@@ -25,7 +25,6 @@ type SlideItemProps = {
   onPointerDown?: (e: React.PointerEvent<HTMLDivElement>) => void;
 };
 
-
 const SlideItem = memo(
   ({
     img,
@@ -98,8 +97,9 @@ const SlideItem = memo(
               width={300}
               height={180}
               draggable={false}
-              className={`${styles.carouselImage} ${fullscreen ? styles.fullscreenImage : ''
-                }`}
+              className={`${styles.carouselImage} ${
+                fullscreen ? styles.fullscreenImage : ''
+              }`}
               onLoad={() => setStatus('loaded')}
               style={{
                 opacity: status === 'loaded' ? 1 : 0,
@@ -206,13 +206,13 @@ export default function CarouselMobile({ images }: Props) {
     }
   };
 
-const next = () => {
-  goTo(mod(state.index + 1, n));
-};
+  const next = () => {
+    goTo(mod(state.index + 1, n));
+  };
 
-const prev = () => {
-  goTo(mod(state.index - 1, n));
-};
+  const prev = () => {
+    goTo(mod(state.index - 1, n));
+  };
 
   const closeFullscreen = () => {
     setIsClosing(true);
@@ -264,8 +264,9 @@ const prev = () => {
           {images.map((_, i) => (
             <button
               key={i}
-              className={`${styles.dot} ${mod(Math.round(state.pos), n) === i ? styles.activeDot : ''
-                }`}
+              className={`${styles.dot} ${
+                mod(Math.round(state.pos), n) === i ? styles.activeDot : ''
+              }`}
               onClick={() => goTo(i)}
             />
           ))}
@@ -274,8 +275,9 @@ const prev = () => {
 
       {isFullscreen && (
         <div
-          className={`${styles.fullscreenOverlay} ${isClosing ? styles.zoomOut : styles.zoomIn
-            }`}
+          className={`${styles.fullscreenOverlay} ${
+            isClosing ? styles.zoomOut : styles.zoomIn
+          }`}
           onPointerDown={e => {
             if (e.pointerType !== 'mouse')
               e.currentTarget.setPointerCapture(e.pointerId);
