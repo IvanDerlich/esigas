@@ -15,6 +15,17 @@ type Props = {
   images: CarouselImage[];
 };
 
+type SlideItemProps = {
+  img: CarouselImage;
+  index: number;
+  tx: number;
+  opacity: number;
+  zIndex: number;
+  fullscreen?: boolean;
+  onPointerDown?: (e: React.PointerEvent<HTMLDivElement>) => void;
+};
+
+
 const SlideItem = memo(
   ({
     img,
@@ -24,7 +35,7 @@ const SlideItem = memo(
     zIndex,
     onPointerDown,
     fullscreen = false,
-  }: any) => {
+  }: SlideItemProps) => {
     const [status, setStatus] = useState<'loading' | 'loaded'>('loading');
     const [currentSrc, setCurrentSrc] = useState('');
 
@@ -87,9 +98,8 @@ const SlideItem = memo(
               width={300}
               height={180}
               draggable={false}
-              className={`${styles.carouselImage} ${
-                fullscreen ? styles.fullscreenImage : ''
-              }`}
+              className={`${styles.carouselImage} ${fullscreen ? styles.fullscreenImage : ''
+                }`}
               onLoad={() => setStatus('loaded')}
               style={{
                 opacity: status === 'loaded' ? 1 : 0,
@@ -110,7 +120,6 @@ export default function CarouselMobile({ images }: Props) {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [isClosing, setIsClosing] = useState(false);
-  const [fsAnimDir, setFsAnimDir] = useState<'left' | 'right' | null>(null);
 
   const n = images.length;
   const gesture = useRef({
@@ -197,22 +206,19 @@ export default function CarouselMobile({ images }: Props) {
     }
   };
 
-  const next = () => {
-    setFsAnimDir('left');
-    goTo(mod(state.index + 1, n));
-  };
+const next = () => {
+  goTo(mod(state.index + 1, n));
+};
 
-  const prev = () => {
-    setFsAnimDir('right');
-    goTo(mod(state.index - 1, n));
-  };
+const prev = () => {
+  goTo(mod(state.index - 1, n));
+};
 
   const closeFullscreen = () => {
     setIsClosing(true);
     setTimeout(() => {
       setIsFullscreen(false);
       setIsClosing(false);
-      setFsAnimDir(null);
     }, 250);
   };
 
@@ -258,9 +264,8 @@ export default function CarouselMobile({ images }: Props) {
           {images.map((_, i) => (
             <button
               key={i}
-              className={`${styles.dot} ${
-                mod(Math.round(state.pos), n) === i ? styles.activeDot : ''
-              }`}
+              className={`${styles.dot} ${mod(Math.round(state.pos), n) === i ? styles.activeDot : ''
+                }`}
               onClick={() => goTo(i)}
             />
           ))}
@@ -269,9 +274,8 @@ export default function CarouselMobile({ images }: Props) {
 
       {isFullscreen && (
         <div
-          className={`${styles.fullscreenOverlay} ${
-            isClosing ? styles.zoomOut : styles.zoomIn
-          }`}
+          className={`${styles.fullscreenOverlay} ${isClosing ? styles.zoomOut : styles.zoomIn
+            }`}
           onPointerDown={e => {
             if (e.pointerType !== 'mouse')
               e.currentTarget.setPointerCapture(e.pointerId);
@@ -312,7 +316,9 @@ export default function CarouselMobile({ images }: Props) {
                   opacity={1}
                   zIndex={10}
                   fullscreen
-                  onPointerDown={(e: any) => onPointerDown(e)}
+                  onPointerDown={(e: React.PointerEvent<HTMLDivElement>) =>
+                    onPointerDown(e)
+                  }
                 />
               );
             })}
