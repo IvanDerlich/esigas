@@ -31,50 +31,50 @@ const locations = [
 export default function Location() {
   return (
     <>
-      <div className={`${inter.className} ${styles.ubicationContainer}`}>
+      <div className={`${inter.className} ${styles.locationContainer}`}>
         <Image
           src={Line}
           alt="Line"
           width={335}
           height={0.5}
-          className={styles.ubicationImage}
+          className={styles.locationImage}
         />
-        <h2 className={styles.ubicationTitle}>Ubicaciones</h2>
+        <h2 className={styles.locationTitle}>Ubicaciones</h2>
         <Image
           src={Line}
           alt="Line"
           width={335}
           height={0.5}
-          className={styles.ubicationImage}
+          className={styles.locationImage}
         />
       </div>
 
-      <div className={`${inter.className} ${styles.ubicationContent}`}>
+      <div className={`${inter.className} ${styles.locationContent}`}>
         {locations.map((loc, index) => (
           <div
             key={index}
-            className={`${styles.ubicationCard} ${
+            className={`${styles.locationCard} ${
               loc.mapLocationRight === false ? styles.reverse : ''
             }`}
           >
             <div
               className={loc.mapLocationRight === false ? styles.alignEnd : ''}
             >
-              <h3 className={styles.ubicationTitleCard}>{loc.title}</h3>
+              <h3 className={styles.locationTitleCard}>{loc.title}</h3>
 
-              <div className={styles.ubicationItem}>
+              <div className={styles.locationItem}>
                 <span className={styles.green}>Teléfono:</span>
                 <br />
                 <span className={styles.value}>{loc.phone}</span>
               </div>
 
-              <div className={styles.ubicationItem}>
+              <div className={styles.locationItem}>
                 <span className={styles.green}>Dirección:</span>
                 <br />
                 <span className={styles.value}>{loc.address}</span>
               </div>
 
-              <div className={styles.ubicationItem}>
+              <div className={styles.locationItem}>
                 <span className={styles.green}>Email:</span>
                 <br />
                 <span className={styles.value}>{loc.email}</span>

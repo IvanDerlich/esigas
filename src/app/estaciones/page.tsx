@@ -109,7 +109,7 @@ export default function Page() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className={styles.ubication}
+                className={styles.location}
               />
             </div>
             <CarouselMobile images={imagesSet} />
@@ -123,7 +123,7 @@ export default function Page() {
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className={styles.ubication}
+                className={styles.location}
               />
               <div className={styles.mapContent}>
                 <h4 className={`${abyssinica.className} ${styles.mapTitle}`}>

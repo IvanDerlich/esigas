@@ -1,5 +1,3 @@
-import { Abyssinica_SIL } from 'next/font/google';
-import { Roboto } from 'next/font/google';
 import Image from 'next/image';
 import Line from '@/images/line.png';
 import Tarjetas from '@/images/tarjetas.png';
