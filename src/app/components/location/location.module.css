@@ -1,4 +1,4 @@
-.ubicationContainer {
+.locationContainer {
   font-size: 25px;
   font-weight: 100;
   display: flex;
@@ -9,14 +9,14 @@
   height: auto;
 }
 
-.ubicationTitle {
+.locationTitle {
   font-size: 45px;
   font-weight: 300;
   color: #62b26e;
   padding-bottom: 20px;
 }
 
-.ubicationContent {
+.locationContent {
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -27,7 +27,7 @@
   background-color: white;
 }
 
-.ubicationCard {
+.locationCard {
   width: 70%;
   display: flex;
   justify-content: space-between;
@@ -42,7 +42,7 @@
     8px 15px 8px rgba(0, 0, 0, 0.25);
 }
 
-.ubicationCard > div:first-child {
+.locationCard > div:first-child {
   flex: 1;
   padding: 25px 25px;
   display: flex;
@@ -51,14 +51,14 @@
   background-color: #fff;
 }
 
-.ubicationTitleCard {
+.locationTitleCard {
   font-size: 28px;
   color: #2c2c2c;
   margin-bottom: 15px;
   font-weight: 400;
 }
 
-.ubicationItem {
+.locationItem {
   margin-bottom: 12px;
 }
 
@@ -71,7 +71,7 @@
 }
 
 .alignEnd h3,
-.alignEnd .ubicationItem {
+.alignEnd .locationItem {
   text-align: right;
 }
 
@@ -104,12 +104,12 @@
 }
 
 @media screen and (max-width: 1023px) {
-  .ubicationContainer {
+  .locationContainer {
     gap: 10px;
     padding-bottom: 30px;
   }
 
-  .ubicationContent {
+  .locationContent {
     width: 100%;
     flex-direction: row;
     flex-wrap: wrap;
@@ -117,7 +117,7 @@
     padding: 20px 15px;
   }
 
-  .ubicationCard {
+  .locationCard {
     width: 307px;
     flex-direction: column;
     height: auto;
@@ -129,7 +129,7 @@
     border-radius: 0 0 12px 12px;
   }
 
-  .ubicationImage {
+  .locationImage {
     width: 25%;
   }
 
@@ -138,30 +138,30 @@
   }
 
   .alignEnd h3,
-  .alignEnd .ubicationItem {
+  .alignEnd .locationItem {
     text-align: left;
   }
 }
 
 @media (min-width: 320px) and (max-width: 600px) {
-  .ubicationContainer {
+  .locationContainer {
     flex-direction: column;
     gap: 10px;
     padding-bottom: 30px;
   }
 
-  .ubicationImage {
+  .locationImage {
     width: 220px;
     order: 0;
   }
 
-  .ubicationTitle {
+  .locationTitle {
     order: 1;
     font-size: 32px;
     padding: 0;
   }
 
-  .ubicationContainer img:last-of-type {
+  .locationContainer img:last-of-type {
     order: 2;
   }
 }
