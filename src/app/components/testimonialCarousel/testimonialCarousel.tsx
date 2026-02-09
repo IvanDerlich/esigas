@@ -24,7 +24,6 @@ type Testimonial = {
 
 const TestimonialCarousel = () => {
   const [state, setState] = useState({ index: 0, pos: 0 });
-  const [isTransitioning, setIsTransitioning] = useState(false);
   const [activeTestimonial, setActiveTestimonial] =
     useState<Testimonial | null>(null);
 
@@ -33,10 +32,11 @@ const TestimonialCarousel = () => {
 
   const gesture = useRef({
     startX: 0,
-    currentX: 0,
+    startPos: 0,
     isDragging: false,
     moved: false,
   });
+
   const rafRef = useRef<number>(0);
 
   useEffect(() => {
@@ -46,55 +46,65 @@ const TestimonialCarousel = () => {
 
   const mod = (n: number, m: number) => ((n % m) + m) % m;
 
-  const goTo = (targetIndex: number) => {
-    setIsTransitioning(true);
+  const goTo = (targetIndex: number, duration = 600) => {
+    cancelAnimationFrame(rafRef.current);
+
     const startPos = state.pos;
     let d = targetIndex - startPos;
+
     if (d > n / 2) d -= n;
     if (d < -n / 2) d += n;
+
     const endPos = startPos + d;
     const startTime = performance.now();
-    const duration = 600;
 
     const animate = (now: number) => {
       const t = Math.min(1, (now - startTime) / duration);
       const ease = 1 - Math.pow(1 - t, 4);
       const currentPos = startPos + (endPos - startPos) * ease;
+
       setState(prev => ({ ...prev, pos: currentPos }));
 
       if (t < 1) {
         rafRef.current = requestAnimationFrame(animate);
       } else {
-        const finalIndex = mod(Math.round(currentPos), n);
+        const finalIndex = mod(Math.round(endPos), n);
         setState({ index: finalIndex, pos: finalIndex });
-        setIsTransitioning(false);
       }
     };
-    cancelAnimationFrame(rafRef.current);
+
     rafRef.current = requestAnimationFrame(animate);
   };
 
   const onPointerDown = (e: React.PointerEvent) => {
-    if (isTransitioning) return;
     gesture.current.startX = e.clientX;
+    gesture.current.startPos = state.pos;
     gesture.current.isDragging = true;
     gesture.current.moved = false;
+
     cancelAnimationFrame(rafRef.current);
   };
 
   const onPointerMove = (e: React.PointerEvent) => {
     if (!gesture.current.isDragging) return;
+
     const dx = e.clientX - gesture.current.startX;
+
     if (Math.abs(dx) > 10) {
       gesture.current.moved = true;
     }
-    setState(prev => ({ ...prev, pos: prev.index - dx / 400 }));
+
+    setState(prev => ({
+      ...prev,
+      pos: gesture.current.startPos - dx / 400,
+    }));
   };
 
   const onPointerUp = () => {
     if (!gesture.current.isDragging) return;
+
     gesture.current.isDragging = false;
-    goTo(mod(Math.round(state.pos), n));
+    goTo(mod(Math.round(state.pos), n), 600);
   };
 
   const handlePreventClick = (e: React.MouseEvent) => {
@@ -110,8 +120,15 @@ const TestimonialCarousel = () => {
     }
   };
 
-  const handleNext = () => goTo(mod(state.index + 1, n));
-  const handlePrev = () => goTo(mod(state.index - 1, n));
+  const handleNext = () => {
+    const next = Math.round(state.pos) + 1;
+    goTo(next, 200);
+  };
+
+  const handlePrev = () => {
+    const prev = Math.round(state.pos) - 1;
+    goTo(prev, 200);
+  };
 
   return (
     <>
@@ -122,6 +139,7 @@ const TestimonialCarousel = () => {
         <div className={styles.testimonials}>
           <h2 className={styles.testimonialsTitle}>Testimonios</h2>
         </div>
+
         <div className={styles.testimonialsDescription}>
           <p className={styles.testimonialsSubtitle}>
             Nuestros clientes opinan
