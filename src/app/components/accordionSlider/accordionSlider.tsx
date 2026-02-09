@@ -45,7 +45,7 @@ export default function AccordionSlider() {
         'Certificación oficial',
         'Revisión integral',
       ],
-      img: '/Image/revision-equipo.png',
+      img: '/Image/revision-equipo.jpeg',
       url: '/pec',
     },
     {
