@@ -10,7 +10,7 @@ type Props = {
     rating?: number;
     urlTestimonial?: string;
   };
-  onClick: () => void;
+  onClick?: () => void;
 };
 
 export default function TextTestimonialCard({ item, onClick }: Props) {
