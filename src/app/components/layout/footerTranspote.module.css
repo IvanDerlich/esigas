@@ -1,0 +1,185 @@
+.footer {
+  padding-top: 30px;
+  width: 100%;
+  background-image: linear-gradient(280deg, #0d2f06 0%, #2bc90a 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footerContent {
+  border-top: 1px solid #4e4989;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 88%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 55px 0px 90px 0px;
+}
+
+.footerInner {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logoWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 150px;
+  height: 100px;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactItem {
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 5px;
+  max-width: 320px;
+}
+
+.iconWrapper {
+  position: absolute;
+  left: 0;
+  top: -2px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.contactText,
+.contactTextTwo {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.2px;
+}
+
+.contactText {
+  color: #c2bde6;
+}
+
+.contactTextTwo {
+  color: #ffffff;
+}
+
+.copy {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+}
+
+.section {
+  height: 14vh;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding-top: 20px;
+  }
+
+  .footerContent {
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+  }
+
+  .footerInner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logoWrapper {
+    width: 100%;
+    padding: 120px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .contactInfo {
+    align-items: flex-start;
+    text-align: center;
+  }
+
+  .contactItem {
+    padding-left: 0;
+    margin-bottom: 35px;
+  }
+
+  .contactItem:last-child {
+    margin-bottom: 0;
+  }
+
+  .iconWrapper {
+    position: absolute;
+    left: -5px;
+    top: -22px;
+  }
+
+  .contactText,
+  .contactTextTwo {
+    margin: 0;
+    font-size: 13px;
+    letter-spacing: 0;
+    text-align: start;
+  }
+
+  .icon_location {
+    width: 23px;
+    height: 23px;
+    object-fit: contain;
+  }
+
+  .icon_email {
+    width: 23px;
+    height: 23px;
+    object-fit: contain;
+  }
+
+  .icon_phone {
+    width: 23px;
+    height: 23px;
+    object-fit: contain;
+  }
+
+  .section {
+    height: 10vh;
+  }
+
+  .copy {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footerContent {
+    width: 75%;
+  }
+
+  .footerInner {
+    max-width: 100%;
+  }
+
+  .logoWrapper {
+    padding: 130px 0;
+  }
+
+  .contactText,
+  .contactTextTwo {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.4em;
+    text-align: start;
+  }
+}
