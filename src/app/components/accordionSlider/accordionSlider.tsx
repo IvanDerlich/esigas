@@ -25,7 +25,7 @@ export default function AccordionSlider() {
         'Transporte inteligente',
         'Certificación ambiental ISO 14001',
       ],
-      img: '/Image/transporte-carga-pesada.png',
+      img: '/Image/transporte-carga-pesada.jpg',
       url: 'https://transporteecologico.com.ar/',
     },
     {
