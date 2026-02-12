@@ -76,7 +76,11 @@ export default function AccordionSlider() {
         {slides.map((slide, i) => (
           <div
             key={slide.id}
-            className={`${styles.slide} ${activeIndex === i ? styles.active : ''}`}
+            className={`
+            ${styles.slide}
+            ${activeIndex === i ? styles.active : ''}
+            ${i === 0 ? styles.leftImage : ''}
+            `}
             style={{ backgroundImage: `url(${slide.img})` }}
             onClick={() => handleClick(i)}
           >
