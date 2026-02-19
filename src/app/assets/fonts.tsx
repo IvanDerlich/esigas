@@ -5,6 +5,8 @@ import {
   Inter,
   Abyssinica_SIL,
   Roboto,
+  Lato,
+  Bebas_Neue,
 } from 'next/font/google';
 
 export const sen = Sen({
@@ -40,5 +42,17 @@ export const abyssinica = Abyssinica_SIL({
 export const roboto = Roboto({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
+  display: 'swap',
+});
+
+export const lato = Lato({
+  subsets: ['latin'],
+  weight: ['300', '400', '700'],
+  display: 'swap',
+});
+
+export const bebas = Bebas_Neue({
+  subsets: ['latin'],
+  weight: ['400'],
   display: 'swap',
 });
