@@ -1,0 +1,137 @@
+.main_container {
+  height: 82vh;
+  width: 100%;
+  background-color: white;
+}
+
+.containerImages {
+  height: 82vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: white;
+}
+
+.cloud {
+  width: clamp(160px, 24vw, 271px);
+  height: auto;
+  object-fit: cover;
+}
+
+.heroImage {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.containerText {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;
+  position: absolute;
+  top: 320px;
+  left: 142px;
+  padding: 0 60px;
+}
+
+.title {
+  color: #0bb115;
+  font-size: 90px;
+  font-weight: 400;
+  line-height: 1em;
+}
+
+.textSlider {
+  position: relative;
+  height: 100px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.line {
+  color: #52f303;
+  font-size: 90px;
+  font-weight: 400;
+  line-height: 1.1;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  margin: 0;
+  opacity: 0;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line1 {
+  animation-name: slide-in-out-1;
+}
+
+.line2 {
+  animation-name: slide-in-out-2;
+}
+
+@keyframes slide-in-out-1 {
+  0%,
+  40% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  46% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  47%,
+  85% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  92% {
+    transform: translateY(20px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-out-2 {
+  0%,
+  38% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  46% {
+    transform: translateY(20px);
+    opacity: 1;
+  }
+  54%,
+  85% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  92% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+.link {
+  padding: 11px 85px;
+  background-image: linear-gradient(130deg, #149225 0%, #15d72f 100%);
+  border-radius: 6px;
+  font-size: 15px;
+  color: white;
+  font-weight: 400;
+  margin-top: 10px;
+}
