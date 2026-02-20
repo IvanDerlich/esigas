@@ -166,12 +166,17 @@
   opacity: 1;
 }
 
+.heroImageMobile {
+  display: none;
+}
+
 @media (max-width: 1246px) {
   .main_container {
     height: 100vh;
     width: 100%;
     background-color: white;
   }
+
   .containerImages {
     height: 100vh;
     width: 100%;
@@ -180,6 +185,7 @@
     align-items: flex-start;
     background-color: white;
   }
+
   .containerText {
     position: absolute;
     left: -10px;
@@ -190,5 +196,145 @@
   .title,
   .line {
     font-size: 76px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .heroImage {
+    display: none;
+  }
+
+  .heroImageMobile {
+    display: block;
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+  }
+
+  .containerImages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+  }
+
+  .cloud {
+    position: absolute;
+    top: 85.8px;
+    left: 0;
+  }
+
+  .containerText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .textSlider {
+    width: 45%;
+    height: 75px;
+    min-width: 405px;
+    overflow: visible;
+    padding-right: 20px;
+  }
+
+  .title,
+  .line {
+    font-size: 58px;
+    white-space: nowrap;
+  }
+
+  .line {
+    width: auto;
+    white-space: nowrap;
+    position: absolute;
+  }
+
+  .textBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 10px 0;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+  }
+}
+
+@media (max-width: 767px) {
+  .main_container {
+    position: relative;
+  }
+
+  .containerImages {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: white;
+  }
+
+  .heroImage {
+    display: none;
+  }
+
+  .heroImageMobile {
+    display: block;
+    height: 100%;
+    min-height: 52%;
+    width: 85%;
+    object-fit: contain;
+    object-position: bottom;
+  }
+
+  .cloud {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .containerText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .textSlider {
+    width: 45%;
+    height: 50px;
+    min-width: 270px;
+    overflow: visible;
+    padding-right: 20px;
+  }
+
+  .title,
+  .line {
+    font-size: 38px;
+    white-space: nowrap;
+  }
+
+  .line {
+    width: auto;
+    white-space: nowrap;
+    position: absolute;
+  }
+
+  .textBox {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 10px;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.9);
+    text-align: center;
   }
 }
