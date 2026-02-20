@@ -127,11 +127,31 @@
 }
 
 .link {
-  padding: 11px 85px;
-  background-image: linear-gradient(130deg, #149225 0%, #15d72f 100%);
+  position: relative;
+  padding: 11px 80px;
   border-radius: 6px;
   font-size: 15px;
   color: white;
   font-weight: 400;
   margin-top: 10px;
+  overflow: hidden;
+  display: inline-block;
+  z-index: 1;
+  background: linear-gradient(130deg, #149225, #15d72f);
+  transition: transform 0.3s ease;
+}
+
+.link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 6px;
+  background: linear-gradient(130deg, #16e432, #149225);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: -1;
+}
+
+.link:hover::before {
+  opacity: 1;
 }
