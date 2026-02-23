@@ -218,6 +218,15 @@
   transition-delay: 0.3s;
 }
 
+.slide {
+  background-size: cover;
+  background-position: center;
+}
+
+.leftImage {
+  background-position: 15% center;
+}
+
 /* Barrido progresivo */
 .name,
 .subtitle,
