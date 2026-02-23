@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
 import styles from './benefits.module.css';
 import Image from 'next/image';
 import route from '@/images/ruta.png';
@@ -6,6 +9,38 @@ import professionals from '@/images/profesionales.png';
 import { oswald, lato } from '@/app/assets/fonts';
 
 export const Benefits = () => {
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 769;
+
+  const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const [visibleItems, setVisibleItems] = useState<number[]>([]);
+
+  useEffect(() => {
+    if (!isMobile) return;
+
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const index = Number(entry.target.getAttribute('data-index'));
+
+            setTimeout(() => {
+              setVisibleItems(prev => [...prev, index]);
+            }, index * 200);
+
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    itemsRef.current.forEach(item => {
+      if (item) observer.observe(item);
+    });
+
+    return () => observer.disconnect();
+  }, [isMobile]);
+
   return (
     <section className={styles.benefits}>
       <h1 className={`${oswald.className} ${styles.title}`}>
@@ -15,8 +50,23 @@ export const Benefits = () => {
         Reducirás en un 30% la huella de carbono de tus productos
       </h2>
       <div className={styles.items}>
-        <div className={styles.item}>
-          <Image src={send} alt="Enviado" width={80} height={80} />
+        <div
+          ref={el => {
+            itemsRef.current[0] = el;
+          }}
+          data-index="0"
+          className={`${styles.item} ${
+            isMobile && visibleItems.includes(0) ? styles.itemVisible : ''
+          }`}
+        >
+          <Image
+            className={styles.image}
+            src={send}
+            alt="Enviado"
+            width={80}
+            height={80}
+            priority
+          />
           <p className={`${oswald.className} ${styles.itemTitle}`}>
             ESCALABILIDAD
           </p>
@@ -24,8 +74,23 @@ export const Benefits = () => {
             33,5 toneladas de carga útil para optimizar recursos.
           </p>
         </div>
-        <div className={styles.item}>
-          <Image src={route} alt="Ruta" width={80} height={80} />
+        <div
+          ref={el => {
+            itemsRef.current[1] = el;
+          }}
+          data-index="1"
+          className={`${styles.item} ${
+            isMobile && visibleItems.includes(1) ? styles.itemVisible : ''
+          }`}
+        >
+          <Image
+            className={styles.image}
+            src={route}
+            alt="Ruta"
+            width={80}
+            height={80}
+            priority
+          />
           <p className={`${oswald.className} ${styles.itemTitle}`}>
             SOSTENIBILIDAD
           </p>
@@ -33,12 +98,22 @@ export const Benefits = () => {
             50 toneladas de CO2 no emitidos utilizando nuestras unidades a GNC.
           </p>
         </div>
-        <div className={styles.item}>
+        <div
+          ref={el => {
+            itemsRef.current[2] = el;
+          }}
+          data-index="2"
+          className={`${styles.item} ${
+            isMobile && visibleItems.includes(2) ? styles.itemVisible : ''
+          }`}
+        >
           <Image
+            className={styles.image}
             src={professionals}
             alt="Profesionales"
             width={80}
             height={80}
+            priority
           />
           <p className={`${oswald.className} ${styles.itemTitle}`}>INCLUSIÓN</p>
           <p className={`${lato.className} ${styles.itemContent}`}>
