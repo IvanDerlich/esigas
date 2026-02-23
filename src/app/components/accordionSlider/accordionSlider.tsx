@@ -10,23 +10,19 @@ export default function AccordionSlider() {
   const slides = [
     {
       id: 1,
-      icon: '/Image/logo-transporte-ecologico.png',
-      brand: 'Transporte Ecológico',
-      name: 'Movilidad Sustentable',
-      subtitle: 'Reducción de emisiones y eficiencia energética',
+      icon: '/Image/logo-esignc.png',
+      brand: 'Estaciones',
+      name: 'Red de Abastecimiento GNC',
+      subtitle: 'Carga rápida, segura y eficiente para cada viaje',
       specs: [
-        'Tecnología: Conversión a Gas Natural Comprimido',
-        'Beneficio: Reducción del 90% en emisiones de CO₂',
-        'Ahorro: Hasta 45% menos costo operativo frente al diésel',
-        'Cobertura: Servicio logístico nacional e internacional',
+        'Infraestructura: Estaciones de carga de alta presión',
+        'Ubicación: Red nacional en expansión continua',
+        'Tecnología: Sistemas automáticos de medición y control',
+        'Servicio: Atención especializada',
       ],
-      badges: [
-        'Energía limpia',
-        'Transporte inteligente',
-        'Certificación ambiental ISO 14001',
-      ],
-      img: '/Image/transporte-carga-pesada.png',
-      url: 'https://transporteecologico.com.ar/',
+      badges: ['Alta disponibilidad', 'Energía limpia', 'Atención profesional'],
+      img: '/Image/estacion-rosario6.jpg',
+      url: '/estaciones',
     },
     {
       id: 2,
@@ -45,24 +41,28 @@ export default function AccordionSlider() {
         'Certificación oficial',
         'Revisión integral',
       ],
-      img: '/Image/revision-equipo.png',
+      img: '/Image/revision-equipo.jpeg',
       url: '/pec',
     },
     {
       id: 3,
-      icon: '/Image/logo-esignc.png',
-      brand: 'Estaciones',
-      name: 'Red de Abastecimiento GNC',
-      subtitle: 'Carga rápida, segura y eficiente para cada viaje',
+      icon: '/Image/logo-transporte-ecologico.png',
+      brand: 'Transporte Ecológico',
+      name: 'Movilidad Sustentable',
+      subtitle: 'Reducción de emisiones y eficiencia energética',
       specs: [
-        'Infraestructura: Estaciones de carga de alta presión',
-        'Ubicación: Red nacional en expansión continua',
-        'Tecnología: Sistemas automáticos de medición y control',
-        'Servicio: Atención especializada',
+        'Tecnología: Conversión a Gas Natural Comprimido',
+        'Beneficio: Reducción del 90% en emisiones de CO₂',
+        'Ahorro: Hasta 45% menos costo operativo frente al diésel',
+        'Cobertura: Servicio logístico nacional e internacional',
       ],
-      badges: ['Alta disponibilidad', 'Energía limpia', 'Atención profesional'],
-      img: '/Image/estacion-rosario6.jpg',
-      url: '/estaciones',
+      badges: [
+        'Energía limpia',
+        'Transporte inteligente',
+        'Certificación ambiental ISO 14001',
+      ],
+      img: '/Image/transporte-carga-pesada.jpg',
+      url: 'https://transporteecologico.com.ar/',
     },
   ];
 
@@ -76,7 +76,11 @@ export default function AccordionSlider() {
         {slides.map((slide, i) => (
           <div
             key={slide.id}
-            className={`${styles.slide} ${activeIndex === i ? styles.active : ''}`}
+            className={`
+            ${styles.slide}
+            ${activeIndex === i ? styles.active : ''}
+            ${i === 2 ? styles.leftImage : ''}
+            `}
             style={{ backgroundImage: `url(${slide.img})` }}
             onClick={() => handleClick(i)}
           >

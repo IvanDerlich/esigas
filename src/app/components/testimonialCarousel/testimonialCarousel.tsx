@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import styles from './testimonialCarousel.module.css';
 import testimonialsData from './testimonials.json';
 import Image from 'next/image';
@@ -23,77 +23,112 @@ type Testimonial = {
 };
 
 const TestimonialCarousel = () => {
-  const [start, setStart] = useState(0);
-  const [visibleItems, setVisibleItems] = useState(3);
-  const [touchStartX, setTouchStartX] = useState(0);
-  const [touchEndX, setTouchEndX] = useState(0);
+  const [state, setState] = useState({ index: 0, pos: 0 });
   const [activeTestimonial, setActiveTestimonial] =
     useState<Testimonial | null>(null);
 
   const testimonials = testimonialsData as Testimonial[];
+  const n = testimonials.length;
 
-  const minSwipeDistance = 50;
+  const gesture = useRef({
+    startX: 0,
+    startPos: 0,
+    isDragging: false,
+    moved: false,
+  });
+
+  const rafRef = useRef<number>(0);
 
   useEffect(() => {
-    const updateVisibleItems = () => {
-      if (window.innerWidth < 768) {
-        setVisibleItems(1);
-      } else if (window.innerWidth < 1024) {
-        setVisibleItems(2);
+    setActiveTestimonial(null);
+    return () => setActiveTestimonial(null);
+  }, []);
+
+  const mod = (n: number, m: number) => ((n % m) + m) % m;
+
+  const goTo = (targetIndex: number, duration = 600) => {
+    cancelAnimationFrame(rafRef.current);
+
+    const startPos = state.pos;
+    let d = targetIndex - startPos;
+
+    if (d > n / 2) d -= n;
+    if (d < -n / 2) d += n;
+
+    const endPos = startPos + d;
+    const startTime = performance.now();
+
+    const animate = (now: number) => {
+      const t = Math.min(1, (now - startTime) / duration);
+      const ease = 1 - Math.pow(1 - t, 4);
+      const currentPos = startPos + (endPos - startPos) * ease;
+
+      setState(prev => ({ ...prev, pos: currentPos }));
+
+      if (t < 1) {
+        rafRef.current = requestAnimationFrame(animate);
       } else {
-        setVisibleItems(3);
+        const finalIndex = mod(Math.round(endPos), n);
+        setState({ index: finalIndex, pos: finalIndex });
       }
     };
 
-    updateVisibleItems();
-    window.addEventListener('resize', updateVisibleItems);
-    return () => window.removeEventListener('resize', updateVisibleItems);
-  }, []);
+    rafRef.current = requestAnimationFrame(animate);
+  };
 
-  const maxStartIndex = Math.max(testimonialsData.length - visibleItems, 0);
+  const onPointerDown = (e: React.PointerEvent) => {
+    gesture.current.startX = e.clientX;
+    gesture.current.startPos = state.pos;
+    gesture.current.isDragging = true;
+    gesture.current.moved = false;
+
+    cancelAnimationFrame(rafRef.current);
+  };
+
+  const onPointerMove = (e: React.PointerEvent) => {
+    if (!gesture.current.isDragging) return;
+
+    const dx = e.clientX - gesture.current.startX;
+
+    if (Math.abs(dx) > 10) {
+      gesture.current.moved = true;
+    }
+
+    setState(prev => ({
+      ...prev,
+      pos: gesture.current.startPos - dx / 400,
+    }));
+  };
+
+  const onPointerUp = () => {
+    if (!gesture.current.isDragging) return;
+
+    gesture.current.isDragging = false;
+    goTo(mod(Math.round(state.pos), n), 600);
+  };
+
+  const handlePreventClick = (e: React.MouseEvent) => {
+    if (gesture.current.moved) {
+      e.preventDefault();
+      e.stopPropagation();
+    }
+  };
+
+  const handleCardClick = (item: Testimonial) => {
+    if (!gesture.current.moved && item.type === 'text') {
+      setActiveTestimonial(item);
+    }
+  };
 
   const handleNext = () => {
-    setStart(prev => Math.min(prev + 1, maxStartIndex));
+    const next = Math.round(state.pos) + 1;
+    goTo(next, 200);
   };
 
   const handlePrev = () => {
-    setStart(prev => Math.max(prev - 1, 0));
+    const prev = Math.round(state.pos) - 1;
+    goTo(prev, 200);
   };
-
-  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    setTouchStartX(e.touches[0].clientX);
-    setTouchEndX(e.touches[0].clientX);
-  };
-
-  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    setTouchEndX(e.touches[0].clientX);
-  };
-
-  const handleTouchEnd = () => {
-    const distance = touchEndX - touchStartX;
-
-    if (Math.abs(distance) < minSwipeDistance) return;
-
-    if (distance < 0) {
-      handleNext();
-    } else {
-      handlePrev();
-    }
-  };
-
-  useEffect(() => {
-    const root = document.documentElement;
-
-    if (activeTestimonial) {
-      root.style.overflow = 'hidden';
-    } else {
-      root.style.overflow = '';
-    }
-
-    return () => {
-      root.style.overflow = '';
-    };
-  }, [activeTestimonial]);
 
   return (
     <>
@@ -104,6 +139,7 @@ const TestimonialCarousel = () => {
         <div className={styles.testimonials}>
           <h2 className={styles.testimonialsTitle}>Testimonios</h2>
         </div>
+
         <div className={styles.testimonialsDescription}>
           <p className={styles.testimonialsSubtitle}>
             Nuestros clientes opinan
@@ -113,65 +149,86 @@ const TestimonialCarousel = () => {
             nosotros.
           </p>
         </div>
+
         <div
-          className={styles.testimonialsContent}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
-          onTouchEnd={handleTouchEnd}
+          className={styles.mzaViewport}
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={onPointerUp}
+          onPointerLeave={onPointerUp}
+          style={{ touchAction: 'pan-y', userSelect: 'none' }}
         >
-          <div
-            className={`${styles.arrowWrapper} ${styles.arrowLeft} ${start > 0 ? '' : styles.hidden}`}
-          >
-            <button className={styles.arrowButton} onClick={handlePrev}>
-              <Image src={leftArrow} alt="Anterior" width={40} height={40} />
-            </button>
+          <div className={styles.mzaTrack}>
+            {testimonials.map((item, i) => {
+              let d = i - state.pos;
+              if (d > n / 2) d -= n;
+              if (d < -n / 2) d += n;
+              if (Math.abs(d) > 2) return null;
+
+              const tx = d * 105;
+              const opacity = 1 - Math.abs(d) * 0.7;
+              const scale = 1 - Math.abs(d) * 0.15;
+
+              return (
+                <div
+                  key={i}
+                  className={styles.mzaSlide}
+                  onDragStart={e => e.preventDefault()}
+                  style={{
+                    transform: `translateX(${tx}%) scale(${scale})`,
+                    opacity,
+                    zIndex: Math.round(100 - Math.abs(d) * 10),
+                    cursor: gesture.current.isDragging ? 'grabbing' : 'pointer',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}
+                >
+                  <div
+                    onClickCapture={handlePreventClick}
+                    onClick={() => handleCardClick(item)}
+                    style={{
+                      height: '100%',
+                      width: '100%',
+                      display: 'contents',
+                    }}
+                  >
+                    {item.type === 'text' && (
+                      <TextTestimonialCard item={item} />
+                    )}
+                    {item.type === 'video' && item.youtubeId && (
+                      <VideoTestimonialCard youtubeId={item.youtubeId} />
+                    )}
+                    {item.type === 'instagram' && item.igUrl && item.image && (
+                      <InstagramTestimonialCard
+                        igUrl={item.igUrl}
+                        image={item.image}
+                      />
+                    )}
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
-          {testimonials
-            .slice(start, start + visibleItems)
-            .map((item, index) => {
-              if (item.type === 'text') {
-                return (
-                  <TextTestimonialCard
-                    key={index}
-                    item={item}
-                    onClick={() => setActiveTestimonial(item)}
-                  />
-                );
-              }
-
-              if (item.type === 'video' && item.youtubeId) {
-                return (
-                  <VideoTestimonialCard
-                    key={index}
-                    youtubeId={item.youtubeId}
-                  />
-                );
-              }
-
-              if (item.type === 'instagram' && item.igUrl && item.image) {
-                return (
-                  <InstagramTestimonialCard
-                    key={index}
-                    igUrl={item.igUrl}
-                    image={item.image}
-                  />
-                );
-              }
-
-              return null;
-            })}
-
-          <div
-            className={`${styles.arrowWrapper} ${styles.arrowRight} ${start < maxStartIndex ? '' : styles.hidden}`}
-          >
-            <button className={styles.arrowButton} onClick={handleNext}>
+          <div className={styles.navigationWrapper}>
+            <button
+              className={`${styles.arrowBtn} ${styles.left}`}
+              onClick={handlePrev}
+            >
+              <Image src={leftArrow} alt="Anterior" width={40} height={40} />
+            </button>
+            <button
+              className={`${styles.arrowBtn} ${styles.right}`}
+              onClick={handleNext}
+            >
               <Image src={rightArrow} alt="Siguiente" width={40} height={40} />
             </button>
           </div>
         </div>
       </div>
-      {activeTestimonial && (
+
+      {activeTestimonial && activeTestimonial.type === 'text' && (
         <div
           className={styles.fullscreenOverlay}
           onClick={() => setActiveTestimonial(null)}
@@ -192,9 +249,7 @@ const TestimonialCarousel = () => {
             <div className={styles.stars}>
               {[1, 2, 3, 4, 5].map(star => (
                 <span key={star} className={styles.star}>
-                  {activeTestimonial.rating && activeTestimonial.rating >= star
-                    ? '★'
-                    : '☆'}
+                  {(activeTestimonial.rating ?? 0) >= star ? '★' : '☆'}
                 </span>
               ))}
             </div>
@@ -202,19 +257,20 @@ const TestimonialCarousel = () => {
             <p className={styles.testimonialTextFull}>
               {activeTestimonial.comment}
             </p>
-
             <p className={styles.testimonialAuthorFull}>
               - {activeTestimonial.author}
             </p>
 
-            <a
-              href={activeTestimonial.urlTestimonial}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={styles.googleButtonFull}
-            >
-              Ver en Google
-            </a>
+            {activeTestimonial.urlTestimonial && (
+              <a
+                href={activeTestimonial.urlTestimonial}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.googleButtonFull}
+              >
+                Ver en Google
+              </a>
+            )}
           </div>
         </div>
       )}
