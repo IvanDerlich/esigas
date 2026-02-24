@@ -1,11 +1,11 @@
 .main_container {
-  height: 82vh;
+  height: 85vh;
   width: 100%;
   background-color: white;
 }
 
 .containerImages {
-  height: 82vh;
+  height: 85vh;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -176,6 +176,8 @@
 .textBox {
   transform: translateX(-120%);
   animation: pushFromLeft 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0 5px;
 }
 
 @keyframes pushFromLeft {
@@ -220,6 +222,10 @@
 }
 
 @media (max-width: 1023px) {
+  .main_container {
+    position: relative;
+  }
+
   .heroImage {
     display: none;
   }
@@ -240,7 +246,7 @@
 
   .cloud {
     position: absolute;
-    top: 85.8px;
+    top: 0;
     left: 0;
   }
 
@@ -279,13 +285,10 @@
     justify-content: center;
     align-items: center;
     gap: 20px;
-    padding: 10px 0;
+    padding: 10px 15px;
     flex-wrap: wrap;
     background-color: rgba(255, 255, 255, 0.8);
     text-align: center;
-  }
-
-  .textBox {
     transform: translateX(-120%);
     animation: pushFromLeft 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
   }
@@ -300,6 +303,7 @@
 @media (max-width: 767px) {
   .main_container {
     position: relative;
+    height: 80vh;
   }
 
   .containerImages {
@@ -307,6 +311,7 @@
     justify-content: center;
     align-items: flex-end;
     background-color: white;
+    height: 80vh;
   }
 
   .heroImage {
@@ -315,7 +320,6 @@
 
   .heroImageMobile {
     display: block;
-    height: 100%;
     min-height: 52%;
     width: 85%;
     object-fit: contain;
