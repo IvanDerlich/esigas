@@ -20,7 +20,10 @@ export const Arguments = () => {
           }
         });
       },
-      { threshold: 0.1 }
+      {
+        threshold: 0,
+        rootMargin: '0px 0px -10% 0px',
+      }
     );
 
     scrollRefs.current.forEach(ref => {
