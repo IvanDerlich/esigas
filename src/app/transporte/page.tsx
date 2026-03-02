@@ -4,6 +4,7 @@ import HeroTransporte from '../components/heroTransporte/heroTransporte';
 import { Benefits } from '../components/benefits/benefits';
 import { Numbers } from '../components/numbers/numbers';
 import { Arguments } from '../components/arguments/arguments';
+import { Sustainability } from '../components/sustainability/sustainability';
 
 export default function Page() {
   return (
@@ -13,6 +14,7 @@ export default function Page() {
       <Benefits />
       <Arguments />
       <Numbers />
+      <Sustainability />
       <FooterTransporte />
     </>
   );

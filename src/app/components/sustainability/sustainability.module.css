@@ -1,0 +1,121 @@
+.section_sustainability {
+    min-height: 110vh;
+    background-image: linear-gradient(260deg, #0af92b 0%, #0d2f06 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_sustainability {
+    max-width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 25px;
+    padding: 0 25px;
+}
+
+.container_text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.title {
+    font-size: 43px;
+    font-weight: 600;
+    line-height: 1.3em;
+    letter-spacing: 0px;
+    color: #FFFFFF;
+}
+
+.text {
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    line-height: 21px;
+    color: #F6F6F6;
+}
+
+.link {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    color: #009E3B;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 10px 47px;
+    border-radius: 6px;
+    background-image: linear-gradient(130deg, #E6E6E6 0%, #D6D1DB 100%);
+}
+
+.link span {
+    position: relative;
+    z-index: 2;
+}
+
+.link::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(130deg, #01F643 0%, #08870D 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 1;
+}
+
+.link:hover::before {
+    opacity: 1;
+}
+
+.link:hover span {
+    color: #ffffff;
+}
+
+.container_arguments {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.container_check {
+    display: flex;
+    gap: 15px;
+}
+
+.subtitle {
+    font-size: 14px;
+    font-weight: 400;
+    color: #FFFFFF;
+}
+
+@media (max-width: 1024px) {
+    .section_sustainability {
+        min-height: 115vh;
+    }
+
+    .title {
+        font-size: 30px;
+    }
+
+    .container_sustainability {
+        padding: 0 30px;
+    }
+
+    .container_text {
+        gap: 10px;
+    }
+
+    .text {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .section_sustainability {
+        height: auto;
+        padding: 55px 0;
+    }
+}
