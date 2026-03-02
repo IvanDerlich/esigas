@@ -6,6 +6,8 @@ import {
   Abyssinica_SIL,
   Roboto,
   Lato,
+  Bebas_Neue,
+  Oswald,
 } from 'next/font/google';
 
 export const sen = Sen({
@@ -47,5 +49,17 @@ export const roboto = Roboto({
 export const lato = Lato({
   subsets: ['latin'],
   weight: ['300', '400', '700'],
+  display: 'swap',
+});
+
+export const bebas = Bebas_Neue({
+  subsets: ['latin'],
+  weight: ['400'],
+  display: 'swap',
+});
+
+export const oswald = Oswald({
+  subsets: ['latin'],
+  weight: ['200', '300', '400', '500', '600', '700'],
   display: 'swap',
 });
