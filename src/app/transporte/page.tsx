@@ -3,6 +3,7 @@ import NavBarTransporte from '../components/header/navBarTransporte';
 import HeroTransporte from '../components/heroTransporte/heroTransporte';
 import { Benefits } from '../components/benefits/benefits';
 import { Numbers } from '../components/numbers/numbers';
+import { TransportForm } from '../components/transportForm/transportForm';
 import { Arguments } from '../components/arguments/arguments';
 
 export default function Page() {
@@ -13,6 +14,7 @@ export default function Page() {
       <Benefits />
       <Arguments />
       <Numbers />
+      <TransportForm />
       <FooterTransporte />
     </>
   );
