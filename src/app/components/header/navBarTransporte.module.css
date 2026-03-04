@@ -1,0 +1,94 @@
+.header {
+  width: 100%;
+  background-color: #07610d;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 20px 85px 20px 40px;
+  max-height: 110px;
+}
+
+.logo {
+  height: 100%;
+  width: 21%;
+  object-fit: contain;
+}
+
+.text {
+  color: white;
+  font-size: 24px;
+  text-align: center;
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 400;
+  border: 1px solid white;
+  padding: 10px 35px;
+  border-radius: 6px;
+  background: transparent;
+}
+
+.link span {
+  position: relative;
+  z-index: 2;
+}
+
+.link::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)),
+    linear-gradient(130deg, #16a807 0%, #88f383 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.link:hover::before {
+  opacity: 1;
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  .inner {
+    padding: 20px 50px 20px 30px;
+    gap: 30px;
+  }
+
+  .text {
+    font-size: 17px;
+  }
+
+  .link {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .inner {
+    max-width: min(610px, 92vw);
+    margin: 0 auto;
+    padding: 20px clamp(8px, 4vw, 20px);
+    max-height: 82px;
+  }
+
+  .logo {
+    width: clamp(120px, 40vw, 190px);
+    height: auto;
+  }
+
+  .text,
+  .link {
+    display: none;
+  }
+}
