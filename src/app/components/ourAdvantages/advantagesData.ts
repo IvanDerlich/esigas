@@ -3,11 +3,13 @@ export interface Advantage {
   description: string;
 }
 
+const years = new Date().getFullYear() - 1989;
+
 export const advantages: Advantage[] = [
   {
-    title: '37 años de trayectoria',
+    title: `${years} años de trayectoria`,
     description:
-      'Hace 37 años nos dedicamos a convertir, reparar, habilitar, abastecer y desarrollar vehículos a GNC, siendo uno de las empresas con más trayectoria en el rubro a nivel nacional.',
+      `Hace ${years} años nos dedicamos a convertir, reparar, habilitar, abastecer y desarrollar vehículos a GNC, siendo una de las empresas con más trayectoria en el rubro a nivel nacional.`,
   },
   {
     title: 'Especialistas en GNC',
