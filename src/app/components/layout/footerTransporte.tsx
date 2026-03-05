@@ -35,6 +35,9 @@ export const FooterTransporte = () => {
                 />
               </div>
               <p className={styles.contactText}>
+                Calle 5 y Calle 11. Segunda Etapa
+              </p>
+              <p className={styles.contactText}>
                 Parque industrial Eje norte, de Las Heras, Mendoza
               </p>
             </div>
