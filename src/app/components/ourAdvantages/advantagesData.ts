@@ -8,8 +8,7 @@ const years = new Date().getFullYear() - 1989;
 export const advantages: Advantage[] = [
   {
     title: `${years} años de trayectoria`,
-    description:
-      `Hace ${years} años nos dedicamos a convertir, reparar, habilitar, abastecer y desarrollar vehículos a GNC, siendo una de las empresas con más trayectoria en el rubro a nivel nacional.`,
+    description: `Hace ${years} años nos dedicamos a convertir, reparar, habilitar, abastecer y desarrollar vehículos a GNC, siendo una de las empresas con más trayectoria en el rubro a nivel nacional.`,
   },
   {
     title: 'Especialistas en GNC',
