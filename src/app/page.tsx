@@ -20,9 +20,9 @@ export default function Home() {
           <h3 className={styles.title_contacto}>Comunicate con nosotros:</h3>
           <a
             className={styles.email_contacto}
-            href="mailto:esigas@esigas.com.ar?subject=Consulta%20de%20servicio&body=Hola,%20quisiera%20consultar%20sobre..."
+            href="mailto:info@esigas.com.ar?subject=Consulta%20de%20servicio&body=Hola,%20quisiera%20consultar%20sobre..."
           >
-            esigas@esigas.com.ar
+            info@esigas.com.ar
           </a>
         </div>
       </main>
