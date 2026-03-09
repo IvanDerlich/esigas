@@ -97,6 +97,7 @@ export default function AccordionSlider() {
                   className={styles.iconImage}
                   width={80}
                   height={60}
+                  priority
                 />
               </span>
             </div>
@@ -109,6 +110,7 @@ export default function AccordionSlider() {
                   className={styles.iconImage}
                   width={80}
                   height={60}
+                  priority
                 />
               </span>
               <span className={styles.brandOpen}>{slide.brand}</span>
