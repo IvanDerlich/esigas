@@ -30,6 +30,7 @@ export default function Calculator() {
   const [step, setStep] = useState<1 | 2>(1);
   const [calculatedStep1, setCalculatedStep1] = useState(false);
   const [calculatedStep2, setCalculatedStep2] = useState(false);
+  const isFirstRender = useRef(true);
 
   const [fuelMonthly, setFuelMonthly] = useState<number | ''>('');
   const [fuelPrice, setFuelPrice] = useState<number | ''>('');
@@ -112,14 +113,14 @@ export default function Calculator() {
   };
 
   useEffect(() => {
-    requestAnimationFrame(() => {
-      if (step === 1) {
-        slowScrollTo(step1Ref);
-      }
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
 
-      if (step === 2) {
-        slowScrollTo(step2Ref);
-      }
+    requestAnimationFrame(() => {
+      if (step === 1) slowScrollTo(step1Ref);
+      if (step === 2) slowScrollTo(step2Ref);
     });
   }, [step]);
 
