@@ -3,7 +3,7 @@ export interface Advantage {
   description: string;
 }
 
-const years = new Date().getFullYear() - 1989;
+const years = new Date().getFullYear() - 1987;
 
 export const advantages: Advantage[] = [
   {
