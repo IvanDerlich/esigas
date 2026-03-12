@@ -153,6 +153,20 @@ export default function StepOneCard({
                   <p className={styles.green}>${monthlySavings.toFixed(0)}</p>
                 </div>
               </div>
+
+              <div className={styles.explanationContainer}>
+                <p className={styles.explanation}>
+                  <span className={styles.titleExplanation}>Explicación:</span>
+                  <br />
+                  Hoy en día gastás ${fuelMonthly} pesos andando a nafta.
+                  <br />
+                  Si anduvieses el mes completo a GNC, vas a estar gastando
+                  aproximadamente ${gncMonthlyCost.toFixed(0)} pesos por mes.
+                  <br />
+                  ¡Esto es una diferencia de ${monthlySavings.toFixed(0)} pesos
+                  a tu favor!
+                </p>
+              </div>
             </div>
           )}
         </div>
