@@ -6,6 +6,7 @@ import OurVision from './components/ourVision/ourVision';
 import OurMission from './components/ourMission/ourMission';
 import OurCompany from './components/ourCompany/ourCompany';
 import logo from '@/images/logo.png';
+import HomeVideo from './components/homeVideo/homeVideo';
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <main className={styles.container_ppl}>
         <AccordionSlider />
         <OurCompany />
+        <HomeVideo />
         <OurMission />
         <OurVision />
         <OurValues />

@@ -7,36 +7,6 @@
   width: 100%;
 }
 
-.container_p {
-  height: 470px;
-  width: 70%;
-  margin-top: 50px;
-  padding-top: 50px;
-  border-top: 1px #939393 solid;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: flex-start;
-}
-
-.vision {
-  width: 300px;
-  font-size: 18px;
-  color: black;
-}
-
-.valores {
-  width: 300px;
-  font-size: 18px;
-  color: black;
-}
-
-.subtitle {
-  color: #62b26e;
-  font-size: 50px;
-  text-align: start;
-  padding-bottom: 30px;
-}
-
 .container_contacto {
   background-color: #eeeeee;
   width: 100%;
@@ -61,68 +31,7 @@
 }
 
 @media (min-width: 320px) and (max-width: 768px) {
-  .container_p {
-    flex-direction: column;
-    width: 80%;
-    padding: 2rem 1rem;
-    gap: 2rem;
-    height: auto;
-  }
-
-  .vision,
-  .valores {
-    width: 100%;
-    font-size: 16px;
-  }
-
-  .subtitle {
-    font-size: 30px;
-    padding-bottom: 20px;
-  }
-
   .container_contacto {
     margin-top: 30px;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .container_p {
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-    padding: 2rem;
-    gap: 2rem;
-    height: auto;
-  }
-
-  .vision,
-  .valores {
-    width: 80%;
-    font-size: 17px;
-    text-align: center;
-  }
-
-  .subtitle {
-    font-size: 40px;
-  }
-}
-
-@media (min-width: 1025px) and (max-width: 1400px) {
-  .container_p {
-    width: 90%;
-    gap: 2rem;
-    padding-top: 40px;
-    margin-top: 40px;
-  }
-
-  .vision,
-  .valores {
-    width: 250px;
-    font-size: 17px;
-  }
-
-  .subtitle {
-    font-size: 45px;
-    padding-bottom: 20px;
   }
 }
