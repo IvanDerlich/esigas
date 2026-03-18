@@ -35,6 +35,9 @@ export const FooterTransporte = () => {
                 />
               </div>
               <p className={styles.contactText}>
+                Lateral Norte Calle Santa Rita y Calle 17
+              </p>
+              <p className={styles.contactText}>
                 Parque industrial Eje norte, de Las Heras, Mendoza
               </p>
             </div>
