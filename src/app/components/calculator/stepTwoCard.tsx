@@ -50,6 +50,24 @@ export default function StepTwoCard({
   resetStep2,
   goBackToStep1,
 }: Props) {
+  function formatTime(months: number) {
+    const years = Math.floor(months / 12);
+    const remainingMonths = months % 12;
+
+    let result = '';
+
+    if (years > 0) {
+      result += `${years} ${years === 1 ? 'año' : 'años'}`;
+    }
+
+    if (remainingMonths > 0) {
+      if (result) result += ' y ';
+      result += `${remainingMonths} ${remainingMonths === 1 ? 'mes' : 'meses'}`;
+    }
+
+    return result || `0 meses`;
+  }
+
   return (
     <div ref={step2Ref} className={`${interClass} ${styles.calculator}`}>
       <div className={styles.calculatorContainer}>
@@ -154,8 +172,8 @@ export default function StepTwoCard({
                     Por lo que la cuota se paga con el ahorro y todos los meses
                     te va a sobrar ${difference.toFixed(0)} en tu bolsillo!
                     <br />
-                    Al cabo de {installments} meses, te va a quedar cada mes $
-                    {monthlySavings.toFixed(0)} en tu bolsillo
+                    Al cabo de {formatTime(Number(installments))}, te va a
+                    quedar cada mes ${monthlySavings.toFixed(0)} en tu bolsillo
                   </p>
                 </div>
               ) : (
@@ -172,8 +190,8 @@ export default function StepTwoCard({
                     <br />O sea que la cuota va a tener un descuento del{' '}
                     {discountPercent.toFixed(0)}%!
                     <br />
-                    Al cabo de {installments} meses te va a quedar en tu
-                    bolsillo ${monthlySavings.toFixed(0)} todos los meses.
+                    Al cabo de {formatTime(Number(installments))} te va a quedar
+                    en tu bolsillo ${monthlySavings.toFixed(0)} todos los meses.
                   </p>
                 </div>
               )}
