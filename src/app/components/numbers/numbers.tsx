@@ -11,7 +11,7 @@ const numbersData = [
     value: 1000,
     label: 'Arboles anuales plantados por camión sin inversión adicional',
   },
-  { value: 37, label: 'Años dedicados al GNC' },
+  { value: new Date().getFullYear() - 1987, label: 'Años dedicados al GNC' },
 ];
 
 export const Numbers = () => {
