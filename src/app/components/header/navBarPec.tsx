@@ -35,6 +35,7 @@ export default function Navbar({ links }: NavbarProps) {
           width={130}
           height={60}
           className={styles.logo}
+          priority
         />
 
         <input

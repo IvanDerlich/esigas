@@ -10,7 +10,7 @@ export default function HeroTransporte() {
   return (
     <section className={styles.main_container}>
       <div className={styles.containerImages}>
-        <Image className={styles.cloud} src={Cloud} alt="Nube" />
+        <Image className={styles.cloud} src={Cloud} alt="Nube" priority />
         <Image
           className={styles.heroImage}
           src={HeroImage}
