@@ -12,8 +12,8 @@ import Location from '../components/location/location';
 import SocialNetwork from '../components/socialNetwork/socialNetwork';
 import { Footer } from '../components/layout/footer';
 import Navbar from '../components/header/navBarPec';
-import Whatsapp from '@/images/whatsapp.png';
 import logo from '@/images/logo.png';
+import BtnWhatsapp from '../components/btnWhatsapp/btnWhatsapp';
 
 const links = [
   { label: 'Home', href: '#home' },
@@ -84,18 +84,7 @@ export default function Page() {
         <Contact formType="oblea-reprueba" showContact={true} />
         <Location />
         <SocialNetwork showNewsletter={false} />
-        <Link
-          href="https://wa.me/+5492616913692"
-          className={styles.btnWhatsapp}
-        >
-          <Image
-            className={styles.imgWhatsapp}
-            src={Whatsapp}
-            alt="Whatsapp"
-            width={120}
-            height={120}
-          />
-        </Link>
+        <BtnWhatsapp phoneNumber="+5492616913692" color="green" />
       </main>
       <Footer logoSrc={logo} />
     </>
