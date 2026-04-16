@@ -13,8 +13,8 @@ const EmailBtn = () => {
         className={styles.imgEmail}
         src={Email}
         alt="Contactar por Email"
-        // width={120}
-        // height={80}
+        width={100}
+        height={65}
       />
     </Link>
   );
