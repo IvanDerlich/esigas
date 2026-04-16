@@ -14,6 +14,7 @@ import { Footer } from '../components/layout/footer';
 import Navbar from '../components/header/navBarPec';
 import Whatsapp from '@/images/whatsapp.png';
 import logo from '@/images/logo.png';
+import EmailBtn from '../components/buttonEmail/btnEmail';
 
 const links = [
   { label: 'Home', href: '#home' },
@@ -84,6 +85,7 @@ export default function Page() {
         <Contact formType="oblea-reprueba" showContact={true} />
         <Location />
         <SocialNetwork showNewsletter={false} />
+        <EmailBtn />
         <Link
           href="https://wa.me/+5492616913692"
           className={styles.btnWhatsapp}

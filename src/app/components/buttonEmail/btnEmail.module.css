@@ -1,0 +1,30 @@
+.btnEmail {
+  position: fixed;
+  bottom: 120px;
+  right: 20px;
+  z-index: 9999;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+.btnEmail:hover {
+  transform: scale(1.1);
+}
+
+.imgEmail {
+  width: 100px;
+  height: 65px;
+  object-fit: contain;
+}
+
+@media screen and (max-width: 768px) {
+  .btnEmail {
+    bottom: 105px;
+    right: 10px;
+  }
+
+  .imgEmail {
+    width: 90px;
+    height: 55px;
+  }
+}

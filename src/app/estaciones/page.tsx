@@ -24,6 +24,7 @@ import SocialNetwork from '../components/socialNetwork/socialNetwork';
 import { Footer } from '../components/layout/footer';
 import Whatsapp from '@/images/whatsapp.png';
 import logo from '@/images/logo-esignc.png';
+import EmailBtn from '../components/buttonEmail/btnEmail';
 
 const links = [
   { label: 'Home', href: '#home' },
@@ -200,6 +201,7 @@ export default function Page() {
           <Contact formType="estaciones" showContact={true} showCheckboxes />
         </div>
         <SocialNetwork showNewsletter={false} />
+        <EmailBtn />
         <Link
           href="https://wa.me/+5492613252113"
           className={styles.btnWhatsapp}

@@ -16,6 +16,7 @@ import { Footer } from '../components/layout/footer';
 import Whatsapp from '@/images/whatsapp.png';
 import logo from '@/images/logo.png';
 import { abyssinica, roboto } from '@/app/assets/fonts';
+import EmailBtn from '../components/buttonEmail/btnEmail';
 
 const links = [
   { label: 'Home', href: '#home' },
@@ -135,6 +136,7 @@ export default function Page() {
         </div>
         <Location />
         <SocialNetwork showNewsletter={false} />
+        <EmailBtn />
         <Link
           href="https://wa.me/+5492616913692"
           className={styles.btnWhatsapp}
