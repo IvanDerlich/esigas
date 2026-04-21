@@ -2,6 +2,14 @@
 
 import { useEffect } from 'react';
 
+declare global {
+  interface Window {
+    chatwootSDK: {
+      run: (config: { websiteToken: string; baseUrl: string }) => void;
+    };
+  }
+}
+
 export default function BtnChatwoot() {
   useEffect(() => {
     const BASE_URL = process.env.NEXT_PUBLIC_CHATWOOT_BASE_URL;
@@ -18,8 +26,8 @@ export default function BtnChatwoot() {
     script.id = 'chatwoot-script';
 
     script.onload = () => {
-      if ((window as any).chatwootSDK) {
-        (window as any).chatwootSDK.run({
+      if (window.chatwootSDK) {
+        window.chatwootSDK.run({
           websiteToken: TOKEN,
           baseUrl: BASE_URL,
         });
