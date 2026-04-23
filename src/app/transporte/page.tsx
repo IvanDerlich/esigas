@@ -7,6 +7,7 @@ import { TransportForm } from '../components/transportForm/transportForm';
 import { Arguments } from '../components/arguments/arguments';
 import { Sustainability } from '../components/sustainability/sustainability';
 import EmailBtn from '../components/buttonEmail/btnEmail';
+import BtnWhatsapp from '../components/btnWhatsapp/btnWhatsapp';
 
 export default function Page() {
   return (
@@ -20,6 +21,7 @@ export default function Page() {
       <TransportForm />
       <EmailBtn />
       <FooterTransporte />
+      <BtnWhatsapp phoneNumber="+5492615591335" color="blue" />
     </>
   );
 }

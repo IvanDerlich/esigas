@@ -22,9 +22,9 @@ import NavbarTwo from '../components/header/navBarEstaciones';
 import Contact from '../components/contact/contact';
 import SocialNetwork from '../components/socialNetwork/socialNetwork';
 import { Footer } from '../components/layout/footer';
-import Whatsapp from '@/images/whatsapp.png';
 import logo from '@/images/logo-esignc.png';
 import EmailBtn from '../components/buttonEmail/btnEmail';
+import BtnWhatsapp from '../components/btnWhatsapp/btnWhatsapp';
 
 const links = [
   { label: 'Home', href: '#home' },
@@ -202,18 +202,7 @@ export default function Page() {
         </div>
         <SocialNetwork showNewsletter={false} />
         <EmailBtn />
-        <Link
-          href="https://wa.me/+5492613252113"
-          className={styles.btnWhatsapp}
-        >
-          <Image
-            className={styles.imgWhatsapp}
-            src={Whatsapp}
-            alt="Whatsapp"
-            width={120}
-            height={120}
-          />
-        </Link>
+        <BtnWhatsapp phoneNumber="+5492613252113" color="green" />
       </main>
       <Footer logoSrc={logo} />
     </>
