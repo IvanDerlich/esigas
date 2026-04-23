@@ -13,8 +13,7 @@ import SocialNetwork from '../components/socialNetwork/socialNetwork';
 import { Footer } from '../components/layout/footer';
 import Navbar from '../components/header/navBarPec';
 import logo from '@/images/logo.png';
-import EmailBtn from '../components/buttonEmail/btnEmail';
-import BtnWhatsapp from '../components/btnWhatsapp/btnWhatsapp';
+import FloatingButtons from '../components/floatingButtons/floatingButtons';
 
 const links = [
   { label: 'Home', href: '#home' },
@@ -85,8 +84,12 @@ export default function Page() {
         <Contact formType="oblea-reprueba" showContact={true} />
         <Location />
         <SocialNetwork showNewsletter={false} />
-        <EmailBtn />
-        <BtnWhatsapp phoneNumber="+5492616913692" color="green" />
+        <FloatingButtons
+          showWhatsapp
+          showEmail
+          phoneNumber="+5492616913692"
+          color="green"
+        />
       </main>
       <Footer logoSrc={logo} />
     </>

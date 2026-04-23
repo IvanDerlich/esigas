@@ -6,8 +6,7 @@ import { Numbers } from '../components/numbers/numbers';
 import { TransportForm } from '../components/transportForm/transportForm';
 import { Arguments } from '../components/arguments/arguments';
 import { Sustainability } from '../components/sustainability/sustainability';
-import EmailBtn from '../components/buttonEmail/btnEmail';
-import BtnWhatsapp from '../components/btnWhatsapp/btnWhatsapp';
+import FloatingButtons from '../components/floatingButtons/floatingButtons';
 
 export default function Page() {
   return (
@@ -19,9 +18,13 @@ export default function Page() {
       <Numbers />
       <Sustainability />
       <TransportForm />
-      <EmailBtn />
+      <FloatingButtons
+        showWhatsapp
+        showEmail
+        phoneNumber="+5492615591335"
+        color="blue"
+      />
       <FooterTransporte />
-      <BtnWhatsapp phoneNumber="+5492615591335" color="blue" />
     </>
   );
 }

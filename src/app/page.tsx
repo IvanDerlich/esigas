@@ -7,6 +7,7 @@ import OurMission from './components/ourMission/ourMission';
 import OurCompany from './components/ourCompany/ourCompany';
 import logo from '@/images/logo.png';
 import HomeVideo from './components/homeVideo/homeVideo';
+import FloatingButtons from './components/floatingButtons/floatingButtons';
 
 export default function Home() {
   return (
@@ -27,6 +28,7 @@ export default function Home() {
             info@esigas.com.ar
           </a>
         </div>
+        <FloatingButtons showEmail />
       </main>
       <Footer logoSrc={logo} />
     </>
