@@ -13,10 +13,9 @@ import Contact from '../components/contact/contact';
 import Location from '../components/location/location';
 import SocialNetwork from '../components/socialNetwork/socialNetwork';
 import { Footer } from '../components/layout/footer';
-import Whatsapp from '@/images/whatsapp.png';
 import logo from '@/images/logo.png';
 import { abyssinica, roboto } from '@/app/assets/fonts';
-import BtnWhatsapp from '../components/btnWhatsapp/btnWhatsapp';
+import FloatingButtons from '../components/floatingButtons/floatingButtons';
 
 const links = [
   { label: 'Home', href: '#home' },
@@ -136,7 +135,12 @@ export default function Page() {
         </div>
         <Location />
         <SocialNetwork showNewsletter={false} />
-        <BtnWhatsapp phoneNumber="+5492616913692" color="green" />
+        <FloatingButtons
+          showWhatsapp
+          showEmail
+          phoneNumber="+5492616913692"
+          color="green"
+        />
       </main>
       <Footer logoSrc={logo} />
     </>

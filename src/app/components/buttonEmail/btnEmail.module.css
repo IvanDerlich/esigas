@@ -1,21 +1,21 @@
-.btnWhatsapp {
+.btnEmail {
   z-index: 9999;
   border-radius: 50%;
   transition: transform 0.2s;
 }
 
-.btnWhatsapp:hover {
+.btnEmail:hover {
   transform: scale(1.1);
 }
 
-.imgWhatsapp {
-  width: 100px;
-  height: 100px;
+.imgEmail {
+  object-fit: contain;
 }
 
 @media screen and (max-width: 768px) {
-  .imgWhatsapp {
+  .imgEmail {
     width: 90px;
-    height: 90px;
+    height: 55px;
+    object-fit: contain;
   }
 }
