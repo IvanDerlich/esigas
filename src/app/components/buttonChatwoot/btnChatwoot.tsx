@@ -16,7 +16,7 @@ export default function BtnChatwoot() {
     const TOKEN = process.env.NEXT_PUBLIC_CHATWOOT_TOKEN;
 
     if (!BASE_URL || !TOKEN) {
-      console.warn("Chatwoot env vars missing");
+      console.warn('Chatwoot env vars missing');
       return;
     }
 
