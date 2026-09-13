@@ -1,12 +1,10 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './btnWhatsapp.module.css';
-import WhatsappGreen from '@/images/whatsapp-green.png';
-import WhatsappBlue from '@/images/whatsapp-blue.png';
 
 const imagePaths = {
-  green: WhatsappGreen,
-  blue: WhatsappBlue,
+  green: '/Image/whatsapp-green.png',
+  blue: '/Image/whatsapp-blue.png',
 };
 
 interface WhatsappBtnProps {

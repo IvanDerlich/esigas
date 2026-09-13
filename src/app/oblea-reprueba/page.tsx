@@ -87,7 +87,7 @@ export default function Page() {
         <FloatingButtons
           showWhatsapp
           showEmail
-          phoneNumber="+5492616913692"
+          phoneNumber="+5492616913727"
           color="green"
         />
       </main>
