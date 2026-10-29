@@ -24,8 +24,8 @@ export const Footer = ({ logoSrc }: FooterProps) => {
               <Image
                 src="/roldar-logo.png"
                 alt="Roldar"
-                width={14}
-                height={18}
+                width={63}
+                height={80}
                 className={styles.credit_logo}
               />
               roldar.com
