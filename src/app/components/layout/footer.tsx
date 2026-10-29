@@ -14,7 +14,7 @@ export const Footer = ({ logoSrc }: FooterProps) => {
       <div className={styles.content_footer}>
         <div className={styles.footer_text}>
           <p className={`${abyssinica.className} ${styles.footer_p}`}>
-            Made by Datara in 2025
+            Made by roldar.com in 2025
           </p>
         </div>
 
