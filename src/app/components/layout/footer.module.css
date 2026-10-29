@@ -26,6 +26,24 @@
   justify-content: flex-start;
 }
 
+.credit_link {
+  color: white;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  vertical-align: middle;
+}
+
+.credit_link:hover {
+  text-decoration: underline;
+}
+
+.credit_logo {
+  height: 18px;
+  width: auto;
+}
+
 .contact_info {
   display: flex;
   flex-direction: column;

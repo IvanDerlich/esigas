@@ -14,7 +14,23 @@ export const Footer = ({ logoSrc }: FooterProps) => {
       <div className={styles.content_footer}>
         <div className={styles.footer_text}>
           <p className={`${abyssinica.className} ${styles.footer_p}`}>
-            Made by roldar.com in 2025
+            Made by{' '}
+            <a
+              className={styles.credit_link}
+              href="https://roldar.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Image
+                src="/roldar-logo.png"
+                alt="Roldar"
+                width={14}
+                height={18}
+                className={styles.credit_logo}
+              />
+              roldar.com
+            </a>{' '}
+            in 2025
           </p>
         </div>
 
